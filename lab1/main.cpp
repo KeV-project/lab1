@@ -14,7 +14,7 @@ void Breakpoints()
         sum += add * i; // breakpoint
         add *= 1.1;
     }
-    cout << "Total sum is " << sum << endl;
+    cout << "Total sum is " << sum << endl << endl;
 }
 
 void Breakpoints2()
@@ -34,7 +34,7 @@ void Breakpoints2()
             add /= 3.0;
         }
     }
-    cout << "Total sum is " << sum << endl;
+    cout << "Total sum is " << sum << endl << endl;
 }
 
 void main()
@@ -49,39 +49,69 @@ void main()
     Breakpoints2();
 
     //Task 1.1.2.1
-    const int valuesCount = 10;
-    int values[valuesCount];
+    const int valuesIntCount = 10;
+    int valuesInt[valuesIntCount];
 
     cout << "Source array is:" << endl;
 
-    for (int i = 0; i < valuesCount; i++)
+    for (int i = 0; i < valuesIntCount; i++)
     {
         //rand() make values ​​in the range 0 - 32767
-        values[i] = rand() % 10;
-        cout << values[i] << " ";
+        valuesInt[i] = rand() % 10;
+        cout << valuesInt[i] << " ";
     }
 
     cout << endl << endl;
 
     // Insertion sort
-    for (int i = 1; i < valuesCount; i++)
+    for (int i = 1; i < valuesIntCount; i++)
     {
         int current = i;
-        while (current != 0 && values[current] < values[current - 1])
+        while (current != 0 && valuesInt[current] < valuesInt[current - 1])
         {
-            int temp = values[current - 1];
-            values[current - 1] = values[current];
-            values[current] = temp;
+            int temp = valuesInt[current - 1];
+            valuesInt[current - 1] = valuesInt[current];
+            valuesInt[current] = temp;
             current--;
         }
     }
 
     cout << "Sorted array is:" << endl;
 
-    for (int i = 0; i < valuesCount; i++)
+    for (int i = 0; i < valuesIntCount; i++)
     {
-        cout << values[i] << " ";
+        cout << valuesInt[i] << " ";
     }
+
+    cout << endl << endl;
+
+    //Task 1.1.2.2
+    const int valuesDoubleCount = 12;
+    float valuesDouble[valuesDoubleCount];
+  
+    cout << "Source array is:" << endl;
+
+    for (int i = 0; i < valuesDoubleCount; i++)
+    {
+        valuesDouble[i] = (rand() % 10) * 0.1 + rand() % 10;
+        cout << valuesDouble[i] << " ";
+    }
+
+    cout << endl << endl;
+
+    float searchingValue = 0.0;
+    cout << "Введите число: ";
+    cin >> searchingValue;
     cout << endl;
+    int count = 0;
+    for (int i = 0; i < valuesDoubleCount; i++)
+    {
+        if (valuesDouble[i] >= searchingValue)
+        {
+            count++;
+        }
+
+    }
+    cout << "Количество чисел в массиве, которые больше или равны " << searchingValue << " - " << count << endl << endl;
 }
 
