@@ -10,7 +10,7 @@ void Breakpoints()
     for (int i = 0; i < 10; i++)
     {
         // sum = 0.0, 1.1, 3.52, 7.513, 13.3, 21.42, 31.05, 45.69, 62.84, 84.06
-        sum += add * i;
+        sum += add * i; // breakpoint
         add *= 1.1;
     }
     cout << "Total sum is " << sum << endl;
@@ -22,8 +22,8 @@ void Breakpoints2()
     double sum = 0.0;
     for (int i = 0; i < 1000; i++)
     {
-        // На 777 итерации цикла sum == 3.26
-        sum += add * i; // Поставьте условную точку останова здесь
+        // At 777 iterations of the loop sum == 3.26
+        sum += add * i; // breakpoint
         if (i % 3 == 0)
         {
             add *= 1.1;
@@ -40,10 +40,10 @@ void main()
 {
 	setlocale(LC_ALL, "rus");
 
-    // Задание 1.1.1.1
+    // Task 1.1.1.1
     Breakpoints();
 
-    // Задание 1.1.1.2
+    // Task 1.1.1.2
     Breakpoints2();
 }
 
