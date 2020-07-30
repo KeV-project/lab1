@@ -42,6 +42,13 @@ double GetPower(double base, int exponent)
     return pow(base, exponent);
 }
 
+void DemoGetPower(double base, int exponent)
+{
+    GetPower(base, exponent);
+
+    cout << "Result: " << base << "^" << exponent << " = " << GetPower(base, exponent) << endl << endl;
+}
+
 void main()
 {
 	setlocale(LC_ALL, "rus");
@@ -157,7 +164,7 @@ void main()
     }
     cout << endl << endl;
 
-    // Task 1.1.3.1 ///////////////////////////////////////////////////////////
+    // Task 1.1.3.2 ///////////////////////////////////////////////////////////
     double base = 0.0;
     int exponent = 0;
     cout << "Enter the base: ";
@@ -167,5 +174,7 @@ void main()
     cin >> exponent;
     cout << endl;
     cout << "Result: " << base << "^" << exponent << " = " << GetPower(base, exponent) << endl << endl;
+
+    // Task 1.1.3.3 ///////////////////////////////////////////////////////////
 }
 
