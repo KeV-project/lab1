@@ -120,6 +120,16 @@ int SearchLetters(char* characters, int charactersCount)
     return lettersCount;
 }
 
+int* MakeRandomArray(int arraySize)
+{
+    int* array = new int[arraySize];
+    for (int i = 0; i < arraySize; i++)
+    {
+        array[i] = rand() % 100 - 50;
+    }
+    return array;
+}
+
 void main()
 {
     setlocale(LC_ALL, "rus");
@@ -428,5 +438,8 @@ void main()
     }
     cout << endl << endl;
     cout << "Letters in array: " << SearchLetters(characters, charactersCount) << endl << endl;
+    delete[] characters;
+
+    // Task 1.1.5.7 ///////////////////////////////////////////////////////////
 } 
 
