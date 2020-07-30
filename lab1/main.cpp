@@ -69,6 +69,16 @@ void Foo(double x)
     cout << "New value of x in Foo(): " << x << endl;
 }
 
+void FooPtr(double* a)
+{
+    cout << "Address in pointer: " << a << endl;
+    cout << "Address of pointer: " << &a << endl;
+    cout << "Value in pointer address: " << *a << endl;
+    *a = 15.0;
+    cout << "New value in pointer address: " << *a << endl;
+}
+
+
 void main()
 {
     setlocale(LC_ALL, "rus");
@@ -262,6 +272,6 @@ void main()
     cout << endl;
     *yPtr = 7;
     cout << "Value in y: " << y << endl;
-    cout << "Value by pointer address: " << *yPtr << endl;
+    cout << "Value by pointer address: " << *yPtr << endl << endl;
 }
 
