@@ -78,6 +78,20 @@ void FooPtr(double* z)
     cout << "New z in pointer address: " << *z << endl << endl;
 }
 
+void Sort(float* numsFloat, int numsFloatCount)
+{
+    for (int i = 1; i < numsFloatCount; i++)
+    {
+        int current = i;
+        while (current != 0 && numsFloat[current] < numsFloat[current - 1])
+        {
+            float temp = numsFloat[current - 1];
+            numsFloat[current - 1] = numsFloat[current];
+            numsFloat[current] = temp;
+            current--;
+        }
+    }
+}
 
 void main()
 {
@@ -331,6 +345,23 @@ void main()
     for (int i = 0; i < symbolsCount; i++)
     {
         cout << symbols[i] << " ";
+    }
+    cout << endl << endl;
+
+    // Task 1.1.5.4 ///////////////////////////////////////////////////////////
+    int numsFloatCount = 10;
+    float* numsFloat = new float[numsFloatCount] {1.2, 6.2, 1.7, 3.8, 7.3, 9.2, 0.5, -9.2, 2.5, 4.6};
+    cout << "Array of float: ";
+    for (int i = 0; i < numsFloatCount; i++)
+    {
+        cout << numsFloat[i] << " ";
+    }
+    cout << endl << endl;
+    Sort(numsFloat, numsFloatCount);
+    cout << "Sorted array of float: ";
+    for (int i = 0; i < numsFloatCount; i++)
+    {
+        cout << numsFloat[i] << " ";
     }
     cout << endl << endl;
 } 
