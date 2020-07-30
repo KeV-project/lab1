@@ -63,7 +63,7 @@ void RoundToTens(int& value)
 
 void main()
 {
-	setlocale(LC_ALL, "rus");
+    setlocale(LC_ALL, "rus");
     srand(time(NULL));
 
     // Task 1.1.1.1 ///////////////////////////////////////////////////////////
@@ -112,7 +112,7 @@ void main()
     // Task 1.1.2.2 ///////////////////////////////////////////////////////////
     const int valuesDoubleCount = 12;
     float valuesDouble[valuesDoubleCount];
-  
+
     cout << "Source valuesChar is:" << endl;
 
     for (int i = 0; i < valuesDoubleCount; i++)
@@ -155,8 +155,8 @@ void main()
             cin.ignore(32767, '\n');
         }
     }
-   
-    cout << endl <<  "Your array: " << endl << endl;
+
+    cout << endl << "Your array: " << endl << endl;
 
     for (int i = 0; i < valuesCharCount; i++)
     {
@@ -209,7 +209,21 @@ void main()
     double c = 13.5;
     cout << "Address of c: " << &c << endl;
     bool d = true;
-    cout << "Address of d: " << &d << endl;
+    cout << "Address of d: " << &d << endl << endl;
 
+    // Task 1.1.4.2///////////////////////////////////////////////////////////
+    int numsInt[10] = { 1, 2, 7, -1, 5, 3, -1, 7, 1, 6 };
+    cout << "Size of int type: " << sizeof(int) << endl;
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "Address of a[" << i << "]: " << &numsInt[i] << endl;
+    }
+    cout << endl;
+    cout << "Size of double type: " << sizeof(double) << endl;
+    double numsDouble[10] = { 1.0, 2.0, 7.0, -1.0, 5.0, 3.5, -1.8, 7.2, 1.9, 6.2 };
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "Address of b[" << i << "]: " << &numsDouble[i] << endl;
+    }
 }
 
