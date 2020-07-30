@@ -253,5 +253,15 @@ void main()
     cout << endl;
     cout << "Value of x in main: " << x << endl << endl;
 
+    // Task 1.1.4.6 ///////////////////////////////////////////////////////////
+    int y = 5;
+    int* yPtr = &y;
+    cout << "Address of y: " << &y << endl;
+    cout << "Address in pointer: " << yPtr << endl;
+    cout << "Address of pointer: " << &yPtr << endl;
+    cout << endl;
+    *yPtr = 7;
+    cout << "Value in y: " << y << endl;
+    cout << "Value by pointer address: " << *yPtr << endl;
 }
 
