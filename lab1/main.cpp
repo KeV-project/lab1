@@ -69,13 +69,13 @@ void Foo(double x)
     cout << "New value of x in Foo(): " << x << endl;
 }
 
-void FooPtr(double* a)
+void FooPtr(double* z)
 {
-    cout << "Address in pointer: " << a << endl;
-    cout << "Address of pointer: " << &a << endl;
-    cout << "Value in pointer address: " << *a << endl;
-    *a = 15.0;
-    cout << "New value in pointer address: " << *a << endl;
+    cout << "Address in pointer: " << z << endl;
+    cout << "Address of pointer: " << &z << endl;
+    cout << "Value in pointer address: " << *z << endl;
+    *z = 15.0;
+    cout << "New z in pointer address: " << *z << endl << endl;
 }
 
 
@@ -273,5 +273,17 @@ void main()
     *yPtr = 7;
     cout << "Value in y: " << y << endl;
     cout << "Value by pointer address: " << *yPtr << endl << endl;
+
+    // Task 1.1.4.8 ///////////////////////////////////////////////////////////
+    double z = 5.0;
+    double* zPtr = &z;
+    cout << "Address of z in main(): " << &z << endl;
+    cout << "Address in pointer in main(): " << zPtr << endl;
+    cout << "Address of pointer in main(): " << &zPtr << endl;
+    cout << "Value of a in main(): " << z << endl << endl;
+    
+    FooPtr(zPtr);
+    
+    cout << "Value of z in main(): " << z << endl << endl;
 }
 
