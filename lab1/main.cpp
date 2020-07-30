@@ -106,8 +106,9 @@ bool Search(int* numsInt, int numsIntCount, int& value, int& index)
     return false;
 }
 
-void SearchLetter(char* characters, int charactersCount, int& lettersCount)
+int SearchLetters(char* characters, int charactersCount)
 {
+    int lettersCount = 0;
     for (int i = 0; i < charactersCount; i++)
     {
         if (((int)characters[i] >= 65 && (int)characters[i] <= 90) || ((int)characters[i] >= 97 && (int)characters[i] <= 122))
@@ -116,6 +117,7 @@ void SearchLetter(char* characters, int charactersCount, int& lettersCount)
             lettersCount++;
         }
     }
+    return lettersCount;
 }
 
 void main()
@@ -417,5 +419,14 @@ void main()
     delete[] numsInt;
 
     // Task 1.1.5.6 ///////////////////////////////////////////////////////////
+    int charactersCount = 15;
+    char* characters = new char[charactersCount] {'1', 'h', '!', '6', 'l', '#', '(', 'y', '*', '5', 'x', '0', '=', 'p', '+'};
+    cout << "Array of char: ";
+    for (int i = 0; i < charactersCount; i++)
+    {
+        cout << characters[i] << " ";
+    }
+    cout << endl << endl;
+    cout << "Letters in array: " << SearchLetters(characters, charactersCount) << endl << endl;
 } 
 
