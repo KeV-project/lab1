@@ -1,4 +1,5 @@
-#include <iostream>
+﻿#include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -39,11 +40,48 @@ void Breakpoints2()
 void main()
 {
 	setlocale(LC_ALL, "rus");
+    srand(time(NULL));
 
     // Task 1.1.1.1
     Breakpoints();
 
     // Task 1.1.1.2
     Breakpoints2();
+
+    //Task 1.1.2.1
+    const int valuesCount = 10;
+    int values[valuesCount];
+
+    cout << "Source array is:" << endl;
+
+    for (int i = 0; i < valuesCount; i++)
+    {
+        //rand() make values ​​in the range 0 - 32767
+        values[i] = rand() % 10;
+        cout << values[i] << " ";
+    }
+
+    cout << endl << endl;
+
+    // Insertion sort
+    for (int i = 1; i < valuesCount; i++)
+    {
+        int current = i;
+        while (current != 0 && values[current] < values[current - 1])
+        {
+            int temp = values[current - 1];
+            values[current - 1] = values[current];
+            values[current] = temp;
+            current--;
+        }
+    }
+
+    cout << "Sorted array is:" << endl;
+
+    for (int i = 0; i < valuesCount; i++)
+    {
+        cout << values[i] << " ";
+    }
+    cout << endl;
 }
 
