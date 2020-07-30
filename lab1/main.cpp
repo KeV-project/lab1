@@ -158,5 +158,14 @@ void main()
     cout << endl << endl;
 
     // Task 1.1.3.1 ///////////////////////////////////////////////////////////
+    double base = 0.0;
+    int exponent = 0;
+    cout << "Enter the base: ";
+    cin >> base;
+    cout << endl;
+    cout << "Enter exponent : ";
+    cin >> exponent;
+    cout << endl;
+    cout << "Result: " << base << "^" << exponent << " = " << GetPower(base, exponent) << endl << endl;
 }
 
