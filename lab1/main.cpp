@@ -106,6 +106,18 @@ bool Search(int* numsInt, int numsIntCount, int& value, int& index)
     return false;
 }
 
+void SearchLetter(char* characters, int charactersCount, int& lettersCount)
+{
+    for (int i = 0; i < charactersCount; i++)
+    {
+        if (((int)characters[i] >= 65 && (int)characters[i] <= 90) || ((int)characters[i] >= 97 && (int)characters[i] <= 122))
+        {
+            cout << characters[i] << " ";
+            lettersCount++;
+        }
+    }
+}
+
 void main()
 {
     setlocale(LC_ALL, "rus");
@@ -360,6 +372,7 @@ void main()
         cout << symbols[i] << " ";
     }
     cout << endl << endl;
+    delete[] symbols;
 
     // Task 1.1.5.4 ///////////////////////////////////////////////////////////
     int numsFloatCount = 10;
@@ -377,6 +390,7 @@ void main()
         cout << numsFloat[i] << " ";
     }
     cout << endl << endl;
+    delete[] numsFloat;
 
     // Task 1.1.5.5 ///////////////////////////////////////////////////////////
     int numsIntCount = 10;
@@ -400,5 +414,8 @@ void main()
     {
         cout << value << " not floun in array" << endl << endl;
     }
+    delete[] numsInt;
+
+    // Task 1.1.5.6 ///////////////////////////////////////////////////////////
 } 
 
