@@ -61,12 +61,12 @@ void RoundToTens(int& value)
     }
 }
 
-void Foo(double a)
+void Foo(double x)
 {
-    cout << "Address of a in Foo(): " << &a << endl;
-    cout << "Value of a in Foo(): " << a << endl;
-    a = 15.0;
-    cout << "New value of a in Foo(): " << a << endl;
+    cout << "Address of x in Foo(): " << &x << endl;
+    cout << "Value of x in Foo(): " << x << endl;
+    x = 15.0;
+    cout << "New value of x in Foo(): " << x << endl;
 }
 
 void main()
@@ -211,8 +211,8 @@ void main()
 
     // Task 1.1.4.1 ///////////////////////////////////////////////////////////
     int a = 5;
-    int b = 4;
     cout << "Address of a: " << &a << endl;
+    int b = 4;
     cout << "Address of b: " << &b << endl;
     double c = 13.5;
     cout << "Address of c: " << &c << endl;
@@ -233,24 +233,25 @@ void main()
     {
         cout << "Address of b[" << i << "]: " << &numsDouble[i] << endl;
     }
+    cout << endl;
 
     // Task 1.1.4.3 ///////////////////////////////////////////////////////////
-    int a = 5;
-    int& b = a;
-    cout << "Address of a: " << &a << endl;
-    cout << "Address of b: " << &b << endl;
+    int val = 5;
+    int& valRef = val;
+    cout << "Address of val: " << &val << endl;
+    cout << "Address of valRef: " << &valRef << endl;
     cout << endl;
-    b = 7;
-    cout << "Value of a: " << a << endl << endl;
+    valRef = 7;
+    cout << "Value of val: " << valRef << endl << endl;
 
     // Task 1.1.4.4 ///////////////////////////////////////////////////////////
-    double a = 5.0;
-    cout << "Address of a in main(): " << &a << endl;
-    cout << "Value of a in main(): " << a << endl;
+    double x = 5.0;
+    cout << "Address of x in main: " << &x << endl;
+    cout << "Value of x in main: " << x << endl;
     cout << endl;
-    Foo(a);
+    Foo(x);
     cout << endl;
-    cout << "Value of a in main(): " << a << endl;
+    cout << "Value of x in main: " << x << endl << endl;
 
 }
 
