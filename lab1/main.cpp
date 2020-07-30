@@ -491,5 +491,14 @@ void main()
     delete[] nums3;
 
     // Task 1.1.5.8 ///////////////////////////////////////////////////////////
+    int count = 15;
+    int* values = ReadArray(count);
+    cout << "Count is: " << CountPositiveValues(values, count) << endl;
+    delete[] values;
+
+    count = 20;
+    values = ReadArray(count);
+    cout << "Count is: " << CountPositiveValues(values, count) << endl;
+    delete[] values;
 } 
 
