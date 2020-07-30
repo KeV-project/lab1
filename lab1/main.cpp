@@ -285,5 +285,16 @@ void main()
     FooPtr(zPtr);
     
     cout << "Value of z in main(): " << z << endl << endl;
-}
+
+    // Task 1.1.5.1 ///////////////////////////////////////////////////////////
+    int valuesFloatCount = 5;
+    float* valuesFloat = new float[valuesFloatCount] {1.2, 2.6, 7.1, 6.3, 2.4};
+    cout << "Array of float: ";
+    for (int i = 0; i < valuesFloatCount; i++)
+    {
+        cout << valuesFloat[i] << " ";
+    }
+    cout << endl << endl;
+    delete[] valuesFloat;
+} 
 
