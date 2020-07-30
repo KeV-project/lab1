@@ -314,5 +314,24 @@ void main()
     }
     cout << endl << endl;
     delete[] valuesBool;
+
+    // Task 1.1.5.3 ///////////////////////////////////////////////////////////
+    int symbolsCount = 0;
+    cout << "Enter char array size: ";
+    cin >> symbolsCount;
+    cout << endl;
+    char* symbols = new char[symbolsCount];
+    for (int i = 0; i < symbolsCount; i++)
+    {
+        cout << "Enter symbol[" << i << "]: ";
+        cin >> symbols[i];
+    }
+    cout << endl;
+    cout << "Your char array is: ";
+    for (int i = 0; i < symbolsCount; i++)
+    {
+        cout << symbols[i] << " ";
+    }
+    cout << endl << endl;
 } 
 
