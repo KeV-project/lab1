@@ -48,11 +48,11 @@ void main()
     // Task 1.1.1.2
     Breakpoints2();
 
-    //Task 1.1.2.1
+    // Task 1.1.2.1
     const int valuesIntCount = 10;
     int valuesInt[valuesIntCount];
 
-    cout << "Source array is:" << endl;
+    cout << "Source valuesChar is:" << endl;
 
     for (int i = 0; i < valuesIntCount; i++)
     {
@@ -76,7 +76,7 @@ void main()
         }
     }
 
-    cout << "Sorted array is:" << endl;
+    cout << "Sorted valuesChar is:" << endl;
 
     for (int i = 0; i < valuesIntCount; i++)
     {
@@ -85,11 +85,11 @@ void main()
 
     cout << endl << endl;
 
-    //Task 1.1.2.2
+    // Task 1.1.2.2
     const int valuesDoubleCount = 12;
     float valuesDouble[valuesDoubleCount];
   
-    cout << "Source array is:" << endl;
+    cout << "Source valuesChar is:" << endl;
 
     for (int i = 0; i < valuesDoubleCount; i++)
     {
@@ -100,7 +100,7 @@ void main()
     cout << endl << endl;
 
     float searchingValue = 0.0;
-    cout << "Введите число: ";
+    cout << "Enter searching value: ";
     cin >> searchingValue;
     cout << endl;
     int count = 0;
@@ -112,6 +112,44 @@ void main()
         }
 
     }
-    cout << "Количество чисел в массиве, которые больше или равны " << searchingValue << " - " << count << endl << endl;
+    cout << "Elements of valuesChar more than " << searchingValue << " - " << count << endl << endl;
+
+    // Task 1.1.2.3
+    const int valuesCharCount = 8;
+    char valuesChar[valuesCharCount];
+
+    cout << "Enter array of 8 chars" << endl;
+
+    for (int i = 0; i < valuesCharCount; i++)
+    {
+        cout << "Enter " << i << " element: " << endl;
+        cin >> valuesChar[i];
+        // Clear input buffer
+        if (cin.get() != (int)'\n')
+        {
+            cin.clear();
+            cin.ignore(32767, '\n');
+        }
+    }
+   
+    cout << endl <<  "Your array: " << endl << endl;
+
+    for (int i = 0; i < valuesCharCount; i++)
+    {
+        cout << valuesChar[i] << " ";
+    }
+
+    cout << endl << endl;
+
+    cout << "All letters in your array: " << endl << endl;
+
+    for (int i = 0; i < valuesCharCount; i++)
+    {
+        if (((int)valuesChar[i] >= 65 && (int)valuesChar[i] <= 90) || ((int)valuesChar[i] >= 97 && (int)valuesChar[i] <= 122))
+        {
+            cout << valuesChar[i] << " ";
+        }
+    }
+    cout << endl << endl;
 }
 
