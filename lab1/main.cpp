@@ -234,7 +234,7 @@ void main()
         cout << "Address of b[" << i << "]: " << &numsDouble[i] << endl;
     }
 
-    // Task 1.1.4.3///////////////////////////////////////////////////////////
+    // Task 1.1.4.3 ///////////////////////////////////////////////////////////
     int a = 5;
     int& b = a;
     cout << "Address of a: " << &a << endl;
@@ -242,5 +242,15 @@ void main()
     cout << endl;
     b = 7;
     cout << "Value of a: " << a << endl << endl;
+
+    // Task 1.1.4.4 ///////////////////////////////////////////////////////////
+    double a = 5.0;
+    cout << "Address of a in main(): " << &a << endl;
+    cout << "Value of a in main(): " << a << endl;
+    cout << endl;
+    Foo(a);
+    cout << endl;
+    cout << "Value of a in main(): " << a << endl;
+
 }
 
