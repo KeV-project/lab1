@@ -134,7 +134,7 @@ int* ReadArray(int count)
     int* values = new int[count];
     for (int i = 0; i < count; i++)
     {
-        cout << "Введите " << i << " элемент: ";
+        cout << "Enter " << i << " element: ";
         cin >> values[i];
     }
     return values;
@@ -483,6 +483,7 @@ void main()
     cout << "Random array of 13: ";
     for (int i = 0; i < 13; i++)
     {
+
         cout << nums3[i] << " ";
     }
     cout << endl << endl;
@@ -491,14 +492,14 @@ void main()
     delete[] nums3;
 
     // Task 1.1.5.8 ///////////////////////////////////////////////////////////
-    int count = 15;
+    int valuesCount = 15;
     int* values = ReadArray(count);
-    cout << "Count is: " << CountPositiveValues(values, count) << endl;
+    cout << "Count is: " << CountPositiveValues(values, valuesCount) << endl << endl;
     delete[] values;
 
     count = 20;
     values = ReadArray(count);
-    cout << "Count is: " << CountPositiveValues(values, count) << endl;
+    cout << "Count is: " << CountPositiveValues(values, valuesCount) << endl << endl;
     delete[] values;
 } 
 
