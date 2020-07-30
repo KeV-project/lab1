@@ -49,6 +49,18 @@ void DemoGetPower(double base, int exponent)
     cout << "Result: " << base << "^" << exponent << " = " << GetPower(base, exponent) << endl;
 }
 
+void RoundToTens(int& value)
+{
+    if (value % 10 < 5)
+    {
+        value = value / 10 * 10;
+    }
+    else if (value % 10 >= 5)
+    {
+        value = value / 10 * 10 + 10;
+    }
+}
+
 void main()
 {
 	setlocale(LC_ALL, "rus");
