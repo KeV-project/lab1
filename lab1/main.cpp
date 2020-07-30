@@ -129,6 +129,31 @@ int* MakeRandomArray(int arraySize)
     return array;
 }
 
+int* ReadArray(int count)
+{
+    int* values = new int[count];
+    for (int i = 0; i < count; i++)
+    {
+        cout << "Введите " << i << " элемент: ";
+        cin >> values[i];
+    }
+    return values;
+}
+
+int CountPositiveValues(int* values, int count)
+{
+    int result = 0;
+    for (int i = 0; i < count; i++)
+
+    {
+        if (values[i] > 0)
+        {
+            result++;
+        }
+    }
+    return result;
+}
+
 void main()
 {
     setlocale(LC_ALL, "rus");
@@ -464,5 +489,7 @@ void main()
     delete[] nums1;
     delete[] nums2;
     delete[] nums3;
+
+    // Task 1.1.5.8 ///////////////////////////////////////////////////////////
 } 
 
