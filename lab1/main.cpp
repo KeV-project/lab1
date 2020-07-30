@@ -16,11 +16,33 @@ void Breakpoints()
     cout << "Total sum is " << sum << endl;
 }
 
+void Breakpoints2()
+{
+    double add = 1.0;
+    double sum = 0.0;
+    for (int i = 0; i < 1000; i++)
+    {
+        sum += add * i; // Поставьте условную точку останова здесь
+        if (i % 3 == 0)
+        {
+            add *= 1.1;
+        }
+        else
+        {
+            add /= 3.0;
+        }
+    }
+    cout << "Total sum is " << sum << endl;
+}
+
 void main()
 {
 	setlocale(LC_ALL, "rus");
 
     // Задание 1.1.1.1
     Breakpoints();
+
+    // Задание 1.1.1.2
+    Breakpoints2();
 }
 
