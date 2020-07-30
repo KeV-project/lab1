@@ -46,7 +46,7 @@ void DemoGetPower(double base, int exponent)
 {
     GetPower(base, exponent);
 
-    cout << "Result: " << base << "^" << exponent << " = " << GetPower(base, exponent) << endl << endl;
+    cout << "Result: " << base << "^" << exponent << " = " << GetPower(base, exponent) << endl;
 }
 
 void main()
@@ -176,5 +176,9 @@ void main()
     cout << "Result: " << base << "^" << exponent << " = " << GetPower(base, exponent) << endl << endl;
 
     // Task 1.1.3.3 ///////////////////////////////////////////////////////////
+    DemoGetPower(2.1, 5);
+    DemoGetPower(5, 2);
+    DemoGetPower(1, 60);
+    cout << endl << endl;
 }
 
