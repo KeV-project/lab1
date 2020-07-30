@@ -93,11 +93,11 @@ void Sort(float* numsFloat, int numsFloatCount)
     }
 }
 
-bool Search(int* numsInt, int numsIntCount, int& value, int& index)
+bool Search(int* numbers, int numsCount, int& searchingValue, int& index)
 {
-    for (int i = 0; i < numsIntCount; i++)
+    for (int i = 0; i < numsCount; i++)
     {
-        if (numsInt[i] == value)
+        if (numbers[i] == searchingValue)
         {
             index = i;
             return true;
@@ -113,7 +113,6 @@ int SearchLetters(char* characters, int charactersCount)
     {
         if (((int)characters[i] >= 65 && (int)characters[i] <= 90) || ((int)characters[i] >= 97 && (int)characters[i] <= 122))
         {
-            cout << characters[i] << " ";
             lettersCount++;
         }
     }
@@ -405,28 +404,28 @@ void main()
     delete[] numsFloat;
 
     // Task 1.1.5.5 ///////////////////////////////////////////////////////////
-    int numsIntCount = 10;
-    int* numsInt = new int[numsFloatCount] {1, 5, -9, 0, 4, 5, 6, 2, 3, 7};
+    int numsCount = 10;
+    int* numbers = new int[numsCount] {1, 5, -9, 0, 4, 5, 6, 2, 3, 7};
     cout << "Array of int: ";
-    for (int i = 0; i < numsIntCount; i++)
+    for (int i = 0; i < numsCount; i++)
     {
-        cout << numsInt[i] << " ";
+        cout << numbers[i] << " ";
     }
     cout << endl << endl;
     int index = 0;
-    int value = 0;
+    int searchingElement = 0;
     cout << "Enter searching value: ";
-    cin >> value;
+    cin >> searchingElement;
     cout << endl;
-    if (Search(numsInt, numsIntCount, value, index))
+    if (Search(numbers, numsCount, searchingElement, index))
     {
-        cout << "Index of searching value " << index << " is: " << value << endl << endl;
+        cout << "Index of searching value " << index << " is: " << searchingElement << endl << endl;
     }
     else
     {
-        cout << value << " not floun in array" << endl << endl;
+        cout << searchingElement << " not floun in array" << endl << endl;
     }
-    delete[] numsInt;
+    delete[] numbers;
 
     // Task 1.1.5.6 ///////////////////////////////////////////////////////////
     int charactersCount = 15;
@@ -441,5 +440,29 @@ void main()
     delete[] characters;
 
     // Task 1.1.5.7 ///////////////////////////////////////////////////////////
+    int* nums1 = MakeRandomArray(5);
+    int* nums2 = MakeRandomArray(8);
+    int* nums3 = MakeRandomArray(13);
+    cout << "Random array of 5: ";
+    for (int i = 0; i < 5; i++)
+    {
+        cout << nums1[i] << " ";
+    }
+    cout << endl << endl;
+    cout << "Random array of 8: ";
+    for (int i = 0; i < 8; i++)
+    {
+        cout << nums2[i] << " ";
+    }
+    cout << endl << endl;
+    cout << "Random array of 13: ";
+    for (int i = 0; i < 13; i++)
+    {
+        cout << nums3[i] << " ";
+    }
+    cout << endl << endl;
+    delete[] nums1;
+    delete[] nums2;
+    delete[] nums3;
 } 
 
