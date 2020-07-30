@@ -61,6 +61,14 @@ void RoundToTens(int& value)
     }
 }
 
+void Foo(double a)
+{
+    cout << "Address of a in Foo(): " << &a << endl;
+    cout << "Value of a in Foo(): " << a << endl;
+    a = 15.0;
+    cout << "New value of a in Foo(): " << a << endl;
+}
+
 void main()
 {
     setlocale(LC_ALL, "rus");
@@ -233,6 +241,6 @@ void main()
     cout << "Address of b: " << &b << endl;
     cout << endl;
     b = 7;
-    cout << "Value of a: " << a << endl;
+    cout << "Value of a: " << a << endl << endl;
 }
 
