@@ -191,6 +191,14 @@ void main()
     DemoGetPower(2.1, 5);
     DemoGetPower(5, 2);
     DemoGetPower(1, 60);
-    cout << endl << endl;
+    cout << endl;
+
+    // Task 1.1.3.4 ///////////////////////////////////////////////////////////
+    int value;
+    cout << "Enter value: ";
+    cin >> value;
+    cout << endl;
+    RoundToTens(value);
+    cout << "Result: " << value << endl << endl;
 }
 
