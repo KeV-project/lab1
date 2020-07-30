@@ -37,18 +37,23 @@ void Breakpoints2()
     cout << "Total sum is " << sum << endl << endl;
 }
 
+double GetPower(double base, int exponent)
+{
+    return pow(base, exponent);
+}
+
 void main()
 {
 	setlocale(LC_ALL, "rus");
     srand(time(NULL));
 
-    // Task 1.1.1.1
+    // Task 1.1.1.1 ///////////////////////////////////////////////////////////
     Breakpoints();
 
-    // Task 1.1.1.2
+    // Task 1.1.1.2 ///////////////////////////////////////////////////////////
     Breakpoints2();
 
-    // Task 1.1.2.1
+    // Task 1.1.2.1 ///////////////////////////////////////////////////////////
     const int valuesIntCount = 10;
     int valuesInt[valuesIntCount];
 
@@ -85,7 +90,7 @@ void main()
 
     cout << endl << endl;
 
-    // Task 1.1.2.2
+    // Task 1.1.2.2 ///////////////////////////////////////////////////////////
     const int valuesDoubleCount = 12;
     float valuesDouble[valuesDoubleCount];
   
@@ -114,7 +119,7 @@ void main()
     }
     cout << "Elements of valuesChar more than " << searchingValue << " - " << count << endl << endl;
 
-    // Task 1.1.2.3
+    // Task 1.1.2.3 ///////////////////////////////////////////////////////////
     const int valuesCharCount = 8;
     char valuesChar[valuesCharCount];
 
@@ -151,5 +156,7 @@ void main()
         }
     }
     cout << endl << endl;
+
+    // Task 1.1.3.1 ///////////////////////////////////////////////////////////
 }
 
