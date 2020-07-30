@@ -93,6 +93,19 @@ void Sort(float* numsFloat, int numsFloatCount)
     }
 }
 
+bool Search(int* numsInt, int numsIntCount, int& value, int& index)
+{
+    for (int i = 0; i < numsIntCount; i++)
+    {
+        if (numsInt[i] == value)
+        {
+            index = i;
+            return true;
+        }
+    }
+    return false;
+}
+
 void main()
 {
     setlocale(LC_ALL, "rus");
@@ -364,5 +377,7 @@ void main()
         cout << numsFloat[i] << " ";
     }
     cout << endl << endl;
+
+    // Task 1.1.5.5 ///////////////////////////////////////////////////////////
 } 
 
