@@ -379,5 +379,26 @@ void main()
     cout << endl << endl;
 
     // Task 1.1.5.5 ///////////////////////////////////////////////////////////
+    int numsIntCount = 10;
+    int* numsInt = new int[numsFloatCount] {1, 5, -9, 0, 4, 5, 6, 2, 3, 7};
+    cout << "Array of int: ";
+    for (int i = 0; i < numsIntCount; i++)
+    {
+        cout << numsInt[i] << " ";
+    }
+    cout << endl << endl;
+    int index = 0;
+    int value = 0;
+    cout << "Enter searching value: ";
+    cin >> value;
+    cout << endl;
+    if (Search(numsInt, numsIntCount, value, index))
+    {
+        cout << "Index of searching value " << index << " is: " << value << endl << endl;
+    }
+    else
+    {
+        cout << value << " not floun in array" << endl << endl;
+    }
 } 
 
