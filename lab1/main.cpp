@@ -45,7 +45,7 @@ double GetPower(double base, int exponent)
 void DemoGetPower(double base, int exponent)
 {
     GetPower(base, exponent);
-
+    //TODO: RSDN
     cout << "Result: " << base << "^" << exponent << " = " << GetPower(base, exponent) << endl;
 }
 
@@ -111,6 +111,9 @@ int SearchLetters(char* characters, int charactersCount)
     int lettersCount = 0;
     for (int i = 0; i < charactersCount; i++)
     {
+    	//TODO: RSDN
+    	//TODO: Сравнение с ASCII кодами
+    	//TODO: Дублируется ниже
         if (((int)characters[i] >= 65 && (int)characters[i] <= 90) || ((int)characters[i] >= 97 && (int)characters[i] <= 122))
         {
             lettersCount++;
@@ -157,6 +160,7 @@ int CountPositiveValues(int* values, int count)
 void main()
 {
     setlocale(LC_ALL, "rus");
+	//TODO: nullptr
     srand(time(NULL));
 
     // Task 1.1.1.1 ///////////////////////////////////////////////////////////
@@ -220,6 +224,7 @@ void main()
     cout << "Enter searching value: ";
     cin >> searchingValue;
     cout << endl;
+	//TODO: RSDN - используется сильно позже
     int count = 0;
     for (int i = 0; i < valuesDoubleCount; i++)
     {
@@ -229,6 +234,7 @@ void main()
         }
 
     }
+	//TODO: RSDN
     cout << "Elements of valuesChar more than " << searchingValue << " - " << count << endl << endl;
 
     // Task 1.1.2.3 ///////////////////////////////////////////////////////////
@@ -242,6 +248,7 @@ void main()
         cout << "Enter " << i << " element: " << endl;
         cin >> valuesChar[i];
         // Clear input buffer
+    	//TODO: ?
         if (cin.get() != (int)'\n')
         {
             cin.clear();
@@ -262,6 +269,8 @@ void main()
 
     for (int i = 0; i < valuesCharCount; i++)
     {
+        //TODO: RSDN
+        //TODO: Сравнение с ASCII кодами
         if (((int)valuesChar[i] >= 65 && (int)valuesChar[i] <= 90) || ((int)valuesChar[i] >= 97 && (int)valuesChar[i] <= 122))
         {
             cout << valuesChar[i] << " ";
@@ -278,6 +287,7 @@ void main()
     cout << "Enter exponent : ";
     cin >> exponent;
     cout << endl;
+    //TODO: RSDN
     cout << "Result: " << base << "^" << exponent << " = " << GetPower(base, exponent) << endl << endl;
 
     // Task 1.1.3.3 ///////////////////////////////////////////////////////////
@@ -313,6 +323,7 @@ void main()
     }
     cout << endl;
     cout << "Size of double type: " << sizeof(double) << endl;
+    //TODO: RSDN
     double numsDouble[10] = { 1.0, 2.0, 7.0, -1.0, 5.0, 3.5, -1.8, 7.2, 1.9, 6.2 };
     for (int i = 0; i < 10; i++)
     {
@@ -374,6 +385,7 @@ void main()
 
     // Task 1.1.5.2 ///////////////////////////////////////////////////////////
     int valuesBoolCount = 5;
+	//TODO: ?
     bool* valuesBool = new bool[valuesFloatCount] {1, 1, 0, 1, 0};
     cout << "Array of bool: ";
     for (int i = 0; i < valuesBoolCount; i++)
@@ -411,7 +423,10 @@ void main()
     delete[] symbols;
 
     // Task 1.1.5.4 ///////////////////////////////////////////////////////////
-    int numsFloatCount = 10;
+    //TODO: const?
+	int numsFloatCount = 10;
+
+	//TODO: RSDN
     float* numsFloat = new float[numsFloatCount] {1.2, 6.2, 1.7, 3.8, 7.3, 9.2, 0.5, -9.2, 2.5, 4.6};
     cout << "Array of float: ";
     for (int i = 0; i < numsFloatCount; i++)
@@ -444,6 +459,7 @@ void main()
     cout << endl;
     if (Search(numbers, numsCount, searchingElement, index))
     {
+    	//TODO: RSDN
         cout << "Index of searching value " << index << " is: " << searchingElement << endl << endl;
     }
     else
@@ -453,7 +469,9 @@ void main()
     delete[] numbers;
 
     // Task 1.1.5.6 ///////////////////////////////////////////////////////////
+	//TODO: const?
     int charactersCount = 15;
+	//TODO: RSDN
     char* characters = new char[charactersCount] {'1', 'h', '!', '6', 'l', '#', '(', 'y', '*', '5', 'x', '0', '=', 'p', '+'};
     cout << "Array of char: ";
     for (int i = 0; i < charactersCount; i++)
@@ -461,10 +479,12 @@ void main()
         cout << characters[i] << " ";
     }
     cout << endl << endl;
+	//TODO: RSDN
     cout << "Letters in array: " << SearchLetters(characters, charactersCount) << endl << endl;
     delete[] characters;
 
     // Task 1.1.5.7 ///////////////////////////////////////////////////////////
+	//TODO: Ниже три дубля
     int* nums1 = MakeRandomArray(5);
     int* nums2 = MakeRandomArray(8);
     int* nums3 = MakeRandomArray(13);
@@ -492,6 +512,7 @@ void main()
     delete[] nums3;
 
     // Task 1.1.5.8 ///////////////////////////////////////////////////////////
+	//TODO: const?
     int valuesCount = 15;
     int* values = ReadArray(count);
     cout << "Count is: " << CountPositiveValues(values, valuesCount) << endl << endl;
@@ -502,4 +523,3 @@ void main()
     cout << "Count is: " << CountPositiveValues(values, valuesCount) << endl << endl;
     delete[] values;
 } 
-
