@@ -229,7 +229,7 @@ void main()
     cout << "Enter searching value: ";
     cin >> searchingValue;
     cout << endl;
-	//TODO: RSDN - используется сильно позже
+	//TODO: RSDN - используется сильно позже +
     int count = 0;
     for (int i = 0; i < valuesDoubleCount; i++)
     {
@@ -522,13 +522,13 @@ void main()
 
     // Task 1.1.5.8 ///////////////////////////////////////////////////////////
 	//TODO: const? +
-    const int valuesCount = 15;
-    int* values = ReadArray(count);
+    int valuesCount = 15;
+    int* values = ReadArray(valuesCount);
     cout << "Count is: " << CountPositiveValues(values, valuesCount) << endl << endl;
     delete[] values;
 
-    count = 20;
-    values = ReadArray(count);
+    valuesCount = 20;
+    values = ReadArray(valuesCount);
     cout << "Count is: " << CountPositiveValues(values, valuesCount) << endl << endl;
     delete[] values;
 } 
