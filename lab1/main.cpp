@@ -84,7 +84,7 @@ void FooPtr(double* z)
     cout << "New z in pointer address: " << *z << endl << endl;
 }
 
-void Sort(float* numsFloat, int numsFloatCount)
+void Sort(float* numsFloat, const int numsFloatCount)
 {
     for (int i = 1; i < numsFloatCount; i++)
     {
@@ -425,9 +425,8 @@ void main()
     delete[] symbols;
 
     // Task 1.1.5.4 ///////////////////////////////////////////////////////////
-    //TODO: const?
-	int numsFloatCount = 10;
-
+    //TODO: const? +
+	const int numsFloatCount = 10;
 	//TODO: RSDN +
     float* numsFloat = new float[numsFloatCount] 
     {
@@ -450,7 +449,7 @@ void main()
     delete[] numsFloat;
 
     // Task 1.1.5.5 ///////////////////////////////////////////////////////////
-    int numsCount = 10;
+    const int numsCount = 10;
     int* numbers = new int[numsCount] {1, 5, -9, 0, 4, 5, 6, 2, 3, 7};
     cout << "Array of int: ";
     for (int i = 0; i < numsCount; i++)
@@ -476,8 +475,8 @@ void main()
     delete[] numbers;
 
     // Task 1.1.5.6 ///////////////////////////////////////////////////////////
-	//TODO: const?
-    int charactersCount = 15;
+	//TODO: const? +
+    const int charactersCount = 15;
 	//TODO: RSDN +
     char* characters = new char[charactersCount] 
     {
@@ -522,8 +521,8 @@ void main()
     }
 
     // Task 1.1.5.8 ///////////////////////////////////////////////////////////
-	//TODO: const?
-    int valuesCount = 15;
+	//TODO: const? +
+    const int valuesCount = 15;
     int* values = ReadArray(count);
     cout << "Count is: " << CountPositiveValues(values, valuesCount) << endl << endl;
     delete[] values;
