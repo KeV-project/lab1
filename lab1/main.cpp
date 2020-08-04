@@ -254,12 +254,14 @@ void main()
         cout << "Enter " << i << " element: " << endl;
         cin >> valuesChar[i];
         // Clear input buffer
-    	//TODO: ?
+    	//TODO: ? +
+        // Исключает ввод более одного символа в переменную типа char
         if (cin.get() != (int)'\n')
         {
             cin.clear();
             cin.ignore(32767, '\n');
         }
+        
     }
 
     cout << endl << "Your array: " << endl << endl;
