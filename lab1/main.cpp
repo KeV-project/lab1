@@ -45,8 +45,9 @@ double GetPower(double base, int exponent)
 void DemoGetPower(double base, int exponent)
 {
     GetPower(base, exponent);
-    //TODO: RSDN
-    cout << "Result: " << base << "^" << exponent << " = " << GetPower(base, exponent) << endl;
+    //TODO: RSDN +
+    cout << "Result: " << base << "^" << exponent;
+    cout << " = " << GetPower(base, exponent) << endl;
 }
 
 void RoundToTens(int& value)
@@ -234,8 +235,9 @@ void main()
         }
 
     }
-	//TODO: RSDN
-    cout << "Elements of valuesChar more than " << searchingValue << " - " << count << endl << endl;
+	//TODO: RSDN +
+    cout << "Elements of valuesChar more than ";
+    cout << searchingValue << " - " << count << endl << endl;
 
     // Task 1.1.2.3 ///////////////////////////////////////////////////////////
     const int valuesCharCount = 8;
@@ -287,8 +289,9 @@ void main()
     cout << "Enter exponent : ";
     cin >> exponent;
     cout << endl;
-    //TODO: RSDN
-    cout << "Result: " << base << "^" << exponent << " = " << GetPower(base, exponent) << endl << endl;
+    //TODO: RSDN +
+    cout << "Result: " << base << "^" << exponent;
+    cout << " = " << GetPower(base, exponent) << endl << endl;
 
     // Task 1.1.3.3 ///////////////////////////////////////////////////////////
     DemoGetPower(2.1, 5);
@@ -459,8 +462,9 @@ void main()
     cout << endl;
     if (Search(numbers, numsCount, searchingElement, index))
     {
-    	//TODO: RSDN
-        cout << "Index of searching value " << index << " is: " << searchingElement << endl << endl;
+    	//TODO: RSDN +
+        cout << "Index of searching value " << index;
+        cout << " is: " << searchingElement << endl << endl;
     }
     else
     {
@@ -479,8 +483,9 @@ void main()
         cout << characters[i] << " ";
     }
     cout << endl << endl;
-	//TODO: RSDN
-    cout << "Letters in array: " << SearchLetters(characters, charactersCount) << endl << endl;
+	//TODO: RSDN +
+    cout << "Letters in array: ";
+    cout << SearchLetters(characters, charactersCount) << endl << endl;
     delete[] characters;
 
     // Task 1.1.5.7 ///////////////////////////////////////////////////////////
