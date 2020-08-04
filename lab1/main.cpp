@@ -328,8 +328,12 @@ void main()
     }
     cout << endl;
     cout << "Size of double type: " << sizeof(double) << endl;
-    //TODO: RSDN
-    double numsDouble[10] = { 1.0, 2.0, 7.0, -1.0, 5.0, 3.5, -1.8, 7.2, 1.9, 6.2 };
+    //TODO: RSDN +
+    double numsDouble[10] = 
+    { 
+        1.0, 2.0, 7.0, -1.0, 5.0,
+        3.5, -1.8, 7.2, 1.9, 6.2 
+    };
     for (int i = 0; i < 10; i++)
     {
         cout << "Address of b[" << i << "]: " << &numsDouble[i] << endl;
@@ -431,8 +435,12 @@ void main()
     //TODO: const?
 	int numsFloatCount = 10;
 
-	//TODO: RSDN
-    float* numsFloat = new float[numsFloatCount] {1.2, 6.2, 1.7, 3.8, 7.3, 9.2, 0.5, -9.2, 2.5, 4.6};
+	//TODO: RSDN +
+    float* numsFloat = new float[numsFloatCount] 
+    {
+        1.2, 6.2, 1.7, 3.8, 7.3,
+        9.2, 0.5, -9.2, 2.5, 4.6
+    };
     cout << "Array of float: ";
     for (int i = 0; i < numsFloatCount; i++)
     {
@@ -477,8 +485,13 @@ void main()
     // Task 1.1.5.6 ///////////////////////////////////////////////////////////
 	//TODO: const?
     int charactersCount = 15;
-	//TODO: RSDN
-    char* characters = new char[charactersCount] {'1', 'h', '!', '6', 'l', '#', '(', 'y', '*', '5', 'x', '0', '=', 'p', '+'};
+	//TODO: RSDN +
+    char* characters = new char[charactersCount] 
+    {
+        '1', 'h', '!', '6', 'l',
+        '#', '(', 'y', '*', '5',
+        'x', '0', '=', 'p', '+'
+    };
     cout << "Array of char: ";
     for (int i = 0; i < charactersCount; i++)
     {
