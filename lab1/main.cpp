@@ -388,8 +388,8 @@ void main()
 
     // Task 1.1.5.2 ///////////////////////////////////////////////////////////
     int valuesBoolCount = 5;
-	//TODO: ?
-    bool* valuesBool = new bool[valuesFloatCount] {1, 1, 0, 1, 0};
+	//TODO: ? +
+    bool* valuesBool = new bool[valuesFloatCount] {true, true, false, true, false};
     cout << "Array of bool: ";
     for (int i = 0; i < valuesBoolCount; i++)
     {
