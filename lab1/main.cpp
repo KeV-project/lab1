@@ -3,6 +3,11 @@
 
 using namespace std;
 
+struct Array
+{
+    int valuesCount;
+    int* values;
+};
 
 void Breakpoints()
 {
@@ -505,31 +510,27 @@ void main()
 
     // Task 1.1.5.7 ///////////////////////////////////////////////////////////
 	//TODO: Ниже три дубля
-    int* nums1 = MakeRandomArray(5);
-    int* nums2 = MakeRandomArray(8);
-    int* nums3 = MakeRandomArray(13);
-    cout << "Random array of 5: ";
-    for (int i = 0; i < 5; i++)
+    const int arraysCount = 3;
+    Array arrays[arraysCount];
+    arrays[0].valuesCount = 5;
+    arrays[0].values = MakeRandomArray(arrays[0].valuesCount);
+    arrays[1].valuesCount = 8;
+    arrays[1].values = MakeRandomArray(arrays[1].valuesCount);
+    arrays[2].valuesCount = 13;
+    arrays[2].values = MakeRandomArray(arrays[2].valuesCount);
+    for (int i = 0; i < arraysCount; i++)
     {
-        cout << nums1[i] << " ";
+        cout << "Random array of " << arrays[i].valuesCount << " : ";
+        for (int j = 0; j < arrays[i].valuesCount; j++)
+        {
+            cout << arrays[i].values[j] << " ";
+        }
+        cout << endl << endl;
     }
-    cout << endl << endl;
-    cout << "Random array of 8: ";
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < arraysCount; i++)
     {
-        cout << nums2[i] << " ";
+        delete[] arrays[i].values;
     }
-    cout << endl << endl;
-    cout << "Random array of 13: ";
-    for (int i = 0; i < 13; i++)
-    {
-
-        cout << nums3[i] << " ";
-    }
-    cout << endl << endl;
-    delete[] nums1;
-    delete[] nums2;
-    delete[] nums3;
 
     // Task 1.1.5.8 ///////////////////////////////////////////////////////////
 	//TODO: const?
