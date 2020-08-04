@@ -112,10 +112,11 @@ int SearchLetters(char* characters, int charactersCount)
     int lettersCount = 0;
     for (int i = 0; i < charactersCount; i++)
     {
-    	//TODO: RSDN
+    	//TODO: RSDN +
     	//TODO: Сравнение с ASCII кодами
     	//TODO: Дублируется ниже
-        if (((int)characters[i] >= 65 && (int)characters[i] <= 90) || ((int)characters[i] >= 97 && (int)characters[i] <= 122))
+        if (((int)characters[i] >= 65 && (int)characters[i] <= 90) 
+            || ((int)characters[i] >= 97 && (int)characters[i] <= 122))
         {
             lettersCount++;
         }
@@ -271,9 +272,10 @@ void main()
 
     for (int i = 0; i < valuesCharCount; i++)
     {
-        //TODO: RSDN
+        //TODO: RSDN +
         //TODO: Сравнение с ASCII кодами
-        if (((int)valuesChar[i] >= 65 && (int)valuesChar[i] <= 90) || ((int)valuesChar[i] >= 97 && (int)valuesChar[i] <= 122))
+        if (((int)valuesChar[i] >= 65 && (int)valuesChar[i] <= 90) 
+            || ((int)valuesChar[i] >= 97 && (int)valuesChar[i] <= 122))
         {
             cout << valuesChar[i] << " ";
         }
