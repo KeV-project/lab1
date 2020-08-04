@@ -112,21 +112,19 @@ bool Search(int* numbers, int numsCount, int& searchingValue, int& index)
     return false;
 }
 
-int SearchLetters(char* characters, int charactersCount)
+void SearchLetters(char* characters, const int charactersCount)
 {
-    int lettersCount = 0;
     for (int i = 0; i < charactersCount; i++)
     {
     	//TODO: RSDN +
     	//TODO: Сравнение с ASCII кодами +
-    	//TODO: Дублируется ниже
+    	//TODO: Дублируется ниже +
         if ((characters[i] >= 'A' && characters[i] <= 'Z') 
             || (characters[i] >= 'a' && characters[i] <= 'z'))
         {
-            lettersCount++;
+            cout << characters[i] << " ";
         }
     }
-    return lettersCount;
 }
 
 int* MakeRandomArray(int arraySize)
@@ -184,7 +182,7 @@ void main()
 
     for (int i = 0; i < valuesIntCount; i++)
     {
-        //rand() make values ​​in the range 0 - 32767
+        //rand() make values ​​range 0 - 32767
         valuesInt[i] = rand() % 10;
         cout << valuesInt[i] << " ";
     }
@@ -274,17 +272,7 @@ void main()
     cout << endl << endl;
 
     cout << "All letters in your array: " << endl << endl;
-
-    for (int i = 0; i < valuesCharCount; i++)
-    {
-        //TODO: RSDN +
-        //TODO: Сравнение с ASCII кодами +
-        if ((valuesChar[i] >= 'A' && valuesChar[i] <= 'Z') 
-            || (valuesChar[i] >= 'a' && valuesChar[i] <= 'z'))
-        {
-            cout << valuesChar[i] << " ";
-        }
-    }
+    SearchLetters(valuesChar, valuesCharCount);
     cout << endl << endl;
 
     // Task 1.1.3.2 ///////////////////////////////////////////////////////////
@@ -504,12 +492,13 @@ void main()
     }
     cout << endl << endl;
 	//TODO: RSDN +
-    cout << "Letters in array: ";
-    cout << SearchLetters(characters, charactersCount) << endl << endl;
+    cout << "All letters in your array: " << endl << endl;
+    SearchLetters(valuesChar, valuesCharCount);
+    cout << endl << endl;
     delete[] characters;
 
     // Task 1.1.5.7 ///////////////////////////////////////////////////////////
-	//TODO: Ниже три дубля
+	//TODO: Ниже три дубля +
     const int arraysCount = 3;
     Array arrays[arraysCount];
     arrays[0].valuesCount = 5;
