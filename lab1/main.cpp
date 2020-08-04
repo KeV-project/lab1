@@ -161,8 +161,8 @@ int CountPositiveValues(int* values, int count)
 void main()
 {
     setlocale(LC_ALL, "rus");
-	//TODO: nullptr
-    srand(time(NULL));
+	//TODO: nullptr +
+    srand(time(nullptr));
 
     // Task 1.1.1.1 ///////////////////////////////////////////////////////////
     Breakpoints();
