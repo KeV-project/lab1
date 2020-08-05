@@ -17,3 +17,5 @@ struct Flight
 	//Количество пассажиров на борту
 	int Passengers;
 };
+
+void DemoFlight();

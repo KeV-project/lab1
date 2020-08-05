@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include "GenreType.h"
 
 using namespace std;
 
@@ -16,3 +17,5 @@ struct Film
 	string Director;
 	string MainRole;
 };
+
+void DemoFilm();

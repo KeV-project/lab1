@@ -13,3 +13,5 @@ struct Rect
 	float Perimeter;
 	float Area;
 };
+
+void DemoRectangle();

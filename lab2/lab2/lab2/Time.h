@@ -14,3 +14,5 @@ struct Time
 	int Minute;
 	int Second;
 };
+
+void DemoTime();
