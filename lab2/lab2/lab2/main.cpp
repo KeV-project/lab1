@@ -1,22 +1,7 @@
 #include <iostream>
+#include "Output.h"
+
 using namespace std;
-
-// ¬ывод разделительной полосы между задани€ми
-void PrintLine()
-{
-    cout << "___________________________";
-    cout << "___________________________";
-    cout << "__________________________" << endl << endl;
-}
-
-void ShowValues(double* values, int count)
-{
-    for (int i = 0; i < count; i++)
-    {
-        cout << values[i] << " ";
-    }
-    cout << endl << endl;
-}
 
 // —ортирует массив вещественных чисел
 void Sort(double* values, int valuesCount)
@@ -65,10 +50,12 @@ void DemoSort()
     delete[] values;
 }
 
+
 void main()
 {
 	setlocale(LC_ALL, "rus");
 
+    // Task 2.2.1.1 - 2.2.1.2
     DemoSort();
     PrintLine();
 
