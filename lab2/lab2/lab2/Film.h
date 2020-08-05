@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include "Output.h"
 #include "GenreType.h"
 
 using namespace std;
