@@ -2,7 +2,7 @@
 #include <ctime>
 
 using namespace std;
-
+// Добавлен комментарий
 struct Array
 {
     int valuesCount;
