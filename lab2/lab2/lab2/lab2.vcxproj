@@ -20,12 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CatchExeption.cpp" />
+    <ClCompile Include="Flight.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="Rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CatchExeption.h" />
+    <ClInclude Include="Flight.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="Rectangle.h" />
   </ItemGroup>
