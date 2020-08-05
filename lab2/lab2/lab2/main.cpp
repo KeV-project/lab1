@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Output.h"
+#include "CatchExeption.h"
 
 using namespace std;
 
