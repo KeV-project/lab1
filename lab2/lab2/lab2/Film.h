@@ -9,7 +9,7 @@ struct Film
 	string Title;
 	int Duration;
 	int Year;
-	Genre Genre;
+	GenreType Genre;
 	float Rating;
 	// Ѕюджет фильма в миллионах
 	float Budget;
