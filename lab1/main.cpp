@@ -135,6 +135,7 @@ int* ReadArray(int count)
         cout << "Enter " << i << " element: ";
         cin >> values[i];
     }
+    cout << endl;
     return values;
 }
 
@@ -164,11 +165,18 @@ void PrintRandomArray(int arrayCount)
     delete[] tmpArray;
 }
 
+void PrintEnterArrayCounts(int valuesCount)
+{
+    int* values = ReadArray(valuesCount);
+    cout << "Count is: " << CountPositiveValues(values, valuesCount) << endl << endl;
+    delete[] values;
+}
+
 void main()
 {
     setlocale(LC_ALL, "rus");
     srand(time(nullptr));
-    
+   
     // Task 1.1.1.1 ///////////////////////////////////////////////////////////
     Breakpoints();
 
@@ -491,23 +499,18 @@ void main()
 
     // Task 1.1.5.7 ///////////////////////////////////////////////////////////
     const int arraysCount = 3;
-    //TODO: Этот кусок я бы переписал и часть, которую под первым for-ом вынес бы в метод, код ниже
+    //TODO: Этот кусок я бы переписал и часть, которую под первым for-ом вынес бы в метод, код ниже +
     int* arraysCounts = new int[arraysCount] { 5, 8, 13 };
     for (int i = 0; i < arraysCount; i++)
     {
         PrintRandomArray(arraysCounts[i]);
     }
     delete[] arraysCounts;
-
+    
     // Task 1.1.5.8 ///////////////////////////////////////////////////////////
-	//TODO: Ниже два дубля
-    int valuesCount = 15;
-    int* values = ReadArray(valuesCount);
-    cout << "Count is: " << CountPositiveValues(values, valuesCount) << endl << endl;
-    delete[] values;
+	//TODO: Ниже два дубля +
+    PrintEnterArrayCounts(15);
+    PrintEnterArrayCounts(20);
 
-    valuesCount = 20;
-    values = ReadArray(valuesCount);
-    cout << "Count is: " << CountPositiveValues(values, valuesCount) << endl << endl;
-    delete[] values;
+    system("pause");
 } 
