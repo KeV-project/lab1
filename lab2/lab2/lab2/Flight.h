@@ -1,11 +1,13 @@
 #pragma once
 
 #include <iostream>
+#include "Output.h"
 
 using namespace std;
 
 struct Flight
 {
+	string FlightNumber;
 	int PlaneNumber;
 	// Пункт Вылета
 	string Departure;
@@ -18,4 +20,6 @@ struct Flight
 	int Passengers;
 };
 
+void ReadFlight(Flight& flight);
+void PrintFlight(Flight& flight);
 void DemoFlight();

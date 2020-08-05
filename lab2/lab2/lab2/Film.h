@@ -18,4 +18,6 @@ struct Film
 	string MainRole;
 };
 
+void ReadFilm(Film& film);
+void PrintFilm(Film& film);
 void DemoFilm();
