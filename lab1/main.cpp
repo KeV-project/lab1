@@ -2,12 +2,6 @@
 #include <ctime>
 
 using namespace std;
-// Добавлен комментарий
-struct Array
-{
-    int valuesCount;
-    int* values;
-};
 
 void Breakpoints()
 {
@@ -128,7 +122,7 @@ int* MakeRandomArray(int arraySize)
     int* array = new int[arraySize];
     for (int i = 0; i < arraySize; i++)
     {
-        array[i] = rand() % 100 - 50;
+        array[i] = rand() % 100;
     }
     return array;
 }
@@ -158,11 +152,23 @@ int CountPositiveValues(int* values, int count)
     return result;
 }
 
+void PrintRandomArray(int arrayCount)
+{
+    int* tmpArray = MakeRandomArray(arrayCount);
+    cout << "Random array of " << arrayCount << " : ";
+    for (int j = 0; j < arrayCount; j++)
+    {
+        cout << tmpArray[j] << " ";
+    }
+    cout << endl << endl;
+    delete[] tmpArray;
+}
+
 void main()
 {
     setlocale(LC_ALL, "rus");
     srand(time(nullptr));
-
+    
     // Task 1.1.1.1 ///////////////////////////////////////////////////////////
     Breakpoints();
 
@@ -484,44 +490,14 @@ void main()
     delete[] characters;
 
     // Task 1.1.5.7 ///////////////////////////////////////////////////////////
-	
     const int arraysCount = 3;
     //TODO: Этот кусок я бы переписал и часть, которую под первым for-ом вынес бы в метод, код ниже
-    //int* arraysCounts = new int[arraysCount] { 5, 8, 13 };
-    //for (int i = 0; i < arraysCount; i++)
-    //{
-    //    int arrayCount = arraysCounts[i];
-    //    int* tmpArray = MakeRandomArray(arrayCount);
-    //    cout << "Random array of " << arrayCount << " : ";
-    //    for (int j = 0; j < arrayCount; j++)
-    //    {
-    //        cout << tmpArray[j] << " ";
-    //    }
-    //    cout << endl << endl;
-    //}
-	
-    Array arrays[arraysCount];
-	
-    arrays[0].valuesCount = 5;
-    arrays[0].values = MakeRandomArray(arrays[0].valuesCount);
-    arrays[1].valuesCount = 8;
-    arrays[1].values = MakeRandomArray(arrays[1].valuesCount);
-    arrays[2].valuesCount = 13;
-    arrays[2].values = MakeRandomArray(arrays[2].valuesCount);
+    int* arraysCounts = new int[arraysCount] { 5, 8, 13 };
     for (int i = 0; i < arraysCount; i++)
     {
-        cout << "Random array of " << arrays[i].valuesCount << " : ";
-        for (int j = 0; j < arrays[i].valuesCount; j++)
-        {
-            cout << arrays[i].values[j] << " ";
-        }
-        cout << endl << endl;
+        PrintRandomArray(arraysCounts[i]);
     }
-	
-    for (int i = 0; i < arraysCount; i++)
-    {
-        delete[] arrays[i].values;
-    }
+    delete[] arraysCounts;
 
     // Task 1.1.5.8 ///////////////////////////////////////////////////////////
 	//TODO: Ниже два дубля
