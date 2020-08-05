@@ -1,10 +1,11 @@
 #pragma once
 
 #include <iostream>
+#include "Output.h"
 
 using namespace std;
 
-struct Rect
+struct Rectangle
 {
 	float Length;
 	float Width;
@@ -14,4 +15,6 @@ struct Rect
 	float Area;
 };
 
+void ReadRectangle(Rectangle& rectangle);
+void PrintRectangle(Rectangle& rectangle);
 void DemoRectangle();
