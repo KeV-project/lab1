@@ -1,6 +1,6 @@
 #include "Rectangle.h"
 
-Rectangle* MakeRect(float length, float width, string color)
+Rectangle* MakeRectangle(float length, float width, string color)
 {
 	Rectangle* rectangle = new Rectangle();
 	rectangle->Length = length;
@@ -42,6 +42,7 @@ void PrintRectangle(Rectangle& rectangle)
 
 void DemoRectangle()
 {
+	
 	// Task 2.2.3.1
 	Rectangle FirstRectangle;
 	FirstRectangle.Length = 13.5;
@@ -57,11 +58,27 @@ void DemoRectangle()
 	ReadRectangle(secondRectangle);
 	PrintRectangle(secondRectangle);
 	PrintLine();
-
+	
 	// Task 2.2.3.3
 	const int rectanglesCount = 3;
-	Rectangle* rectangles = new Rectangle[rectanglesCount];
-
+	Rectangle** rectangles = new Rectangle * [rectanglesCount]
+	{
+		MakeRectangle(13.5, 10.0, "серый"),
+		MakeRectangle(15.3, 7.2, "красный"),
+		MakeRectangle(5.0, 3.5, "зеленый"),
+	};
+	cout << "Массив прямоугольников: " << endl << endl;
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		cout << "Прямоугольник №" << i + 1 << ":" << endl << endl;
+		PrintRectangle(*rectangles[i]);
+	}
+	PrintLine();
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		delete rectangles[i];
+	}
+	delete[] rectangles;
 }
 
 

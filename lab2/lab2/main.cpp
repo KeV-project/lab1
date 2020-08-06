@@ -13,13 +13,13 @@ void main()
 	setlocale(LC_ALL, "rus");
 
     // Task 2.2.1.1 - 2.2.1.2
-    DemoSort();
-    PrintLine();
+    //DemoSort();
+    //PrintLine();
 
     DemoRectangle();
-    DemoFlight();
-    DemoFilm();
-    DemoTime();
+    //DemoFlight();
+    //DemoFilm();
+    //DemoTime();
 
 	system("pause");
 }
