@@ -11,7 +11,8 @@ void ReadRectangle(Rectangle& rectangle)
 	cout << "Ââåäèòå öâåò ïðÿìîóãîëüíèêà: ";
 	cin >> rectangle.Color;
 	cout << endl;
-	rectangle.Diagonal = sqrt(pow(rectangle.Length, 2) + pow(rectangle.Width, 2));
+	rectangle.Diagonal = sqrt(pow(rectangle.Length, 2) 
+		+ pow(rectangle.Width, 2));
 	rectangle.Perimeter = (rectangle.Length + rectangle.Width) * 2;
 	rectangle.Area = rectangle.Length * rectangle.Width;
 }
@@ -40,6 +41,7 @@ void DemoRectangle()
 
 	// Task 2.2.3.2
 	Rectangle secondRectangle;
+	cout << "ÏÐßÌÎÓÃÎËÜÍÈÊ" << endl << endl;
 	ReadRectangle(secondRectangle);
 	PrintRectangle(secondRectangle);
 	PrintLine();

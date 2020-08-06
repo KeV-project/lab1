@@ -12,7 +12,8 @@ void ReadFilm(Film& film)
 	cin >> film.Year;
 	cout << endl;
 	int numGenre;
-	cout << "Введите жанр фильма(0 - Комедия, 1 - Драма, 2 - Триллер," << endl;
+	cout << "Введите жанр фильма";
+	cout << "(0 - Комедия, 1 - Драма, 2 - Триллер, " << endl;
 	cout << "3 - Экшен, 4 - Фильм ужасов, 5 - Блокбастер): ";
 	cin >> numGenre;
 	ReadGenre(numGenre, film.Genre);
@@ -58,6 +59,7 @@ void DemoFilm()
 
 	// Task 2.2.3.2
 	Film secondFilm;
+	cout << "ФИЛЬМ" << endl << endl;
 	ReadFilm(secondFilm);
 	PrintFilm(secondFilm);
 	PrintLine();

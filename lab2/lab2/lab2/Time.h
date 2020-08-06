@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include "Output.h"
 
 using namespace std;
 
@@ -15,4 +16,6 @@ struct Time
 	int Second;
 };
 
+void ReadTime(Time& event);
+void PrintTime(Time& event);
 void DemoTime();

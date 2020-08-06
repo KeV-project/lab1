@@ -33,7 +33,8 @@ void PrintFlight(Flight& flight)
 	cout << "Пункт назначения самолета: " << flight.Destination << endl;
 	cout << "Время полета: " << flight.Duration << endl;
 	cout << "Дальность полета: " << flight.Distance << endl;
-	cout << "Количество пассажиров на борту: " << flight.Passengers << endl << endl;
+	cout << "Количество пассажиров на борту: ";
+	cout << flight.Passengers << endl << endl;
 }
 
 void DemoFlight()
@@ -49,6 +50,7 @@ void DemoFlight()
 
 	// Task 2.2.3.2
 	Flight secondFlight;
+	cout << "РЕЙС" << endl << endl;
 	ReadFlight(secondFlight);
 	PrintFlight(secondFlight);
 	PrintLine();
