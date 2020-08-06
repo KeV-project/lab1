@@ -1,5 +1,19 @@
 #include "Flight.h"
 
+Flight* MakeFlight(int flightNumber, int planeNumber, string departure,
+	string destination, int duration, int distance, int passengers)
+{
+	Flight* flight = new Flight();
+	flight->FlightNumber = flightNumber;
+	flight->PlaneNumber = planeNumber;
+	flight->Departure = departure;
+	flight->Destination = destination;
+	flight->Duration = duration;
+	flight->Distance = distance;
+	flight->Passengers = passengers;
+	return flight;
+}
+
 void ReadFlight(Flight& flight)
 {
 	cout << "¬ведите номер рейса: ";
@@ -54,4 +68,7 @@ void DemoFlight()
 	ReadFlight(secondFlight);
 	PrintFlight(secondFlight);
 	PrintLine();
+
+	// Task 2.2.3.3
+	
 }

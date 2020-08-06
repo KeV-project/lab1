@@ -20,6 +20,8 @@ struct Flight
 	int Passengers;
 };
 
+Flight* MakeFlight(int flightNumber, int planeNumber, string departure,
+	string destination, int duration, int distance, int passengers);
 void ReadFlight(Flight& flight);
 void PrintFlight(Flight& flight);
 void DemoFlight();
