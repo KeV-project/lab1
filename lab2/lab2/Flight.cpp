@@ -1,6 +1,6 @@
 #include "Flight.h"
 
-Flight* MakeFlight(int flightNumber, int planeNumber, string departure,
+Flight* MakeFlight(string flightNumber, int planeNumber, string departure,
 	string destination, int duration, int distance, int passengers)
 {
 	Flight* flight = new Flight();
@@ -41,7 +41,7 @@ void ReadFlight(Flight& flight)
 
 void PrintFlight(Flight& flight)
 {
-	cout << "Рейс " << flight.FlightNumber << " :" << endl;
+	cout << "Рейс № " << flight.FlightNumber << ": " << endl << endl;
 	cout << "Номер самолета: " << flight.PlaneNumber << endl;
 	cout << "Пункт вылета самолета: " << flight.Departure << endl;
 	cout << "Пункт назначения самолета: " << flight.Destination << endl;
@@ -53,6 +53,7 @@ void PrintFlight(Flight& flight)
 
 void DemoFlight()
 {
+	/*
 	// Task 2.2.3.1
 	Flight firstFlight;
 	firstFlight.PlaneNumber = 391;
@@ -68,7 +69,24 @@ void DemoFlight()
 	ReadFlight(secondFlight);
 	PrintFlight(secondFlight);
 	PrintLine();
-
+	*/
 	// Task 2.2.3.3
-	
+	const int flightsCount = 3;
+	Flight** flights = new Flight * [flightsCount]
+	{
+		MakeFlight("4G7L1", 3001, "Москва", "Италия", 250, 3040, 120),
+		MakeFlight("SD147", 6413, "Новосибирск", "Литва", 120, 4339, 113),
+		MakeFlight("7CC77", 5204,  "Дубай", "Москва", 270, 3600, 250),
+	};
+	cout << "Массив рейсов:" << endl << endl;
+	for (int i = 0; i < flightsCount; i++)
+	{
+		PrintFlight(*flights[i]);
+	}
+	PrintLine();
+	for (int i = 0; i < flightsCount; i++)
+	{
+		delete flights[i];
+	}
+	delete[] flights;
 }
