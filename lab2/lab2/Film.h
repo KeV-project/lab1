@@ -19,6 +19,8 @@ struct Film
 	string MainRole;
 };
 
+Film* MakeFilm(string title, int duration, int year, GenreType genre,
+	float rating, float budget, string director, string mainRole);
 void ReadFilm(Film& film);
 void PrintFilm(Film& film);
 void DemoFilm();

@@ -1,5 +1,20 @@
 #include "Film.h"
 
+Film* MakeFilm(string title, int duration, int year, GenreType genre,
+	float rating, float budget, string director, string mainRole)
+{
+	Film* film = new Film();
+	film->Title = title;
+	film->Duration = duration;
+	film->Year = year;
+	film->Genre = genre;
+	film->Rating = rating;
+	film->Budget = budget;
+	film->Director = director;
+	film->MainRole = mainRole;
+	return film;
+}
+
 void ReadFilm(Film& film)
 {
 	cout << "Введите название фильмы: ";
@@ -46,6 +61,7 @@ void PrintFilm(Film& film)
 
 void DemoFilm()
 {
+	
 	// Task 2.2.3.1
 	Film firstFilm;
 	firstFilm.Title = "Focus";
@@ -63,4 +79,25 @@ void DemoFilm()
 	ReadFilm(secondFilm);
 	PrintFilm(secondFilm);
 	PrintLine();
+	
+	// Task 2.2.3.3
+	const int filmsCount = 3;
+	Film** films = new Film * [filmsCount]
+	{
+		MakeFilm("Время", 109, 2011, Thriller, 7.3, 40, "Эндрю Никкол", "Джастин Тимберлейк"),
+		MakeFilm("Я - легенда", 115, 2007, Horror, 7.9, 150, "Фрэнсис Лоуренс", "Уилл Смит"),
+		MakeFilm("Доктор Хаус", 43, 2004, Drama, 8.8, 4.4, "Грег Яйтанс", "Хью Лори"),
+	};
+	cout << "Массив фильмов: " << endl << endl;
+	for (int i = 0; i < filmsCount; i++)
+	{
+		cout << "Фильм №" << i + 1 << ":" << endl << endl;
+		PrintFilm(*films[i]);
+	}
+	PrintLine();
+	for (int i = 0; i < filmsCount; i++)
+	{
+		delete films[i];
+	}
+	delete[] films;
 }

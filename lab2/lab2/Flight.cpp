@@ -53,7 +53,7 @@ void PrintFlight(Flight& flight)
 
 void DemoFlight()
 {
-	/*
+	
 	// Task 2.2.3.1
 	Flight firstFlight;
 	firstFlight.PlaneNumber = 391;
@@ -69,7 +69,7 @@ void DemoFlight()
 	ReadFlight(secondFlight);
 	PrintFlight(secondFlight);
 	PrintLine();
-	*/
+	
 	// Task 2.2.3.3
 	const int flightsCount = 3;
 	Flight** flights = new Flight * [flightsCount]
