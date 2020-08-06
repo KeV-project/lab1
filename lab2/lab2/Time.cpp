@@ -62,6 +62,27 @@ void DemoTime()
 	ReadTime(secondEvent);
 	PrintTime(secondEvent);
 	PrintLine();
+	
+	// Task 2.2.3.3
+	const int eventsCount = 3;
+	Time** events = new Time * [eventsCount]
+	{
+		MakeTime(2015, 10, 12, 1, 30, 12),
+		MakeTime(2020, 6, 8, 10, 10, 7),
+		MakeTime(1995, 12, 31, 23, 59, 0),
+	};
+	cout << "Массив событий: " << endl << endl;
+	for (int i = 0; i < eventsCount; i++)
+	{
+		cout << "Событие №" << i + 1 << ":" << endl << endl;
+		PrintTime(*events[i]);
+	}
+	PrintLine();
+	for (int i = 0; i < eventsCount; i++)
+	{
+		delete events[i];
+	}
+	delete[] events;
 }
 
 
