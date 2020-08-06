@@ -1,5 +1,17 @@
 #include "Rectangle.h"
 
+Rectangle* MakeRect(float length, float width, string color)
+{
+	Rectangle* rectangle = new Rectangle();
+	rectangle->Length = length;
+	rectangle->Width = width;
+	rectangle->Diagonal = sqrt(pow(length, 2) + pow(width, 2));
+	rectangle->Color = color;
+	rectangle->Perimeter = (length + width) * 2;
+	rectangle->Area = length * width;
+	return rectangle;
+}
+
 void ReadRectangle(Rectangle& rectangle)
 {
 	cout << "¬ведите длину пр€моугольника(вещ. ч): ";
@@ -45,6 +57,11 @@ void DemoRectangle()
 	ReadRectangle(secondRectangle);
 	PrintRectangle(secondRectangle);
 	PrintLine();
+
+	// Task 2.2.3.3
+	const int rectanglesCount = 3;
+	Rectangle* rectangles = new Rectangle[rectanglesCount];
+
 }
 
 
