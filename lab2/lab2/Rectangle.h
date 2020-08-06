@@ -18,4 +18,6 @@ struct Rectangle
 Rectangle* MakeRectangle(float length, float width, string color);
 void ReadRectangle(Rectangle& rectangle);
 void PrintRectangle(Rectangle& rectangle);
+void ChangeFields(Rectangle* rectangle, float length,
+	float width, string color);
 void DemoRectangle();

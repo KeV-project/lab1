@@ -40,17 +40,29 @@ void PrintRectangle(Rectangle& rectangle)
 	cout << "Площадь: " << rectangle.Area << endl << endl;
 }
 
+void ChangeFields(Rectangle* rectangle, float length,
+	float width, string color)
+{
+	rectangle->Length = length;
+	rectangle->Width = width;
+	rectangle->Color = color;
+	rectangle->Diagonal = sqrt(pow(rectangle->Length, 2) 
+		+ pow(rectangle->Width, 2));
+	rectangle->Perimeter = (rectangle->Length + rectangle->Width) * 2;
+	rectangle->Area = rectangle->Length * rectangle->Width;
+}
+
 void DemoRectangle()
 {
 	
 	// Task 2.2.3.1
-	Rectangle FirstRectangle;
-	FirstRectangle.Length = 13.5;
-	FirstRectangle.Width = 7.3;
-	FirstRectangle.Diagonal = 15.3;
-	FirstRectangle.Color = "yellow";
-	FirstRectangle.Perimeter = 41.6;
-	FirstRectangle.Area = 98.55;
+	Rectangle firstRectangle;
+	firstRectangle.Length = 13.5;
+	firstRectangle.Width = 7.3;
+	firstRectangle.Diagonal = 15.3;
+	firstRectangle.Color = "yellow";
+	firstRectangle.Perimeter = 41.6;
+	firstRectangle.Area = 98.55;
 
 	// Task 2.2.3.2
 	Rectangle secondRectangle;
@@ -79,6 +91,16 @@ void DemoRectangle()
 		delete rectangles[i];
 	}
 	delete[] rectangles;
+
+	// Task 2.2.4.1
+	Rectangle* pFirstRectangle = &firstRectangle;
+	cout << "Работа с указателем на структуру:" << endl << endl;
+	cout << "Прямоугольник firstRectangle: " << endl << endl;
+	PrintRectangle(firstRectangle);
+	cout << "Измененный прямоугольник firstRectangle: " << endl << endl;
+	ChangeFields(pFirstRectangle, 111, 11, "коричневый");
+	PrintRectangle(*pFirstRectangle);
+	PrintLine();
 }
 
 
