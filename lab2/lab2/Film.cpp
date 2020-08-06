@@ -61,7 +61,6 @@ void PrintFilm(Film& film)
 
 void DemoFilm()
 {
-	
 	// Task 2.2.3.1
 	Film firstFilm;
 	firstFilm.Title = "Focus";

@@ -18,8 +18,8 @@ void main()
 
     //DemoRectangle();
     //DemoFlight();
-    DemoFilm();
-    //DemoTime();
+    //DemoFilm();
+    DemoTime();
 
 	system("pause");
 }

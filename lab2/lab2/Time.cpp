@@ -1,5 +1,18 @@
 #include "Time.h"
 
+Time* MakeTime(int year, int month, int day,
+	int hour, int minute, int second)
+{
+	Time* time = new Time();
+	time->Year = year;
+	time->Month = month;
+	time->Day = day;
+	time->Hour = hour;
+	time->Minute = minute;
+	time->Second = second;
+	return time;
+}
+
 void ReadTime(Time& event)
 {
 	cout << "Год: ";
