@@ -80,6 +80,28 @@ void DemoDynamicFlight()
 	delete pFlight;
 }
 
+void FindShortestFlight(Flight** flights, int flightsCount)
+{
+	int minDuration = flights[0]->Duration;
+	int minDurationIndex = 0;
+	for (int i = 1; i < flightsCount; i++)
+	{
+		if (flights[i]->Duration < minDuration)
+		{
+			minDuration = flights[i]->Duration;
+			minDurationIndex = i;
+		}
+	}
+	cout << "Рейс с наименьшим временем перелета:" << endl << endl;
+	cout << "Рейс " << flights[minDurationIndex]->Departure;
+	cout << " - " << flights[minDurationIndex]->Destination;
+	cout << " находится в полете " << flights[minDurationIndex]->Duration;
+	cout << " минут" << endl;
+	cout << "Номер самолета: " << flights[minDurationIndex]->PlaneNumber;
+	cout << ", на борту " << flights[minDurationIndex]->Passengers;
+	cout << " человек" << endl << endl;
+}
+
 void DemoDynamicFlights()
 {
 	const int flightsCount = 4;
@@ -95,6 +117,11 @@ void DemoDynamicFlights()
 		cout << "Рейс №" << i + 1 << endl << endl;
 		PrintFlight(*flights[i]);
 	}
+
+	// Task 2.2.6.3
+	PrintLine();
+	FindShortestFlight(flights, flightsCount);
+
 	for (int i = 0; i < flightsCount; i++)
 	{
 		delete flights[i];

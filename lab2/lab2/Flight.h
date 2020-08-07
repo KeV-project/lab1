@@ -29,5 +29,6 @@ void ChangeFlight(Flight* flight, string flightNumber,
 	int planeNumber, string departure, string destination,
 	int duration, int distance, int passengers);
 void DemoDynamicFlight();
+void FindShortestFlight(Flight** flights, int flightsCize);
 void DemoDynamicFlights();
 void DemoFlight();
