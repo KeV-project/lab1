@@ -24,4 +24,7 @@ Flight* MakeFlight(string flightNumber, int planeNumber, string departure,
 	string destination, int duration, int distance, int passengers);
 void ReadFlight(Flight& flight);
 void PrintFlight(Flight& flight);
+void ChangeFields(Flight* flight, string flightNumber,
+	int planeNumber, string departure, string destination,
+	int duration, int distance, int passengers);
 void DemoFlight();

@@ -41,7 +41,7 @@ void ReadFlight(Flight& flight)
 
 void PrintFlight(Flight& flight)
 {
-	cout << "Рейс № " << flight.FlightNumber << ": " << endl << endl;
+	cout << "Рейс № " << flight.FlightNumber << ": " << endl;
 	cout << "Номер самолета: " << flight.PlaneNumber << endl;
 	cout << "Пункт вылета самолета: " << flight.Departure << endl;
 	cout << "Пункт назначения самолета: " << flight.Destination << endl;
@@ -51,18 +51,31 @@ void PrintFlight(Flight& flight)
 	cout << flight.Passengers << endl << endl;
 }
 
+void ChangeFields(Flight* flight, string flightNumber,
+	int planeNumber, string departure, string destination,
+	int duration, int distance, int passengers)
+{
+	flight->FlightNumber = flightNumber;
+	flight->PlaneNumber = planeNumber;
+	flight->Departure = departure;
+	flight->Destination = destination;
+	flight->Duration = duration;
+	flight->Distance = distance;
+	flight->Passengers = passengers;
+}
+
 void DemoFlight()
 {
-	
 	// Task 2.2.3.1
 	Flight firstFlight;
-	firstFlight.PlaneNumber = 391;
-	firstFlight.Departure = "Tomsk";
-	firstFlight.Destination = "Moscow";
+	firstFlight.FlightNumber = "5K47X";
+	firstFlight.PlaneNumber = 3910;
+	firstFlight.Departure = "Томск";
+	firstFlight.Destination = "Москва";
 	firstFlight.Duration = 300;
 	firstFlight.Distance = 2800;
 	firstFlight.Passengers = 157;
-
+	
 	// Task 2.2.3.2
 	Flight secondFlight;
 	cout << "РЕЙС" << endl << endl;
@@ -89,4 +102,24 @@ void DemoFlight()
 		delete flights[i];
 	}
 	delete[] flights;
+	
+	// Task 2.2.4.1
+	cout << "Работа с указателем на структуру:" << endl << endl;
+	Flight* pFirstFlight = &firstFlight;
+	cout << "Рейс firstFlight: " << endl << endl;
+	PrintFlight(firstFlight);
+	cout << "Измененный рейс firstFlight: " << endl << endl;
+	ChangeFields(pFirstFlight, "5K47X", 3910, "Томск", "Санкт-Петербург", 455, 4298, 133);
+	PrintFlight(*pFirstFlight);
+	PrintLine();
+
+	// Task 2.2.4.2
+	Flight* pFirstFlight2 = &firstFlight;
+	cout << "Адрес переменной firstFlight: ";
+	cout << &firstFlight << endl << endl;
+	cout << "Адрес в указателе pFirstFlight: ";
+	cout << pFirstFlight << endl << endl;
+	cout << "Адрес в указателе pFirstFlight2: ";
+	cout << pFirstFlight2 << endl << endl;
+	PrintLine();
 }
