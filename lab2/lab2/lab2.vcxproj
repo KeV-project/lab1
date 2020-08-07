@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="CatchExeption.cpp" />
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="ColorType.cpp" />
     <ClCompile Include="Film.cpp" />
     <ClCompile Include="Flight.cpp" />
     <ClCompile Include="GenreType.cpp" />
@@ -32,6 +33,7 @@
   <ItemGroup>
     <ClInclude Include="CatchExeption.h" />
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="ColorType.h" />
     <ClInclude Include="Film.h" />
     <ClInclude Include="Flight.h" />
     <ClInclude Include="GenreType.h" />

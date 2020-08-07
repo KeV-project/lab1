@@ -17,6 +17,7 @@ Flight* MakeFlight(string flightNumber, int planeNumber, string departure,
 Flight* CopyFlight(Flight& flight)
 {
 	Flight* copiedFlight = new Flight();
+	copiedFlight->FlightNumber = flight.FlightNumber;
 	copiedFlight->PlaneNumber = flight.PlaneNumber;
 	copiedFlight->Departure = flight.Departure;
 	copiedFlight->Destination = flight.Destination;
