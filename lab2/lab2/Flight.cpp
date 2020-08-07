@@ -64,6 +64,22 @@ void ChangeFlight(Flight* flight, string flightNumber,
 	flight->Passengers = passengers;
 }
 
+void DemoDynamicFlight()
+{
+	Flight* pFlight = new Flight;
+	pFlight->FlightNumber = "23F14G";
+	pFlight->PlaneNumber = 221;
+	pFlight->Departure = "Кемерово";
+	pFlight->Destination = "Улан-Удэ";
+	pFlight->Duration = 150;
+	pFlight->Distance = 2500;
+	pFlight->Passengers = 90;
+
+	PrintFlight(*pFlight);
+
+	delete pFlight;
+}
+
 void DemoFlight()
 {
 	// Task 2.2.3.1
@@ -122,5 +138,11 @@ void DemoFlight()
 	cout << pFirstFlight << endl << endl;
 	cout << "Адрес в указателе pFirstFlight2: ";
 	cout << pFirstFlight2 << endl << endl;
+	PrintLine();
+
+	// Task 2.2.6.1
+	cout << "Создан динамический объект Flight";
+	cout << " в функции DemoDynamicFlight : " << endl << endl;
+	DemoDynamicFlight();
 	PrintLine();
 }

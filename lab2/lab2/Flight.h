@@ -27,4 +27,5 @@ void PrintFlight(Flight& flight);
 void ChangeFlight(Flight* flight, string flightNumber,
 	int planeNumber, string departure, string destination,
 	int duration, int distance, int passengers);
+void DemoDynamicFlight();
 void DemoFlight();
