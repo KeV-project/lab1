@@ -29,6 +29,7 @@
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Time.cpp" />
+    <ClCompile Include="WeekdaysType.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CatchExeption.h" />
@@ -40,6 +41,7 @@
     <ClInclude Include="Output.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Time.h" />
+    <ClInclude Include="WeekdaysType.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
