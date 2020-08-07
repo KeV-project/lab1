@@ -8,6 +8,17 @@
 
 using namespace std;
 
+// Task 2.2.4.4
+void WrongPointers()
+{
+	Flight SomeFlight;
+	Film SomeFilm;
+	Flight* pFlight = &SomeFlight;
+	Film* pFilm = &SomeFilm;
+	//pFlight = &SomeFilm;
+	//pFilm = &SomeFlight;
+}
+
 void main()
 {
 	setlocale(LC_ALL, "rus");
