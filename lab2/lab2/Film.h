@@ -27,4 +27,7 @@ void PrintFilm(Film& film);
 void ChangeFilm(Film* film, string title, int duration,
 	int year, GenreType genre, float rating, float budget,
 	string director, string mainRole);
+int CountMoviesByGenre(Film** films, int filmsCount, GenreType findedGenre);
+Film* FindBestGenreMovie(Film** films, int filmsCount, GenreType findGenre);
+void DemoMovieWithGenre();
 void DemoFilm();

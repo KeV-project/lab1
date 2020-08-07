@@ -118,14 +118,14 @@ void main()
 	setlocale(LC_ALL, "rus");
 
     // Task 2.2.1.1 - 2.2.1.2
-    //DemoSort();
-    //PrintLine();
+    DemoSort();
+    PrintLine();
 
-    //DemoRectangle();
-    //DemoFlight();
-    //DemoFilm();
-    //DemoTime();
-
+    DemoRectangle();
+    DemoFlight();
+    DemoFilm();
+    DemoTime();
+	
 	// Task 2.2.7.2, 2.2.7.3
 	cout << "Демонстрация работы функции копирования" << endl << endl;
 	PrintLine();
@@ -140,7 +140,8 @@ void main()
 	delete copyRectangle;
 	PrintLine();
 
-	Flight* flight = MakeFlight("11D5N", 333, "Москва", "Фьюмичино", 180, 5600, 120);
+	Flight* flight = MakeFlight("11D5N", 333, "Москва",
+		"Фьюмичино", 180, 5600, 120);
 	cout << "Оригинальный рейс:" << endl << endl;
 	PrintFlight(*flight);
 	Flight* copyFlight = CopyFlight(*flight);

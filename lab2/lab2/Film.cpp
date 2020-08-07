@@ -31,7 +31,7 @@ Film* CopyFilm(Film& film)
 
 void ReadFilm(Film& film)
 {
-	cout << "Введите название фильмы: ";
+	cout << "Введите название фильма: ";
 	cin >> film.Title;
 	cout << endl;
 	cout << "Введите продолжительность фильма(мин): ";
@@ -85,6 +85,114 @@ void ChangeFilm(Film* film, string title, int duration,
 	film->Budget = budget;
 	film->Director = director;
 	film->MainRole = mainRole;
+}
+
+int CountMoviesByGenre(Film** films, int filmsCount, GenreType findedGenre)
+{
+	int genreCount = 0;
+	for (int i = 0; i < filmsCount; i++)
+	{
+		if (films[i]->Genre == findedGenre)
+		{
+			genreCount++;
+		}
+	}
+	return genreCount;
+}
+
+Film* FindBestGenreMovie(Film** films, int filmsCount, GenreType findGenre)
+{
+	float maxRating = 0;
+	Film* maxRatingFilm = nullptr;
+	for (int i = 0; i < filmsCount; i++)
+	{
+		if (films[i]->Genre == findGenre)
+		{
+			if (films[i]->Rating > maxRating)
+			{
+				maxRating = films[i]->Rating;
+				maxRatingFilm = films[i];
+			}
+		}
+	}
+	return maxRatingFilm;
+}
+
+void DemoMovieWithGenre()
+{
+	// Task 2.2.9.2
+	Film film;
+	film.Title = "Focus";
+	film.Duration = 104;
+	film.Year = 2015;
+	film.Genre = Drama;
+	film.Rating = 8.2;
+	film.Budget = 50.1;
+	film.Director = "Glenn Ficarra, John Recua";
+	film.MainRole = "Will Smith";
+
+	// Task 2.2.9.3
+	Film* film2 = MakeFilm("Джентельмены", 113, 2019, Thriller, 8.6, 22,
+		"Гай Ричи", "Мэттью Макконахи, Чарли Ханнэм");
+	delete film2;
+
+	// Task 2.2.9.4
+	const int filmsCount = 10;
+	Film** films = new Film * [filmsCount]
+	{
+		MakeFilm("Время", 109, 2011, Thriller,
+			7.3, 40, "Эндрю Никкол","Джастин Тимберлейк"),
+		MakeFilm("Я - легенда", 115, 2007, Horror,
+			7.9, 150, "Фрэнсис Лоуренс","Уилл Смит"),
+		MakeFilm("Доктор Хаус", 43, 2004, Drama,
+			8.8, 4.5, "Грег Яйтанс", "Хью Лори"),
+		MakeFilm("Focus", 104, 2015, Drama,
+			8.2, 50.1, "Glenn Ficarra, John Recua", "Will Smith"),
+		MakeFilm("Остров проклятых", 139, 2010, Thriller,
+			8.5, 80, "Мартин Скорсезе", "Мартин Скорсезе"),
+		MakeFilm("Дэдпул", 108, 2016, Comedy,
+			7.5, 58, "Тим Миллер", "Райан Рейнольдс"),
+		MakeFilm("Белый плен", 120, 2005, Drama,
+			8.1, 40, "Фрэнк Маршалл", "Пол Уокер"),
+		MakeFilm("Скорость", 116, 1994, Drama,
+			7.7, 30, "Glenn Ficarra, John Recua", "Киану Ривз"),
+		MakeFilm("О чем говорят мужчины", 92, 2010,
+			Comedy, 7.7, 1.95, "Дмитрий Дьяченко", 
+			"Леонид Барац, Ростислав Хаит, Камиль Ларин, Александр Демидов"),
+		MakeFilm("Веном", 112, 2018, Thriller,
+			6.8, 100, "Рубен Флейшер", "Том Харди"),
+	};
+
+	cout << "Массив фильмов:" << endl << endl;
+	for (int i = 0; i < filmsCount; i++)
+	{
+		cout << "Фильм №" << i + 1 << ": " << endl << endl;
+		PrintFilm(*films[i]);
+	}
+	
+	GenreType findedGenre = Thriller;
+	cout << "По запросу " << PrintGenre(findedGenre) << " было найдено ";
+	cout << CountMoviesByGenre(films, filmsCount, Thriller);
+	cout << " фильм(a/ов)" << endl << endl;
+
+	PrintLine();
+	
+	// Task 2.2.9.5
+	if (FindBestGenreMovie(films, filmsCount, findedGenre) != nullptr)
+	{
+		cout << PrintGenre(findedGenre) << " с наибольшим рейтингом: "
+			<< FindBestGenreMovie(films, filmsCount, Thriller)->Title << endl << endl;
+	}
+	else
+	{
+		cout << "Ничего не найдено" << endl << endl;
+	}
+
+	for (int i = 0; i < filmsCount; i++)
+	{
+		delete films[i];
+	}
+	delete[] films;
 }
 
 void DemoFilm()
@@ -147,5 +255,9 @@ void DemoFilm()
 	cout << pFirstFilm << endl << endl;
 	cout << "Адрес в указателе pFirstFilm2: ";
 	cout << pFirstFilm2 << endl << endl;
+	PrintLine();
+
+	cout << "Подсчет фильмов определенного жанра:" << endl << endl;
+	DemoMovieWithGenre();
 	PrintLine();
 }
