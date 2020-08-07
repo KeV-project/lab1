@@ -180,8 +180,9 @@ void DemoMovieWithGenre()
 	// Task 2.2.9.5
 	if (FindBestGenreMovie(films, filmsCount, findedGenre) != nullptr)
 	{
-		cout << PrintGenre(findedGenre) << " с наибольшим рейтингом: "
-			<< FindBestGenreMovie(films, filmsCount, Thriller)->Title << endl << endl;
+		cout << PrintGenre(findedGenre) << " с наибольшим рейтингом: ";
+		cout << FindBestGenreMovie(films, filmsCount, Thriller)->Title;
+		cout << endl << endl;
 	}
 	else
 	{
@@ -219,9 +220,12 @@ void DemoFilm()
 	const int filmsCount = 3;
 	Film** films = new Film * [filmsCount]
 	{
-		MakeFilm("Время", 109, 2011, Thriller, 7.3, 40, "Эндрю Никкол", "Джастин Тимберлейк"),
-		MakeFilm("Я - легенда", 115, 2007, Horror, 7.9, 150, "Фрэнсис Лоуренс", "Уилл Смит"),
-		MakeFilm("Доктор Хаус", 43, 2004, Drama, 8.8, 4.4, "Грег Яйтанс", "Хью Лори"),
+		MakeFilm("Время", 109, 2011, Thriller, 7.3, 40,
+			"Эндрю Никкол", "Джастин Тимберлейк"),
+		MakeFilm("Я - легенда", 115, 2007, Horror, 7.9, 150,
+			"Фрэнсис Лоуренс", "Уилл Смит"),
+		MakeFilm("Доктор Хаус", 43, 2004, Drama, 8.8, 4.4,
+			"Грег Яйтанс", "Хью Лори"),
 	};
 	cout << "Массив фильмов: " << endl << endl;
 	for (int i = 0; i < filmsCount; i++)
