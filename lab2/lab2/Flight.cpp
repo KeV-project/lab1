@@ -80,6 +80,28 @@ void DemoDynamicFlight()
 	delete pFlight;
 }
 
+void DemoDynamicFlights()
+{
+	const int flightsCount = 4;
+	Flight** flights = new Flight * [flightsCount]
+	{
+		MakeFlight("11D5N", 333, "Москва", "Фьюмичино", 180, 5600, 120),
+		MakeFlight("7T5E1", 547, "Новосибирск", "Клайпеда", 110, 3585, 110),
+		MakeFlight("23P08", 123, "Дубай", "Москва", 360, 5000, 80),
+		MakeFlight("1ER7G", 756, "Кемерово", "Улан-Удэ", 120, 2000, 60),
+	};
+	for (int i = 0; i < flightsCount; i++)
+	{
+		cout << "Рейс №" << i + 1 << endl << endl;
+		PrintFlight(*flights[i]);
+	}
+	for (int i = 0; i < flightsCount; i++)
+	{
+		delete flights[i];
+	}
+	delete[] flights;
+}
+
 void DemoFlight()
 {
 	// Task 2.2.3.1
@@ -126,7 +148,8 @@ void DemoFlight()
 	cout << "Рейс firstFlight: " << endl << endl;
 	PrintFlight(firstFlight);
 	cout << "Измененный рейс firstFlight: " << endl << endl;
-	ChangeFlight(pFirstFlight, "5K47X", 3910, "Томск", "Санкт-Петербург", 455, 4298, 133);
+	ChangeFlight(pFirstFlight, "5K47X", 3910, "Томск",
+		"Санкт-Петербург", 455, 4298, 133);
 	PrintFlight(*pFirstFlight);
 	PrintLine();
 
@@ -144,5 +167,11 @@ void DemoFlight()
 	cout << "Создан динамический объект Flight";
 	cout << " в функции DemoDynamicFlight : " << endl << endl;
 	DemoDynamicFlight();
+	PrintLine();
+
+	// Task 2.2.6.2
+	cout << "Массив объектов Flight ";
+	cout << "созданный в функции DemoDynamicFlights : " << endl << endl;
+	DemoDynamicFlights();
 	PrintLine();
 }

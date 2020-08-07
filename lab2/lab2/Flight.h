@@ -15,6 +15,7 @@ struct Flight
 	string Destination;
 	// Время полета в минутах
 	int Duration;
+	// Расстояние в км
 	int Distance;
 	//Количество пассажиров на борту
 	int Passengers;
@@ -28,4 +29,5 @@ void ChangeFlight(Flight* flight, string flightNumber,
 	int planeNumber, string departure, string destination,
 	int duration, int distance, int passengers);
 void DemoDynamicFlight();
+void DemoDynamicFlights();
 void DemoFlight();
