@@ -14,6 +14,18 @@ Flight* MakeFlight(string flightNumber, int planeNumber, string departure,
 	return flight;
 }
 
+Flight* CopyFlight(Flight& flight)
+{
+	Flight* copiedFlight = new Flight();
+	copiedFlight->PlaneNumber = flight.PlaneNumber;
+	copiedFlight->Departure = flight.Departure;
+	copiedFlight->Destination = flight.Destination;
+	copiedFlight->Duration = flight.Duration;
+	copiedFlight->Distance = flight.Distance;
+	copiedFlight->Passengers = flight.Passengers;
+	return copiedFlight;
+}
+
 void ReadFlight(Flight& flight)
 {
 	cout << "¬ведите номер рейса: ";

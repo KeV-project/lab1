@@ -23,6 +23,7 @@ struct Flight
 
 Flight* MakeFlight(string flightNumber, int planeNumber, string departure,
 	string destination, int duration, int distance, int passengers);
+Flight* CopyFlight(Flight& flight);
 void ReadFlight(Flight& flight);
 void PrintFlight(Flight& flight);
 void ChangeFlight(Flight* flight, string flightNumber,
