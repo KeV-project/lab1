@@ -5,6 +5,11 @@
 #include "Flight.h"
 #include "Film.h"
 #include "Time.h"
+#include "EducationFormType.h"
+#include "ColorType.h"
+#include "PhoneManufacturerType.h"
+#include "SeasonType.h"
+#include "WeekdaysType.h"
 
 using namespace std;
 
@@ -17,6 +22,67 @@ void WrongPointers()
 	Film* pFilm = &SomeFilm;
 	//pFlight = &SomeFilm;
 	//pFilm = &SomeFlight;
+}
+
+void DemoEnums()
+{
+	// Task 2.2.8.3
+	ColorType color = Red;
+	WeekdaysType day = Monday;
+	GenreType genre = Comedy;
+	EducationFormType form = FullTime;
+	PhoneManufacturerType manufacturer = Samsung;
+	SeasonType season = Spring;
+
+	// Task 2.2.8.4
+	const int enumsCount = 6;
+
+	ColorType colors[enumsCount];
+	colors[0] = Red;
+	colors[1] = Orange;
+	colors[2] = Yellow;
+	colors[3] = Green;
+	colors[4] = Blue;
+	colors[5] = Purple;
+
+	WeekdaysType weekdays[enumsCount];
+	weekdays[0] = Tuesday;
+	weekdays[1] = Wednesday;
+	weekdays[2] = Thursday;
+	weekdays[3] = Friday;
+	weekdays[4] = Saturday;
+	weekdays[5] = Sunday;
+
+	GenreType genres[enumsCount];
+	genres[0] = Comedy;
+	genres[1] = Drama;
+	genres[2] = Thriller;
+	genres[3] = Action;
+	genres[4] = Horror;
+	genres[5] = Blockbuster;
+
+	EducationFormType forms[enumsCount];
+	forms[0] = FullTime;
+	forms[1] = PartTime;
+	forms[2] = Evening;
+	forms[3] = Distance;
+	forms[4] = FullTime;
+	forms[5] = PartTime;
+
+	PhoneManufacturerType manufacturers[enumsCount];
+	manufacturers[0] = Samsung;
+	manufacturers[1] = Apple;
+	manufacturers[2] = Xiaomi;
+	manufacturers[3] = Nokia;
+	manufacturers[4] = Motorola;
+
+	SeasonType seasons[enumsCount];
+	seasons[0] = Spring;
+	seasons[1] = Summer;
+	seasons[2] = Autumn;
+	seasons[3] = Winter;
+	seasons[4] = Spring;
+	seasons[5] = Summer;
 }
 
 void main()
