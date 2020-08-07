@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+
+using namespace std;
 
 enum ColorType
 {
@@ -10,3 +13,5 @@ enum ColorType
 	DarkBlue,
 	Purple
 };
+
+void PrintColor(ColorType color);
