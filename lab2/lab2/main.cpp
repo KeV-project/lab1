@@ -45,6 +45,14 @@ void DemoEnums()
 	colors[4] = Blue;
 	colors[5] = Purple;
 
+	// Task 2.2.8.5
+	cout << "Массив перечислений типа Color:" << endl << endl;
+	for (int i = 0; i < enumsCount; i++)
+	{
+		PrintColor(colors[i]);
+	}
+	PrintLine();
+
 	WeekdaysType weekdays[enumsCount];
 	weekdays[0] = Tuesday;
 	weekdays[1] = Wednesday;
@@ -142,6 +150,8 @@ void main()
 	delete event;
 	delete copyEvent;
 	PrintLine();
+
+	DemoEnums();
 	
 	system("pause");
 }
