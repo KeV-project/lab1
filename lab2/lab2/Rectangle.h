@@ -19,7 +19,9 @@ Rectangle* MakeRectangle();
 Rectangle* MakeRectangle(float length, float width, string color);
 void ReadRectangle(Rectangle& rectangle);
 void PrintRectangle(Rectangle& rectangle);
-void DemoReadAndPrintRectangles(int rectanglesCount);
+Rectangle** DemoReadAndPrintRectangles(int rectanglesCount);
 void ChangeRectangle(Rectangle* rectangle, float length,
 	float width, string color);
+void Exchange(Rectangle& rectangle1, Rectangle& rectangle2);
+void FindRectangle(Rectangle** rectangles, int rectanglesCount);
 void DemoRectangle();

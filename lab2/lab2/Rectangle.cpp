@@ -51,7 +51,7 @@ void PrintRectangle(Rectangle& rectangle)
 	cout << "Площадь: " << rectangle.Area << endl << endl;
 }
 
-void DemoReadAndPrintRectangles(int rectanglesCount)
+Rectangle** DemoReadAndPrintRectangles(int rectanglesCount)
 {
 	Rectangle** rectangles = new Rectangle * [rectanglesCount];
 	for (int i = 0; i < rectanglesCount; i++)
@@ -69,11 +69,7 @@ void DemoReadAndPrintRectangles(int rectanglesCount)
 		cout << "Прямоугольник №" << i + 1 << ":" << endl << endl;
 		PrintRectangle(*rectangles[i]);
 	}
-	for (int i = 0; i < rectanglesCount; i++)
-	{
-		delete rectangles[i];
-	}
-	delete[] rectangles;
+	return rectangles;
 }
 
 void ChangeRectangle(Rectangle* rectangle, float length,
@@ -114,6 +110,40 @@ void Exchange(Rectangle& rectangle1, Rectangle& rectangle2)
 	rectangle2.Area = rectangle.Area;
 }
 
+void FindRectangle(Rectangle** rectangles, int rectanglesCount)
+{
+	float maxLength = 0.0;
+	int maxLengthIndex = 0;
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		if (rectangles[i]->Length > maxLength)
+		{
+			maxLength = rectangles[i]->Length;
+			maxLengthIndex = i;
+		}
+	}
+	cout << "Прямоугольник с наибольшей длиной: ";
+	cout << rectangles[maxLengthIndex]->Length << " * ";
+	cout << rectangles[maxLengthIndex]->Width << endl << endl;
+}
+
+void FindMaxRectangle(Rectangle** rectangles, int rectanglesCount)
+{
+	float maxArea = 0.0;
+	int maxAreaIndex = 0;
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		if (rectangles[i]->Area > maxArea)
+		{
+			maxArea = rectangles[i]->Area;
+			maxAreaIndex = i;
+		}
+	}
+	cout << "Прямоугольник с наибольшей площадью: ";
+	cout << rectangles[maxAreaIndex]->Length << " * ";
+	cout << rectangles[maxAreaIndex]->Width << endl << endl;
+}
+
 void DemoRectangle()
 {
 	// Task 2.2.3.1
@@ -134,7 +164,7 @@ void DemoRectangle()
 	
 	// Task 2.2.3.3 / 2.2.5.3
 	const int rectanglesCount = 5;
-	DemoReadAndPrintRectangles(rectanglesCount);
+	Rectangle** rectangles = DemoReadAndPrintRectangles(rectanglesCount);
 	PrintLine();
 	
 	// Task 2.2.4.1
@@ -173,6 +203,16 @@ void DemoRectangle()
 	PrintRectangle(secondRectangle);
 	
 	PrintLine();
+
+	// Task 2.2.5.5
+	FindRectangle(rectangles, rectanglesCount);
+	PrintLine();
+
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		delete rectangles[i];
+	}
+	delete[] rectangles;
 }
 
 
