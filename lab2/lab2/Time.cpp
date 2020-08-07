@@ -45,6 +45,17 @@ void PrintTime(Time& event)
 	cout << "Секунда: " << event.Second << endl << endl;
 }
 
+void ChangeTime(Time* event, int year, int month, int day,
+	int hour, int minute, int second)
+{
+	event->Year = year;
+	event->Month = month;
+	event->Day = day;
+	event->Hour = hour;
+	event->Minute = minute;
+	event->Second = second;
+}
+
 void DemoTime()
 {
 	// Task 2.2.3.1
@@ -83,6 +94,26 @@ void DemoTime()
 		delete events[i];
 	}
 	delete[] events;
+
+	// Task 2.2.4.1
+	cout << "Работа с указателем на структуру:" << endl << endl;
+	Time* pFirstEvent = &firstEvent;
+	cout << "Прямоугольник firstEvent: " << endl << endl;
+	PrintTime(firstEvent);
+	cout << "Измененное событие firstEvent: " << endl << endl;
+	ChangeTime(pFirstEvent, 2020, 12, 10, 5, 30, 1);
+	PrintTime(*pFirstEvent);
+	PrintLine();
+
+	// Task 2.2.4.2
+	Time* pFirstEvent2 = &firstEvent;
+	cout << "Адрес переменной firstEvent: ";
+	cout << &firstEvent << endl << endl;
+	cout << "Адрес в указателе pFirstEvent: ";
+	cout << pFirstEvent << endl << endl;
+	cout << "Адрес в указателе pFirstEvent2: ";
+	cout << pFirstEvent2 << endl << endl;
+	PrintLine();
 }
 
 

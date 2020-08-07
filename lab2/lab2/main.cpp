@@ -16,7 +16,7 @@ void main()
     DemoSort();
     PrintLine();
 
-    //DemoRectangle();
+    DemoRectangle();
     DemoFlight();
     DemoFilm();
     DemoTime();

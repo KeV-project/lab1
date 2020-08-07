@@ -31,7 +31,6 @@ void ReadRectangle(Rectangle& rectangle)
 
 void PrintRectangle(Rectangle& rectangle)
 {
-	cout << "Прямоугольник:" << endl;
 	cout << "Длина: " << rectangle.Length << endl;
 	cout << "Ширина: " << rectangle.Width << endl;
 	cout << "Диагональ: " << rectangle.Diagonal << endl;
@@ -40,7 +39,7 @@ void PrintRectangle(Rectangle& rectangle)
 	cout << "Площадь: " << rectangle.Area << endl << endl;
 }
 
-void ChangeFields(Rectangle* rectangle, float length,
+void ChangeRectangle(Rectangle* rectangle, float length,
 	float width, string color)
 {
 	rectangle->Length = length;
@@ -97,7 +96,7 @@ void DemoRectangle()
 	cout << "Прямоугольник firstRectangle: " << endl << endl;
 	PrintRectangle(firstRectangle);
 	cout << "Измененный прямоугольник firstRectangle: " << endl << endl;
-	ChangeFields(pFirstRectangle, 111, 11, "коричневый");
+	ChangeRectangle(pFirstRectangle, 111, 11, "коричневый");
 	PrintRectangle(*pFirstRectangle);
 	PrintLine();
 	

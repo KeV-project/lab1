@@ -20,4 +20,6 @@ Time* MakeTime(int year, int month, int day,
 	int hour, int minute, int second);
 void ReadTime(Time& event);
 void PrintTime(Time& event);
+void ChangeTime(Time* event, int year, int month, int day,
+	int hour, int minute, int second);
 void DemoTime();

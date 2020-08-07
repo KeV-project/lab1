@@ -51,7 +51,7 @@ void PrintFlight(Flight& flight)
 	cout << flight.Passengers << endl << endl;
 }
 
-void ChangeFields(Flight* flight, string flightNumber,
+void ChangeFlight(Flight* flight, string flightNumber,
 	int planeNumber, string departure, string destination,
 	int duration, int distance, int passengers)
 {
@@ -94,6 +94,7 @@ void DemoFlight()
 	cout << "Массив рейсов:" << endl << endl;
 	for (int i = 0; i < flightsCount; i++)
 	{
+		cout << "Рейс №" << i + 1 << endl << endl;
 		PrintFlight(*flights[i]);
 	}
 	PrintLine();
@@ -109,7 +110,7 @@ void DemoFlight()
 	cout << "Рейс firstFlight: " << endl << endl;
 	PrintFlight(firstFlight);
 	cout << "Измененный рейс firstFlight: " << endl << endl;
-	ChangeFields(pFirstFlight, "5K47X", 3910, "Томск", "Санкт-Петербург", 455, 4298, 133);
+	ChangeFlight(pFirstFlight, "5K47X", 3910, "Томск", "Санкт-Петербург", 455, 4298, 133);
 	PrintFlight(*pFirstFlight);
 	PrintLine();
 

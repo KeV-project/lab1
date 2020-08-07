@@ -36,7 +36,7 @@ void ReadFilm(Film& film)
 	cout << "Введите рейтинг фильма(вещ. ч): ";
 	cin >> film.Rating;
 	cout << endl;
-	cout << "Введите бюджет фильмы(млн): ";
+	cout << "Введите бюджет фильмa(млн): ";
 	cin >> film.Budget;
 	cout << endl;
 	cout << "Введите имя режиссера: ";
@@ -59,7 +59,7 @@ void PrintFilm(Film& film)
 	cout << "В главной роли: " << film.MainRole << endl << endl;
 }
 
-void ChangeFields(Film* film, string title, int duration,
+void ChangeFilm(Film* film, string title, int duration,
 	int year, GenreType genre, float rating, float budget,
 	string director, string mainRole)
 {
@@ -80,7 +80,7 @@ void DemoFilm()
 	firstFilm.Title = "Focus";
 	firstFilm.Duration = 104;
 	firstFilm.Year = 2015;
-	//firstFilm.Genre = Drama;
+	firstFilm.Genre = Drama;
 	firstFilm.Rating = 8.2;
 	firstFilm.Budget = 50.1;
 	firstFilm.Director = "Glenn Ficarra, John Recua";
@@ -120,7 +120,7 @@ void DemoFilm()
 	cout << "Фильм firstFilm: " << endl << endl;
 	PrintFilm(firstFilm);
 	cout << "Измененный фильм firstFilm: " << endl << endl;
-	ChangeFields(pFirstFilm, "Остров Проклятых", 139, 2010,
+	ChangeFilm(pFirstFilm, "Остров Проклятых", 139, 2010,
 		Thriller, 8.5, 80, "Мартин Скорсезе", "Леонардо Ди Каприо");
 	PrintFilm(*pFirstFilm);
 	PrintLine();
