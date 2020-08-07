@@ -30,6 +30,7 @@
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="PhoneManufacturerType.cpp" />
     <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="SeasonType.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="WeekdaysType.cpp" />
   </ItemGroup>
@@ -44,6 +45,7 @@
     <ClInclude Include="Output.h" />
     <ClInclude Include="PhoneManufacturerType.h" />
     <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="SeasonType.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="WeekdaysType.h" />
   </ItemGroup>
