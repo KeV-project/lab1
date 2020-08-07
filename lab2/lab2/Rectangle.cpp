@@ -1,5 +1,17 @@
 #include "Rectangle.h"
 
+Rectangle* MakeRectangle()
+{
+	Rectangle* rectangle = new Rectangle();
+	rectangle->Length = 0.0;
+	rectangle->Width = 0.0;
+	rectangle->Diagonal = 0.0;
+	rectangle->Color = "";
+	rectangle->Perimeter = 0.0;
+	rectangle->Area = 0.0;
+	return rectangle;
+}
+
 Rectangle* MakeRectangle(float length, float width, string color)
 {
 	Rectangle* rectangle = new Rectangle();
@@ -39,6 +51,31 @@ void PrintRectangle(Rectangle& rectangle)
 	cout << "Площадь: " << rectangle.Area << endl << endl;
 }
 
+void DemoReadAndPrintRectangles(int rectanglesCount)
+{
+	Rectangle** rectangles = new Rectangle * [rectanglesCount];
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		rectangles[i] = MakeRectangle();
+	}
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		cout << "Прямоугольник №" << i + 1 << ":" << endl << endl;
+		ReadRectangle(*rectangles[i]);
+	}
+	cout << "Массив прямоугольников: " << endl << endl;
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		cout << "Прямоугольник №" << i + 1 << ":" << endl << endl;
+		PrintRectangle(*rectangles[i]);
+	}
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		delete rectangles[i];
+	}
+	delete[] rectangles;
+}
+
 void ChangeRectangle(Rectangle* rectangle, float length,
 	float width, string color)
 {
@@ -69,26 +106,10 @@ void DemoRectangle()
 	PrintRectangle(secondRectangle);
 	PrintLine();
 	
-	// Task 2.2.3.3
-	const int rectanglesCount = 3;
-	Rectangle** rectangles = new Rectangle * [rectanglesCount]
-	{
-		MakeRectangle(13.5, 10.0, "серый"),
-		MakeRectangle(15.3, 7.2, "красный"),
-		MakeRectangle(5.0, 3.5, "зеленый"),
-	};
-	cout << "Массив прямоугольников: " << endl << endl;
-	for (int i = 0; i < rectanglesCount; i++)
-	{
-		cout << "Прямоугольник №" << i + 1 << ":" << endl << endl;
-		PrintRectangle(*rectangles[i]);
-	}
+	// Task 2.2.3.3 / 2.2.5.3
+	const int rectanglesCount = 5;
+	DemoReadAndPrintRectangles(rectanglesCount);
 	PrintLine();
-	for (int i = 0; i < rectanglesCount; i++)
-	{
-		delete rectangles[i];
-	}
-	delete[] rectangles;
 	
 	// Task 2.2.4.1
 	cout << "Работа с указателем на структуру:" << endl << endl;
@@ -109,6 +130,7 @@ void DemoRectangle()
 	cout << "Адрес в указателе pFirstRectangle2: ";
 	cout << pFirstRectangle2 << endl << endl;
 	PrintLine();
+
 }
 
 

@@ -15,9 +15,11 @@ struct Rectangle
 	float Area;
 };
 
+Rectangle* MakeRectangle();
 Rectangle* MakeRectangle(float length, float width, string color);
 void ReadRectangle(Rectangle& rectangle);
 void PrintRectangle(Rectangle& rectangle);
+void DemoReadAndPrintRectangles(int rectanglesCount);
 void ChangeRectangle(Rectangle* rectangle, float length,
 	float width, string color);
 void DemoRectangle();
