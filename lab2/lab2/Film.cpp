@@ -15,6 +15,20 @@ Film* MakeFilm(string title, int duration, int year, GenreType genre,
 	return film;
 }
 
+Film* CopyFilm(Film& film)
+{
+	Film* copiedFilm = new Film();
+	copiedFilm->Title = film.Title;
+	copiedFilm->Duration = film.Duration;
+	copiedFilm->Year = film.Year;
+	copiedFilm->Genre = film.Genre;
+	copiedFilm->Rating = film.Rating;
+	copiedFilm->Budget = film.Budget;
+	copiedFilm->Director = film.Director;
+	copiedFilm->MainRole = film.MainRole;
+	return copiedFilm;
+}
+
 void ReadFilm(Film& film)
 {
 	cout << "¬ведите название фильмы: ";
