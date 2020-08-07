@@ -53,3 +53,16 @@ ColorType ReadColor()
 		return Purple;
 	}
 }
+
+int CountRed(ColorType* colors, int colorsCount)
+{
+	int count = 0;
+	for (int i = 0; i < colorsCount; i++)
+	{
+		if (colors[i] == Red)
+		{
+			count++;
+		}
+	}
+	return count;
+}

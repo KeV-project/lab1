@@ -16,3 +16,4 @@ enum ColorType
 
 void PrintColor(ColorType color);
 ColorType ReadColor();
+int CountRed(ColorType* colors, int colorsCount);

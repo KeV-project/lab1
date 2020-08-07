@@ -59,6 +59,11 @@ void DemoEnums()
 	PrintColor(color2);
 	PrintLine();
 
+	// Task 2.2.8.7
+	cout << "Красный цвет встречается в массиве ";
+	cout << CountRed(colors, enumsCount) << " раз(а)" << endl << endl;
+	PrintLine();
+
 	WeekdaysType weekdays[enumsCount];
 	weekdays[0] = Tuesday;
 	weekdays[1] = Wednesday;
