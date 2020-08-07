@@ -53,6 +53,12 @@ void DemoEnums()
 	}
 	PrintLine();
 
+	// Task 2.2.8.6
+	ColorType color2 = ReadColor();
+	cout << "Вы ввели:" << endl << endl;
+	PrintColor(color2);
+	PrintLine();
+
 	WeekdaysType weekdays[enumsCount];
 	weekdays[0] = Tuesday;
 	weekdays[1] = Wednesday;

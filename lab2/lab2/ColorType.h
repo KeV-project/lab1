@@ -15,3 +15,4 @@ enum ColorType
 };
 
 void PrintColor(ColorType color);
+ColorType ReadColor();
