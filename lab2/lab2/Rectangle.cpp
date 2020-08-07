@@ -88,6 +88,32 @@ void ChangeRectangle(Rectangle* rectangle, float length,
 	rectangle->Area = rectangle->Length * rectangle->Width;
 }
 
+void Exchange(Rectangle& rectangle1, Rectangle& rectangle2)
+{
+	Rectangle rectangle;
+
+	rectangle.Length = rectangle1.Length;
+	rectangle.Width = rectangle1.Width;
+	rectangle.Color = rectangle1.Color;
+	rectangle.Diagonal = rectangle1.Diagonal;
+	rectangle.Perimeter = rectangle1.Perimeter;
+	rectangle.Area = rectangle1.Area;
+
+	rectangle1.Length = rectangle2.Length;
+	rectangle1.Width = rectangle2.Width;
+	rectangle1.Color = rectangle2.Color;
+	rectangle1.Diagonal = rectangle2.Diagonal;
+	rectangle1.Perimeter = rectangle2.Perimeter;
+	rectangle1.Area = rectangle2.Area;
+
+	rectangle2.Length = rectangle.Length;
+	rectangle2.Width = rectangle.Width;
+	rectangle2.Color = rectangle.Color;
+	rectangle2.Diagonal = rectangle.Diagonal;
+	rectangle2.Perimeter = rectangle.Perimeter;
+	rectangle2.Area = rectangle.Area;
+}
+
 void DemoRectangle()
 {
 	// Task 2.2.3.1
@@ -130,7 +156,23 @@ void DemoRectangle()
 	cout << "Адрес в указателе pFirstRectangle2: ";
 	cout << pFirstRectangle2 << endl << endl;
 	PrintLine();
+	
+	// Task 2.2.5.4
+	cout << "Прямоугольник firstRectangle:" << endl << endl;
+	PrintRectangle(firstRectangle);
+	cout << "Прямоугольник secondRectangle:" << endl << endl;
+	PrintRectangle(secondRectangle);
 
+	Exchange(firstRectangle, secondRectangle);
+
+	cout << "Прямоугольник firstRectangle ";
+	cout << "после работы функции Exchange : " << endl << endl;
+	PrintRectangle(firstRectangle);
+	cout << "Прямоугольник secondRectangle ";
+	cout << "после работы функции Exchange : " << endl << endl;
+	PrintRectangle(secondRectangle);
+	
+	PrintLine();
 }
 
 
