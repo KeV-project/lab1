@@ -50,19 +50,28 @@ void DemoEnums()
 	for (int i = 0; i < enumsCount; i++)
 	{
 		PrintColor(colors[i]);
+		cout << endl;
 	}
 	PrintLine();
 
 	// Task 2.2.8.6
 	ColorType color2 = ReadColor();
-	cout << "Вы ввели:" << endl << endl;
+	cout << "Вы ввели: ";
 	PrintColor(color2);
+	cout << endl << endl;
 	PrintLine();
 
 	// Task 2.2.8.7
 	cout << "Красный цвет встречается в массиве ";
 	cout << CountRed(colors, enumsCount) << " раз(а)" << endl << endl;
 	PrintLine();
+
+	// Task 2.2.8.8
+	ColorType findedColor = ReadColor();
+	PrintColor(findedColor);
+	cout << " встречается в массиве ";
+	cout << CountColor(colors, enumsCount, findedColor);
+	cout << " раз(а)" << endl << endl;
 
 	WeekdaysType weekdays[enumsCount];
 	weekdays[0] = Tuesday;

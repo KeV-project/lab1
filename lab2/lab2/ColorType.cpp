@@ -5,25 +5,25 @@ void PrintColor(ColorType color)
 	switch (color)
 	{
 	case Red:
-		cout << "Красный цвет" << endl;
+		cout << "Красный цвет";
 		break;
 	case Orange:
-		cout << "Оранжевый цвет" << endl;
+		cout << "Оранжевый цвет";
 		break;
 	case Yellow:
-		cout << "Желтый цвет" << endl;
+		cout << "Желтый цвет";
 		break;
 	case Green:
-		cout << "Зеленый цвет" << endl;
+		cout << "Зеленый цвет";
 		break;
 	case Blue:
-		cout << "Голубой цвет" << endl;
+		cout << "Голубой цвет";
 		break;
 	case DarkBlue:
-		cout << "Синий цвет" << endl;
+		cout << "Синий цвет";
 		break;
 	case Purple:
-		cout << "Пурпурный цвет" << endl;
+		cout << "Пурпурный цвет";
 		break;
 	}
 }
@@ -56,13 +56,26 @@ ColorType ReadColor()
 
 int CountRed(ColorType* colors, int colorsCount)
 {
-	int count = 0;
+	int redCount = 0;
 	for (int i = 0; i < colorsCount; i++)
 	{
 		if (colors[i] == Red)
 		{
-			count++;
+			redCount++;
 		}
 	}
-	return count;
+	return redCount;
+}
+
+int CountColor(ColorType* colors, int colorsCount, ColorType findedColor)
+{
+	int colorCount = 0;
+	for (int i = 0; i < colorsCount; i++)
+	{
+		if (colors[i] == findedColor)
+		{
+			colorCount++;
+		}
+	}
+	return colorCount;
 }
