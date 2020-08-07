@@ -54,7 +54,6 @@ void ChangeFields(Rectangle* rectangle, float length,
 
 void DemoRectangle()
 {
-	
 	// Task 2.2.3.1
 	Rectangle firstRectangle;
 	firstRectangle.Length = 13.5;
@@ -63,7 +62,7 @@ void DemoRectangle()
 	firstRectangle.Color = "yellow";
 	firstRectangle.Perimeter = 41.6;
 	firstRectangle.Area = 98.55;
-
+	
 	// Task 2.2.3.2
 	Rectangle secondRectangle;
 	cout << "ПРЯМОУГОЛЬНИК" << endl << endl;
@@ -91,15 +90,25 @@ void DemoRectangle()
 		delete rectangles[i];
 	}
 	delete[] rectangles;
-
+	
 	// Task 2.2.4.1
-	Rectangle* pFirstRectangle = &firstRectangle;
 	cout << "Работа с указателем на структуру:" << endl << endl;
+	Rectangle* pFirstRectangle = &firstRectangle;
 	cout << "Прямоугольник firstRectangle: " << endl << endl;
 	PrintRectangle(firstRectangle);
 	cout << "Измененный прямоугольник firstRectangle: " << endl << endl;
 	ChangeFields(pFirstRectangle, 111, 11, "коричневый");
 	PrintRectangle(*pFirstRectangle);
+	PrintLine();
+	
+	// Task 2.2.4.2
+	Rectangle* pFirstRectangle2 = &firstRectangle;
+	cout << "Адрес переменной firstRectangle: ";
+	cout << &firstRectangle << endl << endl;
+	cout << "Адрес в указателе pFirstRectangle: ";
+	cout << pFirstRectangle << endl << endl;
+	cout << "Адрес в указателе pFirstRectangle2: ";
+	cout << pFirstRectangle2 << endl << endl;
 	PrintLine();
 }
 
