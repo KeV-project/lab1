@@ -208,6 +208,10 @@ void DemoRectangle()
 	FindRectangle(rectangles, rectanglesCount);
 	PrintLine();
 
+	// Task 2.2.5.6
+	FindMaxRectangle(rectangles, rectanglesCount);
+	PrintLine();
+
 	for (int i = 0; i < rectanglesCount; i++)
 	{
 		delete rectangles[i];
