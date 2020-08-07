@@ -28,6 +28,7 @@
     <ClCompile Include="GenreType.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Output.cpp" />
+    <ClCompile Include="PhoneManufacturerType.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="WeekdaysType.cpp" />
@@ -41,6 +42,7 @@
     <ClInclude Include="Flight.h" />
     <ClInclude Include="GenreType.h" />
     <ClInclude Include="Output.h" />
+    <ClInclude Include="PhoneManufacturerType.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="WeekdaysType.h" />
