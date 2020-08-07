@@ -13,6 +13,18 @@ Time* MakeTime(int year, int month, int day,
 	return time;
 }
 
+Time* CopyTime(Time& time)
+{
+	Time* copiedTime = new Time();
+	copiedTime->Year = time.Year;
+	copiedTime->Month = time.Month;
+	copiedTime->Day = time.Day;
+	copiedTime->Hour = time.Hour;
+	copiedTime->Minute = time.Minute;
+	copiedTime->Second = time.Second;
+	return copiedTime;
+}
+
 void ReadTime(Time& event)
 {
 	cout << "Год: ";
