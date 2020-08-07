@@ -24,6 +24,19 @@ Rectangle* MakeRectangle(float length, float width, string color)
 	return rectangle;
 }
 
+Rectangle* CopyRectangle(Rectangle& rectangle)
+{
+	Rectangle* copiedRectangle = new Rectangle();
+	copiedRectangle->Length = rectangle.Length;
+	copiedRectangle->Width = rectangle.Width;
+	copiedRectangle->Diagonal = rectangle.Diagonal;
+	copiedRectangle->Color = rectangle.Color;
+	copiedRectangle->Perimeter = rectangle.Perimeter;
+	copiedRectangle->Area = rectangle.Area;
+	return copiedRectangle;
+}
+
+
 void ReadRectangle(Rectangle& rectangle)
 {
 	cout << "¬ведите длину пр€моугольника(вещ. ч): ";
