@@ -59,6 +59,20 @@ void PrintFilm(Film& film)
 	cout << "В главной роли: " << film.MainRole << endl << endl;
 }
 
+void ChangeFields(Film* film, string title, int duration,
+	int year, GenreType genre, float rating, float budget,
+	string director, string mainRole)
+{
+	film->Title = title;
+	film->Duration = duration;
+	film->Year = year;
+	film->Genre = genre;
+	film->Rating = rating;
+	film->Budget = budget;
+	film->Director = director;
+	film->MainRole = mainRole;
+}
+
 void DemoFilm()
 {
 	// Task 2.2.3.1
@@ -99,4 +113,25 @@ void DemoFilm()
 		delete films[i];
 	}
 	delete[] films;
+
+	// Task 2.2.4.1
+	cout << "Работа с указателем на структуру:" << endl << endl;
+	Film* pFirstFilm = &firstFilm;
+	cout << "Фильм firstFilm: " << endl << endl;
+	PrintFilm(firstFilm);
+	cout << "Измененный фильм firstFilm: " << endl << endl;
+	ChangeFields(pFirstFilm, "Остров Проклятых", 139, 2010,
+		Thriller, 8.5, 80, "Мартин Скорсезе", "Леонардо Ди Каприо");
+	PrintFilm(*pFirstFilm);
+	PrintLine();
+
+	// Task 2.2.4.2
+	Film* pFirstFilm2 = &firstFilm;
+	cout << "Адрес переменной firstFilm: ";
+	cout << &firstFilm << endl << endl;
+	cout << "Адрес в указателе pFirstFilm: ";
+	cout << pFirstFilm << endl << endl;
+	cout << "Адрес в указателе pFirstFilm2: ";
+	cout << pFirstFilm2 << endl << endl;
+	PrintLine();
 }
