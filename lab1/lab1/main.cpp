@@ -499,7 +499,6 @@ void main()
 
     // Task 1.1.5.7 ///////////////////////////////////////////////////////////
     const int arraysCount = 3;
-    //TODO: Этот кусок я бы переписал и часть, которую под первым for-ом вынес бы в метод, код ниже +
     int* arraysCounts = new int[arraysCount] { 5, 8, 13 };
     for (int i = 0; i < arraysCount; i++)
     {
@@ -508,7 +507,6 @@ void main()
     delete[] arraysCounts;
     
     // Task 1.1.5.8 ///////////////////////////////////////////////////////////
-	//TODO: Ниже два дубля +
     PrintEnterArrayCounts(15);
     PrintEnterArrayCounts(20);
 
