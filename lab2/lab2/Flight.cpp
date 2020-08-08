@@ -54,7 +54,7 @@ void ReadFlight(Flight& flight)
 	cout << endl;
 }
 
-void PrintFlight(Flight& flight)
+void PrintFlight(const Flight& flight)
 {
 	cout << "Рейс № " << flight.FlightNumber << ": " << endl;
 	cout << "Номер самолета: " << flight.PlaneNumber << endl;
