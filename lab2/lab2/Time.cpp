@@ -48,7 +48,7 @@ void ReadTime(Time& event)
 	cout << endl;
 }
 
-void PrintTime(Time& event)
+void PrintTime(const Time& event)
 {
 	cout << "Ãמה: " << event.Year << endl;
 	cout << "Ìוסÿצ: " << event.Month << endl;

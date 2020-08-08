@@ -20,7 +20,7 @@ Time* MakeTime(const int year, const int month, const int day,
 	const int hour, const int minute, const int second);
 Time* CopyTime(const Time& time);
 void ReadTime(Time& event);
-void PrintTime(Time& event);
+void PrintTime(const Time& event);
 void ChangeTime(Time* event, int year, int month, int day,
 	int hour, int minute, int second);
 void DemoTime();
