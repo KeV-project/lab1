@@ -57,9 +57,26 @@ void DemoEnums()
 	PrintLine();
 
 	// Task 2.2.8.6
-	ColorType color2 = ReadColor();
-	cout << "¬ы ввели: ";
-	PrintColor(color2);
+	do
+	{
+		cout << "¬ведите цвет: " << endl << endl;
+		cout << "¬ведите число от 0 до 6 (0 Ц красный, 1 Ц оранжевый,";
+		cout << "\n2 Ц желтый, 3 Цзеленый, 4 Ц голубой, 5 Ц синий, 6 Ц фиолетовый): ";
+		int numColor = 0;
+		cin >> numColor;
+		cout << endl;
+		if (IsValue())
+		{
+			ColorType color2 = ReadColor(numColor);
+			cout << "¬ы ввели: ";
+			PrintColor(color2);
+			break;
+		}
+		else
+		{
+			cout << "¬ведено недопустимое значение";
+		}
+	} while (true);
 	cout << endl << endl;
 	PrintLine();
 
@@ -69,12 +86,31 @@ void DemoEnums()
 	PrintLine();
 
 	// Task 2.2.8.8
-	ColorType findedColor = ReadColor();
-	PrintColor(findedColor);
-	cout << " встречаетс€ в массиве ";
-	cout << CountColor(colors, enumsCount, findedColor);
-	cout << " раз(а)" << endl << endl;
-
+	do
+	{
+		cout << "¬ведите цвет: " << endl << endl;
+		cout << "¬ведите число от 0 до 6 (0 Ц красный, 1 Ц оранжевый,";
+		cout << "\n2 Ц желтый, 3 Цзеленый, 4 Ц голубой, 5 Ц синий, 6 Ц фиолетовый): ";
+		int findedNumColor = 0;
+		cin >> findedNumColor;
+		cout << endl;
+		if (IsValue())
+		{
+			ColorType findedColor = ReadColor(findedNumColor);
+			PrintColor(findedColor);
+			cout << " встречаетс€ в массиве ";
+			cout << CountColor(colors, enumsCount, findedColor);
+			cout << " раз(а)";
+			break;
+		}
+		else
+		{
+			cout << "¬ведено недопустимое значение";
+		}
+	} while (true);
+	cout << endl << endl;
+	PrintLine();
+	
 	WeekdaysType weekdays[enumsCount];
 	weekdays[0] = Tuesday;
 	weekdays[1] = Wednesday;

@@ -65,19 +65,57 @@ Rectangle* CopyRectangle(const Rectangle& rectangle)
 
 void ReadRectangle(Rectangle& rectangle)
 {
-	cout << "¬ведите длину пр€моугольника: ";
-	float length = 0.0;
-	cin >> length;
-	cout << endl;
-	SetLength(rectangle, length);
-	cout << "¬ведите ширину пр€моугольника: ";
-	float width = 0.0;
-	cin >> width;
-	cout << endl;
-	SetWidth(rectangle, width);
-	cout << "¬ведите цвет пр€моугольника: " << endl << endl;
-	SetColor(rectangle, ReadColor());
-	cout << endl;
+	do
+	{
+		cout << "¬ведите длину пр€моугольника: ";
+		float length = 0.0;
+		cin >> length;
+		cout << endl;
+		if (IsValue())
+		{
+			SetLength(rectangle, length);
+			break;
+		}
+		else
+		{
+			cout << "¬ведено недопустимое значение" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "¬ведите ширину пр€моугольника: ";
+		float width = 0.0;
+		cin >> width;
+		cout << endl;
+		if (IsValue())
+		{
+			SetWidth(rectangle, width);
+			break;
+		}
+		else
+		{
+			cout << "¬ведено недопустимое значение" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "¬ведите цвет пр€моугольника: " << endl << endl;
+		int numColor;
+		cout << "¬ведите число от 0 до 6 (0 Ц красный, 1 Ц оранжевый,";
+		cout << "\n2 Ц желтый, 3 Цзеленый, 4 Ц голубой, 5 Ц синий, 6 Ц фиолетовый): ";
+		cin >> numColor;
+		cout << endl;
+		if (IsValue())
+		{
+			SetColor(rectangle, ReadColor(numColor));
+			cout << endl;
+			break;
+		}
+		else
+		{
+			cout << "¬ведено недопустимое значение" << endl << endl;
+		}
+	} while (true);
 	rectangle.Diagonal = sqrt(pow(rectangle.Length, 2) 
 		+ pow(rectangle.Width, 2));
 	rectangle.Perimeter = (rectangle.Length + rectangle.Width) * 2;

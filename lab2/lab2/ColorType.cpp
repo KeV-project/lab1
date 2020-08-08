@@ -16,13 +16,9 @@ void PrintColor(const ColorType &color)
 	}
 }
 
-ColorType ReadColor()
+ColorType ReadColor(const int numColor)
 {
-	int numColor;
-	cout << "¬ведите число от 0 до 6 (0 Ц красный, 1 Ц оранжевый,";
-	cout << "\n2 Ц желтый, 3 Цзеленый, 4 Ц голубой, 5 Ц синий, 6 Ц фиолетовый): ";
-	cin >> numColor;
-	cout << endl;
+	
 	//TODO: Ќе обработан случай ввода отрицательного значени€ и больше 6 +
 	if (!IsValueInRange(numColor, 0, 6))
 	{
