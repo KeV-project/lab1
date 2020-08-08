@@ -21,7 +21,7 @@ Rectangle* MakeRectangle(const float length, const float width,
 Rectangle* CopyRectangle(const Rectangle& rectangle);
 void ReadRectangle(Rectangle& rectangle);
 void PrintRectangle(const Rectangle& rectangle);
-Rectangle** DemoReadAndPrintRectangles(int rectanglesCount);
+Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount);
 void ChangeRectangle(Rectangle* rectangle, float length,
 	float width, string color);
 void Exchange(Rectangle& rectangle1, Rectangle& rectangle2);

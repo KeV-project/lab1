@@ -66,8 +66,8 @@ void PrintRectangle(const Rectangle& rectangle)
 	cout << "Площадь: " << rectangle.Area << endl << endl;
 }
 
-//TODO: Сигнатура
-Rectangle** DemoReadAndPrintRectangles(int rectanglesCount)
+//TODO: Сигнатура +
+Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount)
 {
 	Rectangle** rectangles = new Rectangle * [rectanglesCount];
 	for (int i = 0; i < rectanglesCount; i++)
