@@ -88,36 +88,102 @@ Time* CopyTime(const Time& event)
 
 void ReadTime(Time& event)
 {
-	cout << "Год: ";
-	int year = 0;
-	cin >> year;
-	cout << endl;
-	SetYear(event, year);
-	cout << "Месяц: ";
-	int month = 0;
-	cin >> month;
-	cout << endl;
-	SetMonth(event, month);
-	cout << "День: ";
-	int day = 0;
-	cin >> day;
-	cout << endl;
-	SetDay(event, day);
-	cout << "Час: ";
-	int hour = 0;
-	cin >> hour;
-	cout << endl;
-	SetHour(event, hour);
-	cout << "Минута: ";
-	int minute = 0;
-	cin >> minute;
-	cout << endl;
-	SetMinute(event, minute);
-	cout << "Секунда: ";
-	int second = 0;
-	cin >> second;
-	cout << endl;
-	SetSecond(event, second);
+	do
+	{
+		cout << "Год: ";
+		int year = 0;
+		cin >> year;
+		cout << endl;
+		if (IsValue())
+		{
+			SetYear(event, year);
+			break;
+		}
+		else
+		{
+			cout << "Введено некорректное значение" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "Месяц: ";
+		int month = 0;
+		cin >> month;
+		cout << endl;
+		if (IsValue())
+		{
+			SetMonth(event, month);
+			break;
+		}
+		else
+		{
+			cout << "Введено некорректное значение" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "День: ";
+		int day = 0;
+		cin >> day;
+		cout << endl;
+		if (IsValue())
+		{
+			SetDay(event, day);
+			break;
+		}
+		else
+		{
+			cout << "Введено некорректное значение" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "Час: ";
+		int hour = 0;
+		cin >> hour;
+		cout << endl;
+		if (IsValue())
+		{
+			SetHour(event, hour);
+			break;
+		}
+		else
+		{
+			cout << "Введено некорректное значение" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "Минута: ";
+		int minute = 0;
+		cin >> minute;
+		cout << endl;
+		if (IsValue())
+		{
+			SetMinute(event, minute);
+			break;
+		}
+		else
+		{
+			cout << "Введено некорректное значение" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "Секунда: ";
+		int second = 0;
+		cin >> second;
+		cout << endl;
+		if (IsValue())
+		{
+			SetSecond(event, second);
+			break;
+		}
+		else
+		{
+			cout << "Введено некорректное значение" << endl << endl;
+		}
+	} while (true);
 }
 
 void PrintTime(const Time& event)
