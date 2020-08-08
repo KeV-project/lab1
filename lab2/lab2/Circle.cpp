@@ -1,10 +1,10 @@
 #include "Circle.h"
 
-//TODO: ќпечатка
+//TODO: ќпечатка +
 //TODO: ѕохорошему - везде, где значение не измен€етс€ в сигнатере правильнее писать const
 //TODO: “.к. строка может оказатьс€ достаточно большой дл€ передачи - правильнее передавать еЄ по ссылке, чтобы избежать копировани€
 //TODO: ƒальше везде буду писать "—игнатура" чтобы не повтор€тьс€
-Circle* MakeCercle(const double x, const double y, const double radius, string color)
+Circle* MakeCircle(const double x, const double y, const double radius, string color)
 {
 	Circle* circle = new Circle();
 	circle->X = x;
@@ -26,9 +26,9 @@ Circle* CopyCircle(Circle& circle)
 
 void DemoCircle()
 {
-	Circle* circle1 = MakeCercle(5.0, 7.0, 7.5, "Red");
-	Circle* circle2 = MakeCercle(2.0, -12.0, 12.75, "Green");
-	Circle* circle3 = MakeCercle(-10.0, 10.0, 1.45, "Blue");
+	Circle* circle1 = MakeCircle(5.0, 7.0, 7.5, "Red");
+	Circle* circle2 = MakeCircle(2.0, -12.0, 12.75, "Green");
+	Circle* circle3 = MakeCircle(-10.0, 10.0, 1.45, "Blue");
 
 	Circle* copiedCircle1(circle1);
 	Circle* copiedCircle2(circle2);
