@@ -26,7 +26,7 @@ Rectangle* MakeRectangle(const float length, const float width,
 	return rectangle;
 }
 
-Rectangle* CopyRectangle(Rectangle& rectangle)
+Rectangle* CopyRectangle(const Rectangle& rectangle)
 {
 	Rectangle* copiedRectangle = new Rectangle();
 	copiedRectangle->Length = rectangle.Length;
