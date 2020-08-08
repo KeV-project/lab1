@@ -1,51 +1,123 @@
 #include "Time.h"
 
+void SetYear(Time& event, const int year)
+{
+	if (year <= 0)
+	{
+		throw exception("Пле год не может быть задано" 
+			"числом меньше или равным 0");
+	}
+	event.Year = year;
+}
+
+void SetMonth(Time& event, const int month)
+{
+	if (month < 1 || month > 12)
+	{
+		throw exception("Поле месяц должно быть"
+			"числом в промежутке [1, 12]");
+	}
+	event.Month = month;
+}
+
+void SetDay(Time& event, const int day)
+{
+	if (day < 1 || day > 31)
+	{
+		throw exception("Поле день должно быть"
+			"числом в промежутке [1, 31]");
+	}
+	event.Day = day;
+}
+
+void SetHour(Time& event, const int hour)
+{
+	if (hour < 0 || hour > 23)
+	{
+		throw exception("Поле час должно быть"
+			"числом в промежутке [0, 23]");
+	}
+	event.Hour = hour;
+}
+
+void SetMinute(Time& event, const int minute)
+{
+	if (minute < 0 || minute > 59)
+	{
+		throw exception("Поле день должно быть"
+			"числом в промежутке [0, 59]");
+	}
+	event.Minute = minute;
+}
+
+void SetSecond(Time& event, const int second)
+{
+	if (second < 0 || second > 59)
+	{
+		throw exception("Поле секунда должно быть"
+			"числом в промежутке [0, 59]");
+	}
+	event.Second = second;
+}
+
 //TODO: Сигнатура +
 Time* MakeTime(const int year, const int month, const int day,
 	const int hour, const int minute, const int second)
 {
-	Time* time = new Time();
-	time->Year = year;
-	time->Month = month;
-	time->Day = day;
-	time->Hour = hour;
-	time->Minute = minute;
-	time->Second = second;
-	return time;
+	Time* event = new Time();
+	SetYear(*event, year);
+	SetMonth(*event, month);
+	SetDay(*event, day);
+	SetHour(*event, hour);
+	SetMinute(*event, minute);
+	SetSecond(*event, second);
+	return event;
 }
 
-Time* CopyTime(const Time& time)
+Time* CopyTime(const Time& event)
 {
 	Time* copiedTime = new Time();
-	copiedTime->Year = time.Year;
-	copiedTime->Month = time.Month;
-	copiedTime->Day = time.Day;
-	copiedTime->Hour = time.Hour;
-	copiedTime->Minute = time.Minute;
-	copiedTime->Second = time.Second;
+	copiedTime->Year = event.Year;
+	copiedTime->Month = event.Month;
+	copiedTime->Day = event.Day;
+	copiedTime->Hour = event.Hour;
+	copiedTime->Minute = event.Minute;
+	copiedTime->Second = event.Second;
 	return copiedTime;
 }
 
 void ReadTime(Time& event)
 {
 	cout << "Год: ";
-	cin >> event.Year;
+	int year = 0;
+	cin >> year;
 	cout << endl;
+	SetYear(event, year);
 	cout << "Месяц: ";
-	cin >> event.Month;
+	int month = 0;
+	cin >> month;
 	cout << endl;
+	SetMonth(event, month);
 	cout << "День: ";
-	cin >> event.Day;
+	int day = 0;
+	cin >> day;
 	cout << endl;
+	SetDay(event, day);
 	cout << "Час: ";
-	cin >> event.Hour;
+	int hour = 0;
+	cin >> hour;
 	cout << endl;
+	SetHour(event, hour);
 	cout << "Минута: ";
-	cin >> event.Minute;
+	int minute = 0;
+	cin >> minute;
 	cout << endl;
+	SetMinute(event, minute);
 	cout << "Секунда: ";
-	cin >> event.Second;
+	int second = 0;
+	cin >> second;
 	cout << endl;
+	SetSecond(event, second);
 }
 
 void PrintTime(const Time& event)
@@ -62,25 +134,25 @@ void PrintTime(const Time& event)
 void ChangeTime(Time* event, const int year, const int month,
 	const int day, const int hour, const int minute, const int second)
 {
-	//TODO: Нет никаких проверок на переданные значения, вероятно нельзя передать 0 и больше 12 в month и т.д.
-	event->Year = year;
-	event->Month = month;
-	event->Day = day;
-	event->Hour = hour;
-	event->Minute = minute;
-	event->Second = second;
+	//TODO: Нет никаких проверок на переданные значения, вероятно нельзя передать 0 и больше 12 в month и т.д. +
+	SetYear(*event, year);
+	SetMonth(*event, month);
+	SetDay(*event, day);
+	SetHour(*event, hour);
+	SetMinute(*event, minute);
+	SetSecond(*event, second);
 }
 
 void DemoTime()
 {
 	// Task 2.2.3.1
 	Time firstEvent;
-	firstEvent.Year = 2003;
-	firstEvent.Month = 10;
-	firstEvent.Day = 13;
-	firstEvent.Hour = 22;
-	firstEvent.Minute = 54;
-	firstEvent.Second = 11;
+	SetYear(firstEvent, 2005);
+	SetMonth(firstEvent, 12);
+	SetDay(firstEvent, 5);
+	SetHour(firstEvent, 13);
+	SetMinute(firstEvent, 23);
+	SetSecond(firstEvent, 17);
 
 	// Task 2.2.3.2
 	Time secondEvent;

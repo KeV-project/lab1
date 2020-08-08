@@ -123,8 +123,8 @@ void main()
     //DemoSort();
     //PrintLine();
 
-   // DemoRectangle();
-    //DemoFlight();
+    DemoRectangle();
+    DemoFlight();
     DemoFilm();
     DemoTime();
 	
