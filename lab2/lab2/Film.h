@@ -26,9 +26,11 @@ Film* MakeFilm(const string& title, const int duration, const int year,
 Film* CopyFilm(const Film& film);
 void ReadFilm(Film& film);
 void PrintFilm(const Film& film);
-void ChangeFilm(Film* film, string title, int duration,
-	int year, GenreType genre, float rating, float budget,
-	string director, string mainRole);
+void ChangeFilm(Film* film, const string& title,
+	const int duration, const int year,
+	const GenreType& genre, const float rating,
+	const float budget, const string& director,
+	const string& mainRole);
 int CountMoviesByGenre(Film** films, int filmsCount, GenreType findedGenre);
 Film* FindBestGenreMovie(Film** films, int filmsCount, GenreType findGenre);
 void DemoMovieWithGenre();

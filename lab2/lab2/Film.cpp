@@ -75,10 +75,12 @@ void PrintFilm(const Film& film)
 	cout << "В главной роли: " << film.MainRole << endl << endl;
 }
 
-//TODO: Сигнатура
-void ChangeFilm(Film* film, string title, int duration,
-	int year, GenreType genre, float rating, float budget,
-	string director, string mainRole)
+//TODO: Сигнатура +
+void ChangeFilm(Film* film, const string& title,
+	const int duration, const int year, 
+	const GenreType& genre, const float rating, 
+	const float budget, const string &director, 
+	const string& mainRole)
 {
 	film->Title = title;
 	film->Duration = duration;
