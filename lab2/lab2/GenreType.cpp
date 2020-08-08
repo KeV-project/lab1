@@ -1,31 +1,19 @@
 #include "GenreType.h"
 
-//TODO: Сигнатура
+//TODO: Сигнатура +
 void ReadGenre(const int numGenre, GenreType& filmsGenre)
 {
 	//TODO: Не обработаны крайние случаи - меньше нуля и больше 5
 	
 	switch (numGenre)
 	{
-		//TODO: RSDN
-	case 0:
-		filmsGenre = Comedy;
-		break;
-	case 1:
-		filmsGenre = Drama;
-		break;
-	case 2:
-		filmsGenre = Thriller;
-		break;
-	case 3:
-		filmsGenre = Action;
-		break;
-	case 4:
-		filmsGenre = Horror;
-		break;
-	case 5:
-		filmsGenre = Blockbuster;
-		break;
+		//TODO: RSDN +
+	case 0: filmsGenre = Comedy;      break;
+	case 1: filmsGenre = Drama;       break;
+	case 2: filmsGenre = Thriller;    break;
+	case 3: filmsGenre = Action;      break;
+	case 4: filmsGenre = Horror;      break;
+	case 5: filmsGenre = Blockbuster; break;
 	}
 }
 
