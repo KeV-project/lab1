@@ -1,19 +1,76 @@
 #include "Film.h"
 
+void SetTitle(Film& film, const string& title)
+{
+	film.Title = title;
+}
+
+void SetDuration(Film& film, const int duration)
+{
+	if (duration <= 0)
+	{
+		throw exception("Продолжительность фильма"
+			"должна быть больше 0 минут");
+	}
+	film.Duration = duration;
+}
+
+void SetYear(Film& film, const int year)
+{
+	if (year <= 0)
+	{
+		throw exception("Год не может быть числом меньше или равным 0");
+	}
+	film.Year = year;
+}
+
+void SetGenre(Film& film, const GenreType& genre)
+{
+	film.Genre = genre;
+}
+
+void SetRating(Film& film, const float rating)
+{
+	if (rating < 0.0)
+	{
+		throw exception("Рейтинг не может быть меньше 0");
+	}
+	film.Rating = rating;
+}
+
+void SetBudget(Film& film, const int budget)
+{
+	if (budget < 0)
+	{
+		throw exception("Бюдет не может быть отрицательным числом");
+	}
+	film.Budget = budget;
+}
+
+void SetDirector(Film& film, const string& director)
+{
+	film.Director = director;
+}
+
+void SetMainRole(Film& film, const string& mainRole)
+{
+	film.MainRole = mainRole;
+}
+
 //TODO: Сигнатура +
 Film* MakeFilm(const string &title, const int duration, const int year,
-	const GenreType &genre, const float rating, const float budget,
+	const GenreType &genre, const float rating, const int budget,
 	const string &director, const string &mainRole)
 {
 	Film* film = new Film();
-	film->Title = title;
-	film->Duration = duration;
-	film->Year = year;
-	film->Genre = genre;
-	film->Rating = rating;
-	film->Budget = budget;
-	film->Director = director;
-	film->MainRole = mainRole;
+	SetTitle(*film, title);
+	SetDuration(*film, duration);
+	SetYear(*film, year);
+	SetGenre(*film, genre);
+	SetRating(*film, rating);
+	SetBudget(*film, budget);
+	SetDirector(*film, director);
+	SetMainRole(*film, mainRole);
 	return film;
 }
 
@@ -34,33 +91,43 @@ Film* CopyFilm(const Film& film)
 void ReadFilm(Film& film)
 {
 	cout << "Введите название фильма: ";
-	cin >> film.Title;
+	string title = "";
+	cin >> title;
 	cout << endl;
+	SetTitle(film, title);
 	cout << "Введите продолжительность фильма(мин): ";
-	cin >> film.Duration;
+	int duration = 0;
+	cin >> duration;
 	cout << endl;
+	SetDuration(film, duration);
 	cout << "Введите год выпуска фильмы: ";
-	cin >> film.Year;
+	int year = 0;
+	cin >> year;
 	cout << endl;
-	int numGenre;
-	cout << "Введите жанр фильма";
-	cout << "(0 - Комедия, 1 - Драма, 2 - Триллер, " << endl;
-	cout << "3 - Экшен, 4 - Фильм ужасов, 5 - Блокбастер): ";
-	cin >> numGenre;
-	ReadGenre(numGenre, film.Genre);
+	SetYear(film, year);
+	cout << "Введите жанр:" << endl;
+	film.Genre = ReadGenre();
 	cout << endl;
-	cout << "Введите рейтинг фильма(вещ. ч): ";
-	cin >> film.Rating;
+	cout << "Введите рейтинг фильма: ";
+	float rating = 0.0;
+	cin >> rating;
 	cout << endl;
-	cout << "Введите бюджет фильмa(млн): ";
-	cin >> film.Budget;
+	SetRating(film, rating);
+	cout << "Введите бюджет фильмa: ";
+	int budget = 0;
+	cin >> budget;
 	cout << endl;
+	SetBudget(film, budget);
 	cout << "Введите имя режиссера: ";
-	cin >> film.Director;
+	string director = "";
+	cin >> director;
 	cout << endl;
+	SetDirector(film, director);
 	cout << "Введите актера, играющего главную роль: ";
-	cin >> film.MainRole;
+	string mainRole = "";
+	cin >> mainRole;
 	cout << endl;
+	SetMainRole(film, mainRole);
 }
 
 void PrintFilm(const Film& film)
@@ -79,17 +146,17 @@ void PrintFilm(const Film& film)
 void ChangeFilm(Film* film, const string& title,
 	const int duration, const int year, 
 	const GenreType& genre, const float rating, 
-	const float budget, const string &director, 
+	const int budget, const string &director, 
 	const string& mainRole)
 {
-	film->Title = title;
-	film->Duration = duration;
-	film->Year = year;
-	film->Genre = genre;
-	film->Rating = rating;
-	film->Budget = budget;
-	film->Director = director;
-	film->MainRole = mainRole;
+	SetTitle(*film, title);
+	SetDuration(*film, duration);
+	SetYear(*film, year);
+	SetGenre(*film, genre);
+	SetRating(*film, rating);
+	SetBudget(*film, budget);
+	SetDirector(*film, director);
+	SetMainRole(*film, mainRole);
 }
 
 //TODO: Сигнатура +
@@ -128,14 +195,14 @@ void DemoMovieWithGenre()
 {
 	// Task 2.2.9.2
 	Film film;
-	film.Title = "Focus";
-	film.Duration = 104;
-	film.Year = 2015;
-	film.Genre = Drama;
-	film.Rating = 8.2;
-	film.Budget = 50.1;
-	film.Director = "Glenn Ficarra, John Recua";
-	film.MainRole = "Will Smith";
+	SetTitle(film, "Focus");
+	SetDuration(film, 104);
+	SetYear(film, 2015);
+	SetGenre(film, Drama);
+	SetRating(film, 8.2);
+	SetBudget(film, 50100000);
+	SetDirector(film, "Glenn Ficarra, John Recua");
+	SetMainRole(film, "Will Smith");
 
 	// Task 2.2.9.3
 	Film* film2 = MakeFilm("Джентельмены", 113, 2019, Thriller, 8.6,
@@ -206,14 +273,14 @@ void DemoFilm()
 {
 	// Task 2.2.3.1
 	Film firstFilm;
-	firstFilm.Title = "Focus";
-	firstFilm.Duration = 104;
-	firstFilm.Year = 2015;
-	firstFilm.Genre = Drama;
-	firstFilm.Rating = 8.2;
-	firstFilm.Budget = 50100000;
-	firstFilm.Director = "Glenn Ficarra, John Recua";
-	firstFilm.MainRole = "Will Smith";
+	SetTitle(firstFilm, "Focus");
+	SetDuration(firstFilm, 104);
+	SetYear(firstFilm, 2015);
+	SetGenre(firstFilm, Drama);
+	SetRating(firstFilm, 8.2);
+	SetBudget(firstFilm, 50100000);
+	SetDirector(firstFilm, "Glenn Ficarra, John Recua");
+	SetMainRole(firstFilm, "Will Smith");
 
 	// Task 2.2.3.2
 	Film secondFilm;
@@ -226,7 +293,7 @@ void DemoFilm()
 	const int filmsCount = 3;
 	Film** films = new Film * [filmsCount]
 	{
-		MakeFilm("Время", 109, 2011, Thriller, 7.3, 40,
+		MakeFilm("Время", 109, 2011, Thriller, 7.3, 40000000,
 			"Эндрю Никкол", "Джастин Тимберлейк"),
 		MakeFilm("Я - легенда", 115, 2007, Horror, 7.9, 150000000,
 			"Фрэнсис Лоуренс", "Уилл Смит"),

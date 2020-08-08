@@ -124,7 +124,7 @@ void main()
     //PrintLine();
 
    // DemoRectangle();
-    DemoFlight();
+    //DemoFlight();
     DemoFilm();
     DemoTime();
 	

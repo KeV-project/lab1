@@ -14,5 +14,5 @@ enum GenreType
 	Blockbuster
 };
 
-void ReadGenre(const int numGenre, GenreType& filmsGenre);
+GenreType ReadGenre();
 string PrintGenre(const GenreType& filmsGenre);
