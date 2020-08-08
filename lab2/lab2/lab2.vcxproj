@@ -22,17 +22,13 @@
     <ClCompile Include="CatchExeption.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="ColorType.cpp" />
-    <ClCompile Include="EducationFormType.cpp" />
     <ClCompile Include="Film.cpp" />
     <ClCompile Include="Flight.cpp" />
     <ClCompile Include="GenreType.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Output.cpp" />
-    <ClCompile Include="PhoneManufacturerType.cpp" />
     <ClCompile Include="Rectangle.cpp" />
-    <ClCompile Include="SeasonType.cpp" />
     <ClCompile Include="Time.cpp" />
-    <ClCompile Include="WeekdaysType.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CatchExeption.h" />
