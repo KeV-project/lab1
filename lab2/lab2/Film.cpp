@@ -222,7 +222,8 @@ void ChangeFilm(Film* film, const string& title,
 }
 
 //TODO: Сигнатура +
-int CountMoviesByGenre(Film** films, const int filmsCount, const GenreType& findedGenre)
+int CountMoviesByGenre(Film** films, const int filmsCount,
+	const GenreType& findedGenre)
 {
 	int genreCount = 0;
 	for (int i = 0; i < filmsCount; i++)
@@ -235,7 +236,8 @@ int CountMoviesByGenre(Film** films, const int filmsCount, const GenreType& find
 	return genreCount;
 }
 
-Film* FindBestGenreMovie(Film** films, const int filmsCount, const GenreType& findGenre)
+Film* FindBestGenreMovie(Film** films, const int filmsCount,
+	const GenreType& findGenre)
 {
 	float maxRating = 0;
 	Film* maxRatingFilm = nullptr;

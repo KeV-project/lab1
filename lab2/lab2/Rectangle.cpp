@@ -102,7 +102,8 @@ void ReadRectangle(Rectangle& rectangle)
 		cout << "¬ведите цвет пр€моугольника: " << endl << endl;
 		int numColor;
 		cout << "¬ведите число от 0 до 6 (0 Ц красный, 1 Ц оранжевый,";
-		cout << "\n2 Ц желтый, 3 Цзеленый, 4 Ц голубой, 5 Ц синий, 6 Ц фиолетовый): ";
+		cout << "\n2 Ц желтый, 3 Цзеленый, 4 Ц голубой, ";
+		cout << "5 Ц синий, 6 Ц фиолетовый): ";
 		cin >> numColor;
 		cout << endl;
 		if (IsValue())

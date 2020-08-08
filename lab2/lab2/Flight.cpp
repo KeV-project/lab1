@@ -53,8 +53,9 @@ void SetPassengers(Flight& flight, const int passengers)
 
 //TODO: Сигнатура +
 Flight* MakeFlight(const string& flightNumber, const int planeNumber,
-	const string& departure, const string& destination, const int durationInMinutes,
-	const int distanceInMeters, const int passengers)
+	const string& departure, const string& destination,
+	const int durationInMinutes, const int distanceInMeters,
+	const int passengers)
 {
 	Flight* flight = new Flight();
 	SetFlightNumber(*flight, flightNumber);
@@ -221,7 +222,8 @@ void FindShortestFlight(Flight** flights, const int flightsCount)
 	cout << "Рейс с наименьшим временем перелета:" << endl << endl;
 	cout << "Рейс " << flights[minDurationIndex]->Departure;
 	cout << " - " << flights[minDurationIndex]->Destination;
-	cout << " находится в полете " << flights[minDurationIndex]->DurationInMinutes;
+	cout << " находится в полете ";
+	cout << flights[minDurationIndex]->DurationInMinutes;
 	cout << " минут" << endl;
 	cout << "Номер самолета: " << flights[minDurationIndex]->PlaneNumber;
 	cout << ", на борту " << flights[minDurationIndex]->Passengers;

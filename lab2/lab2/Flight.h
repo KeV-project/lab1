@@ -27,8 +27,9 @@ void SetDistanceInMeters(Flight& flight, const int distanceInMeters);
 void SetPassengers(Flight& flight, const int passengers);
 
 Flight* MakeFlight(const string& flightNumber, const int planeNumber,
-	const string& departure, const string& destination, const int durationInMinutes,
-	const int distanceInMeters, const int passengers);
+	const string& departure, const string& destination, 
+	const int durationInMinutes, const int distanceInMeters,
+	const int passengers);
 
 Flight* CopyFlight(const Flight& flight);
 void ReadFlight(Flight& flight);

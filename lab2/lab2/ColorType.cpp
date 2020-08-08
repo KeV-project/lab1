@@ -52,7 +52,8 @@ int CountRed(ColorType* colors, const int colorsCount)
 }
 
 //TODO: Сигнатура +
-int CountColor(ColorType* colors, const int colorsCount, ColorType &findedColor)
+int CountColor(ColorType* colors, const int colorsCount,
+	ColorType &findedColor)
 {
 	int colorCount = 0;
 	for (int i = 0; i < colorsCount; i++)
