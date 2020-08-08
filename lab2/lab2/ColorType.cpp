@@ -1,7 +1,7 @@
 #include "ColorType.h"
 
-//TODO: Сигнатура
-void PrintColor(ColorType color)
+//TODO: Сигнатура +
+void PrintColor(ColorType &color)
 {
 	switch (color)
 	{

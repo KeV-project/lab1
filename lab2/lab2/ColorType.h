@@ -14,7 +14,7 @@ enum ColorType
 	Purple
 };
 
-void PrintColor(ColorType color);
+void PrintColor(ColorType &color);
 ColorType ReadColor();
 int CountRed(ColorType* colors, int colorsCount);
 int CountColor(ColorType* colors, int colorsCount, ColorType findedColor);
