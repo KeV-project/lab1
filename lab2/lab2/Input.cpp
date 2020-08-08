@@ -8,3 +8,17 @@ bool IsValueInRange(const int value, const int minLimit, const int maxLimit)
 	}
 	return true;
 }
+
+bool IsValue()
+{
+	if (!(cin.get() == (int)'\n'))
+	{
+		cin.clear();
+		cin.ignore(32767, '\n');
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}

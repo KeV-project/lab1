@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Input.h"
 #include "Output.h"
 #include "DemoExñeption.h"
 #include "Rectangle.h"

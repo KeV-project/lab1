@@ -4,3 +4,4 @@
 using namespace std;
 
 bool IsValueInRange(const int value, const int minLimit, const int maxLimit);
+bool IsValue();
