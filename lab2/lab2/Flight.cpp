@@ -97,8 +97,8 @@ void DemoDynamicFlight()
 	delete pFlight;
 }
 
-//TODO: Сигнатура
-void FindShortestFlight(Flight** flights, int flightsCount)
+//TODO: Сигнатура +
+void FindShortestFlight(Flight** flights, const int flightsCount)
 {
 	int minDuration = flights[0]->Duration;
 	int minDurationIndex = 0;

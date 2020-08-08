@@ -33,6 +33,6 @@ void ChangeFlight(Flight* flight, const string& flightNumber,
 	const string& destination, const int duration,
 	const int distance, const int passengers);
 void DemoDynamicFlight();
-void FindShortestFlight(Flight** flights, int flightsCize);
+void FindShortestFlight(Flight** flights, const int flightsCount);
 void DemoDynamicFlights();
 void DemoFlight();
