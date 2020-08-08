@@ -17,7 +17,7 @@ Film* MakeFilm(const string &title, const int duration, const int year,
 	return film;
 }
 
-Film* CopyFilm(Film& film)
+Film* CopyFilm(const Film& film)
 {
 	Film* copiedFilm = new Film();
 	copiedFilm->Title = film.Title;
