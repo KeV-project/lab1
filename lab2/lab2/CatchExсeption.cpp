@@ -4,9 +4,9 @@
 
 using namespace std;
 
-//TODO: int to const?
+//TODO: int to const? +
 // Сортирует массив вещественных чисел
-void Sort(double* values, int valuesCount)
+void Sort(double* values, const int valuesCount)
 {
     if (valuesCount < 0)
     {
