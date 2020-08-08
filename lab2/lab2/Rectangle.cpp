@@ -88,9 +88,9 @@ Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount)
 	return rectangles;
 }
 
-//TODO: Сигнатура
-void ChangeRectangle(Rectangle* rectangle, float length,
-	float width, string color)
+//TODO: Сигнатура +
+void ChangeRectangle(Rectangle* rectangle, const float length,
+	const float width, const string& color)
 {
 	rectangle->Length = length;
 	rectangle->Width = width;
