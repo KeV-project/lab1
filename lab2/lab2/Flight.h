@@ -28,9 +28,10 @@ Flight* MakeFlight(const string& flightNumber, const int planeNumber,
 Flight* CopyFlight(const Flight& flight);
 void ReadFlight(Flight& flight);
 void PrintFlight(const Flight& flight);
-void ChangeFlight(Flight* flight, string flightNumber,
-	int planeNumber, string departure, string destination,
-	int duration, int distance, int passengers);
+void ChangeFlight(Flight* flight, const string& flightNumber,
+	const int planeNumber, const string& departure,
+	const string& destination, const int duration,
+	const int distance, const int passengers);
 void DemoDynamicFlight();
 void FindShortestFlight(Flight** flights, int flightsCize);
 void DemoDynamicFlights();

@@ -66,10 +66,11 @@ void PrintFlight(const Flight& flight)
 	cout << flight.Passengers << endl << endl;
 }
 
-//TODO: Сигнатура
-void ChangeFlight(Flight* flight, string flightNumber,
-	int planeNumber, string departure, string destination,
-	int duration, int distance, int passengers)
+//TODO: Сигнатура +
+void ChangeFlight(Flight* flight, const string& flightNumber,
+	const int planeNumber, const string& departure, 
+	const string& destination, const int duration,
+	const int distance, const int passengers)
 {
 	flight->FlightNumber = flightNumber;
 	flight->PlaneNumber = planeNumber;
