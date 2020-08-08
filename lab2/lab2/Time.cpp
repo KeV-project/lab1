@@ -58,9 +58,9 @@ void PrintTime(const Time& event)
 	cout << "Секунда: " << event.Second << endl << endl;
 }
 
-//TODO: Сигнатура
-void ChangeTime(Time* event, int year, int month, int day,
-	int hour, int minute, int second)
+//TODO: Сигнатура +
+void ChangeTime(Time* event, const int year, const int month,
+	const int day, const int hour, const int minute, const int second)
 {
 	//TODO: Нет никаких проверок на переданные значения, вероятно нельзя передать 0 и больше 12 в month и т.д.
 	event->Year = year;
