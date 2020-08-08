@@ -89,7 +89,7 @@ void DemoDynamicFlight()
 	pFlight->Departure = "Кемерово";
 	pFlight->Destination = "Улан-Удэ";
 	pFlight->DurationInMinutes = 150;
-	pFlight->DistanceInMeters = 2500;
+	pFlight->DistanceInMeters = 2500000;
 	pFlight->Passengers = 90;
 
 	PrintFlight(*pFlight);
@@ -126,14 +126,21 @@ void DemoDynamicFlights()
 	const int flightsCount = 7;
 	Flight** flights = new Flight * [flightsCount]
 	{
-		//TODO: RSDN
-		MakeFlight("11D5N", 333, "Москва", "Фьюмичино", 180, 5600, 120),
-		MakeFlight("7T5E1", 547, "Новосибирск", "Клайпеда", 110, 3585, 110),
-		MakeFlight("23P08", 123, "Дубай", "Москва", 360, 5000, 80),
-		MakeFlight("1ER7G", 756, "Кемерово", "Улан-Удэ", 120, 2000, 60),
-		MakeFlight("4G7L1", 3001, "Москва", "Италия", 250, 3040, 120),
-		MakeFlight("SD147", 6413, "Новосибирск", "Литва", 120, 4339, 113),
-		MakeFlight("7CC77", 5204, "Дубай", "Москва", 270, 3600, 250),
+		//TODO: RSDN +
+		MakeFlight("11D5N", 333, "Москва",
+			"Фьюмичино", 180, 5600000, 120),
+		MakeFlight("7T5E1", 547, "Новосибирск",
+			"Клайпеда", 110, 3585000, 110),
+		MakeFlight("23P08", 123, "Дубай",
+			"Москва", 360, 5000000, 80),
+		MakeFlight("1ER7G", 756, "Кемерово",
+			"Улан-Удэ", 120, 2000000, 60),
+		MakeFlight("4G7L1", 3001, "Москва",
+			"Италия", 250, 3040000, 120),
+		MakeFlight("SD147", 6413, "Новосибирск",
+			"Литва", 120, 4339000, 113),
+		MakeFlight("7CC77", 5204, "Дубай",
+			"Москва", 270, 3600000, 250),
 	};
 	for (int i = 0; i < flightsCount; i++)
 	{
@@ -166,7 +173,7 @@ void DemoFlight()
 	firstFlight.Departure = "Томск";
 	firstFlight.Destination = "Москва";
 	firstFlight.DurationInMinutes = 300;
-	firstFlight.DistanceInMeters = 2800;
+	firstFlight.DistanceInMeters = 2800000;
 	firstFlight.Passengers = 157;
 	
 	// Task 2.2.3.2
@@ -189,7 +196,7 @@ void DemoFlight()
 	PrintFlight(firstFlight);
 	cout << "Измененный рейс firstFlight: " << endl << endl;
 	ChangeFlight(pFirstFlight, "5K47X", 3910, "Томск",
-		"Санкт-Петербург", 455, 4298, 133);
+		"Санкт-Петербург", 455, 4298000, 133);
 	PrintFlight(*pFirstFlight);
 	PrintLine();
 
