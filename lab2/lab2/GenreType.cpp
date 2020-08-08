@@ -1,7 +1,7 @@
 #include "GenreType.h"
 
 //TODO: Сигнатура
-void ReadGenre(int numGenre, GenreType& filmsGenre)
+void ReadGenre(const int numGenre, GenreType& filmsGenre)
 {
 	//TODO: Не обработаны крайние случаи - меньше нуля и больше 5
 	
