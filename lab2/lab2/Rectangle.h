@@ -16,7 +16,8 @@ struct Rectangle
 };
 
 Rectangle* MakeRectangle();
-Rectangle* MakeRectangle(float length, float width, string color);
+Rectangle* MakeRectangle(const float length, const float width,
+	const string& color);
 Rectangle* CopyRectangle(Rectangle& rectangle);
 void ReadRectangle(Rectangle& rectangle);
 void PrintRectangle(Rectangle& rectangle);

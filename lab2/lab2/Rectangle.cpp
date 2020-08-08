@@ -12,8 +12,9 @@ Rectangle* MakeRectangle()
 	return rectangle;
 }
 
-//TODO: Сигнатура
-Rectangle* MakeRectangle(float length, float width, string color)
+//TODO: Сигнатура +
+Rectangle* MakeRectangle(const float length, const float width,
+	const string& color)
 {
 	Rectangle* rectangle = new Rectangle();
 	rectangle->Length = length;
