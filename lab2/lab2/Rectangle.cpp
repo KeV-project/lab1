@@ -56,7 +56,7 @@ void ReadRectangle(Rectangle& rectangle)
 	rectangle.Area = rectangle.Length * rectangle.Width;
 }
 
-void PrintRectangle(Rectangle& rectangle)
+void PrintRectangle(const Rectangle& rectangle)
 {
 	cout << "ƒлина: " << rectangle.Length << endl;
 	cout << "Ўирина: " << rectangle.Width << endl;

@@ -20,7 +20,7 @@ Rectangle* MakeRectangle(const float length, const float width,
 	const string& color);
 Rectangle* CopyRectangle(const Rectangle& rectangle);
 void ReadRectangle(Rectangle& rectangle);
-void PrintRectangle(Rectangle& rectangle);
+void PrintRectangle(const Rectangle& rectangle);
 Rectangle** DemoReadAndPrintRectangles(int rectanglesCount);
 void ChangeRectangle(Rectangle* rectangle, float length,
 	float width, string color);
