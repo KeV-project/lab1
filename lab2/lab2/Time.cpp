@@ -1,8 +1,8 @@
 #include "Time.h"
 
-//TODO: Сигнатура
-Time* MakeTime(int year, int month, int day,
-	int hour, int minute, int second)
+//TODO: Сигнатура +
+Time* MakeTime(const int year, const int month, const int day,
+	const int hour, const int minute, const int second)
 {
 	Time* time = new Time();
 	time->Year = year;

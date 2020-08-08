@@ -16,8 +16,8 @@ struct Time
 	int Second;
 };
 
-Time* MakeTime(int year, int month, int day,
-	int hour, int minute, int second);
+Time* MakeTime(const int year, const int month, const int day,
+	const int hour, const int minute, const int second);
 Time* CopyTime(Time& time);
 void ReadTime(Time& event);
 void PrintTime(Time& event);
