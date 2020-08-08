@@ -127,7 +127,7 @@ void Exchange(Rectangle& rectangle1, Rectangle& rectangle2)
 	rectangle2.Area = rectangle.Area;
 }
 
-void FindRectangle(Rectangle** rectangles, int rectanglesCount)
+void FindRectangle(Rectangle** rectangles, const int rectanglesCount)
 {
 	float maxLength = 0.0;
 	int maxLengthIndex = 0;

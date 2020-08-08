@@ -25,5 +25,5 @@ Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount);
 void ChangeRectangle(Rectangle* rectangle, const float length,
 	const float width, const string& color);
 void Exchange(Rectangle& rectangle1, Rectangle& rectangle2);
-void FindRectangle(Rectangle** rectangles, int rectanglesCount);
+void FindRectangle(Rectangle** rectangles, const int rectanglesCount);
 void DemoRectangle();
