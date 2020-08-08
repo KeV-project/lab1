@@ -14,7 +14,7 @@ Time* MakeTime(const int year, const int month, const int day,
 	return time;
 }
 
-Time* CopyTime(Time& time)
+Time* CopyTime(const Time& time)
 {
 	Time* copiedTime = new Time();
 	copiedTime->Year = time.Year;

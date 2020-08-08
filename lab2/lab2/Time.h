@@ -18,7 +18,7 @@ struct Time
 
 Time* MakeTime(const int year, const int month, const int day,
 	const int hour, const int minute, const int second);
-Time* CopyTime(Time& time);
+Time* CopyTime(const Time& time);
 void ReadTime(Time& event);
 void PrintTime(Time& event);
 void ChangeTime(Time* event, int year, int month, int day,
