@@ -1,18 +1,69 @@
 #include "Flight.h"
 
+void SetFlightNumber(Flight& flight, const string& flightNumber)
+{
+	flight.FlightNumber = flightNumber;
+}
+
+void SetPlaneNumber(Flight& flight, const int planeNumber)
+{
+	if (planeNumber < 0)
+	{
+		throw exception("Номер самолета не может быть меньше 0");
+	}
+	flight.PlaneNumber = planeNumber;
+}
+
+void SetDeparture(Flight& flight, const string& departure)
+{
+	flight.Departure = departure;
+}
+
+void SetDestination(Flight& flight, const string& destination)
+{
+	flight.Destination = destination;
+}
+
+void SetDurationInMinutes(Flight& flight, const int durationInMinutes)
+{
+	if (durationInMinutes <= 0)
+	{
+		throw exception("Время полета не может быть меньше или равно 0");
+	}
+	flight.DurationInMinutes = durationInMinutes;
+}
+
+void SetDistanceInMeters(Flight& flight, const int distanceInMeters)
+{
+	if (distanceInMeters <= 0)
+	{
+		throw exception("Дальность полета не может быть меньше или равна 0");
+	}
+	flight.DistanceInMeters = distanceInMeters;
+}
+
+void SetPassengers(Flight& flight, const int passengers)
+{
+	if (passengers < 0)
+	{
+		throw exception("Количество пассажиров не может быть меньше 0");
+	}
+	flight.Passengers = passengers;
+}
+
 //TODO: Сигнатура +
 Flight* MakeFlight(const string& flightNumber, const int planeNumber,
 	const string& departure, const string& destination, const int durationInMinutes,
 	const int distanceInMeters, const int passengers)
 {
 	Flight* flight = new Flight();
-	flight->FlightNumber = flightNumber;
-	flight->PlaneNumber = planeNumber;
-	flight->Departure = departure;
-	flight->Destination = destination;
-	flight->DurationInMinutes = durationInMinutes;
-	flight->DistanceInMeters = distanceInMeters;
-	flight->Passengers = passengers;
+	SetFlightNumber(*flight, flightNumber);
+	SetPlaneNumber(*flight, planeNumber);
+	SetDeparture(*flight, departure);
+	SetDestination(*flight, destination);
+	SetDurationInMinutes(*flight, durationInMinutes);
+	SetDistanceInMeters(*flight, distanceInMeters);
+	SetPassengers(*flight, passengers);
 	return flight;
 }
 
@@ -32,26 +83,40 @@ Flight* CopyFlight(const Flight& flight)
 void ReadFlight(Flight& flight)
 {
 	cout << "Введите номер рейса: ";
-	cin >> flight.FlightNumber;
+	string flightNimber = "";
+	cin >> flightNimber;
 	cout << endl;
+	SetFlightNumber(flight, flightNimber);
 	cout << "Введите номер самолета: ";
-	cin >> flight.PlaneNumber;
+	int planeNumber = 0;
+	cin >> planeNumber;
 	cout << endl;
+	SetPlaneNumber(flight, planeNumber);
 	cout << "Введите пункт вылета самолета: ";
-	cin >> flight.Departure;
+	string departure = "";
+	cin >> departure;
 	cout << endl;
+	SetDeparture(flight, departure);
 	cout << "Введите пункт назначения самолета: ";
-	cin >> flight.Destination;
+	string destination = "";
+	cin >> destination;
 	cout << endl;
+	SetDestination(flight, destination);
 	cout << "Введите время полета(мин): ";
-	cin >> flight.DurationInMinutes;
+	int durationInMinutes = 0;
+	cin >> durationInMinutes;
 	cout << endl;
-	cout << "Введите дальность полета(км): ";
-	cin >> flight.DistanceInMeters;
+	SetDurationInMinutes(flight, durationInMinutes);
+	cout << "Введите дальность полета(м): ";
+	int distanceInMeters = 0;
+	cin >> distanceInMeters;
 	cout << endl;
+	SetDistanceInMeters(flight, distanceInMeters);
 	cout << "Введите количество пассажиров на борту: ";
-	cin >> flight.Passengers;
+	int passengers = 0;
+	cin >> passengers;
 	cout << endl;
+	SetPassengers(flight, passengers);
 }
 
 void PrintFlight(const Flight& flight)
@@ -72,25 +137,25 @@ void ChangeFlight(Flight* flight, const string& flightNumber,
 	const string& destination, const int durationInMinutes,
 	const int distanceInMeters, const int passengers)
 {
-	flight->FlightNumber = flightNumber;
-	flight->PlaneNumber = planeNumber;
-	flight->Departure = departure;
-	flight->Destination = destination;
-	flight->DurationInMinutes = durationInMinutes;
-	flight->DistanceInMeters = distanceInMeters;
-	flight->Passengers = passengers;
+	SetFlightNumber(*flight, flightNumber);
+	SetPlaneNumber(*flight, planeNumber);
+	SetDeparture(*flight, departure);
+	SetDestination(*flight, destination);
+	SetDurationInMinutes(*flight, durationInMinutes);
+	SetDistanceInMeters(*flight, distanceInMeters);
+	SetPassengers(*flight, passengers);
 }
 
 void DemoDynamicFlight()
 {
 	Flight* pFlight = new Flight;
-	pFlight->FlightNumber = "23F14G";
-	pFlight->PlaneNumber = 221;
-	pFlight->Departure = "Кемерово";
-	pFlight->Destination = "Улан-Удэ";
-	pFlight->DurationInMinutes = 150;
-	pFlight->DistanceInMeters = 2500000;
-	pFlight->Passengers = 90;
+	SetFlightNumber(*pFlight, "23F14G");
+	SetPlaneNumber(*pFlight, 221);
+	SetDeparture(*pFlight, "Кемерово");
+	SetDestination(*pFlight, "Кемерово");
+	SetDurationInMinutes(*pFlight, 150);
+	SetDistanceInMeters(*pFlight, 2500000);
+	SetPassengers(*pFlight, 90);
 
 	PrintFlight(*pFlight);
 
@@ -147,11 +212,6 @@ void DemoDynamicFlights()
 		cout << "Рейс №" << i + 1 << endl << endl;
 		PrintFlight(*flights[i]);
 	}
-	for (int i = 0; i < flightsCount; i++)
-	{
-		delete flights[i];
-	}
-	delete[] flights;
 
 	// Task 2.2.6.3
 	PrintLine();

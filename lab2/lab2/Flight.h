@@ -17,9 +17,18 @@ struct Flight
 	int Passengers;
 };
 
+void SetFlightNumber(Flight& flight, const string& flightNumber);
+void SetPlaneNumber(Flight& flight, const int planeNumber);
+void SetDeparture(Flight& flight, const string& departure);
+void SetDestination(Flight& flight, const string& destination);
+void SetDurationInMinutes(Flight& flight, const int durationInMinutes);
+void SetDistanceInMeters(Flight& flight, const int distanceInMeters);
+void SetPassengers(Flight& flight, const int passengers);
+
 Flight* MakeFlight(const string& flightNumber, const int planeNumber,
 	const string& departure, const string& destination, const int durationInMinutes,
 	const int distanceInMeters, const int passengers);
+
 Flight* CopyFlight(const Flight& flight);
 void ReadFlight(Flight& flight);
 void PrintFlight(const Flight& flight);
