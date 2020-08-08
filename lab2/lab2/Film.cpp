@@ -92,8 +92,8 @@ void ChangeFilm(Film* film, const string& title,
 	film->MainRole = mainRole;
 }
 
-//TODO: Сигнатура
-int CountMoviesByGenre(Film** films, int filmsCount, GenreType findedGenre)
+//TODO: Сигнатура +
+int CountMoviesByGenre(Film** films, const int filmsCount, const GenreType& findedGenre)
 {
 	int genreCount = 0;
 	for (int i = 0; i < filmsCount; i++)

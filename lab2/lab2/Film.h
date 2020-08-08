@@ -31,7 +31,8 @@ void ChangeFilm(Film* film, const string& title,
 	const GenreType& genre, const float rating,
 	const float budget, const string& director,
 	const string& mainRole);
-int CountMoviesByGenre(Film** films, int filmsCount, GenreType findedGenre);
+int CountMoviesByGenre(Film** films, const int filmsCount,
+	const GenreType& findedGenre);
 Film* FindBestGenreMovie(Film** films, int filmsCount, GenreType findGenre);
 void DemoMovieWithGenre();
 void DemoFilm();
