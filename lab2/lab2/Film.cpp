@@ -106,7 +106,7 @@ int CountMoviesByGenre(Film** films, const int filmsCount, const GenreType& find
 	return genreCount;
 }
 
-Film* FindBestGenreMovie(Film** films, int filmsCount, GenreType findGenre)
+Film* FindBestGenreMovie(Film** films, const int filmsCount, const GenreType& findGenre)
 {
 	float maxRating = 0;
 	Film* maxRatingFilm = nullptr;
