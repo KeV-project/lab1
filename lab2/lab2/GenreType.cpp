@@ -17,24 +17,18 @@ void ReadGenre(const int numGenre, GenreType& filmsGenre)
 	}
 }
 
-//TODO: Сигнатура
+//TODO: Сигнатура +
 string PrintGenre(const GenreType& filmsGenre)
 {
 	switch (filmsGenre)
 	{
-		//TODO: RSDN
-	case Comedy:
-		return "комедия";
-	case Drama:
-		return "драма";
-	case Thriller:
-		return "триллер";
-	case Action:
-		return "экшен";
-	case Horror:
-		return "фильм ужасов";
-	case Blockbuster:
-		return "блокбастер";
+		//TODO: RSDN +
+	case Comedy:	  return "комедия";
+	case Drama:		  return "драма";
+	case Thriller:    return "триллер";
+	case Action:	  return "экшен";
+	case Horror:	  return "фильм ужасов";
+	case Blockbuster: return "блокбастер";
 	}
 }
 
