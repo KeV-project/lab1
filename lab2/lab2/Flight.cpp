@@ -16,7 +16,7 @@ Flight* MakeFlight(const string& flightNumber, const int planeNumber,
 	return flight;
 }
 
-Flight* CopyFlight(Flight& flight)
+Flight* CopyFlight(const Flight& flight)
 {
 	Flight* copiedFlight = new Flight();
 	copiedFlight->FlightNumber = flight.FlightNumber;
