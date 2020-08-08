@@ -37,7 +37,7 @@ ColorType ReadColor()
 	}
 }
 
-//TODO: Сигнатура
+//TODO: Сигнатура +
 int CountRed(ColorType* colors, const int colorsCount)
 {
 	int redCount = 0;
@@ -51,7 +51,7 @@ int CountRed(ColorType* colors, const int colorsCount)
 	return redCount;
 }
 
-//TODO: Сигнатура
+//TODO: Сигнатура +
 int CountColor(ColorType* colors, const int colorsCount, ColorType &findedColor)
 {
 	int colorCount = 0;

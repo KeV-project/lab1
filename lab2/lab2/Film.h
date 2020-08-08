@@ -20,8 +20,9 @@ struct Film
 	string MainRole;
 };
 
-Film* MakeFilm(string title, int duration, int year, GenreType genre,
-	float rating, float budget, string director, string mainRole);
+Film* MakeFilm(const string& title, const int duration, const int year,
+	const GenreType& genre, const float rating, const float budget,
+	const string& director, const string& mainRole);
 Film* CopyFilm(Film& film);
 void ReadFilm(Film& film);
 void PrintFilm(Film& film);

@@ -4,7 +4,7 @@
 //TODO: ѕохорошему - везде, где значение не измен€етс€ в сигнатере правильнее писать const
 //TODO: “.к. строка может оказатьс€ достаточно большой дл€ передачи - правильнее передавать еЄ по ссылке, чтобы избежать копировани€
 //TODO: ƒальше везде буду писать "—игнатура" чтобы не повтор€тьс€
-Circle* MakeCircle(const double x, const double y, const double radius, string color)
+Circle* MakeCircle(const double x, const double y, const double radius, const string &color)
 {
 	Circle* circle = new Circle();
 	circle->X = x;
@@ -14,7 +14,7 @@ Circle* MakeCircle(const double x, const double y, const double radius, string c
 	return circle;
 }
 
-Circle* CopyCircle(Circle& circle)
+Circle* CopyCircle(const Circle& circle)
 {
 	Circle* copiedCircle = new Circle();
 	copiedCircle->X = circle.X;

@@ -12,6 +12,6 @@ struct Circle
 	string Color;
 };
 
-Circle* MakeCircle(const double x, const double y, const double radius, string color);
-Circle* CopyCircle(Circle& circle);
+Circle* MakeCircle(const double x, const double y, const double radius, const string &color);
+Circle* CopyCircle(const Circle& circle);
 void DemoCircle();

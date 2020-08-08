@@ -1,8 +1,9 @@
 #include "Film.h"
 
-//TODO: Сигнатура
-Film* MakeFilm(string title, int duration, int year, GenreType genre,
-	float rating, float budget, string director, string mainRole)
+//TODO: Сигнатура +
+Film* MakeFilm(const string &title, const int duration, const int year,
+	const GenreType &genre, const float rating, const float budget,
+	const string &director, const string &mainRole)
 {
 	Film* film = new Film();
 	film->Title = title;
