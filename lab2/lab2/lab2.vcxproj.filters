@@ -21,9 +21,6 @@
     <ClCompile Include="Output.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CatchExeption.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Rectangle.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -45,12 +42,12 @@
     <ClCompile Include="ColorType.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="CatchExсeption.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Output.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CatchExeption.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Rectangle.h">
@@ -84,6 +81,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="SeasonType.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CatchExсeption.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

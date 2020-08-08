@@ -1,5 +1,5 @@
 #include <iostream>
-#include "CatchExeption.h"
+#include "CatchExсeption.h"
 #include "Output.h"
 
 using namespace std;
@@ -19,15 +19,15 @@ void Sort(double* values, int valuesCount)
             "Количество элементов массива не может быть "
             "отрицательным числом");
     }
-	//TODO: Нет смысла объявлять настолько заранее
-    double swap;
+	//TODO: Нет смысла объявлять настолько заранее +
+    //double swap;
     for (int i = 0; i < valuesCount; i++)
     {
         for (int j = 0; j < valuesCount; j++)
         {
             if (values[i] < values[j])
             {
-                swap = values[i];
+                const double swap = values[i];
                 values[i] = values[j];
                 values[j] = swap;
             }
