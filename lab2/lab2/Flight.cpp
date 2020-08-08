@@ -1,8 +1,9 @@
 #include "Flight.h"
 
-//TODO: Сигнатура
-Flight* MakeFlight(string flightNumber, int planeNumber, string departure,
-	string destination, int duration, int distance, int passengers)
+//TODO: Сигнатура +
+Flight* MakeFlight(const string& flightNumber, const int planeNumber,
+	const string& departure, const string& destination, const int duration,
+	const int distance, const int passengers)
 {
 	Flight* flight = new Flight();
 	flight->FlightNumber = flightNumber;
