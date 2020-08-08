@@ -127,13 +127,27 @@ void ReadFilm(Film& film)
 			cout << "Введено некорректное значение" << endl << endl;
 		}
 	} while (true);
-	cout << "Введите жанр:" << endl;
-	cout << "(0 - Комедия, 1 - Драма, 2 - Триллер, " << endl;
-	cout << "3 - Экшен, 4 - Фильм ужасов, 5 - Блокбастер): ";
-	int numGenre = 0;
-	cin >> numGenre;
-	film.Genre = ReadGenre(numGenre);
-	cout << endl;
+	do
+	{
+		cout << "Введите жанр:" << endl << endl;
+		cout << "(0 - Комедия, 1 - Драма, 2 - Триллер, " << endl;
+		cout << "3 - Экшен, 4 - Фильм ужасов, 5 - Блокбастер): ";
+		int numGenre = 0;
+		cin >> numGenre;
+		cout << endl;
+		if (IsValue())
+		{
+			film.Genre = ReadGenre(numGenre);
+			break;
+		}
+		else
+		{
+			cout << "Введено некорректное значение" << endl << endl;
+		}
+	} while (true);
+	
+	
+	
 	do
 	{
 		cout << "Введите рейтинг фильма: ";

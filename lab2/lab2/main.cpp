@@ -98,7 +98,7 @@ void DemoEnums()
 		{
 			ColorType findedColor = ReadColor(findedNumColor);
 			PrintColor(findedColor);
-			cout << " встречается в массиве ";
+			cout << " цвет встречается в массиве ";
 			cout << CountColor(colors, enumsCount, findedColor);
 			cout << " раз(а)" << endl << endl;
 			break;
@@ -159,7 +159,7 @@ void main()
     DemoSort();
     PrintLine();
 
-    //DemoRectangle();
+    DemoRectangle();
     DemoFlight();
     DemoFilm();
     DemoTime();
