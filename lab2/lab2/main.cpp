@@ -132,7 +132,7 @@ void main()
 	cout << "Демонстрация работы функции копирования" << endl << endl;
 	PrintLine();
 
-	Rectangle* rectangle = MakeRectangle(16.5, 12.6, "синий");
+	Rectangle* rectangle = MakeRectangle(16.5, 12.6, DarkBlue);
 	cout << "Оригинальный прямоугольник:" << endl << endl;
 	PrintRectangle(*rectangle);
 	Rectangle* copyRectangle = CopyRectangle(*rectangle);

@@ -6,7 +6,7 @@ Rectangle* MakeRectangle()
 	rectangle->Length = 0.0;
 	rectangle->Width = 0.0;
 	rectangle->Diagonal = 0.0;
-	rectangle->Color = "";
+	rectangle->Color = Red;
 	rectangle->Perimeter = 0.0;
 	rectangle->Area = 0.0;
 	return rectangle;
@@ -14,7 +14,7 @@ Rectangle* MakeRectangle()
 
 //TODO: Сигнатура +
 Rectangle* MakeRectangle(const float length, const float width,
-	const string& color)
+	const ColorType& color)
 {
 	Rectangle* rectangle = new Rectangle();
 	rectangle->Length = length;
@@ -47,8 +47,8 @@ void ReadRectangle(Rectangle& rectangle)
 	cout << "Введите ширину прямоугольника(вещ. ч): ";
 	cin >> rectangle.Width;
 	cout << endl;
-	cout << "Введите цвет прямоугольника: ";
-	cin >> rectangle.Color;
+	cout << "Введите цвет прямоугольника: " << endl << endl;
+	rectangle.Color = ReadColor();
 	cout << endl;
 	rectangle.Diagonal = sqrt(pow(rectangle.Length, 2) 
 		+ pow(rectangle.Width, 2));
@@ -61,7 +61,9 @@ void PrintRectangle(const Rectangle& rectangle)
 	cout << "Длина: " << rectangle.Length << endl;
 	cout << "Ширина: " << rectangle.Width << endl;
 	cout << "Диагональ: " << rectangle.Diagonal << endl;
-	cout << "Цвет: " << rectangle.Color << endl;
+	cout << "Цвет: ";
+	PrintColor(rectangle.Color);
+	cout << endl;
 	cout << "Периметр: " << rectangle.Perimeter << endl;
 	cout << "Площадь: " << rectangle.Area << endl << endl;
 }
@@ -90,7 +92,7 @@ Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount)
 
 //TODO: Сигнатура +
 void ChangeRectangle(Rectangle* rectangle, const float length,
-	const float width, const string& color)
+	const float width, const ColorType& color)
 {
 	rectangle->Length = length;
 	rectangle->Width = width;
@@ -168,7 +170,7 @@ void DemoRectangle()
 	firstRectangle.Length = 13.5;
 	firstRectangle.Width = 7.3;
 	firstRectangle.Diagonal = 15.3;
-	firstRectangle.Color = "yellow";
+	firstRectangle.Color = Yellow;
 	firstRectangle.Perimeter = 41.6;
 	firstRectangle.Area = 98.55;
 	
@@ -190,7 +192,7 @@ void DemoRectangle()
 	cout << "Прямоугольник firstRectangle: " << endl << endl;
 	PrintRectangle(firstRectangle);
 	cout << "Измененный прямоугольник firstRectangle: " << endl << endl;
-	ChangeRectangle(pFirstRectangle, 111, 11, "коричневый");
+	ChangeRectangle(pFirstRectangle, 111, 11, Purple);
 	PrintRectangle(*pFirstRectangle);
 	PrintLine();
 	

@@ -1,18 +1,18 @@
 #include "ColorType.h"
 
 //TODO: Сигнатура +
-void PrintColor(ColorType &color)
+void PrintColor(const ColorType &color)
 {
 	switch (color)
 	{
 		//TODO: RSDN +
-	case Red:      cout << "Красный цвет";   break;
-	case Orange:   cout << "Оранжевый цвет"; break;
-	case Yellow:   cout << "Желтый цвет";    break;
-	case Green:    cout << "Зеленый цвет";   break;
-	case Blue:     cout << "Голубой цвет";   break;
-	case DarkBlue: cout << "Синий цвет";     break;
-	case Purple:   cout << "Пурпурный цвет"; break;
+	case Red:      cout << "красный";   break;
+	case Orange:   cout << "оранжевый"; break;
+	case Yellow:   cout << "желтый";    break;
+	case Green:    cout << "зеленый";   break;
+	case Blue:     cout << "голубой";   break;
+	case DarkBlue: cout << "синий";     break;
+	case Purple:   cout << "фиолетовый"; break;
 	}
 }
 
