@@ -5,28 +5,14 @@ void PrintColor(ColorType color)
 {
 	switch (color)
 	{
-		//TODO: RSDN
-	case Red:
-		cout << "Красный цвет";
-		break;
-	case Orange:
-		cout << "Оранжевый цвет";
-		break;
-	case Yellow:
-		cout << "Желтый цвет";
-		break;
-	case Green:
-		cout << "Зеленый цвет";
-		break;
-	case Blue:
-		cout << "Голубой цвет";
-		break;
-	case DarkBlue:
-		cout << "Синий цвет";
-		break;
-	case Purple:
-		cout << "Пурпурный цвет";
-		break;
+		//TODO: RSDN +
+	case Red:      cout << "Красный цвет";   break;
+	case Orange:   cout << "Оранжевый цвет"; break;
+	case Yellow:   cout << "Желтый цвет";    break;
+	case Green:    cout << "Зеленый цвет";   break;
+	case Blue:     cout << "Голубой цвет";   break;
+	case DarkBlue: cout << "Синий цвет";     break;
+	case Purple:   cout << "Пурпурный цвет"; break;
 	}
 }
 
@@ -40,21 +26,14 @@ ColorType ReadColor()
 	//TODO: Не обработан случай ввода отрицательного значения и больше 6
 	switch (numColor)
 	{
-		//TODO: RSDN
-	case 0:
-		return Red;
-	case 1:
-		return Orange;
-	case 2:
-		return Yellow;
-	case 3:
-		return Green;
-	case 4:
-		return Blue;
-	case 5:
-		return DarkBlue;
-	case 6:
-		return Purple;
+		//TODO: RSDN +
+	case 0: return Red;
+	case 1: return Orange;
+	case 2: return Yellow;
+	case 3: return Green;
+	case 4: return Blue;
+	case 5: return DarkBlue;
+	case 6: return Purple;
 	}
 }
 
