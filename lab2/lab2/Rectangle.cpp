@@ -144,7 +144,7 @@ void FindRectangle(Rectangle** rectangles, const int rectanglesCount)
 	cout << rectangles[maxLengthIndex]->Width << endl << endl;
 }
 
-void FindMaxRectangle(Rectangle** rectangles, int rectanglesCount)
+void FindMaxRectangle(Rectangle** rectangles, const int rectanglesCount)
 {
 	float maxArea = 0.0;
 	int maxAreaIndex = 0;
