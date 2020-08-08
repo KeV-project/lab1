@@ -12,6 +12,7 @@ Rectangle* MakeRectangle()
 	return rectangle;
 }
 
+//TODO: Сигнатура
 Rectangle* MakeRectangle(float length, float width, string color)
 {
 	Rectangle* rectangle = new Rectangle();
@@ -64,6 +65,7 @@ void PrintRectangle(Rectangle& rectangle)
 	cout << "Площадь: " << rectangle.Area << endl << endl;
 }
 
+//TODO: Сигнатура
 Rectangle** DemoReadAndPrintRectangles(int rectanglesCount)
 {
 	Rectangle** rectangles = new Rectangle * [rectanglesCount];
@@ -85,6 +87,7 @@ Rectangle** DemoReadAndPrintRectangles(int rectanglesCount)
 	return rectangles;
 }
 
+//TODO: Сигнатура
 void ChangeRectangle(Rectangle* rectangle, float length,
 	float width, string color)
 {

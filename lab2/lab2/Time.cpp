@@ -1,5 +1,6 @@
 #include "Time.h"
 
+//TODO: Сигнатура
 Time* MakeTime(int year, int month, int day,
 	int hour, int minute, int second)
 {
@@ -57,9 +58,11 @@ void PrintTime(Time& event)
 	cout << "Секунда: " << event.Second << endl << endl;
 }
 
+//TODO: Сигнатура
 void ChangeTime(Time* event, int year, int month, int day,
 	int hour, int minute, int second)
 {
+	//TODO: Нет никаких проверок на переданные значения, вероятно нельзя передать 0 и больше 12 в month и т.д.
 	event->Year = year;
 	event->Month = month;
 	event->Day = day;

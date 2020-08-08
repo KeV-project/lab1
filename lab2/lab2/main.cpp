@@ -10,6 +10,7 @@
 #include "PhoneManufacturerType.h"
 #include "SeasonType.h"
 #include "WeekdaysType.h"
+#include <clocale>
 
 using namespace std;
 
@@ -115,8 +116,9 @@ void DemoEnums()
 
 void main()
 {
-	setlocale(LC_ALL, "rus");
-
+	setlocale(LC_ALL, "Russian");
+	std::system("chcp 1251");
+	
     // Task 2.2.1.1 - 2.2.1.2
     DemoSort();
     PrintLine();

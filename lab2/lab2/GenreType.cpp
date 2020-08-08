@@ -1,9 +1,13 @@
 #include "GenreType.h"
 
+//TODO: Сигнатура
 void ReadGenre(int numGenre, GenreType& filmsGenre)
 {
+	//TODO: Не обработаны крайние случаи - меньше нуля и больше 5
+	
 	switch (numGenre)
 	{
+		//TODO: RSDN
 	case 0:
 		filmsGenre = Comedy;
 		break;
@@ -25,10 +29,12 @@ void ReadGenre(int numGenre, GenreType& filmsGenre)
 	}
 }
 
+//TODO: Сигнатура
 string PrintGenre(GenreType& filmsGenre)
 {
 	switch (filmsGenre)
 	{
+		//TODO: RSDN
 	case Comedy:
 		return "комедия";
 	case Drama:

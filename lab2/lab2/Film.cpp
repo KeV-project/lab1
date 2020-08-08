@@ -1,5 +1,6 @@
 #include "Film.h"
 
+//TODO: Сигнатура
 Film* MakeFilm(string title, int duration, int year, GenreType genre,
 	float rating, float budget, string director, string mainRole)
 {
@@ -73,6 +74,7 @@ void PrintFilm(Film& film)
 	cout << "В главной роли: " << film.MainRole << endl << endl;
 }
 
+//TODO: Сигнатура
 void ChangeFilm(Film* film, string title, int duration,
 	int year, GenreType genre, float rating, float budget,
 	string director, string mainRole)
@@ -87,6 +89,7 @@ void ChangeFilm(Film* film, string title, int duration,
 	film->MainRole = mainRole;
 }
 
+//TODO: Сигнатура
 int CountMoviesByGenre(Film** films, int filmsCount, GenreType findedGenre)
 {
 	int genreCount = 0;

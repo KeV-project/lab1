@@ -1,5 +1,6 @@
 #include "Flight.h"
 
+//TODO: Сигнатура
 Flight* MakeFlight(string flightNumber, int planeNumber, string departure,
 	string destination, int duration, int distance, int passengers)
 {
@@ -64,6 +65,7 @@ void PrintFlight(Flight& flight)
 	cout << flight.Passengers << endl << endl;
 }
 
+//TODO: Сигнатура
 void ChangeFlight(Flight* flight, string flightNumber,
 	int planeNumber, string departure, string destination,
 	int duration, int distance, int passengers)
@@ -93,6 +95,7 @@ void DemoDynamicFlight()
 	delete pFlight;
 }
 
+//TODO: Сигнатура
 void FindShortestFlight(Flight** flights, int flightsCount)
 {
 	int minDuration = flights[0]->Duration;
@@ -117,9 +120,11 @@ void FindShortestFlight(Flight** flights, int flightsCount)
 
 void DemoDynamicFlights()
 {
+	//TODO: Части дублируются с методом DemoFlight
 	const int flightsCount = 4;
 	Flight** flights = new Flight * [flightsCount]
 	{
+		//TODO: RSDN
 		MakeFlight("11D5N", 333, "Москва", "Фьюмичино", 180, 5600, 120),
 		MakeFlight("7T5E1", 547, "Новосибирск", "Клайпеда", 110, 3585, 110),
 		MakeFlight("23P08", 123, "Дубай", "Москва", 360, 5000, 80),
@@ -165,6 +170,7 @@ void DemoFlight()
 	const int flightsCount = 3;
 	Flight** flights = new Flight * [flightsCount]
 	{
+		//TODO: RSDN
 		MakeFlight("4G7L1", 3001, "Москва", "Италия", 250, 3040, 120),
 		MakeFlight("SD147", 6413, "Новосибирск", "Литва", 120, 4339, 113),
 		MakeFlight("7CC77", 5204,  "Дубай", "Москва", 270, 3600, 250),

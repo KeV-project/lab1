@@ -4,13 +4,19 @@
 
 using namespace std;
 
+//TODO: int to const?
 // Сортирует массив вещественных чисел
 void Sort(double* values, int valuesCount)
 {
     if (valuesCount < 0)
     {
+    	//TODO: В сообщении описывается, что исключение поймано,
+    	//TODO: по факту отлов исключения должен происходить снаружи с помощью try-catch
+    	//TODO: корректнее в сообщение укладывать информацию о типе ошибки для того,
+    	//TODO: чтобы пользователь (программист) знал - что и где пошло не так
         throw exception("Exception catched!");
     }
+	//TODO: Нет смысла объявлять настолько заранее
     double swap;
     for (int i = 0; i < valuesCount; i++)
     {

@@ -1,9 +1,11 @@
 #include "ColorType.h"
 
+//TODO: —игнатура
 void PrintColor(ColorType color)
 {
 	switch (color)
 	{
+		//TODO: RSDN
 	case Red:
 		cout << " расный цвет";
 		break;
@@ -35,8 +37,10 @@ ColorType ReadColor()
 	cout << "\n2 Ц желтый, 3 Цзеленый, 4 Ц голубой, 5 Ц синий, 6 Ц фиолетовый): ";
 	cin >> numColor;
 	cout << endl;
+	//TODO: Ќе обработан случай ввода отрицательного значени€ и больше 6
 	switch (numColor)
 	{
+		//TODO: RSDN
 	case 0:
 		return Red;
 	case 1:
@@ -54,6 +58,7 @@ ColorType ReadColor()
 	}
 }
 
+//TODO: —игнатура
 int CountRed(ColorType* colors, int colorsCount)
 {
 	int redCount = 0;
@@ -67,6 +72,7 @@ int CountRed(ColorType* colors, int colorsCount)
 	return redCount;
 }
 
+//TODO: —игнатура
 int CountColor(ColorType* colors, int colorsCount, ColorType findedColor)
 {
 	int colorCount = 0;

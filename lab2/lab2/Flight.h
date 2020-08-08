@@ -9,6 +9,7 @@ struct Flight
 {
 	string FlightNumber;
 	int PlaneNumber;
+	//TODO: Много не нужных комментов, названия полей говорят сами за себя
 	// Пункт Вылета
 	string Departure;
 	// Пункт назначения
