@@ -38,7 +38,7 @@ ColorType ReadColor()
 }
 
 //TODO: Сигнатура
-int CountRed(ColorType* colors, int colorsCount)
+int CountRed(ColorType* colors, const int colorsCount)
 {
 	int redCount = 0;
 	for (int i = 0; i < colorsCount; i++)
