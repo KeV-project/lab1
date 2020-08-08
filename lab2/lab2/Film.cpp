@@ -95,29 +95,77 @@ void ReadFilm(Film& film)
 	cin >> title;
 	cout << endl;
 	SetTitle(film, title);
-	cout << "¬ведите продолжительность фильма(мин): ";
-	int duration = 0;
-	cin >> duration;
-	cout << endl;
-	SetDuration(film, duration);
-	cout << "¬ведите год выпуска фильмы: ";
-	int year = 0;
-	cin >> year;
-	cout << endl;
-	SetYear(film, year);
+	do
+	{
+		cout << "¬ведите продолжительность фильма(мин): ";
+		int duration = 0;
+		cin >> duration;
+		cout << endl;
+		if (IsValue())
+		{
+			SetDuration(film, duration);
+			break;
+		}
+		else
+		{
+			cout << "¬ведено некорректное значение" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "¬ведите год выпуска фильмы: ";
+		int year = 0;
+		cin >> year;
+		cout << endl;
+		if (IsValue())
+		{
+			SetYear(film, year);
+			break;
+		}
+		else
+		{
+			cout << "¬ведено некорректное значение" << endl << endl;
+		}
+	} while (true);
 	cout << "¬ведите жанр:" << endl;
-	film.Genre = ReadGenre();
+	cout << "(0 -  омеди€, 1 - ƒрама, 2 - “риллер, " << endl;
+	cout << "3 - Ёкшен, 4 - ‘ильм ужасов, 5 - Ѕлокбастер): ";
+	int numGenre = 0;
+	cin >> numGenre;
+	film.Genre = ReadGenre(numGenre);
 	cout << endl;
-	cout << "¬ведите рейтинг фильма: ";
-	float rating = 0.0;
-	cin >> rating;
-	cout << endl;
-	SetRating(film, rating);
-	cout << "¬ведите бюджет фильмa: ";
-	int budget = 0;
-	cin >> budget;
-	cout << endl;
-	SetBudget(film, budget);
+	do
+	{
+		cout << "¬ведите рейтинг фильма: ";
+		float rating = 0.0;
+		cin >> rating;
+		cout << endl;
+		if (IsValue())
+		{
+			SetRating(film, rating);
+			break;
+		}
+		else
+		{
+			cout << "¬ведено некорректное значение" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "¬ведите бюджет фильмa: ";
+		int budget = 0;
+		cin >> budget;
+		cout << endl;
+		if (IsValue())
+		{
+			SetBudget(film, budget);
+			break;
+		}
+		else
+		{
+			cout << "¬ведено некорректное значение" << endl << endl;
+		}
+	} while (true);
 	cout << "¬ведите им€ режиссера: ";
 	string director = "";
 	cin >> director;

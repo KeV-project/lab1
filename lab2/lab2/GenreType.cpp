@@ -1,14 +1,9 @@
 #include "GenreType.h"
 
 //TODO: Сигнатура +
-GenreType ReadGenre()
+GenreType ReadGenre(const int numGenre)
 {
 	//TODO: Не обработаны крайние случаи - меньше нуля и больше 5 +
-	int numGenre = 0;
-	cout << "Введите жанр фильма";
-	cout << "(0 - Комедия, 1 - Драма, 2 - Триллер, " << endl;
-	cout << "3 - Экшен, 4 - Фильм ужасов, 5 - Блокбастер): ";
-	cin >> numGenre;
 	if (!IsValueInRange(numGenre, 0, 5))
 	{
 		throw exception("Число не входит в допустимый диапазон");
