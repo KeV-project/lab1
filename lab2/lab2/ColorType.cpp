@@ -23,7 +23,11 @@ ColorType ReadColor()
 	cout << "\n2 Ц желтый, 3 Цзеленый, 4 Ц голубой, 5 Ц синий, 6 Ц фиолетовый): ";
 	cin >> numColor;
 	cout << endl;
-	//TODO: Ќе обработан случай ввода отрицательного значени€ и больше 6
+	//TODO: Ќе обработан случай ввода отрицательного значени€ и больше 6 +
+	if (!IsValueInRange(numColor, 0, 6))
+	{
+		throw exception("„исло не входит в допустимый диапазон");
+	}
 	switch (numColor)
 	{
 		//TODO: RSDN +
