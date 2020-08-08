@@ -138,8 +138,8 @@ void DemoMovieWithGenre()
 	film.MainRole = "Will Smith";
 
 	// Task 2.2.9.3
-	Film* film2 = MakeFilm("Джентельмены", 113, 2019, Thriller, 8.6, 22,
-		"Гай Ричи", "Мэттью Макконахи, Чарли Ханнэм");
+	Film* film2 = MakeFilm("Джентельмены", 113, 2019, Thriller, 8.6,
+		22000000, "Гай Ричи", "Мэттью Макконахи, Чарли Ханнэм");
 	delete film2;
 
 	// Task 2.2.9.4
@@ -147,26 +147,26 @@ void DemoMovieWithGenre()
 	Film** films = new Film * [filmsCount]
 	{
 		MakeFilm("Время", 109, 2011, Thriller,
-			7.3, 40, "Эндрю Никкол","Джастин Тимберлейк"),
+			7.3, 40000000, "Эндрю Никкол","Джастин Тимберлейк"),
 		MakeFilm("Я - легенда", 115, 2007, Horror,
-			7.9, 150, "Фрэнсис Лоуренс","Уилл Смит"),
+			7.9, 150000000, "Фрэнсис Лоуренс","Уилл Смит"),
 		MakeFilm("Доктор Хаус", 43, 2004, Drama,
-			8.8, 4.5, "Грег Яйтанс", "Хью Лори"),
+			8.8, 4500000, "Грег Яйтанс", "Хью Лори"),
 		MakeFilm("Focus", 104, 2015, Drama,
-			8.2, 50.1, "Glenn Ficarra, John Recua", "Will Smith"),
+			8.2, 50100000, "Glenn Ficarra, John Recua", "Will Smith"),
 		MakeFilm("Остров проклятых", 139, 2010, Thriller,
-			8.5, 80, "Мартин Скорсезе", "Мартин Скорсезе"),
+			8.5, 80000000, "Мартин Скорсезе", "Мартин Скорсезе"),
 		MakeFilm("Дэдпул", 108, 2016, Comedy,
-			7.5, 58, "Тим Миллер", "Райан Рейнольдс"),
+			7.5, 58000000, "Тим Миллер", "Райан Рейнольдс"),
 		MakeFilm("Белый плен", 120, 2005, Drama,
-			8.1, 40, "Фрэнк Маршалл", "Пол Уокер"),
+			8.1, 40000000, "Фрэнк Маршалл", "Пол Уокер"),
 		MakeFilm("Скорость", 116, 1994, Drama,
-			7.7, 30, "Glenn Ficarra, John Recua", "Киану Ривз"),
+			7.7, 30000000, "Glenn Ficarra, John Recua", "Киану Ривз"),
 		MakeFilm("О чем говорят мужчины", 92, 2010,
-			Comedy, 7.7, 1.95, "Дмитрий Дьяченко", 
+			Comedy, 7.7, 1950000, "Дмитрий Дьяченко", 
 			"Леонид Барац, Ростислав Хаит,Камиль Ларин, Александр Демидов"),
 		MakeFilm("Веном", 112, 2018, Thriller,
-			6.8, 100, "Рубен Флейшер", "Том Харди"),
+			6.8, 100000000, "Рубен Флейшер", "Том Харди"),
 	};
 
 	cout << "Массив фильмов:" << endl << endl;
@@ -211,7 +211,7 @@ void DemoFilm()
 	firstFilm.Year = 2015;
 	firstFilm.Genre = Drama;
 	firstFilm.Rating = 8.2;
-	firstFilm.Budget = 50.1;
+	firstFilm.Budget = 50100000;
 	firstFilm.Director = "Glenn Ficarra, John Recua";
 	firstFilm.MainRole = "Will Smith";
 
@@ -228,9 +228,9 @@ void DemoFilm()
 	{
 		MakeFilm("Время", 109, 2011, Thriller, 7.3, 40,
 			"Эндрю Никкол", "Джастин Тимберлейк"),
-		MakeFilm("Я - легенда", 115, 2007, Horror, 7.9, 150,
+		MakeFilm("Я - легенда", 115, 2007, Horror, 7.9, 150000000,
 			"Фрэнсис Лоуренс", "Уилл Смит"),
-		MakeFilm("Доктор Хаус", 43, 2004, Drama, 8.8, 4.4,
+		MakeFilm("Доктор Хаус", 43, 2004, Drama, 8.8, 4400000,
 			"Грег Яйтанс", "Хью Лори"),
 	};
 	cout << "Массив фильмов: " << endl << endl;
@@ -253,7 +253,7 @@ void DemoFilm()
 	PrintFilm(firstFilm);
 	cout << "Измененный фильм firstFilm: " << endl << endl;
 	ChangeFilm(pFirstFilm, "Остров Проклятых", 139, 2010,
-		Thriller, 8.5, 80, "Мартин Скорсезе", "Леонардо Ди Каприо");
+		Thriller, 8.5, 80000000, "Мартин Скорсезе", "Леонардо Ди Каприо");
 	PrintFilm(*pFirstFilm);
 	PrintLine();
 

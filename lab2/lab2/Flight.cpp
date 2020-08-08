@@ -122,8 +122,8 @@ void FindShortestFlight(Flight** flights, const int flightsCount)
 
 void DemoDynamicFlights()
 {
-	//TODO: Части дублируются с методом DemoFlight
-	const int flightsCount = 4;
+	//TODO: Части дублируются с методом DemoFlight +
+	const int flightsCount = 7;
 	Flight** flights = new Flight * [flightsCount]
 	{
 		//TODO: RSDN
@@ -131,12 +131,20 @@ void DemoDynamicFlights()
 		MakeFlight("7T5E1", 547, "Новосибирск", "Клайпеда", 110, 3585, 110),
 		MakeFlight("23P08", 123, "Дубай", "Москва", 360, 5000, 80),
 		MakeFlight("1ER7G", 756, "Кемерово", "Улан-Удэ", 120, 2000, 60),
+		MakeFlight("4G7L1", 3001, "Москва", "Италия", 250, 3040, 120),
+		MakeFlight("SD147", 6413, "Новосибирск", "Литва", 120, 4339, 113),
+		MakeFlight("7CC77", 5204, "Дубай", "Москва", 270, 3600, 250),
 	};
 	for (int i = 0; i < flightsCount; i++)
 	{
 		cout << "Рейс №" << i + 1 << endl << endl;
 		PrintFlight(*flights[i]);
 	}
+	for (int i = 0; i < flightsCount; i++)
+	{
+		delete flights[i];
+	}
+	delete[] flights;
 
 	// Task 2.2.6.3
 	PrintLine();
@@ -168,27 +176,11 @@ void DemoFlight()
 	PrintFlight(secondFlight);
 	PrintLine();
 	
-	// Task 2.2.3.3
-	const int flightsCount = 3;
-	Flight** flights = new Flight * [flightsCount]
-	{
-		//TODO: RSDN
-		MakeFlight("4G7L1", 3001, "Москва", "Италия", 250, 3040, 120),
-		MakeFlight("SD147", 6413, "Новосибирск", "Литва", 120, 4339, 113),
-		MakeFlight("7CC77", 5204,  "Дубай", "Москва", 270, 3600, 250),
-	};
-	cout << "Массив рейсов:" << endl << endl;
-	for (int i = 0; i < flightsCount; i++)
-	{
-		cout << "Рейс №" << i + 1 << endl << endl;
-		PrintFlight(*flights[i]);
-	}
+	// Task 2.2.3.3, 2.2.6.2
+	cout << "Массив объектов Flight ";
+	cout << "созданный в функции DemoDynamicFlights : " << endl << endl;
+	DemoDynamicFlights();
 	PrintLine();
-	for (int i = 0; i < flightsCount; i++)
-	{
-		delete flights[i];
-	}
-	delete[] flights;
 	
 	// Task 2.2.4.1
 	cout << "Работа с указателем на структуру:" << endl << endl;
@@ -215,11 +207,5 @@ void DemoFlight()
 	cout << "Создан динамический объект Flight";
 	cout << " в функции DemoDynamicFlight : " << endl << endl;
 	DemoDynamicFlight();
-	PrintLine();
-
-	// Task 2.2.6.2
-	cout << "Массив объектов Flight ";
-	cout << "созданный в функции DemoDynamicFlights : " << endl << endl;
-	DemoDynamicFlights();
 	PrintLine();
 }
