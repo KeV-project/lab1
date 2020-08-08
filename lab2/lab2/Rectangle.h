@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include "Input.h"
 #include "Output.h"
 #include "ColorType.h"
 

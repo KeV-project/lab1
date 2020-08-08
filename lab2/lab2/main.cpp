@@ -70,14 +70,14 @@ void DemoEnums()
 			ColorType color2 = ReadColor(numColor);
 			cout << "Вы ввели: ";
 			PrintColor(color2);
+			cout << endl << endl;
 			break;
 		}
 		else
 		{
-			cout << "Введено недопустимое значение";
+			cout << "Введено недопустимое значение" << endl << endl;
 		}
 	} while (true);
-	cout << endl << endl;
 	PrintLine();
 
 	// Task 2.2.8.7
@@ -100,15 +100,14 @@ void DemoEnums()
 			PrintColor(findedColor);
 			cout << " встречается в массиве ";
 			cout << CountColor(colors, enumsCount, findedColor);
-			cout << " раз(а)";
+			cout << " раз(а)" << endl << endl;
 			break;
 		}
 		else
 		{
-			cout << "Введено недопустимое значение";
+			cout << "Введено недопустимое значение" << endl << endl;
 		}
 	} while (true);
-	cout << endl << endl;
 	PrintLine();
 	
 	WeekdaysType weekdays[enumsCount];
@@ -160,7 +159,7 @@ void main()
     DemoSort();
     PrintLine();
 
-    DemoRectangle();
+    //DemoRectangle();
     DemoFlight();
     DemoFilm();
     DemoTime();

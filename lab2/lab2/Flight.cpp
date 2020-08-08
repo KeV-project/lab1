@@ -86,12 +86,22 @@ void ReadFlight(Flight& flight)
 	string flightNimber = "";
 	cin >> flightNimber;
 	cout << endl;
-	SetFlightNumber(flight, flightNimber);
-	cout << "¬ведите номер самолета: ";
-	int planeNumber = 0;
-	cin >> planeNumber;
-	cout << endl;
-	SetPlaneNumber(flight, planeNumber);
+	do
+	{
+		cout << "¬ведите номер самолета: ";
+		int planeNumber = 0;
+		cin >> planeNumber;
+		cout << endl;
+		if (IsValue())
+		{
+			SetFlightNumber(flight, flightNimber);
+			break;
+		}
+		else
+		{
+			cout << "¬ведено недопустимое значение" << endl << endl;
+		}
+	} while (true);
 	cout << "¬ведите пункт вылета самолета: ";
 	string departure = "";
 	cin >> departure;
@@ -102,21 +112,54 @@ void ReadFlight(Flight& flight)
 	cin >> destination;
 	cout << endl;
 	SetDestination(flight, destination);
-	cout << "¬ведите врем€ полета(мин): ";
-	int durationInMinutes = 0;
-	cin >> durationInMinutes;
-	cout << endl;
-	SetDurationInMinutes(flight, durationInMinutes);
-	cout << "¬ведите дальность полета(м): ";
-	int distanceInMeters = 0;
-	cin >> distanceInMeters;
-	cout << endl;
-	SetDistanceInMeters(flight, distanceInMeters);
-	cout << "¬ведите количество пассажиров на борту: ";
-	int passengers = 0;
-	cin >> passengers;
-	cout << endl;
-	SetPassengers(flight, passengers);
+	do
+	{
+		cout << "¬ведите врем€ полета(мин): ";
+		int durationInMinutes = 0;
+		cin >> durationInMinutes;
+		cout << endl;
+		if (IsValue())
+		{
+			SetDurationInMinutes(flight, durationInMinutes);
+			break;
+		}
+		else
+		{
+			cout << "¬ведено недопустимое значение" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "¬ведите дальность полета(м): ";
+		int distanceInMeters = 0;
+		cin >> distanceInMeters;
+		cout << endl;
+		if (IsValue())
+		{
+			SetDistanceInMeters(flight, distanceInMeters);
+			break;
+		}
+		else
+		{
+			cout << "¬ведено недопустимое значение" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "¬ведите количество пассажиров на борту: ";
+		int passengers = 0;
+		cin >> passengers;
+		cout << endl;
+		if (IsValue())
+		{
+			SetPassengers(flight, passengers);
+			break;
+		}
+		else
+		{
+			cout << "¬ведено недопустимое значение" << endl << endl;
+		}
+	} while (true);
 }
 
 void PrintFlight(const Flight& flight)
