@@ -25,6 +25,7 @@
     <ClCompile Include="Film.cpp" />
     <ClCompile Include="Flight.cpp" />
     <ClCompile Include="GenreType.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="Rectangle.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="Film.h" />
     <ClInclude Include="Flight.h" />
     <ClInclude Include="GenreType.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="PhoneManufacturerType.h" />
     <ClInclude Include="Rectangle.h" />

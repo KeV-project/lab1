@@ -120,8 +120,8 @@ void main()
 	std::system("chcp 1251");
 	
     // Task 2.2.1.1 - 2.2.1.2
-    //DemoSort();
-    //PrintLine();
+    DemoSort();
+    PrintLine();
 
     DemoRectangle();
     DemoFlight();
