@@ -16,9 +16,14 @@ struct Rectangle
 	float Area;
 };
 
+void SetLength(Rectangle &rectangle, const float length);
+void SetWidth(Rectangle& rectangle, const float width);
+void SetColor(Rectangle& rectangle, const ColorType& color);
+
 Rectangle* MakeRectangle();
 Rectangle* MakeRectangle(const float length, const float width,
 	const ColorType& color);
+
 Rectangle* CopyRectangle(const Rectangle& rectangle);
 void ReadRectangle(Rectangle& rectangle);
 void PrintRectangle(const Rectangle& rectangle);

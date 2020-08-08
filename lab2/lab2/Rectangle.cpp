@@ -1,14 +1,38 @@
 #include "Rectangle.h"
 
+void SetLength(Rectangle& rectangle, const float length)
+{
+	if (length <= 0)
+	{
+		throw exception("ИСКЛЮЧЕНИЕ: длина прямоугольника"
+			"не может быть меньше или равна 0");
+	}
+	rectangle.Length = length;
+}
+
+void SetWidth(Rectangle& rectangle, const float width)
+{
+	if (width <= 0)
+	{
+		throw exception("ИСКЛЮЧЕНИЕ: ширина прямоугольника"
+			"не может быть меньше или равна 0");
+	}
+	rectangle.Width = width;
+}
+
+void SetColor(Rectangle& rectangle, const ColorType& color)
+{
+	rectangle.Color = color;
+}
+
 Rectangle* MakeRectangle()
 {
 	Rectangle* rectangle = new Rectangle();
-	rectangle->Length = 0.0;
-	rectangle->Width = 0.0;
-	rectangle->Diagonal = 0.0;
-	rectangle->Color = Red;
-	rectangle->Perimeter = 0.0;
-	rectangle->Area = 0.0;
+	SetLength(*rectangle, 1.0);
+	SetWidth(*rectangle, 1.0);
+	rectangle->Diagonal = 1.0;
+	SetColor(*rectangle, Red);
+	rectangle->Perimeter = 2.0;
 	return rectangle;
 }
 
@@ -17,10 +41,10 @@ Rectangle* MakeRectangle(const float length, const float width,
 	const ColorType& color)
 {
 	Rectangle* rectangle = new Rectangle();
-	rectangle->Length = length;
-	rectangle->Width = width;
+	SetLength(*rectangle, length);
+	SetWidth(*rectangle, width);
 	rectangle->Diagonal = sqrt(pow(length, 2) + pow(width, 2));
-	rectangle->Color = color;
+	SetColor(*rectangle, color);
 	rectangle->Perimeter = (length + width) * 2;
 	rectangle->Area = length * width;
 	return rectangle;
@@ -41,14 +65,18 @@ Rectangle* CopyRectangle(const Rectangle& rectangle)
 
 void ReadRectangle(Rectangle& rectangle)
 {
-	cout << "Введите длину прямоугольника(вещ. ч): ";
-	cin >> rectangle.Length;
+	cout << "Введите длину прямоугольника: ";
+	float length = 0.0;
+	cin >> length;
 	cout << endl;
-	cout << "Введите ширину прямоугольника(вещ. ч): ";
-	cin >> rectangle.Width;
+	SetLength(rectangle, length);
+	cout << "Введите ширину прямоугольника: ";
+	float width = 0.0;
+	cin >> width;
 	cout << endl;
+	SetWidth(rectangle, width);
 	cout << "Введите цвет прямоугольника: " << endl << endl;
-	rectangle.Color = ReadColor();
+	SetColor(rectangle, ReadColor());
 	cout << endl;
 	rectangle.Diagonal = sqrt(pow(rectangle.Length, 2) 
 		+ pow(rectangle.Width, 2));
@@ -94,9 +122,9 @@ Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount)
 void ChangeRectangle(Rectangle* rectangle, const float length,
 	const float width, const ColorType& color)
 {
-	rectangle->Length = length;
-	rectangle->Width = width;
-	rectangle->Color = color;
+	SetLength(*rectangle, length);
+	SetWidth(*rectangle, width);
+	SetColor(*rectangle, color);
 	rectangle->Diagonal = sqrt(pow(rectangle->Length, 2) 
 		+ pow(rectangle->Width, 2));
 	rectangle->Perimeter = (rectangle->Length + rectangle->Width) * 2;
@@ -167,10 +195,10 @@ void DemoRectangle()
 {
 	// Task 2.2.3.1
 	Rectangle firstRectangle;
-	firstRectangle.Length = 13.5;
-	firstRectangle.Width = 7.3;
+	SetLength(firstRectangle, 13.5);
+	SetWidth(firstRectangle, 7.3);
+	SetColor(firstRectangle, Yellow);
 	firstRectangle.Diagonal = 15.3;
-	firstRectangle.Color = Yellow;
 	firstRectangle.Perimeter = 41.6;
 	firstRectangle.Area = 98.55;
 	
@@ -237,5 +265,3 @@ void DemoRectangle()
 	}
 	delete[] rectangles;
 }
-
-
