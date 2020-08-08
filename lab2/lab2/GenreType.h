@@ -15,4 +15,4 @@ enum GenreType
 };
 
 void ReadGenre(int numGenre, GenreType& filmsGenre);
-string PrintGenre(GenreType& filmsGenre);
+string PrintGenre(const GenreType& filmsGenre);

@@ -63,7 +63,7 @@ void ReadFilm(Film& film)
 	cout << endl;
 }
 
-void PrintFilm(Film& film)
+void PrintFilm(const Film& film)
 {
 	cout << "Название: " << film.Title << endl;
 	cout << "Продолжительность: " << film.Duration << endl;

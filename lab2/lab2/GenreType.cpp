@@ -30,7 +30,7 @@ void ReadGenre(int numGenre, GenreType& filmsGenre)
 }
 
 //TODO: Сигнатура
-string PrintGenre(GenreType& filmsGenre)
+string PrintGenre(const GenreType& filmsGenre)
 {
 	switch (filmsGenre)
 	{
