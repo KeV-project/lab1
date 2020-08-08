@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CatchExсeption.cpp" />
+    <ClCompile Include="DemoExсeption.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="ColorType.cpp" />
     <ClCompile Include="Film.cpp" />
@@ -31,7 +31,7 @@
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CatchExсeption.h" />
+    <ClInclude Include="DemoExсeption.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="ColorType.h" />
     <ClInclude Include="EducationFormType.h" />
