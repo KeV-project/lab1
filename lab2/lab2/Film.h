@@ -13,8 +13,7 @@ struct Film
 	int Year;
 	GenreType Genre;
 	float Rating;
-	//TODO: Не нужный комментарий, лучше переименовать переменную в BudgetInMillions, хотя хранить прям в миллионах - это не правильно
-	// Бюджет фильма в миллионах
+	//TODO: Не нужный комментарий, лучше переименовать переменную в BudgetInMillions, хотя хранить прям в миллионах - это не правильно +
 	float Budget;
 	string Director;
 	string MainRole;

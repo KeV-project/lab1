@@ -9,29 +9,24 @@ struct Flight
 {
 	string FlightNumber;
 	int PlaneNumber;
-	//TODO: Много не нужных комментов, названия полей говорят сами за себя
-	// Пункт Вылета
+	//TODO: Много не нужных комментов, названия полей говорят сами за себя +
 	string Departure;
-	// Пункт назначения
 	string Destination;
-	// Время полета в минутах
-	int Duration;
-	// Расстояние в км
-	int Distance;
-	//Количество пассажиров на борту
+	int DurationInMinutes;
+	int DistanceInMeters;
 	int Passengers;
 };
 
 Flight* MakeFlight(const string& flightNumber, const int planeNumber,
-	const string& departure, const string& destination, const int duration,
-	const int distance, const int passengers);
+	const string& departure, const string& destination, const int durationInMinutes,
+	const int distanceInMeters, const int passengers);
 Flight* CopyFlight(const Flight& flight);
 void ReadFlight(Flight& flight);
 void PrintFlight(const Flight& flight);
 void ChangeFlight(Flight* flight, const string& flightNumber,
 	const int planeNumber, const string& departure,
-	const string& destination, const int duration,
-	const int distance, const int passengers);
+	const string& destination, const int durationInMinutes,
+	const int distanceInMeters, const int passengers);
 void DemoDynamicFlight();
 void FindShortestFlight(Flight** flights, const int flightsCount);
 void DemoDynamicFlights();

@@ -2,16 +2,16 @@
 
 //TODO: Сигнатура +
 Flight* MakeFlight(const string& flightNumber, const int planeNumber,
-	const string& departure, const string& destination, const int duration,
-	const int distance, const int passengers)
+	const string& departure, const string& destination, const int durationInMinutes,
+	const int distanceInMeters, const int passengers)
 {
 	Flight* flight = new Flight();
 	flight->FlightNumber = flightNumber;
 	flight->PlaneNumber = planeNumber;
 	flight->Departure = departure;
 	flight->Destination = destination;
-	flight->Duration = duration;
-	flight->Distance = distance;
+	flight->DurationInMinutes = durationInMinutes;
+	flight->DistanceInMeters = distanceInMeters;
 	flight->Passengers = passengers;
 	return flight;
 }
@@ -23,8 +23,8 @@ Flight* CopyFlight(const Flight& flight)
 	copiedFlight->PlaneNumber = flight.PlaneNumber;
 	copiedFlight->Departure = flight.Departure;
 	copiedFlight->Destination = flight.Destination;
-	copiedFlight->Duration = flight.Duration;
-	copiedFlight->Distance = flight.Distance;
+	copiedFlight->DurationInMinutes = flight.DurationInMinutes;
+	copiedFlight->DistanceInMeters = flight.DistanceInMeters;
 	copiedFlight->Passengers = flight.Passengers;
 	return copiedFlight;
 }
@@ -44,10 +44,10 @@ void ReadFlight(Flight& flight)
 	cin >> flight.Destination;
 	cout << endl;
 	cout << "Введите время полета(мин): ";
-	cin >> flight.Duration;
+	cin >> flight.DurationInMinutes;
 	cout << endl;
 	cout << "Введите дальность полета(км): ";
-	cin >> flight.Distance;
+	cin >> flight.DistanceInMeters;
 	cout << endl;
 	cout << "Введите количество пассажиров на борту: ";
 	cin >> flight.Passengers;
@@ -60,8 +60,8 @@ void PrintFlight(const Flight& flight)
 	cout << "Номер самолета: " << flight.PlaneNumber << endl;
 	cout << "Пункт вылета самолета: " << flight.Departure << endl;
 	cout << "Пункт назначения самолета: " << flight.Destination << endl;
-	cout << "Время полета: " << flight.Duration << endl;
-	cout << "Дальность полета: " << flight.Distance << endl;
+	cout << "Время полета: " << flight.DurationInMinutes << endl;
+	cout << "Дальность полета: " << flight.DistanceInMeters << endl;
 	cout << "Количество пассажиров на борту: ";
 	cout << flight.Passengers << endl << endl;
 }
@@ -69,15 +69,15 @@ void PrintFlight(const Flight& flight)
 //TODO: Сигнатура +
 void ChangeFlight(Flight* flight, const string& flightNumber,
 	const int planeNumber, const string& departure, 
-	const string& destination, const int duration,
-	const int distance, const int passengers)
+	const string& destination, const int durationInMinutes,
+	const int distanceInMeters, const int passengers)
 {
 	flight->FlightNumber = flightNumber;
 	flight->PlaneNumber = planeNumber;
 	flight->Departure = departure;
 	flight->Destination = destination;
-	flight->Duration = duration;
-	flight->Distance = distance;
+	flight->DurationInMinutes = durationInMinutes;
+	flight->DistanceInMeters = distanceInMeters;
 	flight->Passengers = passengers;
 }
 
@@ -88,8 +88,8 @@ void DemoDynamicFlight()
 	pFlight->PlaneNumber = 221;
 	pFlight->Departure = "Кемерово";
 	pFlight->Destination = "Улан-Удэ";
-	pFlight->Duration = 150;
-	pFlight->Distance = 2500;
+	pFlight->DurationInMinutes = 150;
+	pFlight->DistanceInMeters = 2500;
 	pFlight->Passengers = 90;
 
 	PrintFlight(*pFlight);
@@ -100,20 +100,20 @@ void DemoDynamicFlight()
 //TODO: Сигнатура +
 void FindShortestFlight(Flight** flights, const int flightsCount)
 {
-	int minDuration = flights[0]->Duration;
+	int minDuration = flights[0]->DurationInMinutes;
 	int minDurationIndex = 0;
 	for (int i = 1; i < flightsCount; i++)
 	{
-		if (flights[i]->Duration < minDuration)
+		if (flights[i]->DurationInMinutes < minDuration)
 		{
-			minDuration = flights[i]->Duration;
+			minDuration = flights[i]->DurationInMinutes;
 			minDurationIndex = i;
 		}
 	}
 	cout << "Рейс с наименьшим временем перелета:" << endl << endl;
 	cout << "Рейс " << flights[minDurationIndex]->Departure;
 	cout << " - " << flights[minDurationIndex]->Destination;
-	cout << " находится в полете " << flights[minDurationIndex]->Duration;
+	cout << " находится в полете " << flights[minDurationIndex]->DurationInMinutes;
 	cout << " минут" << endl;
 	cout << "Номер самолета: " << flights[minDurationIndex]->PlaneNumber;
 	cout << ", на борту " << flights[minDurationIndex]->Passengers;
@@ -157,8 +157,8 @@ void DemoFlight()
 	firstFlight.PlaneNumber = 3910;
 	firstFlight.Departure = "Томск";
 	firstFlight.Destination = "Москва";
-	firstFlight.Duration = 300;
-	firstFlight.Distance = 2800;
+	firstFlight.DurationInMinutes = 300;
+	firstFlight.DistanceInMeters = 2800;
 	firstFlight.Passengers = 157;
 	
 	// Task 2.2.3.2
