@@ -273,13 +273,13 @@ void DemoFlight()
 {
 	// Task 2.2.3.1
 	Flight firstFlight;
-	firstFlight.FlightNumber = "5K47X";
-	firstFlight.PlaneNumber = 3910;
-	firstFlight.Departure = "Томск";
-	firstFlight.Destination = "Москва";
-	firstFlight.DurationInMinutes = 300;
-	firstFlight.DistanceInMeters = 2800000;
-	firstFlight.Passengers = 157;
+	SetFlightNumber(firstFlight, "5K47X");
+	SetPlaneNumber(firstFlight, 3910);
+	SetDeparture(firstFlight, "Томск");
+	SetDestination(firstFlight, "Москва");
+	SetDurationInMinutes(firstFlight, 300);
+	SetDistanceInMeters(firstFlight, 2800000);
+	SetPassengers(firstFlight, 157);
 	
 	// Task 2.2.3.2
 	Flight secondFlight;
