@@ -55,7 +55,7 @@ void DemoEnums()
 		cout << endl;
 	}
 	PrintLine();
-	/*
+	
 	// Task 2.2.8.6
 	do
 	{
@@ -68,7 +68,7 @@ void DemoEnums()
 		cout << endl;
 		if (IsValue())
 		{
-			ColorType color2 = ReadColor(numColor);
+			ColorType color2 = GetColorType(numColor);
 			cout << "Вы ввели: ";
 			PrintColor(color2);
 			cout << endl << endl;
@@ -98,7 +98,7 @@ void DemoEnums()
 		cout << endl;
 		if (IsValue())
 		{
-			ColorType findedColor = ReadColor(findedNumColor);
+			ColorType findedColor = GetColorType(findedNumColor);
 			PrintColor(findedColor);
 			cout << " цвет встречается в массиве ";
 			cout << CountColor(colors, enumsCount, findedColor);
@@ -111,7 +111,7 @@ void DemoEnums()
 		}
 	} while (true);
 	PrintLine();
-	*/
+	
 	WeekdaysType weekdays[enumsCount];
 	weekdays[0] = Tuesday;
 	weekdays[1] = Wednesday;
@@ -162,7 +162,7 @@ void main()
     //DemoSort();
     //PrintLine();
 	
-    DemoRectangle();
+    //DemoRectangle();
 	/*
     DemoFlight();
     DemoFilm();
