@@ -1,7 +1,7 @@
 #include "GenreType.h"
 
 //TODO: Сигнатура +
-GenreType ReadGenre(const int numGenre)
+GenreType GetGenreType(const int numGenre)
 {
 	//TODO: Не обработаны крайние случаи - меньше нуля и больше 5 +
 	if (!IsValueInRange(numGenre, 0, 5))

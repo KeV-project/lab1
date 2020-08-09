@@ -137,7 +137,7 @@ void ReadFilm(Film& film)
 		cout << endl;
 		if (IsValue())
 		{
-			film.Genre = ReadGenre(numGenre);
+			film.Genre = GetGenreType(numGenre);
 			break;
 		}
 		else
@@ -145,9 +145,6 @@ void ReadFilm(Film& film)
 			cout << "¬ведено некорректное значение" << endl << endl;
 		}
 	} while (true);
-	
-	
-	
 	do
 	{
 		cout << "¬ведите рейтинг фильма: ";

@@ -163,9 +163,9 @@ void main()
     //PrintLine();
 	
     //DemoRectangle();
-    DemoFlight();
-	/*
+    // DemoFlight();
     DemoFilm();
+	/*
     DemoTime();
 	
 	// Task 2.2.7.2, 2.2.7.3
