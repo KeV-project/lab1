@@ -1,7 +1,7 @@
 #include "ColorType.h"
 
 //TODO: Сигнатура +
-void PrintColor(const ColorType &color)
+void PrintColor(const ColorType& color)
 {
 	switch (color)
 	{
@@ -16,9 +16,8 @@ void PrintColor(const ColorType &color)
 	}
 }
 
-ColorType ReadColor(const int numColor)
+ColorType GetColorType(const int numColor)
 {
-	
 	//TODO: Не обработан случай ввода отрицательного значения и больше 6 +
 	if (!IsValueInRange(numColor, 0, 6))
 	{

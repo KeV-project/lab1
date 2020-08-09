@@ -20,9 +20,24 @@ void SetWidth(Rectangle& rectangle, const float width)
 	rectangle.Width = width;
 }
 
+void SetDiagonal(Rectangle& rectangle, const float length, const float width)
+{
+	rectangle.Diagonal = sqrt(pow(length, 2) + pow(width, 2));
+}
+
 void SetColor(Rectangle& rectangle, const ColorType& color)
 {
 	rectangle.Color = color;
+}
+
+void SetPerimeter(Rectangle& rectangle, const float length, const float width)
+{
+	rectangle.Perimeter = (length + width) * 2;
+}
+
+void SetArea(Rectangle& rectangle, const float length, const float width)
+{
+	rectangle.Area = length * width;
 }
 
 Rectangle* MakeRectangle()
@@ -30,9 +45,10 @@ Rectangle* MakeRectangle()
 	Rectangle* rectangle = new Rectangle();
 	SetLength(*rectangle, 1.0);
 	SetWidth(*rectangle, 1.0);
-	rectangle->Diagonal = 1.0;
+	SetDiagonal(*rectangle, rectangle->Length, rectangle->Width);
 	SetColor(*rectangle, Red);
-	rectangle->Perimeter = 2.0;
+	SetPerimeter(*rectangle, rectangle->Length, rectangle->Width);
+	SetArea(*rectangle, rectangle->Length, rectangle->Width);
 	return rectangle;
 }
 
@@ -43,10 +59,10 @@ Rectangle* MakeRectangle(const float length, const float width,
 	Rectangle* rectangle = new Rectangle();
 	SetLength(*rectangle, length);
 	SetWidth(*rectangle, width);
-	rectangle->Diagonal = sqrt(pow(length, 2) + pow(width, 2));
+	SetDiagonal(*rectangle, rectangle->Length, rectangle->Width);
 	SetColor(*rectangle, color);
-	rectangle->Perimeter = (length + width) * 2;
-	rectangle->Area = length * width;
+	SetPerimeter(*rectangle, rectangle->Length, rectangle->Width);
+	SetArea(*rectangle, rectangle->Length, rectangle->Width);
 	return rectangle;
 }
 
@@ -61,7 +77,6 @@ Rectangle* CopyRectangle(const Rectangle& rectangle)
 	copiedRectangle->Area = rectangle.Area;
 	return copiedRectangle;
 }
-
 
 void ReadRectangle(Rectangle& rectangle)
 {
@@ -99,7 +114,7 @@ void ReadRectangle(Rectangle& rectangle)
 	} while (true);
 	do
 	{
-		cout << "¬ведите цвет пр€моугольника: " << endl << endl;
+		cout << "«адайте цвет пр€моугольнику" << endl << endl;
 		int numColor;
 		cout << "¬ведите число от 0 до 6 (0 Ц красный, 1 Ц оранжевый,";
 		cout << "\n2 Ц желтый, 3 Цзеленый, 4 Ц голубой, ";
@@ -108,8 +123,7 @@ void ReadRectangle(Rectangle& rectangle)
 		cout << endl;
 		if (IsValue())
 		{
-			SetColor(rectangle, ReadColor(numColor));
-			cout << endl;
+			SetColor(rectangle, GetColorType(numColor));
 			break;
 		}
 		else
@@ -236,10 +250,10 @@ void DemoRectangle()
 	Rectangle firstRectangle;
 	SetLength(firstRectangle, 13.5);
 	SetWidth(firstRectangle, 7.3);
+	SetDiagonal(firstRectangle, firstRectangle.Length, firstRectangle.Width);
 	SetColor(firstRectangle, Yellow);
-	firstRectangle.Diagonal = 15.3;
-	firstRectangle.Perimeter = 41.6;
-	firstRectangle.Area = 98.55;
+	SetPerimeter(firstRectangle, firstRectangle.Length, firstRectangle.Width);
+	SetArea(firstRectangle, firstRectangle.Length, firstRectangle.Width);
 	
 	// Task 2.2.3.2
 	Rectangle secondRectangle;

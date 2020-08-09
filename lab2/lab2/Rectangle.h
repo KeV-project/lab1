@@ -19,7 +19,13 @@ struct Rectangle
 
 void SetLength(Rectangle &rectangle, const float length);
 void SetWidth(Rectangle& rectangle, const float width);
+void SetDiagonal(Rectangle& rectangle, const float length,
+	const float width);
 void SetColor(Rectangle& rectangle, const ColorType& color);
+void SetPerimeter(Rectangle& rectangle, const float length,
+	const float width);
+void SetArea(Rectangle& rectangle, const float length,
+	const float width);
 
 Rectangle* MakeRectangle();
 Rectangle* MakeRectangle(const float length, const float width,

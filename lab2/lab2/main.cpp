@@ -55,7 +55,7 @@ void DemoEnums()
 		cout << endl;
 	}
 	PrintLine();
-
+	/*
 	// Task 2.2.8.6
 	do
 	{
@@ -111,7 +111,7 @@ void DemoEnums()
 		}
 	} while (true);
 	PrintLine();
-	
+	*/
 	WeekdaysType weekdays[enumsCount];
 	weekdays[0] = Tuesday;
 	weekdays[1] = Wednesday;
@@ -156,12 +156,14 @@ void main()
 {
 	setlocale(LC_ALL, "Russian");
 	std::system("chcp 1251");
+	cout << endl;
 	
     // Task 2.2.1.1 - 2.2.1.2
-    DemoSort();
-    PrintLine();
-
+    //DemoSort();
+    //PrintLine();
+	
     DemoRectangle();
+	/*
     DemoFlight();
     DemoFilm();
     DemoTime();
@@ -213,6 +215,6 @@ void main()
 	PrintLine();
 
 	DemoEnums();
-	
+	*/
 	system("pause");
 }
