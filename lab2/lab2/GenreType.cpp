@@ -1,16 +1,14 @@
 #include "GenreType.h"
 
-//TODO: —игнатура +
 GenreType GetGenreType(const int numGenre)
 {
-	//TODO: Ќе обработаны крайние случаи - меньше нул€ и больше 5 +
 	if (!IsValueInRange(numGenre, 0, 5))
 	{
 		throw exception("„исло не входит в допустимый диапазон");
 	}
 	switch (numGenre)
 	{
-		//TODO: RSDN +
+		//TODO: RSDN - ¬сегда дл€ Switch-case использовать правила длинной последовательности + ставить скобочки дл€ case-ов
 	case 0: return Comedy;
 	case 1: return Drama;
 	case 2: return Thriller;
@@ -20,12 +18,11 @@ GenreType GetGenreType(const int numGenre)
 	}
 }
 
-//TODO: —игнатура +
 string PrintGenre(const GenreType& filmsGenre)
 {
 	switch (filmsGenre)
 	{
-		//TODO: RSDN +
+		//TODO: RSDN - ¬сегда дл€ Switch-case использовать правила длинной последовательности + ставить скобочки дл€ case-ов
 	case Comedy:	  return "комеди€";
 	case Drama:		  return "драма";
 	case Thriller:    return "триллер";

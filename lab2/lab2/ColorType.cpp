@@ -1,11 +1,10 @@
 #include "ColorType.h"
 
-//TODO: Сигнатура +
 void PrintColor(const ColorType& color)
 {
 	switch (color)
 	{
-		//TODO: RSDN +
+		//TODO: RSDN - Всегда для Switch-case использовать правила длинной последовательности + ставить скобочки для case-ов
 	case Red:      cout << "красный";   break;
 	case Orange:   cout << "оранжевый"; break;
 	case Yellow:   cout << "желтый";    break;
@@ -18,14 +17,13 @@ void PrintColor(const ColorType& color)
 
 ColorType GetColorType(const int numColor)
 {
-	//TODO: Не обработан случай ввода отрицательного значения и больше 6 +
 	if (!IsValueInRange(numColor, 0, 6))
 	{
 		throw exception("Число не входит в допустимый диапазон");
 	}
 	switch (numColor)
 	{
-		//TODO: RSDN +
+		//TODO: RSDN - Всегда для Switch-case использовать правила длинной последовательности + ставить скобочки для case-ов
 	case 0: return Red;
 	case 1: return Orange;
 	case 2: return Yellow;
@@ -36,7 +34,6 @@ ColorType GetColorType(const int numColor)
 	}
 }
 
-//TODO: Сигнатура +
 int CountRed(ColorType* colors, const int colorsCount)
 {
 	int redCount = 0;
@@ -50,7 +47,6 @@ int CountRed(ColorType* colors, const int colorsCount)
 	return redCount;
 }
 
-//TODO: Сигнатура +
 int CountColor(ColorType* colors, const int colorsCount,
 	ColorType &findedColor)
 {

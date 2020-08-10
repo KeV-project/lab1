@@ -51,7 +51,6 @@ void SetPassengers(Flight& flight, const int passengers)
 	flight.Passengers = passengers;
 }
 
-//TODO: Сигнатура +
 Flight* MakeFlight(const string& flightNumber, const int planeNumber,
 	const string& departure, const string& destination,
 	const int durationInMinutes, const int distanceInMeters,
@@ -175,7 +174,6 @@ void PrintFlight(const Flight& flight)
 	cout << flight.Passengers << endl << endl;
 }
 
-//TODO: Сигнатура +
 void ChangeFlight(Flight* flight, const string& flightNumber,
 	const int planeNumber, const string& departure, 
 	const string& destination, const int durationInMinutes,
@@ -206,7 +204,6 @@ void DemoDynamicFlight()
 	delete pFlight;
 }
 
-//TODO: Сигнатура +
 void FindShortestFlight(Flight** flights, const int flightsCount)
 {
 	int minDuration = flights[0]->DurationInMinutes;
@@ -232,11 +229,9 @@ void FindShortestFlight(Flight** flights, const int flightsCount)
 
 void DemoDynamicFlights()
 {
-	//TODO: Части дублируются с методом DemoFlight +
 	const int flightsCount = 7;
 	Flight** flights = new Flight * [flightsCount]
 	{
-		//TODO: RSDN +
 		MakeFlight("11D5N", 333, "Москва",
 			"Фьюмичино", 180, 5600000, 120),
 		MakeFlight("7T5E1", 547, "Новосибирск",

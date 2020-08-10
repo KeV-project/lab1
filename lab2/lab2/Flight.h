@@ -10,7 +10,6 @@ struct Flight
 {
 	string FlightNumber;
 	int PlaneNumber;
-	//TODO: Много не нужных комментов, названия полей говорят сами за себя +
 	string Departure;
 	string Destination;
 	int DurationInMinutes;

@@ -11,6 +11,7 @@ bool IsValueInRange(const int value, const int minLimit, const int maxLimit)
 
 bool IsValue()
 {
+	//TODO: К int можно не приводить и писать != вместо отрицания ==
 	if (!(cin.get() == (int)'\n'))
 	{
 		cin.clear();

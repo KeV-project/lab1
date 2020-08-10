@@ -57,7 +57,6 @@ void SetMainRole(Film& film, const string& mainRole)
 	film.MainRole = mainRole;
 }
 
-//TODO: Сигнатура +
 Film* MakeFilm(const string &title, const int duration, const int year,
 	const GenreType &genre, const float rating, const int budget,
 	const string &director, const string &mainRole)
@@ -201,7 +200,6 @@ void PrintFilm(const Film& film)
 	cout << "В главной роли: " << film.MainRole << endl << endl;
 }
 
-//TODO: Сигнатура +
 void ChangeFilm(Film* film, const string& title,
 	const int duration, const int year, 
 	const GenreType& genre, const float rating, 
@@ -218,7 +216,6 @@ void ChangeFilm(Film* film, const string& title,
 	SetMainRole(*film, mainRole);
 }
 
-//TODO: Сигнатура +
 int CountMoviesByGenre(Film** films, const int filmsCount,
 	const GenreType& findedGenre)
 {
@@ -296,7 +293,7 @@ void DemoMovieWithGenre()
 		MakeFilm("Веном", 112, 2018, Thriller,
 			6.8, 100000000, "Рубен Флейшер", "Том Харди"),
 	};
-
+	//TODO: Дубль
 	cout << "Массив фильмов:" << endl << endl;
 	for (int i = 0; i < filmsCount; i++)
 	{
@@ -361,6 +358,7 @@ void DemoFilm()
 		MakeFilm("Доктор Хаус", 43, 2004, Drama, 8.8, 4400000,
 			"Грег Яйтанс", "Хью Лори"),
 	};
+	//TODO: Дубль
 	cout << "Массив фильмов: " << endl << endl;
 	for (int i = 0; i < filmsCount; i++)
 	{
@@ -376,6 +374,7 @@ void DemoFilm()
 
 	// Task 2.2.4.1
 	cout << "Работа с указателем на структуру:" << endl << endl;
+	//TODO: RSDN - сокращения в переменных
 	Film* pFirstFilm = &firstFilm;
 	cout << "Фильм firstFilm: " << endl << endl;
 	PrintFilm(firstFilm);
@@ -386,6 +385,7 @@ void DemoFilm()
 	PrintLine();
 
 	// Task 2.2.4.2
+	//TODO: RSDN - сокращения в переменных
 	Film* pFirstFilm2 = &firstFilm;
 	cout << "Адрес переменной firstFilm: ";
 	cout << &firstFilm << endl << endl;

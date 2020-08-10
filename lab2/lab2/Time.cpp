@@ -60,7 +60,6 @@ void SetSecond(Time& event, const int second)
 	event.Second = second;
 }
 
-//TODO: Сигнатура +
 Time* MakeTime(const int year, const int month, const int day,
 	const int hour, const int minute, const int second)
 {
@@ -196,11 +195,9 @@ void PrintTime(const Time& event)
 	cout << "Секунда: " << event.Second << endl << endl;
 }
 
-//TODO: Сигнатура +
 void ChangeTime(Time* event, const int year, const int month,
 	const int day, const int hour, const int minute, const int second)
 {
-	//TODO: Нет никаких проверок на переданные значения, вероятно нельзя передать 0 и больше 12 в month и т.д. +
 	SetYear(*event, year);
 	SetMonth(*event, month);
 	SetDay(*event, day);
@@ -254,6 +251,7 @@ void DemoTime()
 	cout << "Прямоугольник firstEvent: " << endl << endl;
 	PrintTime(firstEvent);
 	cout << "Измененное событие firstEvent: " << endl << endl;
+	//TODO: Может прилететь исключение - нужна проверка.
 	ChangeTime(pFirstEvent, 2020, 12, 10, 5, 30, 1);
 	PrintTime(*pFirstEvent);
 	PrintLine();

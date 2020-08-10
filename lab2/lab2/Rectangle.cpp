@@ -52,7 +52,6 @@ Rectangle* MakeRectangle()
 	return rectangle;
 }
 
-//TODO: Сигнатура +
 Rectangle* MakeRectangle(const float length, const float width,
 	const ColorType& color)
 {
@@ -149,7 +148,6 @@ void PrintRectangle(const Rectangle& rectangle)
 	cout << "Площадь: " << rectangle.Area << endl << endl;
 }
 
-//TODO: Сигнатура +
 Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount)
 {
 	Rectangle** rectangles = new Rectangle * [rectanglesCount];
@@ -159,19 +157,20 @@ Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount)
 	}
 	for (int i = 0; i < rectanglesCount; i++)
 	{
+		//TODO: Дубль
 		cout << "Прямоугольник №" << i + 1 << ":" << endl << endl;
 		ReadRectangle(*rectangles[i]);
 	}
 	cout << "Массив прямоугольников: " << endl << endl;
 	for (int i = 0; i < rectanglesCount; i++)
 	{
+		//TODO: Дубль
 		cout << "Прямоугольник №" << i + 1 << ":" << endl << endl;
 		PrintRectangle(*rectangles[i]);
 	}
 	return rectangles;
 }
 
-//TODO: Сигнатура +
 void ChangeRectangle(Rectangle* rectangle, const float length,
 	const float width, const ColorType& color)
 {
@@ -258,6 +257,7 @@ void DemoRectangle()
 	// Task 2.2.3.2
 	Rectangle secondRectangle;
 	cout << "ПРЯМОУГОЛЬНИК" << endl << endl;
+	//TODO: В подобных методах корректнее будет возвращать созданную фигуру, а не передавать её для задания
 	ReadRectangle(secondRectangle);
 	PrintRectangle(secondRectangle);
 	PrintLine();
