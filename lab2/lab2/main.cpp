@@ -163,8 +163,8 @@ void main()
     //PrintLine();
 	
    // DemoRectangle();
-    //DemoFlight();
-    DemoFilm();
+    DemoFlight();
+    //DemoFilm();
 	
     //DemoTime();
 	

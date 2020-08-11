@@ -95,7 +95,15 @@ Flight* ReadFlight()
 		cout << endl;
 		if (IsValue())
 		{
-			SetFlightNumber(*flight, flightNimber);
+			try
+			{
+				SetPlaneNumber(*flight, planeNumber);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -121,7 +129,15 @@ Flight* ReadFlight()
 		cout << endl;
 		if (IsValue())
 		{
-			SetDurationInMinutes(*flight, durationInMinutes);
+			try
+			{
+				SetDurationInMinutes(*flight, durationInMinutes);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -137,7 +153,15 @@ Flight* ReadFlight()
 		cout << endl;
 		if (IsValue())
 		{
-			SetDistanceInMeters(*flight, distanceInMeters);
+			try
+			{
+				SetDistanceInMeters(*flight, distanceInMeters);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -153,7 +177,15 @@ Flight* ReadFlight()
 		cout << endl;
 		if (IsValue())
 		{
-			SetPassengers(*flight, passengers);
+			try
+			{
+				SetPassengers(*flight, passengers);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
