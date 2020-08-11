@@ -159,14 +159,13 @@ void main()
 	cout << endl;
 	
     // Task 2.2.1.1 - 2.2.1.2
-    //DemoSort();
-    //PrintLine();
+    DemoSort();
+    PrintLine();
 	
     DemoRectangle();
-    //DemoFlight();
-    //DemoFilm();
-	
-    //DemoTime();
+    DemoFlight();
+    DemoFilm();
+    DemoTime();
 	
 	// Task 2.2.7.2, 2.2.7.3
 	cout << "Демонстрация работы функции копирования" << endl << endl;
