@@ -80,8 +80,9 @@ Flight* CopyFlight(const Flight& flight)
 	return copiedFlight;
 }
 
-void ReadFlight(Flight& flight)
+Flight* ReadFlight()
 {
+	Flight* flight = new Flight;
 	cout << "Введите номер рейса: ";
 	string flightNimber = "";
 	cin >> flightNimber;
@@ -94,7 +95,7 @@ void ReadFlight(Flight& flight)
 		cout << endl;
 		if (IsValue())
 		{
-			SetFlightNumber(flight, flightNimber);
+			SetFlightNumber(*flight, flightNimber);
 			break;
 		}
 		else
@@ -106,12 +107,12 @@ void ReadFlight(Flight& flight)
 	string departure = "";
 	cin >> departure;
 	cout << endl;
-	SetDeparture(flight, departure);
+	SetDeparture(*flight, departure);
 	cout << "Введите пункт назначения самолета: ";
 	string destination = "";
 	cin >> destination;
 	cout << endl;
-	SetDestination(flight, destination);
+	SetDestination(*flight, destination);
 	do
 	{
 		cout << "Введите время полета(мин): ";
@@ -120,7 +121,7 @@ void ReadFlight(Flight& flight)
 		cout << endl;
 		if (IsValue())
 		{
-			SetDurationInMinutes(flight, durationInMinutes);
+			SetDurationInMinutes(*flight, durationInMinutes);
 			break;
 		}
 		else
@@ -136,7 +137,7 @@ void ReadFlight(Flight& flight)
 		cout << endl;
 		if (IsValue())
 		{
-			SetDistanceInMeters(flight, distanceInMeters);
+			SetDistanceInMeters(*flight, distanceInMeters);
 			break;
 		}
 		else
@@ -152,7 +153,7 @@ void ReadFlight(Flight& flight)
 		cout << endl;
 		if (IsValue())
 		{
-			SetPassengers(flight, passengers);
+			SetPassengers(*flight, passengers);
 			break;
 		}
 		else
@@ -160,6 +161,7 @@ void ReadFlight(Flight& flight)
 			cout << "Введено недопустимое значение" << endl << endl;
 		}
 	} while (true);
+	return flight;
 }
 
 void PrintFlight(const Flight& flight)
@@ -277,10 +279,10 @@ void DemoFlight()
 	SetPassengers(firstFlight, 157);
 	
 	// Task 2.2.3.2
-	Flight secondFlight;
 	cout << "РЕЙС" << endl << endl;
-	ReadFlight(secondFlight);
-	PrintFlight(secondFlight);
+	Flight* secondFlight = ReadFlight();
+	PrintFlight(*secondFlight);
+	delete secondFlight;
 	PrintLine();
 	
 	// Task 2.2.3.3, 2.2.6.2

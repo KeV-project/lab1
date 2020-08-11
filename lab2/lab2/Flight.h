@@ -31,7 +31,7 @@ Flight* MakeFlight(const string& flightNumber, const int planeNumber,
 	const int passengers);
 
 Flight* CopyFlight(const Flight& flight);
-void ReadFlight(Flight& flight);
+Flight* ReadFlight();
 void PrintFlight(const Flight& flight);
 void ChangeFlight(Flight* flight, const string& flightNumber,
 	const int planeNumber, const string& departure,
