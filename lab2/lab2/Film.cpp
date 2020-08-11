@@ -200,6 +200,16 @@ void PrintFilm(const Film& film)
 	cout << "В главной роли: " << film.MainRole << endl << endl;
 }
 
+void PrintFilms(Film** films, const int filmsCount)
+{
+	cout << "Массив фильмов:" << endl << endl;
+	for (int i = 0; i < filmsCount; i++)
+	{
+		cout << "Фильм №" << i + 1 << ": " << endl << endl;
+		PrintFilm(*films[i]);
+	}
+}
+
 void ChangeFilm(Film* film, const string& title,
 	const int duration, const int year, 
 	const GenreType& genre, const float rating, 
@@ -293,13 +303,8 @@ void DemoMovieWithGenre()
 		MakeFilm("Веном", 112, 2018, Thriller,
 			6.8, 100000000, "Рубен Флейшер", "Том Харди"),
 	};
-	//TODO: Дубль
-	cout << "Массив фильмов:" << endl << endl;
-	for (int i = 0; i < filmsCount; i++)
-	{
-		cout << "Фильм №" << i + 1 << ": " << endl << endl;
-		PrintFilm(*films[i]);
-	}
+	//TODO: Дубль +
+	PrintFilms(films, filmsCount);
 	
 	GenreType findedGenre = Thriller;
 	cout << "По запросу " << PrintGenre(findedGenre) << " было найдено ";
@@ -358,13 +363,8 @@ void DemoFilm()
 		MakeFilm("Доктор Хаус", 43, 2004, Drama, 8.8, 4400000,
 			"Грег Яйтанс", "Хью Лори"),
 	};
-	//TODO: Дубль
-	cout << "Массив фильмов: " << endl << endl;
-	for (int i = 0; i < filmsCount; i++)
-	{
-		cout << "Фильм №" << i + 1 << ":" << endl << endl;
-		PrintFilm(*films[i]);
-	}
+	//TODO: Дубль +
+	PrintFilms(films, filmsCount);
 	PrintLine();
 	for (int i = 0; i < filmsCount; i++)
 	{
