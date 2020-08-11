@@ -4,7 +4,7 @@ void SetLength(Rectangle& rectangle, const float length)
 {
 	if (length <= 0)
 	{
-		throw exception("ИСКЛЮЧЕНИЕ: длина прямоугольника"
+		throw exception("ИСКЛЮЧЕНИЕ: длина прямоугольника "
 			"не может быть меньше или равна 0");
 	}
 	rectangle.Length = length;
@@ -14,7 +14,7 @@ void SetWidth(Rectangle& rectangle, const float width)
 {
 	if (width <= 0)
 	{
-		throw exception("ИСКЛЮЧЕНИЕ: ширина прямоугольника"
+		throw exception("ИСКЛЮЧЕНИЕ: ширина прямоугольника "
 			"не может быть меньше или равна 0");
 	}
 	rectangle.Width = width;
@@ -88,7 +88,15 @@ Rectangle* ReadRectangle()
 		cout << endl;
 		if (IsValue())
 		{
-			SetLength(*rectangle, length);
+			try
+			{
+				SetLength(*rectangle, length);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -104,7 +112,15 @@ Rectangle* ReadRectangle()
 		cout << endl;
 		if (IsValue())
 		{
-			SetWidth(*rectangle, width);
+			try
+			{
+				SetWidth(*rectangle, width);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
