@@ -374,25 +374,25 @@ void DemoFilm()
 
 	// Task 2.2.4.1
 	cout << "Работа с указателем на структуру:" << endl << endl;
-	//TODO: RSDN - сокращения в переменных
-	Film* pFirstFilm = &firstFilm;
+	//TODO: RSDN - сокращения в переменных +
+	Film* FirstFilmPointer = &firstFilm;
 	cout << "Фильм firstFilm: " << endl << endl;
 	PrintFilm(firstFilm);
 	cout << "Измененный фильм firstFilm: " << endl << endl;
-	ChangeFilm(pFirstFilm, "Остров Проклятых", 139, 2010,
+	ChangeFilm(FirstFilmPointer, "Остров Проклятых", 139, 2010,
 		Thriller, 8.5, 80000000, "Мартин Скорсезе", "Леонардо Ди Каприо");
-	PrintFilm(*pFirstFilm);
+	PrintFilm(*FirstFilmPointer);
 	PrintLine();
 
 	// Task 2.2.4.2
-	//TODO: RSDN - сокращения в переменных
-	Film* pFirstFilm2 = &firstFilm;
+	//TODO: RSDN - сокращения в переменных +
+	Film* FirstFilm2Pointer = &firstFilm;
 	cout << "Адрес переменной firstFilm: ";
 	cout << &firstFilm << endl << endl;
-	cout << "Адрес в указателе pFirstFilm: ";
-	cout << pFirstFilm << endl << endl;
-	cout << "Адрес в указателе pFirstFilm2: ";
-	cout << pFirstFilm2 << endl << endl;
+	cout << "Адрес в указателе FirstFilmPointer: ";
+	cout << FirstFilmPointer << endl << endl;
+	cout << "Адрес в указателе FirstFilm2Pointer: ";
+	cout << FirstFilm2Pointer << endl << endl;
 	PrintLine();
 
 	cout << "Подсчет фильмов определенного жанра:" << endl << endl;
