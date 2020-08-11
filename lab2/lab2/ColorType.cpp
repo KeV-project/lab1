@@ -5,41 +5,41 @@ void PrintColor(const ColorType& color)
 	switch (color)
 	{
 		//TODO: RSDN - Всегда для Switch-case использовать правила длинной последовательности + ставить скобочки для case-ов +
-	case Red:
-	{
-		cout << "красный";
-		break;
-	}	
-	case Orange:   
-	{
-		cout << "оранжевый"; 
-		break;
-	}
-	case Yellow:
-	{
-		cout << "желтый";
-		break;
-	}
-	case Green:
-	{
-		cout << "зеленый";
-		break;
-	}
-	case Blue:
-	{
-		cout << "голубой";
-		break;
-	}
-	case DarkBlue:
-	{
-		cout << "синий";     
-		break;
-	}
-	case Purple:
-	{
-		cout << "фиолетовый";
-		break;
-	}
+		case Red:
+		{
+			cout << "красный";
+			break;
+		}	
+		case Orange:   
+		{
+			cout << "оранжевый"; 
+			break;
+		}
+		case Yellow:
+		{
+			cout << "желтый";
+			break;
+		}
+		case Green:
+		{
+			cout << "зеленый";
+			break;
+		}
+		case Blue:
+		{
+			cout << "голубой";
+			break;
+		}
+		case DarkBlue:
+		{
+			cout << "синий";     
+			break;
+		}
+		case Purple:
+		{
+			cout << "фиолетовый";
+			break;
+		}
 	}
 }
 
@@ -52,34 +52,34 @@ ColorType GetColorType(const int numColor)
 	switch (numColor)
 	{
 		//TODO: RSDN - Всегда для Switch-case использовать правила длинной последовательности + ставить скобочки для case-ов +
-	case 0: 
-	{
-		return Red;
-	}
-	case 1: 
-	{
-		return Orange;
-	}
-	case 2: 
-	{
-		return Yellow;
-	}
-	case 3: 
-	{
-		return Green;
-	}
-	case 4: 
-	{
-		return Blue;
-	}
-	case 5: 
-	{
-		return DarkBlue;
-	}
-	case 6: 
-	{
-		return Purple;
-	}
+		case 0: 
+		{
+			return Red;
+		}
+		case 1: 
+		{
+			return Orange;
+		}
+		case 2: 
+		{
+			return Yellow;
+		}
+		case 3: 
+		{
+			return Green;
+		}
+		case 4: 
+		{
+			return Blue;
+		}
+		case 5: 
+		{
+			return DarkBlue;
+		}
+		case 6: 
+		{
+			return Purple;
+		}
 	}
 }
 
