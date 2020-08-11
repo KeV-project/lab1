@@ -32,8 +32,10 @@ Rectangle* MakeRectangle(const float length, const float width,
 	const ColorType& color);
 
 Rectangle* CopyRectangle(const Rectangle& rectangle);
-void ReadRectangle(Rectangle& rectangle);
+Rectangle* ReadRectangle();
+Rectangle** ReadRectangles(const int rectanglesCount);
 void PrintRectangle(const Rectangle& rectangle);
+void PrintRectangles(Rectangle** rectangles, const int rectanglesCount);
 Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount);
 void ChangeRectangle(Rectangle* rectangle, const float length,
 	const float width, const ColorType& color);

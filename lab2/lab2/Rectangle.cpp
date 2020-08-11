@@ -77,8 +77,9 @@ Rectangle* CopyRectangle(const Rectangle& rectangle)
 	return copiedRectangle;
 }
 
-void ReadRectangle(Rectangle& rectangle)
+Rectangle* ReadRectangle()
 {
+	Rectangle* rectangle = new Rectangle;
 	do
 	{
 		cout << "Введите длину прямоугольника: ";
@@ -87,7 +88,7 @@ void ReadRectangle(Rectangle& rectangle)
 		cout << endl;
 		if (IsValue())
 		{
-			SetLength(rectangle, length);
+			SetLength(*rectangle, length);
 			break;
 		}
 		else
@@ -103,7 +104,7 @@ void ReadRectangle(Rectangle& rectangle)
 		cout << endl;
 		if (IsValue())
 		{
-			SetWidth(rectangle, width);
+			SetWidth(*rectangle, width);
 			break;
 		}
 		else
@@ -122,7 +123,7 @@ void ReadRectangle(Rectangle& rectangle)
 		cout << endl;
 		if (IsValue())
 		{
-			SetColor(rectangle, GetColorType(numColor));
+			SetColor(*rectangle, GetColorType(numColor));
 			break;
 		}
 		else
@@ -130,10 +131,26 @@ void ReadRectangle(Rectangle& rectangle)
 			cout << "Введено недопустимое значение" << endl << endl;
 		}
 	} while (true);
-	rectangle.Diagonal = sqrt(pow(rectangle.Length, 2) 
-		+ pow(rectangle.Width, 2));
-	rectangle.Perimeter = (rectangle.Length + rectangle.Width) * 2;
-	rectangle.Area = rectangle.Length * rectangle.Width;
+	rectangle->Diagonal = sqrt(pow(rectangle->Length, 2) 
+		+ pow(rectangle->Width, 2));
+	rectangle->Perimeter = (rectangle->Length + rectangle->Width) * 2;
+	rectangle->Area = rectangle->Length * rectangle->Width;
+	return rectangle;
+}
+
+Rectangle** ReadRectangles(const int rectanglesCount)
+{
+	Rectangle** rectangles = new Rectangle * [rectanglesCount];
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		rectangles[i] = MakeRectangle();
+	}
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		cout << "Прямоугольник №" << i + 1 << ":" << endl << endl;
+		rectangles[i] = ReadRectangle();
+	}
+	return rectangles;
 }
 
 void PrintRectangle(const Rectangle& rectangle)
@@ -148,26 +165,22 @@ void PrintRectangle(const Rectangle& rectangle)
 	cout << "Площадь: " << rectangle.Area << endl << endl;
 }
 
-Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount)
+void PrintRectangles(Rectangle** rectangles, const int rectanglesCount)
 {
-	Rectangle** rectangles = new Rectangle * [rectanglesCount];
-	for (int i = 0; i < rectanglesCount; i++)
-	{
-		rectangles[i] = MakeRectangle();
-	}
-	for (int i = 0; i < rectanglesCount; i++)
-	{
-		//TODO: Дубль
-		cout << "Прямоугольник №" << i + 1 << ":" << endl << endl;
-		ReadRectangle(*rectangles[i]);
-	}
 	cout << "Массив прямоугольников: " << endl << endl;
 	for (int i = 0; i < rectanglesCount; i++)
 	{
-		//TODO: Дубль
 		cout << "Прямоугольник №" << i + 1 << ":" << endl << endl;
 		PrintRectangle(*rectangles[i]);
 	}
+}
+
+Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount)
+{
+	//TODO: Дубль +
+	Rectangle** rectangles = ReadRectangles(rectanglesCount);
+	//TODO: Дубль +
+	PrintRectangles(rectangles, rectanglesCount);
 	return rectangles;
 }
 
@@ -255,11 +268,10 @@ void DemoRectangle()
 	SetArea(firstRectangle, firstRectangle.Length, firstRectangle.Width);
 	
 	// Task 2.2.3.2
-	Rectangle secondRectangle;
 	cout << "ПРЯМОУГОЛЬНИК" << endl << endl;
-	//TODO: В подобных методах корректнее будет возвращать созданную фигуру, а не передавать её для задания
-	ReadRectangle(secondRectangle);
-	PrintRectangle(secondRectangle);
+	//TODO: В подобных методах корректнее будет возвращать созданную фигуру, а не передавать её для задания +
+	Rectangle* secondRectangle = ReadRectangle();
+	PrintRectangle(*secondRectangle);
 	PrintLine();
 	
 	// Task 2.2.3.3 / 2.2.5.3
@@ -291,16 +303,17 @@ void DemoRectangle()
 	cout << "Прямоугольник firstRectangle:" << endl << endl;
 	PrintRectangle(firstRectangle);
 	cout << "Прямоугольник secondRectangle:" << endl << endl;
-	PrintRectangle(secondRectangle);
+	PrintRectangle(*secondRectangle);
 
-	Exchange(firstRectangle, secondRectangle);
+	Exchange(firstRectangle, *secondRectangle);
 
 	cout << "Прямоугольник firstRectangle ";
 	cout << "после работы функции Exchange : " << endl << endl;
 	PrintRectangle(firstRectangle);
 	cout << "Прямоугольник secondRectangle ";
 	cout << "после работы функции Exchange : " << endl << endl;
-	PrintRectangle(secondRectangle);
+	PrintRectangle(*secondRectangle);
+	delete secondRectangle;
 	
 	PrintLine();
 
