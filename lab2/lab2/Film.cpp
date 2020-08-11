@@ -87,13 +87,14 @@ Film* CopyFilm(const Film& film)
 	return copiedFilm;
 }
 
-void ReadFilm(Film& film)
+Film* ReadFilm()
 {
+	Film* film = new Film;
 	cout << "¬ведите название фильма: ";
 	string title = "";
 	cin >> title;
 	cout << endl;
-	SetTitle(film, title);
+	SetTitle(*film, title);
 	do
 	{
 		cout << "¬ведите продолжительность фильма(мин): ";
@@ -102,7 +103,7 @@ void ReadFilm(Film& film)
 		cout << endl;
 		if (IsValue())
 		{
-			SetDuration(film, duration);
+			SetDuration(*film, duration);
 			break;
 		}
 		else
@@ -118,7 +119,7 @@ void ReadFilm(Film& film)
 		cout << endl;
 		if (IsValue())
 		{
-			SetYear(film, year);
+			SetYear(*film, year);
 			break;
 		}
 		else
@@ -136,7 +137,7 @@ void ReadFilm(Film& film)
 		cout << endl;
 		if (IsValue())
 		{
-			film.Genre = GetGenreType(numGenre);
+			film->Genre = GetGenreType(numGenre);
 			break;
 		}
 		else
@@ -152,7 +153,7 @@ void ReadFilm(Film& film)
 		cout << endl;
 		if (IsValue())
 		{
-			SetRating(film, rating);
+			SetRating(*film, rating);
 			break;
 		}
 		else
@@ -168,7 +169,7 @@ void ReadFilm(Film& film)
 		cout << endl;
 		if (IsValue())
 		{
-			SetBudget(film, budget);
+			SetBudget(*film, budget);
 			break;
 		}
 		else
@@ -180,12 +181,13 @@ void ReadFilm(Film& film)
 	string director = "";
 	cin >> director;
 	cout << endl;
-	SetDirector(film, director);
+	SetDirector(*film, director);
 	cout << "¬ведите актера, играющего главную роль: ";
 	string mainRole = "";
 	cin >> mainRole;
 	cout << endl;
-	SetMainRole(film, mainRole);
+	SetMainRole(*film, mainRole);
+	return film;
 }
 
 void PrintFilm(const Film& film)
@@ -346,10 +348,10 @@ void DemoFilm()
 	SetMainRole(firstFilm, "Will Smith");
 
 	// Task 2.2.3.2
-	Film secondFilm;
 	cout << "‘»Ћ№ћ" << endl << endl;
-	ReadFilm(secondFilm);
-	PrintFilm(secondFilm);
+	Film* secondFilm = ReadFilm();
+	PrintFilm(*secondFilm);
+	delete secondFilm;
 	PrintLine();
 	
 	// Task 2.2.3.3

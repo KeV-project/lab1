@@ -32,7 +32,7 @@ Film* MakeFilm(const string& title, const int duration, const int year,
 	const GenreType& genre, const float rating, const int budget,
 	const string& director, const string& mainRole);
 Film* CopyFilm(const Film& film);
-void ReadFilm(Film& film);
+Film* ReadFilm();
 void PrintFilm(const Film& film);
 void PrintFilms(Film** films, const int filmsCount);
 void ChangeFilm(Film* film, const string& title,
