@@ -4,8 +4,8 @@ void SetYear(Time& event, const int year)
 {
 	if (year <= 0)
 	{
-		throw exception("ѕле год не может быть задано" 
-			"числом меньше или равным 0");
+		throw exception("ѕоле год не может быть задано" 
+			" числом меньше или равным 0");
 	}
 	event.Year = year;
 }
@@ -15,7 +15,7 @@ void SetMonth(Time& event, const int month)
 	if (month < 1 || month > 12)
 	{
 		throw exception("ѕоле мес€ц должно быть"
-			"числом в промежутке [1, 12]");
+			" числом в промежутке [1, 12]");
 	}
 	event.Month = month;
 }
@@ -25,7 +25,7 @@ void SetDay(Time& event, const int day)
 	if (day < 1 || day > 31)
 	{
 		throw exception("ѕоле день должно быть"
-			"числом в промежутке [1, 31]");
+			" числом в промежутке [1, 31]");
 	}
 	event.Day = day;
 }
@@ -35,7 +35,7 @@ void SetHour(Time& event, const int hour)
 	if (hour < 0 || hour > 23)
 	{
 		throw exception("ѕоле час должно быть"
-			"числом в промежутке [0, 23]");
+			" числом в промежутке [0, 23]");
 	}
 	event.Hour = hour;
 }
@@ -44,8 +44,8 @@ void SetMinute(Time& event, const int minute)
 {
 	if (minute < 0 || minute > 59)
 	{
-		throw exception("ѕоле день должно быть"
-			"числом в промежутке [0, 59]");
+		throw exception("ѕоле минута должно быть"
+			" числом в промежутке [0, 59]");
 	}
 	event.Minute = minute;
 }
@@ -55,7 +55,7 @@ void SetSecond(Time& event, const int second)
 	if (second < 0 || second > 59)
 	{
 		throw exception("ѕоле секунда должно быть"
-			"числом в промежутке [0, 59]");
+			" числом в промежутке [0, 59]");
 	}
 	event.Second = second;
 }
@@ -96,7 +96,15 @@ Time* ReadTime()
 		cout << endl;
 		if (IsValue())
 		{
-			SetYear(*event, year);
+			try
+			{
+				SetYear(*event, year);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -112,7 +120,15 @@ Time* ReadTime()
 		cout << endl;
 		if (IsValue())
 		{
-			SetMonth(*event, month);
+			try
+			{
+				SetMonth(*event, month);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -128,7 +144,15 @@ Time* ReadTime()
 		cout << endl;
 		if (IsValue())
 		{
-			SetDay(*event, day);
+			try
+			{
+				SetDay(*event, day);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -144,7 +168,15 @@ Time* ReadTime()
 		cout << endl;
 		if (IsValue())
 		{
-			SetHour(*event, hour);
+			try
+			{
+				SetHour(*event, hour);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -160,7 +192,15 @@ Time* ReadTime()
 		cout << endl;
 		if (IsValue())
 		{
-			SetMinute(*event, minute);
+			try
+			{
+				SetMinute(*event, minute);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -176,7 +216,15 @@ Time* ReadTime()
 		cout << endl;
 		if (IsValue())
 		{
-			SetSecond(*event, second);
+			try
+			{
+				SetSecond(*event, second);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -253,7 +301,7 @@ void DemoTime()
 	cout << "ѕр€моугольник firstEvent: " << endl << endl;
 	PrintTime(firstEvent);
 	cout << "»змененное событие firstEvent: " << endl << endl;
-	//TODO: ћожет прилететь исключение - нужна проверка.
+	//TODO: ћожет прилететь исключение - нужна проверка. +
 	ChangeTime(pFirstEvent, 2020, 12, 10, 5, 30, 1);
 	PrintTime(*pFirstEvent);
 	PrintLine();

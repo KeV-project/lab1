@@ -159,12 +159,12 @@ void main()
 	cout << endl;
 	
     // Task 2.2.1.1 - 2.2.1.2
-    DemoSort();
-    PrintLine();
+    //DemoSort();
+    //PrintLine();
 	
-    DemoRectangle();
-    DemoFlight();
-    DemoFilm();
+   // DemoRectangle();
+    //DemoFlight();
+    //DemoFilm();
 	
     DemoTime();
 	
