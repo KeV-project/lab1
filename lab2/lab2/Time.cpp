@@ -85,8 +85,9 @@ Time* CopyTime(const Time& event)
 	return copiedTime;
 }
 
-void ReadTime(Time& event)
+Time* ReadTime()
 {
+	Time* event = new Time;
 	do
 	{
 		cout << "Год: ";
@@ -95,7 +96,7 @@ void ReadTime(Time& event)
 		cout << endl;
 		if (IsValue())
 		{
-			SetYear(event, year);
+			SetYear(*event, year);
 			break;
 		}
 		else
@@ -111,7 +112,7 @@ void ReadTime(Time& event)
 		cout << endl;
 		if (IsValue())
 		{
-			SetMonth(event, month);
+			SetMonth(*event, month);
 			break;
 		}
 		else
@@ -127,7 +128,7 @@ void ReadTime(Time& event)
 		cout << endl;
 		if (IsValue())
 		{
-			SetDay(event, day);
+			SetDay(*event, day);
 			break;
 		}
 		else
@@ -143,7 +144,7 @@ void ReadTime(Time& event)
 		cout << endl;
 		if (IsValue())
 		{
-			SetHour(event, hour);
+			SetHour(*event, hour);
 			break;
 		}
 		else
@@ -159,7 +160,7 @@ void ReadTime(Time& event)
 		cout << endl;
 		if (IsValue())
 		{
-			SetMinute(event, minute);
+			SetMinute(*event, minute);
 			break;
 		}
 		else
@@ -175,7 +176,7 @@ void ReadTime(Time& event)
 		cout << endl;
 		if (IsValue())
 		{
-			SetSecond(event, second);
+			SetSecond(*event, second);
 			break;
 		}
 		else
@@ -183,6 +184,7 @@ void ReadTime(Time& event)
 			cout << "Введено некорректное значение" << endl << endl;
 		}
 	} while (true);
+	return event;
 }
 
 void PrintTime(const Time& event)
@@ -218,10 +220,10 @@ void DemoTime()
 	SetSecond(firstEvent, 17);
 
 	// Task 2.2.3.2
-	Time secondEvent;
 	cout << "СОБЫТИЕ" << endl << endl;
-	ReadTime(secondEvent);
-	PrintTime(secondEvent);
+	Time* secondEvent = ReadTime();
+	PrintTime(*secondEvent);
+	delete secondEvent;
 	PrintLine();
 	
 	// Task 2.2.3.3

@@ -26,7 +26,7 @@ void SetSecond(Time& event, const int second);
 Time* MakeTime(const int year, const int month, const int day,
 	const int hour, const int minute, const int second);
 Time* CopyTime(const Time& event);
-void ReadTime(Time& event);
+Time* ReadTime();
 void PrintTime(const Time& event);
 void ChangeTime(Time* event, const int year, const int month,
 	const int day, const int hour, const int minute, const int second);
