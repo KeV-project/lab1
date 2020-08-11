@@ -164,9 +164,9 @@ void main()
 	
    // DemoRectangle();
     //DemoFlight();
-    //DemoFilm();
+    DemoFilm();
 	
-    DemoTime();
+    //DemoTime();
 	
 	// Task 2.2.7.2, 2.2.7.3
 	cout << "Демонстрация работы функции копирования" << endl << endl;

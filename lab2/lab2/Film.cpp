@@ -9,7 +9,7 @@ void SetDuration(Film& film, const int duration)
 {
 	if (duration <= 0)
 	{
-		throw exception("ѕродолжительность фильма"
+		throw exception("ѕродолжительность фильма "
 			"должна быть больше 0 минут");
 	}
 	film.Duration = duration;
@@ -103,7 +103,15 @@ Film* ReadFilm()
 		cout << endl;
 		if (IsValue())
 		{
-			SetDuration(*film, duration);
+			try
+			{
+				SetDuration(*film, duration);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -119,7 +127,15 @@ Film* ReadFilm()
 		cout << endl;
 		if (IsValue())
 		{
-			SetYear(*film, year);
+			try
+			{
+				SetYear(*film, year);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -137,7 +153,15 @@ Film* ReadFilm()
 		cout << endl;
 		if (IsValue())
 		{
-			film->Genre = GetGenreType(numGenre);
+			try
+			{
+				film->Genre = GetGenreType(numGenre);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -153,7 +177,15 @@ Film* ReadFilm()
 		cout << endl;
 		if (IsValue())
 		{
-			SetRating(*film, rating);
+			try
+			{
+				SetRating(*film, rating);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
@@ -169,7 +201,15 @@ Film* ReadFilm()
 		cout << endl;
 		if (IsValue())
 		{
-			SetBudget(*film, budget);
+			try
+			{
+				SetBudget(*film, budget);
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else
