@@ -4,7 +4,6 @@ void PrintColor(const ColorType& color)
 {
 	switch (color)
 	{
-		//TODO: RSDN - Всегда для Switch-case использовать правила длинной последовательности + ставить скобочки для case-ов +
 		case Red:
 		{
 			cout << "красный";
@@ -45,13 +44,13 @@ void PrintColor(const ColorType& color)
 
 ColorType GetColorType(const int numColor)
 {
+	//TODO: Комментарий по исключению лучше бы расширить
 	if (!IsValueInRange(numColor, 0, 6))
 	{
 		throw exception("Число не входит в допустимый диапазон");
 	}
 	switch (numColor)
 	{
-		//TODO: RSDN - Всегда для Switch-case использовать правила длинной последовательности + ставить скобочки для case-ов +
 		case 0: 
 		{
 			return Red;

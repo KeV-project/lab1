@@ -345,7 +345,6 @@ void DemoMovieWithGenre()
 		MakeFilm("Веном", 112, 2018, Thriller,
 			6.8, 100000000, "Рубен Флейшер", "Том Харди"),
 	};
-	//TODO: Дубль +
 	PrintFilms(films, filmsCount);
 	
 	GenreType findedGenre = Thriller;
@@ -405,7 +404,6 @@ void DemoFilm()
 		MakeFilm("Доктор Хаус", 43, 2004, Drama, 8.8, 4400000,
 			"Грег Яйтанс", "Хью Лори"),
 	};
-	//TODO: Дубль +
 	PrintFilms(films, filmsCount);
 	PrintLine();
 	for (int i = 0; i < filmsCount; i++)
@@ -416,7 +414,6 @@ void DemoFilm()
 
 	// Task 2.2.4.1
 	cout << "Работа с указателем на структуру:" << endl << endl;
-	//TODO: RSDN - сокращения в переменных +
 	Film* FirstFilmPointer = &firstFilm;
 	cout << "Фильм firstFilm: " << endl << endl;
 	PrintFilm(firstFilm);
@@ -427,7 +424,7 @@ void DemoFilm()
 	PrintLine();
 
 	// Task 2.2.4.2
-	//TODO: RSDN - сокращения в переменных +
+	//TODO: RSDN 
 	Film* FirstFilm2Pointer = &firstFilm;
 	cout << "Адрес переменной firstFilm: ";
 	cout << &firstFilm << endl << endl;

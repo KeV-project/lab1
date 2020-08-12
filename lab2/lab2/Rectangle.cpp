@@ -193,9 +193,7 @@ void PrintRectangles(Rectangle** rectangles, const int rectanglesCount)
 
 Rectangle** DemoReadAndPrintRectangles(const int rectanglesCount)
 {
-	//TODO: ƒубль +
 	Rectangle** rectangles = ReadRectangles(rectanglesCount);
-	//TODO: ƒубль +
 	PrintRectangles(rectangles, rectanglesCount);
 	return rectangles;
 }
@@ -285,7 +283,6 @@ void DemoRectangle()
 	
 	// Task 2.2.3.2
 	cout << "ѕ–яћќ”√ќЋ№Ќ» " << endl << endl;
-	//TODO: ¬ подобных методах корректнее будет возвращать созданную фигуру, а не передавать еЄ дл€ задани€ +
 	Rectangle* secondRectangle = ReadRectangle();
 	PrintRectangle(*secondRectangle);
 	PrintLine();

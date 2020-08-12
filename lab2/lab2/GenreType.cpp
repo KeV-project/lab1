@@ -8,7 +8,6 @@ GenreType GetGenreType(const int numGenre)
 	}
 	switch (numGenre)
 	{
-		//TODO: RSDN - Всегда для Switch-case использовать правила длинной последовательности + ставить скобочки для case-ов +
 		case 0: 
 		{
 			return Comedy;
@@ -40,7 +39,6 @@ string PrintGenre(const GenreType& filmsGenre)
 {
 	switch (filmsGenre)
 	{
-		//TODO: RSDN - Всегда для Switch-case использовать правила длинной последовательности + ставить скобочки для case-ов +
 		case Comedy:	  
 		{
 			return "комедия";

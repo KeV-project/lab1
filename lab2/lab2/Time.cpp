@@ -301,7 +301,6 @@ void DemoTime()
 	cout << "Прямоугольник firstEvent: " << endl << endl;
 	PrintTime(firstEvent);
 	cout << "Измененное событие firstEvent: " << endl << endl;
-	//TODO: Может прилететь исключение - нужна проверка. +
 	ChangeTime(pFirstEvent, 2020, 12, 10, 5, 30, 1);
 	PrintTime(*pFirstEvent);
 	PrintLine();
