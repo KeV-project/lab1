@@ -8,7 +8,11 @@ void DemoWorkingWithClasses::DemoBook()
 	{
 		"Карлос Кастанеда",
 	};
-	Book book("Путешествие в Икстлан", 2013, 287, 1, authors);
-	delete[] authors;
+	Book firstBook("Путешествие в Икстлан", 2013, 287, 1, authors);
+
+	// Task 3.2.3
+	Book secondBook;
+	secondBook.ReadBookFromConsole();
+	PrintLine();
 }
 

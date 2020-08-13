@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include "Input.h"
 
 using namespace std;
 
@@ -26,7 +27,12 @@ public:
 	int GetAuthorsCount();
 	string* GetAuthors();
 
+	Book();
 	Book(const string& title, const int year, const int pagesCount,
 		const int authorsCount, string* author);
+
+	~Book();
+
+	void ReadBookFromConsole();
 };
 

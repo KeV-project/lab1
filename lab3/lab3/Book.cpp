@@ -7,10 +7,10 @@ void Book::SetTitle(const string& title)
 
 void Book::SetYear(const int year)
 {
-	if (year < 0 || year > 2020)
+	if (year <= 0 || year > 2020)
 	{
 		throw exception("Год выпуска книги "
-			"задается числом в диапазоне [0, 2020]");
+			"задается числом в диапазоне [1, 2020]");
 	}
 	this->_year = year;
 }
@@ -27,10 +27,10 @@ void Book::SetPagesCount(const int pagesCount)
 
 void Book::SetAuthors(string* authors, const int authorsCount)
 {
-	if (authorsCount <= 0)
+	if (authorsCount <= 0 || authorsCount > 10)
 	{
 		throw exception("Количество авторов книги "
-			"задается положительным числом");
+			"должно быть в диапазоне [1, 10]");
 	}
 	this->_authorsCount = authorsCount;
 	this->_authors = authors;
@@ -61,6 +61,14 @@ string* Book::GetAuthors()
 	return this->_authors;
 }
 
+Book::Book()
+{
+	SetTitle("");
+	SetYear(1);
+	SetPagesCount(1);
+	SetAuthors(nullptr, 1);
+}
+
 Book::Book(const string& title, const int year, const int pagesCount,
 	const int authorsCount, string* authors)
 {
@@ -68,4 +76,89 @@ Book::Book(const string& title, const int year, const int pagesCount,
 	SetYear(year);
 	SetPagesCount(pagesCount);
 	SetAuthors(authors, authorsCount);
+}
+
+Book::~Book()
+{
+	delete[] _authors;
+}
+
+void Book::ReadBookFromConsole()
+{
+	cout << "Введите название книги: ";
+	string title = "";
+	cin >> title;
+	cout << endl;
+	SetTitle(title);
+	do
+	{
+		cout << "Введите год издания книги: ";
+		int year = 0;
+		cin >> year;
+		cout << endl;
+		if (IsValue())
+		{
+			try
+			{
+				SetYear(year);
+				break;
+			}
+			catch (const std::exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
+		}
+		else
+		{
+			cout << "Пожалуйста, введите целое число" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "Введите количество страниц в книге: ";
+		int pagesCount = 0;
+		cin >> pagesCount;
+		cout << endl;
+		if (IsValue())
+		{
+			try
+			{
+				SetPagesCount(pagesCount);
+				break;
+			}
+			catch (const std::exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
+		}
+		else
+		{
+			cout << "Пожалуйста, введите целое число" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "Введите количество авторов книги: ";
+		int authorsCount = 0;
+		cin >> authorsCount;
+		cout << endl;
+		if (IsValue() && authorsCount > 0)
+		{
+			string* authors = new string[authorsCount];
+			for (int i = 0; i < authorsCount; i++)
+			{
+				cout << "Введите автора №" << i + 1 << ": ";
+				cin >> authors[i];
+				cout << endl;
+			}
+			SetAuthors(authors, authorsCount);
+			break;
+		}
+		else
+		{
+			cout << "Пожалуйста, введите положительное число" << endl << endl;
+		}
+	} while (true);
 }
