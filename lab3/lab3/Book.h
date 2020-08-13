@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 class Book
@@ -15,8 +16,8 @@ private:
 
 public:
 	void SetTitle(const string& title);
-	void SetYear(const int& year);
-	void SetPagesCount(const int& pagesCount);
+	void SetYear(const int year);
+	void SetPagesCount(const int pagesCount);
 	void SetAuthors(string* authors, const int authorsCount);
 
 	string GetTitle();
@@ -24,5 +25,8 @@ public:
 	int GetPagesCount();
 	int GetAuthorsCount();
 	string* GetAuthors();
+
+	Book(const string& title, const int year, const int pagesCount,
+		const int authorsCount, string* author);
 };
 

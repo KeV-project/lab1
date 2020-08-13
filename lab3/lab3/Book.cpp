@@ -5,7 +5,7 @@ void Book::SetTitle(const string& title)
 	this->_title = title;
 }
 
-void Book::SetYear(const int& year)
+void Book::SetYear(const int year)
 {
 	if (year < 0 || year > 2020)
 	{
@@ -15,7 +15,7 @@ void Book::SetYear(const int& year)
 	this->_year = year;
 }
 
-void Book::SetPagesCount(const int& pagesCount)
+void Book::SetPagesCount(const int pagesCount)
 {
 	if (pagesCount <= 0)
 	{
@@ -59,4 +59,13 @@ int Book::GetAuthorsCount()
 string* Book::GetAuthors()
 {
 	return this->_authors;
+}
+
+Book::Book(const string& title, const int year, const int pagesCount,
+	const int authorsCount, string* authors)
+{
+	SetTitle(title);
+	SetYear(year);
+	SetPagesCount(pagesCount);
+	SetAuthors(authors, authorsCount);
 }
