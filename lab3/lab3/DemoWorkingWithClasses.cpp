@@ -1,5 +1,20 @@
 #include "DemoWorkingWithClasses.h"
 
+int DemoWorkingWithClasses::FindBookByAuthor(Book* books, const int booksCount, const string& findedAuthor)
+{
+	for (int i = 0; i < booksCount; i++)
+	{
+		for (int j = 0; j < books[i].GetAuthorsCount(); j++)
+		{
+			if (books[i].GetAuthors()[j] == findedAuthor)
+			{
+				return i;
+			}
+		}
+	}
+	return -1;
+}
+
 void DemoWorkingWithClasses::DemoBook()
 {
 	// Task 3.2.4
@@ -17,6 +32,24 @@ void DemoWorkingWithClasses::DemoBook()
 		cout << "КНИГА №" << i + 1 << ": ";
 		books[i].WriteBookToConsole();
 	}
-	delete[] books;
 	PrintLine();
+
+	// Task 3.2.5
+	cout << "Введите автора для поиска книги: ";
+	string findedAuthor = "";
+	cin >> findedAuthor;
+	cout << endl;
+	int findedBookIndex = FindBookByAuthor(books, booksCount, findedAuthor);
+	if (findedBookIndex == -1)
+	{
+		cout << "Книги " << findedAuthor << " нет в массиве" << endl << endl;
+	}
+	else
+	{
+		cout << "Книга автора: ";
+		books[findedBookIndex].WriteBookToConsole();
+	}
+	PrintLine();
+
+	delete[] books;
 }

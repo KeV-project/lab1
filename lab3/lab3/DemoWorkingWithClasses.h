@@ -8,6 +8,8 @@ using namespace std;
 static class DemoWorkingWithClasses
 {
 public:
+	static int FindBookByAuthor(Book* books, const int booksCount,
+		const string& findedAuthor);
 	static void DemoBook();
 };
 
