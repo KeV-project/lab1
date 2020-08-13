@@ -34,5 +34,6 @@ public:
 	~Book();
 
 	void ReadBookFromConsole();
+	void  WriteBookToConsole();
 };
 

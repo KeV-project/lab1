@@ -2,17 +2,21 @@
 
 void DemoWorkingWithClasses::DemoBook()
 {
-	// Task 3.2.2
-	const int authorsCount = 1;
-	string* authors = new string[authorsCount]
+	// Task 3.2.4
+	const int booksCount = 5;
+	Book* books = new Book [booksCount];
+	cout << "Заполните массив из 5 книг:" << endl << endl;
+	for (int i = 0; i < booksCount; i++)
 	{
-		"Карлос Кастанеда",
-	};
-	Book firstBook("Путешествие в Икстлан", 2013, 287, 1, authors);
-
-	// Task 3.2.3
-	Book secondBook;
-	secondBook.ReadBookFromConsole();
+		cout << "КНИГА №" << i + 1 << ":" << endl << endl;
+		books[i].ReadBookFromConsole();
+	}
+	cout << "Массив книг:" << endl << endl;
+	for (int i = 0; i < booksCount; i++)
+	{
+		cout << "КНИГА №" << i + 1 << ": ";
+		books[i].WriteBookToConsole();
+	}
+	delete[] books;
 	PrintLine();
 }
-
