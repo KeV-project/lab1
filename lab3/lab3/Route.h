@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include "Input.h"
 
 using namespace std;
 
@@ -28,5 +29,10 @@ public:
 	Route();
 	Route(const int number, const int duration, const int periodicity,
 		const int stopsCount, string* stops);
+
+	~Route();
+
+	void ReadRouteFromConsole();
+	void WriteRouteFromConsole();
 };
 

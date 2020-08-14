@@ -96,3 +96,118 @@ Route::Route(const int number, const int duration, const int periodicity,
 	SetPeriodicity(periodicity);
 	SetStops(stops, stopsCount);
 }
+
+Route::~Route()
+{
+	delete [] this->_stops;
+}
+
+void Route::ReadRouteFromConsole()
+{
+	do
+	{
+		cout << "Введите номер рейса: ";
+		int number = 0;
+		cin >> number;
+		cout << endl;
+		if (IsValue())
+		{
+			try
+			{
+				SetNumber(number);
+				break;
+			}
+			catch (const std::exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
+		}
+		else
+		{
+			cout << "Пожалуйста, введите целое число" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "Введите продолжительность рейса: ";
+		int duration = 0;
+		cin >> duration;
+		cout << endl;
+		if (IsValue())
+		{
+			try
+			{
+				SetDuration(duration);
+				break;
+			}
+			catch (const std::exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
+		}
+		else
+		{
+			cout << "Пожалуйста, введите целое число" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "Введите периодичность рейса: ";
+		int periodicity = 0;
+		cin >> periodicity;
+		cout << endl;
+		if (IsValue())
+		{
+			try
+			{
+				SetPeriodicity(periodicity);
+				break;
+			}
+			catch (const std::exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
+		}
+		else
+		{
+			cout << "Пожалуйста, введите целое число" << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "Введите количество остановок рейса: ";
+		int stopsCount = 0;
+		cin >> stopsCount;
+		cout << endl;
+		if (IsValue() && stopsCount > 0)
+		{
+			string* stops = new string[stopsCount];
+			for (int i = 0; i < stopsCount; i++)
+			{
+				cout << "Введите остановку №" << i + 1 << ": ";
+				cin >> stops[i];
+				cout << endl;
+			}
+			SetStops(stops, stopsCount);
+			break;
+		}
+		else
+		{
+			cout << "Пожалуйста, введите положительное целое число" << endl << endl;
+		}
+	} while (true);
+}
+
+void Route::WriteRouteFromConsole()
+{
+	cout << "Рейс №" << this->_number << " (" << this->_stops[0];
+	cout << " - " << this->_stops[_stopsCount - 1] << ") находится в пути ";
+	cout << this->_durationInMinutes << " минут, " << endl;
+	cout << "отпраляется на маршрут с периодичностью в ";
+	cout << this->_periodicity << " минут. " << endl;
+	cout << "Маршрут включает " << this->_stopsCount << " остановок";
+	cout << endl << endl;
+}

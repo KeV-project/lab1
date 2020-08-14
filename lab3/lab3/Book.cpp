@@ -169,7 +169,7 @@ void Book::ReadBookFromConsole()
 		}
 		else
 		{
-			cout << "Число " << authorsCount << " не явяется положительным" << endl << endl;
+			cout << "Пожалуйста, введите положительное целое число" << endl << endl;
 		}
 	} while (true);
 }
