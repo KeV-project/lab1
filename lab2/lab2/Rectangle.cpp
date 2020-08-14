@@ -139,7 +139,15 @@ Rectangle* ReadRectangle()
 		cout << endl;
 		if (IsValue())
 		{
-			SetColor(*rectangle, GetColorType(numColor));
+			try
+			{
+				SetColor(*rectangle, GetColorType(numColor));
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
 			break;
 		}
 		else

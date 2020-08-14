@@ -44,10 +44,13 @@ void PrintColor(const ColorType& color)
 
 ColorType GetColorType(const int numColor)
 {
-	//TODO: Комментарий по исключению лучше бы расширить
+	//TODO: Комментарий по исключению лучше бы расширить +
 	if (!IsValueInRange(numColor, 0, 6))
 	{
-		throw exception("Число не входит в допустимый диапазон");
+		string message = "Число " + to_string(numColor) + " не входит в допустимый диапазон [0, 6]";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	switch (numColor)
 	{
