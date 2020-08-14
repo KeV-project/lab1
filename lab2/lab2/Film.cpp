@@ -9,8 +9,12 @@ void SetDuration(Film& film, const int duration)
 {
 	if (duration <= 0)
 	{
-		throw exception("Продолжительность фильма "
-			"должна быть больше 0 минут");
+		string message = "Число " + to_string(duration) +
+			" не является положительным\nи не может "
+			"определять продолжительность фильма";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	film.Duration = duration;
 }
@@ -19,7 +23,12 @@ void SetYear(Film& film, const int year)
 {
 	if (year <= 0)
 	{
-		throw exception("Год не может быть числом меньше или равным 0");
+		string message = "Число " + to_string(year) +
+			" не является положительным\nи не может "
+			"определять год выпуска фильма";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	film.Year = year;
 }
@@ -33,7 +42,11 @@ void SetRating(Film& film, const float rating)
 {
 	if (rating < 0.0)
 	{
-		throw exception("Рейтинг не может быть меньше 0");
+		string message = "Отрицательное число  " + to_string(rating)
+			+ " не может определять рейтинг фильма";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	film.Rating = rating;
 }
@@ -42,7 +55,11 @@ void SetBudget(Film& film, const int budget)
 {
 	if (budget < 0)
 	{
-		throw exception("Бюдет не может быть отрицательным числом");
+		string message = "Отрицательное число  " + to_string(budget)
+			+ " не может определять бюджет фильма";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	film.Budget = budget;
 }
