@@ -53,3 +53,23 @@ void DemoWorkingWithClasses::DemoBook()
 
 	delete[] books;
 }
+
+int DemoWorkingWithClasses::FindRouteTo(Route* routes, const int routesCount, const string& findedStop)
+{
+	for (int i = 0; i < routesCount; i++)
+	{
+		for (int j = 0; j < routes[i].GetStopsCount(); j++)
+		{
+			if (routes[i].GetStops()[j] == findedStop)
+			{
+				return i;
+			}
+		}
+	}
+	return -1;
+}
+
+void DemoWorkingWithClasses::DemoRoute()
+{
+
+}

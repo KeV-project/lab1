@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Output.h"
 #include "Book.h"
+#include "Route.h"
 
 using namespace std;
 
@@ -11,5 +12,9 @@ public:
 	static int FindBookByAuthor(Book* books, const int booksCount,
 		const string& findedAuthor);
 	static void DemoBook();
+
+	static int FindRouteTo(Route* routes, const int routesCount,
+		const string& findedStop);
+	static void DemoRoute();
 };
 
