@@ -14,6 +14,7 @@ private:
 	int _periodicity;
 	int _stopsCount;
 	string* _stops;
+
 public:
 	void SetNumber(const int number);
 	void SetDuration(const int duration);
@@ -33,6 +34,6 @@ public:
 	~Route();
 
 	void ReadRouteFromConsole();
-	void WriteRouteFromConsole();
+	void WriteRouteToConsole();
 };
 

@@ -18,7 +18,7 @@ void Route::SetDuration(const int duration)
 	if (duration <= 0)
 	{
 		string message = "Число " + to_string(duration) +
-			" не является положительным чисом\n"
+			" не является положительным числом\n"
 			"и не может определять продолжительность рейса";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
@@ -32,7 +32,7 @@ void Route::SetPeriodicity(const int periodicity)
 	if (periodicity <= 0)
 	{
 		string message = "Число " + to_string(periodicity) +
-			"не является положительным числом\n"
+			" не является положительным числом\n"
 			"и не может определять периодичность рейса";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
@@ -43,10 +43,10 @@ void Route::SetPeriodicity(const int periodicity)
 
 void Route::SetStops(string* stops, const int stopsCount)
 {
-	if (stopsCount < 0)
+	if (stopsCount < 0 || stopsCount > 10)
 	{
-		string message = "Отрицательное число  " + to_string(stopsCount) +
-			" не может определять количество остоновок рейса";
+		string message = "Число " + to_string(stopsCount) +
+			" не входит в допустимый диапазон значений [0, 10]";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);
@@ -201,7 +201,7 @@ void Route::ReadRouteFromConsole()
 	} while (true);
 }
 
-void Route::WriteRouteFromConsole()
+void Route::WriteRouteToConsole()
 {
 	cout << "Рейс №" << this->_number << " (" << this->_stops[0];
 	cout << " - " << this->_stops[_stopsCount - 1] << ") находится в пути ";

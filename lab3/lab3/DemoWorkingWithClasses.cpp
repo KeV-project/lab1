@@ -71,5 +71,36 @@ int DemoWorkingWithClasses::FindRouteTo(Route* routes, const int routesCount, co
 
 void DemoWorkingWithClasses::DemoRoute()
 {
+	const int routesCount = 5;
+	Route* routes = new Route[routesCount];
+	cout << "Заполните массив из 5 рейсов:" << endl << endl;
+	for (int i = 0; i < routesCount; i++)
+	{
+		cout << "РЕЙС №" << i + 1 << ":" << endl << endl;
+		routes[i].ReadRouteFromConsole();
+	}
+	cout << "Массив рейсов:" << endl << endl;
+	for (int i = 0; i < routesCount; i++)
+	{
+		routes[i].WriteRouteToConsole();
+	}
+	PrintLine();
 
+	cout << "Введите остановку для поиска рейса: ";
+	string findedStop = "";
+	cin >> findedStop;
+	cout << endl;
+	int findedRouteIndex = FindRouteTo(routes, routesCount, findedStop);
+	if (findedRouteIndex == -1)
+	{
+		cout << "Не существует рейса с остановкой " << findedStop << endl << endl;
+	}
+	else
+	{
+		cout << "Рейс, включающий остановку " << findedStop << endl << endl;
+		routes[findedRouteIndex].WriteRouteToConsole();
+	}
+	PrintLine();
+
+	delete[] routes;
 }
