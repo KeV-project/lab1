@@ -18,8 +18,12 @@ void SetWidth(Rectangle& rectangle, const float width)
 {
 	if (width <= 0)
 	{
-		throw exception("ИСКЛЮЧЕНИЕ: ширина прямоугольника "
-			"не может быть меньше или равна 0");
+		string message = "Число " + to_string(width) +
+			" не является положительным\nи не может "
+			"определять ширину прямоугольника";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	rectangle.Width = width;
 }
