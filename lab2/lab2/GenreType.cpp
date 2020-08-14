@@ -5,7 +5,7 @@ GenreType GetGenreType(const int numGenre)
 	if (!IsValueInRange(numGenre, 0, 5))
 	{
 		string message = "„исло " + to_string(numGenre) + 
-			" не входит в допустимый диапазон [0, 5] "
+			" не входит в допустимый диапазон [0, 5]\n"
 			"и не может быть сопоставлено с соответствующим "
 			"значением перечислени€";
 		char buf[255];

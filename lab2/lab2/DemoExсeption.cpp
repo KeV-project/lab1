@@ -10,7 +10,7 @@ void Sort(double* values, const int valuesCount)
     if (valuesCount <= 0)
     {
         string message = "Число " + to_string(valuesCount) + 
-            " не является положительным и не может определять "
+            " не является положительным\nи не может определять "
             "количество элементов в массиве";
         char buf[255];
         strcpy_s(buf, message.c_str());

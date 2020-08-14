@@ -48,7 +48,7 @@ ColorType GetColorType(const int numColor)
 	if (!IsValueInRange(numColor, 0, 6))
 	{
 		string message = "„исло " + to_string(numColor) + 
-			" не входит в допустимый диапазон [0, 6] "
+			" не входит в допустимый диапазон [0, 6]\n"
 			"и не может быть сопоставлено с соответствующим "
 			"значением перечислени€";
 		char buf[255];

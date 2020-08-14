@@ -4,8 +4,12 @@ void SetLength(Rectangle& rectangle, const float length)
 {
 	if (length <= 0)
 	{
-		throw exception("ИСКЛЮЧЕНИЕ: длина прямоугольника "
-			"не может быть меньше или равна 0");
+		string message = "Число " + to_string(length) +
+			" не является положительным\nи не может "
+			"определять длину прямоугольника";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	rectangle.Length = length;
 }
