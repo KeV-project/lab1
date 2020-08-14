@@ -7,12 +7,14 @@ using namespace std;
 // Сортирует массив вещественных чисел
 void Sort(double* values, const int valuesCount)
 {
-    if (valuesCount < 0)
+    if (valuesCount <= 0)
     {
-        throw exception("ИСКЛЮЧЕНИЕ"
-            "(Функция сортировки вещественных чисел):\n"
-            "Количество элементов массива не может быть "
-            "отрицательным числом");
+        string message = "Число " + to_string(valuesCount) + 
+            " не является положительным и не может определять "
+            "количество элементов в массиве";
+        char buf[255];
+        strcpy_s(buf, message.c_str());
+        throw exception(buf);
     }
 	
     for (int i = 0; i < valuesCount; i++)

@@ -4,7 +4,10 @@ GenreType GetGenreType(const int numGenre)
 {
 	if (!IsValueInRange(numGenre, 0, 5))
 	{
-		string message = "Число " + to_string(numGenre) + " не входит в допустимый диапазон [0, 5]";
+		string message = "Число " + to_string(numGenre) + 
+			" не входит в допустимый диапазон [0, 5] "
+			"и не может быть сопоставлено с соответствующим "
+			"значением перечисления";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);
