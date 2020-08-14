@@ -9,7 +9,11 @@ void SetPlaneNumber(Flight& flight, const int planeNumber)
 {
 	if (planeNumber < 0)
 	{
-		throw exception("Ќомер самолета не может быть меньше 0");
+		string message = "ќтрицательное число  " + to_string(planeNumber) 
+			+ " не может определ€ть номер самолетa";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	flight.PlaneNumber = planeNumber;
 }
@@ -28,7 +32,12 @@ void SetDurationInMinutes(Flight& flight, const int durationInMinutes)
 {
 	if (durationInMinutes <= 0)
 	{
-		throw exception("¬рем€ полета не может быть меньше или равно 0");
+		string message = "„исло " + to_string(durationInMinutes) +
+			" не €вл€етс€ положительным\nи не может "
+			"определ€ть продолжительность полета самолета";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	flight.DurationInMinutes = durationInMinutes;
 }
@@ -37,7 +46,12 @@ void SetDistanceInMeters(Flight& flight, const int distanceInMeters)
 {
 	if (distanceInMeters <= 0)
 	{
-		throw exception("ƒальность полета не может быть меньше или равна 0");
+		string message = "„исло " + to_string(distanceInMeters) +
+			" не €вл€етс€ положительным\nи не может "
+			"определ€ть дистанцию полета самолета";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	flight.DistanceInMeters = distanceInMeters;
 }
@@ -46,7 +60,12 @@ void SetPassengers(Flight& flight, const int passengers)
 {
 	if (passengers < 0)
 	{
-		throw exception(" оличество пассажиров не может быть меньше 0");
+		string message = "ќтрицательное число  " + to_string(passengers)
+			+ " не может определ€ть количество\n"
+			  "пассажиров на борту самолета";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	flight.Passengers = passengers;
 }
