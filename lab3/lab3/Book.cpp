@@ -9,8 +9,12 @@ void Book::SetYear(const int year)
 {
 	if (year <= 0 || year > 2020)
 	{
-		throw exception("Год выпуска книги "
-			"задается числом в диапазоне [1, 2020]");
+		string message = "Число " + to_string(year) +
+			" не входит в допустимый диапазон значений [0, 2020]\n"
+			"и не может определять год издания книги";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	this->_year = year;
 }
@@ -19,8 +23,12 @@ void Book::SetPagesCount(const int pagesCount)
 {
 	if (pagesCount <= 0)
 	{
-		throw exception("Количество страниц в книге "
-			"задается положительным числом");
+		string message = "Число " + to_string(pagesCount) +
+			" не является положительным "
+			"и не может определять\nколичество страниц в книге";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	this->_pagesCount = pagesCount;
 }
@@ -29,8 +37,11 @@ void Book::SetAuthors(string* authors, const int authorsCount)
 {
 	if (authorsCount <= 0 || authorsCount > 10)
 	{
-		throw exception("Количество авторов книги "
-			"должно быть в диапазоне [1, 10]");
+		string message = "Число " + to_string(authorsCount) +
+			" не входит в допустимый диапазон значений [0, 10]";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	this->_authorsCount = authorsCount;
 	this->_authors = authors;
@@ -158,7 +169,7 @@ void Book::ReadBookFromConsole()
 		}
 		else
 		{
-			cout << "Пожалуйста, введите положительное число" << endl << endl;
+			cout << "Число " << authorsCount << " не явяется положительным" << endl << endl;
 		}
 	} while (true);
 }

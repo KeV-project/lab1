@@ -9,7 +9,7 @@ void SetPlaneNumber(Flight& flight, const int planeNumber)
 {
 	if (planeNumber < 0)
 	{
-		string message = "Отрицательное число  " + to_string(planeNumber) 
+		string message = "Отрицательное число " + to_string(planeNumber) 
 			+ " не может определять номер самолетa";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
@@ -60,7 +60,7 @@ void SetPassengers(Flight& flight, const int passengers)
 {
 	if (passengers < 0)
 	{
-		string message = "Отрицательное число  " + to_string(passengers)
+		string message = "Отрицательное число " + to_string(passengers)
 			+ " не может определять количество\n"
 			  "пассажиров на борту самолета";
 		char buf[255];
