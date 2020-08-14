@@ -4,8 +4,12 @@ void SetYear(Time& event, const int year)
 {
 	if (year <= 0)
 	{
-		throw exception("ѕоле год не может быть задано" 
-			" числом меньше или равным 0");
+		string message = "„исло " + to_string(year) +
+			" не €вл€етс€ положительным\nи не может "
+			"определ€ть год";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	event.Year = year;
 }
@@ -14,8 +18,12 @@ void SetMonth(Time& event, const int month)
 {
 	if (month < 1 || month > 12)
 	{
-		throw exception("ѕоле мес€ц должно быть"
-			" числом в промежутке [1, 12]");
+		string message = "„исло " + to_string(month) +
+			" не входит в допустимый диапазон значений [1, 12]\n"
+			"и не может определ€ть мес€ц";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	event.Month = month;
 }
@@ -24,8 +32,12 @@ void SetDay(Time& event, const int day)
 {
 	if (day < 1 || day > 31)
 	{
-		throw exception("ѕоле день должно быть"
-			" числом в промежутке [1, 31]");
+		string message = "„исло " + to_string(day) +
+			" не входит в допустимый диапазон значений [1, 31]\n"
+			"и не может определ€ть день";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	event.Day = day;
 }
@@ -34,8 +46,12 @@ void SetHour(Time& event, const int hour)
 {
 	if (hour < 0 || hour > 23)
 	{
-		throw exception("ѕоле час должно быть"
-			" числом в промежутке [0, 23]");
+		string message = "„исло " + to_string(hour) +
+			" не входит в допустимый диапазон значений [0, 23]\n"
+			"и не может определ€ть час";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	event.Hour = hour;
 }
@@ -44,8 +60,12 @@ void SetMinute(Time& event, const int minute)
 {
 	if (minute < 0 || minute > 59)
 	{
-		throw exception("ѕоле минута должно быть"
-			" числом в промежутке [0, 59]");
+		string message = "„исло " + to_string(minute) +
+			" не входит в допустимый диапазон значений [0, 59]\n"
+			"и не может определ€ть минуту";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	event.Minute = minute;
 }
@@ -54,8 +74,12 @@ void SetSecond(Time& event, const int second)
 {
 	if (second < 0 || second > 59)
 	{
-		throw exception("ѕоле секунда должно быть"
-			" числом в промежутке [0, 59]");
+		string message = "„исло " + to_string(second) +
+			" не входит в допустимый диапазон значений [0, 59]\n"
+			"и не может определ€ть секунду";
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
 	}
 	event.Second = second;
 }
