@@ -35,7 +35,7 @@ void Book::SetPagesCount(const int pagesCount)
 
 void Book::SetAuthors(string* authors, const int authorsCount)
 {
-	if (authorsCount <= 0 || authorsCount > 10)
+	if (authorsCount < 0 || authorsCount > 10)
 	{
 		string message = "Число " + to_string(authorsCount) +
 			" не входит в допустимый диапазон значений [0, 10]";
@@ -77,7 +77,7 @@ Book::Book()
 	SetTitle("");
 	SetYear(1);
 	SetPagesCount(1);
-	SetAuthors(nullptr, 1);
+	SetAuthors(nullptr, 0);
 }
 
 Book::Book(const string& title, const int year, const int pagesCount,
@@ -155,21 +155,25 @@ void Book::ReadBookFromConsole()
 		int authorsCount = 0;
 		cin >> authorsCount;
 		cout << endl;
-		if (IsValue() && authorsCount > 0)
+		if (IsValue() && authorsCount >= 0)
 		{
-			string* authors = new string[authorsCount];
-			for (int i = 0; i < authorsCount; i++)
+			string* authors = nullptr;
+			if (authorsCount > 0)
 			{
-				cout << "Введите автора №" << i + 1 << ": ";
-				cin >> authors[i];
-				cout << endl;
+				authors = new string[authorsCount];
+				for (int i = 0; i < authorsCount; i++)
+				{
+					cout << "Введите автора №" << i + 1 << ": ";
+					cin >> authors[i];
+					cout << endl;
+				}
 			}
 			SetAuthors(authors, authorsCount);
 			break;
 		}
 		else
 		{
-			cout << "Пожалуйста, введите положительное целое число" << endl << endl;
+			cout << "Пожалуйста, введите неотрицательное целое число" << endl << endl;
 		}
 	} while (true);
 }
