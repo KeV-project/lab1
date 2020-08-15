@@ -182,14 +182,18 @@ void Route::ReadRouteFromConsole()
 		int stopsCount = 0;
 		cin >> stopsCount;
 		cout << endl;
-		if (IsValue() && stopsCount > 0)
+		if (IsValue() && stopsCount >= 0)
 		{
-			string* stops = new string[stopsCount];
-			for (int i = 0; i < stopsCount; i++)
+			string* stops = nullptr;
+			if (stopsCount > 0)
 			{
-				cout << "Введите остановку №" << i + 1 << ": ";
-				cin >> stops[i];
-				cout << endl;
+				stops = new string[stopsCount];
+				for (int i = 0; i < stopsCount; i++)
+				{
+					cout << "Введите остановку №" << i + 1 << ": ";
+					cin >> stops[i];
+					cout << endl;
+				}
 			}
 			SetStops(stops, stopsCount);
 			break;

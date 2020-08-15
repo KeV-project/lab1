@@ -6,6 +6,6 @@ using namespace std;
 void main()
 {
 	setlocale(LC_ALL, "rus");
-	DemoWorkingWithClasses::DemoBook();
+	//DemoWorkingWithClasses::DemoBook();
 	//DemoWorkingWithClasses::DemoRoute();
 }
