@@ -29,5 +29,6 @@ public:
 
 	void ChangeRectangle(const float length, const float width,
 		const float x, const float y);
+	void WriteRectangle();
 };
 

@@ -40,12 +40,12 @@ void Rectangle::SetWidth(const float width)
 
 float Rectangle::GetCenterX()
 {
-	return GetCenterX();
+	return _center.GetX();
 }
 
 float Rectangle::GetCenterY()
 {
-	return GetCenterY();
+	return _center.GetY();
 }
 
 float Rectangle::GetLength()
@@ -82,4 +82,12 @@ void Rectangle::ChangeRectangle(const float length, const float width,
 	SetWidth(width);
 	SetCenterX(x);
 	SetCenterY(y);
+}
+
+void Rectangle::WriteRectangle()
+{
+	cout << "ƒлинa: " << _length << endl;
+	cout << "Ўирина: " << _width << endl;
+	cout << "x: " << GetCenterX() << endl;
+	cout << "y: " << GetCenterY() << endl << endl;
 }

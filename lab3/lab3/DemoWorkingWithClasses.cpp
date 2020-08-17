@@ -49,9 +49,10 @@ void DemoWorkingWithClasses::DemoBook()
 		cout << "Книга автора: ";
 		books[findedBookIndex].WriteBookToConsole();
 	}
-	PrintLine();
 
 	delete[] books;
+
+	PrintLine();
 }
 
 int DemoWorkingWithClasses::FindRouteTo(Route* routes, const int routesCount, const string& findedStop)
@@ -100,17 +101,36 @@ void DemoWorkingWithClasses::DemoRoute()
 		cout << "Рейс, включающий остановку " << findedStop << endl << endl;
 		routes[findedRouteIndex].WriteRouteToConsole();
 	}
-	PrintLine();
 
 	delete[] routes;
+
+	PrintLine();
+}
+
+void DemoWorkingWithClasses::WriteRectangles(Rectangle* rectangles, const int rectanglesCount)
+{
+	cout << "Массив прямоугольников:" << endl << endl;
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		cout << "Прямоугольник №" << i + 1 << ": " << endl;
+		rectangles[i].WriteRectangle();
+	}
 }
 
 void DemoWorkingWithClasses::DemoRectangleWithPoint()
 {
+	// Task 3.3.3 - 3.3.4
 	const int rectanglesCount = 5;
-	Rectangle* rectangles = new Rectangle[rectanglesCount]
-	{
+	Rectangle* rectangles = new Rectangle[rectanglesCount];
+	rectangles[0].ChangeRectangle(15.5, 13.6, -2, 3);
+	rectangles[1].ChangeRectangle(7.3, 5.4, 6, 1);
+	rectangles[2].ChangeRectangle(19.0, 12.5, 15, -9);
+	rectangles[3].ChangeRectangle(8.2, 7.0, -10, 10);
+	rectangles[4].ChangeRectangle(4.7, 2.5, 0.0, 0.0);
 
-	};
+	WriteRectangles(rectangles, rectanglesCount);
+
 	delete [] rectangles;
+
+	PrintLine();
 }

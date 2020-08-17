@@ -18,6 +18,7 @@ public:
 		const string& findedStop);
 	static void DemoRoute();
 
+	static void WriteRectangles(Rectangle* rectangles, const int rectanglesCount);
 	static void DemoRectangleWithPoint();
 };
 
