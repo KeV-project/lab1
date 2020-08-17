@@ -171,8 +171,10 @@ void DemoWorkingWithClasses::WriteFlights(Flight** flights, const int flightsCou
 {
 	for (int i = 0; i < flightsCount; i++)
 	{
+		cout << "Рейс №";
 		flights[i]->WriteFlight();
 	}
+	cout << endl;
 }
 
 void DemoWorkingWithClasses::DemoFlightWithTime()
@@ -181,14 +183,26 @@ void DemoWorkingWithClasses::DemoFlightWithTime()
 	int const flightCount = 5;
 	Flight** flights = new Flight * [flightCount]
 	{
-		new Flight(1, "Абакан", "Белгород", 2020, 10, 9, 10, 40, 30, 2020, 10, 9, 13, 50, 10),
-		new Flight(2, "Братск", "Воронеж", 2020, 11, 11, 13, 20, 25, 2020, 11, 11, 20, 25, 5),
-		new Flight(3, "Грозный", "Иваново", 2020, 11, 12, 13, 15, 40, 2020, 11, 12, 23, 20, 59),
-		new Flight(4, "Кемерово", "Казань", 2020, 12, 11, 0, 13, 20, 2020, 12, 12, 15, 7, 17),
-		new Flight(5, "Липецк", "Москва", 2020, 12, 23, 17, 10, 14, 2020, 12, 23, 23, 50, 40),
+		new Flight(1, "Абакан", "Белгород", 2020, 10, 9, 10, 40, 2020, 10, 9, 13, 50),
+		new Flight(2, "Братск", "Воронеж", 2020, 11, 11, 13, 30, 2020, 11, 11, 20, 25),
+		new Flight(3, "Грозный", "Иваново", 2020, 11, 12, 13, 15, 2020, 11, 12, 23, 20),
+		new Flight(4, "Кемерово", "Казань", 2020, 12, 15, 0, 13, 2020, 12, 15, 7, 17),
+		new Flight(5, "Липецк", "Москва", 2020, 12, 23, 17, 10, 2020, 12, 23, 23, 50),
 	};
 
 	WriteFlights(flights, flightCount);
+
+	PrintLine();
+
+	// Task 3.3.11
+	for (int i = 0; i < flightCount; i++)
+	{
+		cout << "Рейс №" << i + 1 << " ";
+		cout << flights[i]->GetDeparture() << " - ";
+		cout << flights[i]->GetDestination() << " ";
+		cout << "Время в полете: " << flights[i]->GetFlightTimeMinutes() << endl;
+	}
+	cout << endl;
 
 	PrintLine();
 

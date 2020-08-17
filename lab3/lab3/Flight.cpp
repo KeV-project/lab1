@@ -24,18 +24,17 @@ void Flight::SetDestination(const string& destination)
 }
 
 void Flight::SetDepartureTime(const int year, const int month,
-	const int day, const int hour, const int minute, const int second)
+	const int day, const int hour, const int minute)
 {
 	this->_departureTime.SetYear(year);
 	this->_departureTime.SetMonth(month);
 	this->_departureTime.SetDay(day);
 	this->_departureTime.SetHour(hour);
 	this->_departureTime.SetMinute(minute);
-	this->_departureTime.SetSecond(second);
 }
 
 void Flight::SetDestinationTime(const int year, const int month,
-	const int day, const int hour, const int minute, const int second)
+	const int day, const int hour, const int minute)
 {
 	if (year < this->_departureTime.GetYear())
 	{
@@ -112,29 +111,6 @@ void Flight::SetDestinationTime(const int year, const int month,
 						strcpy_s(buf, message.c_str());
 						throw exception(buf);
 					}
-					else if (minute == this->_departureTime.GetMinute())
-					{
-						if (second < this->_departureTime.GetSecond())
-						{
-							string message = "Время прибытия: "
-								+ to_string(_destinationTime.GetYear()) + "."
-								+ to_string(_destinationTime.GetMonth()) + "."
-								+ to_string(_destinationTime.GetDay())
-								+ to_string(_destinationTime.GetHour()) + ":"
-								+ to_string(_destinationTime.GetMinute())
-								+ to_string(second)
-								+ " предшествует времени вылета: "
-								+ to_string(_departureTime.GetYear()) + "."
-								+ to_string(_departureTime.GetMonth()) + "."
-								+ to_string(_departureTime.GetDay())
-								+ to_string(_departureTime.GetHour())
-								+ to_string(_departureTime.GetMinute())
-								+ to_string(_departureTime.GetSecond());
-							char buf[255];
-							strcpy_s(buf, message.c_str());
-							throw exception(buf);
-						}
-					}
 				}
 			}
 		}
@@ -144,7 +120,6 @@ void Flight::SetDestinationTime(const int year, const int month,
 	this->_destinationTime.SetDay(day);
 	this->_destinationTime.SetHour(hour);
 	this->_destinationTime.SetMinute(minute);
-	this->_destinationTime.SetSecond(second);
 }
 
 int Flight::GetNumber()
@@ -177,48 +152,42 @@ Flight::Flight()
 	SetNumber(0);
 	SetDeparture("");
 	SetDestination("");
-	SetDepartureTime(1, 1, 1, 1, 1, 1);
-	SetDestinationTime(2020, 12, 31, 23, 59, 59);
+	SetDepartureTime(1, 1, 1, 1, 1);
+	SetDestinationTime(2020, 12, 31, 23, 59);
 }
 
 Flight::Flight(const int number, const string& departure,
 	const string& destination, const int departureYear,
 	const int departureMonth, const int departureDay,
 	const int departureHour, const int departureMinute,
-	const int departureSecond, const int destinationYear,
-	const int destinationMonth, const int destinationDay,
-	const int destinationHour, const int destinationMinute,
-	const int destinationSecond)
+	const int destinationYear, const int destinationMonth, 
+	const int destinationDay, const int destinationHour, 
+	const int destinationMinute)
 {
 	SetNumber(number);
 	SetDeparture(departure);
 	SetDestination(destination);
 	SetDepartureTime(departureYear, departureMonth,
-		departureDay, departureHour, departureMinute,
-		departureSecond);
+		departureDay, departureHour, departureMinute);
 	SetDestinationTime(destinationYear, destinationMonth, 
-		destinationDay, destinationHour, destinationMinute,
-		destinationSecond);
+		destinationDay, destinationHour, destinationMinute);
 }
 
 void Flight::ChangeFlight(const int number, const string& departure,
 	const string& destination, const int departureYear,
 	const int departureMonth, const int departureDay,
 	const int departureHour, const int departureMinute,
-	const int departureSecond, const int destinationYear,
-	const int destinationMonth, const int destinationDay,
-	const int destinationHour, const int destinationMinute,
-	const int destinationSecond)
+	const int destinationYear, const int destinationMonth, 
+	const int destinationDay, const int destinationHour, 
+	const int destinationMinute)
 {
 	SetNumber(number);
 	SetDeparture(departure);
 	SetDestination(destination);
 	SetDepartureTime(departureYear, departureMonth,
-		departureDay, departureHour, departureMinute,
-		departureSecond);
+		departureDay, departureHour, departureMinute);
 	SetDestinationTime(destinationYear, destinationMonth,
-		destinationDay, destinationHour, destinationMinute,
-		destinationSecond);
+		destinationDay, destinationHour, destinationMinute);
 }
 
 void Flight::WriteFlight()
@@ -226,5 +195,14 @@ void Flight::WriteFlight()
 	cout << _number << " ";
 	cout << _departure << " - " << _destination << " ";
 	cout << "Вылет: " << _departureTime.GetTime() << " ";
-	cout << "Прибытие " << _destinationTime.GetTime() << endl << endl;
+	cout << "Прибытие " << _destinationTime.GetTime() << endl;
+}
+
+int Flight::GetFlightTimeMinutes()
+{
+	int DifHour = 0;
+	int DifMinute = 0;
+	DifHour = this->_destinationTime.GetHour() - this->_departureTime.GetHour();
+	DifMinute = this->_destinationTime.GetMinute() - this->_departureTime.GetMinute();
+	return DifMinute + DifHour * 60;
 }

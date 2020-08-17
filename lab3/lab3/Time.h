@@ -13,7 +13,6 @@ private:
 	int _day;
 	int _hour;
 	int _minute;
-	int _second;
 
 public:
 	void SetYear(const int year);
@@ -21,18 +20,16 @@ public:
 	void SetDay(const int day);
 	void SetHour(const int hour);
 	void SetMinute(const int minute);
-	void SetSecond(const int second);
 
 	int GetYear();
 	int GetMonth();
 	int GetDay();
 	int GetHour();
 	int GetMinute();
-	int GetSecond();
 
 	Time();
 	Time(const int year, const int month, const int day,
-		const int hour, const int minute, const int second);
+		const int hour, const int minute);
 	
 	string GetTime();
 };

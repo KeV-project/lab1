@@ -20,9 +20,9 @@ public:
 	void SetDeparture(const string& departure);
 	void SetDestination(const string& destination);
 	void SetDepartureTime(const int year, const int month,
-		const int day, const int hour, const int minute, const int second);
+		const int day, const int hour, const int minute);
 	void SetDestinationTime(const int year, const int month,
-		const int day, const int hour, const int minute, const int second);
+		const int day, const int hour, const int minute);
 
 	int GetNumber();
 	string GetDeparture();
@@ -35,19 +35,19 @@ public:
 		const string& destination, const int departureYear,
 		const int departureMonth, const int departureDay,
 		const int departureHour, const int departureMinute,
-		const int departureSecond, const int destinationYear,
-		const int destinationMonth, const int destinationDay,
-		const int destinationHour, const int destinationMinute,
-		const int destinationSecond);
+	    const int destinationYear, const int destinationMonth, 
+		const int destinationDay, const int destinationHour, 
+		const int destinationMinute);
 
 	void ChangeFlight(const int number, const string& departure,
 		const string& destination, const int departureYear,
 		const int departureMonth, const int departureDay,
 		const int departureHour, const int departureMinute,
-		const int departureSecond, const int destinationYear,
-		const int destinationMonth, const int destinationDay,
-		const int destinationHour, const int destinationMinute,
-		const int destinationSecond);
+		const int destinationYear, const int destinationMonth, 
+		const int destinationDay, const int destinationHour, 
+		const int destinationMinute);
 	void WriteFlight();
+
+	int GetFlightTimeMinutes();
 };
 
