@@ -200,3 +200,31 @@ Flight::Flight(const int number, const string& departure,
 		destinationDay, destinationHour, destinationMinute,
 		destinationSecond);
 }
+
+void Flight::ChangeFlight(const int number, const string& departure,
+	const string& destination, const int departureYear,
+	const int departureMonth, const int departureDay,
+	const int departureHour, const int departureMinute,
+	const int departureSecond, const int destinationYear,
+	const int destinationMonth, const int destinationDay,
+	const int destinationHour, const int destinationMinute,
+	const int destinationSecond)
+{
+	SetNumber(number);
+	SetDeparture(departure);
+	SetDestination(destination);
+	SetDepartureTime(departureYear, departureMonth,
+		departureDay, departureHour, departureMinute,
+		departureSecond);
+	SetDestinationTime(destinationYear, destinationMonth,
+		destinationDay, destinationHour, destinationMinute,
+		destinationSecond);
+}
+
+void Flight::WriteFlight()
+{
+	cout << _number << " ";
+	cout << _departure << " - " << _destination << " ";
+	cout << "Вылет: " << _departureTime.GetTime() << " ";
+	cout << "Прибытие " << _destinationTime.GetTime() << endl << endl;
+}

@@ -135,3 +135,10 @@ Time::Time(const int year, const int month, const int day,
 	SetMinute(minute);
 	SetSecond(second);
 }
+
+string Time::GetTime()
+{
+	return to_string(_year) + "." + to_string(_month) 
+		+ "." + to_string(_day) + " " + to_string(_hour) 
+		+ ":" + to_string( _minute) + ":" + to_string(_second);
+}

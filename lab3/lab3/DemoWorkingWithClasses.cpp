@@ -107,32 +107,32 @@ void DemoWorkingWithClasses::DemoRoute()
 	PrintLine();
 }
 
-void DemoWorkingWithClasses::WriteRectangles(Rectangle* rectangles, const int rectanglesCount)
+void DemoWorkingWithClasses::WriteRectangles(Rectangle** rectangles, const int rectanglesCount)
 {
 	cout << "Массив прямоугольников:" << endl << endl;
 	for (int i = 0; i < rectanglesCount; i++)
 	{
 		cout << "Прямоугольник №" << i + 1 << ": " << endl;
-		rectangles[i].WriteRectangle();
+		rectangles[i]->WriteRectangle();
 	}
 }
 
-float DemoWorkingWithClasses::GetMeanCenterX(Rectangle* rectangles, const int rectanglesCount)
+float DemoWorkingWithClasses::GetMeanCenterX(Rectangle** rectangles, const int rectanglesCount)
 {
 	float sumCenterX = 0.0;
 	for (int i = 0; i < rectanglesCount; i++)
 	{
-		sumCenterX += rectangles[i].GetCenterX();
+		sumCenterX += rectangles[i]->GetCenterX();
 	}
 	return sumCenterX / rectanglesCount;
 }
 
-float DemoWorkingWithClasses::GetMeanCenterY(Rectangle* rectangles, const int rectanglesCount)
+float DemoWorkingWithClasses::GetMeanCenterY(Rectangle** rectangles, const int rectanglesCount)
 {
 	float sumCenterY = 0.0;
 	for (int i = 0; i < rectanglesCount; i++)
 	{
-		sumCenterY += rectangles[i].GetCenterY();
+		sumCenterY += rectangles[i]->GetCenterY();
 	}
 	return sumCenterY / rectanglesCount;
 }
@@ -141,12 +141,14 @@ void DemoWorkingWithClasses::DemoRectangleWithPoint()
 {
 	// Task 3.3.3 - 3.3.4
 	const int rectanglesCount = 5;
-	Rectangle* rectangles = new Rectangle[rectanglesCount];
-	rectangles[0].ChangeRectangle(15.5, 13.6, -2, 3);
-	rectangles[1].ChangeRectangle(7.3, 5.4, 6, 1);
-	rectangles[2].ChangeRectangle(19.0, 12.5, 15, -9);
-	rectangles[3].ChangeRectangle(8.2, 7.0, -10, 10);
-	rectangles[4].ChangeRectangle(4.7, 2.5, 0.0, 0.0);
+	Rectangle** rectangles = new Rectangle*[rectanglesCount]
+	{
+		new Rectangle(15.5, 13.6, -2, 3),
+		new Rectangle(7.3, 5.4, 6, 1),
+		new Rectangle(19.0, 12.5, 15, -9),
+		new Rectangle(8.2, 7.0, -10, 10),
+		new Rectangle(4.7, 2.5, 0.0, 0.0),
+	};
 
 	WriteRectangles(rectangles, rectanglesCount);
 
@@ -158,5 +160,41 @@ void DemoWorkingWithClasses::DemoRectangleWithPoint()
 
 	PrintLine();
 
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		delete rectangles[i];
+	}
 	delete[] rectangles;
+}
+
+void DemoWorkingWithClasses::WriteFlights(Flight** flights, const int flightsCount)
+{
+	for (int i = 0; i < flightsCount; i++)
+	{
+		flights[i]->WriteFlight();
+	}
+}
+
+void DemoWorkingWithClasses::DemoFlightWithTime()
+{
+	// Task 3.3.9
+	int const flightCount = 5;
+	Flight** flights = new Flight * [flightCount]
+	{
+		new Flight(1, "Абакан", "Белгород", 2020, 10, 9, 10, 40, 30, 2020, 10, 9, 13, 50, 10),
+		new Flight(2, "Братск", "Воронеж", 2020, 11, 11, 13, 20, 25, 2020, 11, 11, 20, 25, 5),
+		new Flight(3, "Грозный", "Иваново", 2020, 11, 12, 13, 15, 40, 2020, 11, 12, 23, 20, 59),
+		new Flight(4, "Кемерово", "Казань", 2020, 12, 11, 0, 13, 20, 2020, 12, 12, 15, 7, 17),
+		new Flight(5, "Липецк", "Москва", 2020, 12, 23, 17, 10, 14, 2020, 12, 23, 23, 50, 40),
+	};
+
+	WriteFlights(flights, flightCount);
+
+	PrintLine();
+
+	for (int i = 0; i < flightCount; i++)
+	{
+		delete flights[i];
+	}
+	delete[] flights;
 }

@@ -8,5 +8,6 @@ void main()
 	setlocale(LC_ALL, "rus");
 	//DemoWorkingWithClasses::DemoBook();
 	//DemoWorkingWithClasses::DemoRoute();
-	DemoWorkingWithClasses::DemoRectangleWithPoint();
+	//DemoWorkingWithClasses::DemoRectangleWithPoint();
+	DemoWorkingWithClasses::DemoFlightWithTime();
 }

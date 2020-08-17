@@ -39,5 +39,15 @@ public:
 		const int destinationMonth, const int destinationDay,
 		const int destinationHour, const int destinationMinute,
 		const int destinationSecond);
+
+	void ChangeFlight(const int number, const string& departure,
+		const string& destination, const int departureYear,
+		const int departureMonth, const int departureDay,
+		const int departureHour, const int departureMinute,
+		const int departureSecond, const int destinationYear,
+		const int destinationMonth, const int destinationDay,
+		const int destinationHour, const int destinationMinute,
+		const int destinationSecond);
+	void WriteFlight();
 };
 

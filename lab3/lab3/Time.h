@@ -33,5 +33,7 @@ public:
 	Time();
 	Time(const int year, const int month, const int day,
 		const int hour, const int minute, const int second);
+	
+	string GetTime();
 };
 
