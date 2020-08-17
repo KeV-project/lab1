@@ -141,6 +141,7 @@
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="DemoWorkingWithClasses.cpp" />
     <ClCompile Include="Flight.cpp" />
+    <ClCompile Include="GenreType.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Output.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="Book.h" />
     <ClInclude Include="DemoWorkingWithClasses.h" />
     <ClInclude Include="Flight.h" />
+    <ClInclude Include="GenreType.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="Point.h" />
