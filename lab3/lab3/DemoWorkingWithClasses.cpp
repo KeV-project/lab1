@@ -117,6 +117,26 @@ void DemoWorkingWithClasses::WriteRectangles(Rectangle* rectangles, const int re
 	}
 }
 
+float DemoWorkingWithClasses::GetMeanCenterX(Rectangle* rectangles, const int rectanglesCount)
+{
+	float sumCenterX = 0.0;
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		sumCenterX += rectangles[i].GetCenterX();
+	}
+	return sumCenterX / rectanglesCount;
+}
+
+float DemoWorkingWithClasses::GetMeanCenterY(Rectangle* rectangles, const int rectanglesCount)
+{
+	float sumCenterY = 0.0;
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		sumCenterY += rectangles[i].GetCenterY();
+	}
+	return sumCenterY / rectanglesCount;
+}
+
 void DemoWorkingWithClasses::DemoRectangleWithPoint()
 {
 	// Task 3.3.3 - 3.3.4
@@ -130,7 +150,13 @@ void DemoWorkingWithClasses::DemoRectangleWithPoint()
 
 	WriteRectangles(rectangles, rectanglesCount);
 
-	delete [] rectangles;
+	PrintLine();
+
+	// Task 3.3.5
+	cout << "meanCenterX: " << GetMeanCenterX(rectangles, rectanglesCount) << endl << endl;
+	cout << "meanCenterY: " << GetMeanCenterY(rectangles, rectanglesCount) << endl << endl;
 
 	PrintLine();
+
+	delete[] rectangles;
 }
