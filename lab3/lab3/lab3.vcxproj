@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="DemoWorkingWithClasses.cpp" />
+    <ClCompile Include="Flight.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Output.cpp" />
@@ -151,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="Book.h" />
     <ClInclude Include="DemoWorkingWithClasses.h" />
+    <ClInclude Include="Flight.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="Point.h" />
