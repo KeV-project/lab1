@@ -1,6 +1,7 @@
 #pragma once
 #include "Point.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -23,7 +24,7 @@ public:
 	float GetWidth();
 
 	Rectangle();
-	Rectangle(const float x, const float y,
-		const float length, const float width);
+	Rectangle(const float length, const float width,
+		const float x, const float y);
 };
 
