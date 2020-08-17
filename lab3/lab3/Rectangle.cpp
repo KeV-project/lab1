@@ -74,3 +74,12 @@ Rectangle::Rectangle(const float length, const float width,
 	SetCenterX(x);
 	SetCenterY(y);
 }
+
+void Rectangle::ChangeRectangle(const float length, const float width,
+	const float x, const float y)
+{
+	SetLength(length);
+	SetWidth(width);
+	SetCenterX(x);
+	SetCenterY(y);
+}

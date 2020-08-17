@@ -104,3 +104,13 @@ void DemoWorkingWithClasses::DemoRoute()
 
 	delete[] routes;
 }
+
+void DemoWorkingWithClasses::DemoRectangleWithPoint()
+{
+	const int rectanglesCount = 5;
+	Rectangle* rectangles = new Rectangle[rectanglesCount]
+	{
+
+	};
+	delete [] rectangles;
+}

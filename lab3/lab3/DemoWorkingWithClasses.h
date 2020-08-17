@@ -3,6 +3,7 @@
 #include "Output.h"
 #include "Book.h"
 #include "Route.h"
+#include "Rectangle.h"
 
 using namespace std;
 
@@ -16,5 +17,7 @@ public:
 	static int FindRouteTo(Route* routes, const int routesCount,
 		const string& findedStop);
 	static void DemoRoute();
+
+	static void DemoRectangleWithPoint();
 };
 
