@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Album.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="DemoWorkingWithClasses.cpp" />
     <ClCompile Include="Flight.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Album.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="DemoWorkingWithClasses.h" />
     <ClInclude Include="Flight.h" />
