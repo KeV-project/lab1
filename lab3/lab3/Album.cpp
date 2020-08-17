@@ -29,7 +29,7 @@ void Album::SetSongs(Song* songs, const int songsCount)
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);
 	}
-	this->_songCount = songsCount;
+	this->_songsCount = songsCount;
 	this->_songs = songs;
 }
 
