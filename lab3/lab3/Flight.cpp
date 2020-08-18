@@ -203,6 +203,7 @@ int Flight::GetFlightTimeMinutes()
 	int DifHour = 0;
 	int DifMinute = 0;
 	DifHour = this->_destinationTime.GetHour() - this->_departureTime.GetHour();
-	DifMinute = this->_destinationTime.GetMinute() - this->_departureTime.GetMinute();
+	DifMinute = this->_destinationTime.GetMinute() 
+		- this->_departureTime.GetMinute();
 	return DifMinute + DifHour * 60;
 }

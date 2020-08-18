@@ -285,7 +285,8 @@ void DemoWorkingWithClasses::DemoBand()
 	}
 	else
 	{
-		cout << "По запросу " << "\"" << findedSong << "\"" << " ничего не найдено";
+		cout << "По запросу " << "\"" << findedSong << "\"";
+		cout << " ничего не найдено";
 	}
 	cout << endl << endl;
 	PrintLine();
@@ -329,20 +330,23 @@ void DemoWorkingWithClasses::DemoBand()
 	cout << endl;
 	GenreType findedGenre = GetGenreType(findedGenreNum);
 	int findedSongsCount = 0;
-	Song* findedGenreSongs = band.GetAllGenreSongs(findedGenre, findedSongsCount);
+	Song* findedGenreSongs = 
+		band.GetAllGenreSongs(findedGenre, findedSongsCount);
 	if (findedGenreSongs != 0)
 	{
 		cout << "По запросу " << "\"" << GetGenreForWrite(findedGenre) << "\"";
 		cout << " найдено " << findedSongsCount << " песен:" << endl << endl;
 		for (int i = 0; i < findedSongsCount; i++)
 		{
-			cout << i + 1 << ". " << findedGenreSongs[i].GetInformationAboutSong() << endl;
+			cout << i + 1 << ". ";
+			cout << findedGenreSongs[i].GetInformationAboutSong() << endl;
 		}
 		cout << endl;
 	}
 	else
 	{
-		cout << "По запросу " << "\"" << GetGenreForWrite(findedGenre) << "\"";
+		cout << "По запросу " << "\"" << GetGenreForWrite(findedGenre);
+		cout << "\"";
 		cout << " ничего не найдено" << endl << endl;
 	}
 	PrintLine();

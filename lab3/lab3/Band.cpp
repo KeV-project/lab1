@@ -126,7 +126,8 @@ Song* Band::GetAllSongs(int& allSongsCount)
 	return songs;
 }
 
-Song* Band::GetAllGenreSongs(const GenreType& findedGenre, int& findedGenreSongs)
+Song* Band::GetAllGenreSongs(const GenreType& findedGenre,
+	int& findedGenreSongs)
 {
 	findedGenreSongs = 0;
 	for (int i = 0; i < this->_albumsCount; i++)

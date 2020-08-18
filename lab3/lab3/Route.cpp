@@ -200,7 +200,8 @@ void Route::ReadRouteFromConsole()
 		}
 		else
 		{
-			cout << "Пожалуйста, введите положительное целое число" << endl << endl;
+			cout << "Пожалуйста, введите положительное целое число";
+			cout << endl << endl;
 		}
 	} while (true);
 }

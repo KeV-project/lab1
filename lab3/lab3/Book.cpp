@@ -173,7 +173,8 @@ void Book::ReadBookFromConsole()
 		}
 		else
 		{
-			cout << "Пожалуйста, введите неотрицательное целое число" << endl << endl;
+			cout << "Пожалуйста, введите неотрицательное целое число";
+			cout << endl << endl;
 		}
 	} while (true);
 }

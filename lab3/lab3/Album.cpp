@@ -60,7 +60,8 @@ Album::Album()
 	SetSongs(nullptr, 0);
 }
 
-Album::Album(const string& name, const int year, Song* songs, const int songsCount)
+Album::Album(const string& name, const int year,
+	Song* songs, const int songsCount)
 {
 	SetName(name);
 	SetYear(year);
