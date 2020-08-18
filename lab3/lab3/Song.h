@@ -24,5 +24,5 @@ public:
 	Song();
 	Song(const string& title, const int duration, const GenreType& genre);
 
-	void WriteSong();
+	string GetInformationAboutSong();
 };

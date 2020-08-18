@@ -45,7 +45,7 @@ GenreType GetGenreType(const int numGenre)
 	}
 }
 
-string WriteGenre(const GenreType& genre)
+string GetGenreForWrite(const GenreType& genre)
 {
 	switch (genre)
 	{

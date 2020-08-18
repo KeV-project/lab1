@@ -71,3 +71,9 @@ Album::~Album()
 {
 	delete[] _songs;
 }
+
+string Album::GetInformationAboutSong()
+{
+	return _name + " - год выпуска " + to_string(_year) 
+		+ ", количество песен " + to_string(_songsCount); 
+}
