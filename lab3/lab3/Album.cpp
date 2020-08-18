@@ -48,7 +48,7 @@ int Album::GetSongsCount()
 	return _songsCount;
 }
 
-Song* Album::GetSong()
+Song* Album::GetSongs()
 {
 	return _songs;
 }
@@ -65,4 +65,9 @@ Album::Album(const string& name, const int year, Song* songs, const int songsCou
 	SetName(name);
 	SetYear(year);
 	SetSongs(songs, songsCount);
+}
+
+Album::~Album()
+{
+	delete[] _songs;
 }

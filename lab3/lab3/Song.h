@@ -15,6 +15,7 @@ public:
 	void SetTitle(const string& title);
 	void SetDuration(const int duration);
 	void SetGenre(const GenreType& genre);
+	void SetSong(const string& title, const int duration, const GenreType& genre);
 
 	string GetTitle();
 	float GetDuration();
@@ -22,4 +23,6 @@ public:
 
 	Song();
 	Song(const string& title, const int duration, const GenreType& genre);
+
+	void WriteSong();
 };

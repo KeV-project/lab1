@@ -12,20 +12,26 @@ private:
 	string _name;
 	string _solist;
 	int _albumsCount;
-	Album* _albums;
+	Album** _albums;
 
 public:
 	void SetName(const string& name);
 	void SetSolist(const string& solist);
-	void SetAlbums(Album* albums, const int albumsCount);
+	void SetAlbums(Album** albums, const int albumsCount);
 
 	string GetName();
 	string GetSolist();
 	int GetAlbumsCount();
-	Album* GetAlbums();
+	Album** GetAlbums();
 
 	Band();
 	Band(const string& name, const string& solist, 
-		Album* albums, const int albumsCount);
+		Album** albums, const int albumsCount);
+
+	~Band();
+	
+	Song* FindSong(const string& songTitle);
+	Album* FindAlbum(Song& findedSong);
+	Song* GetAllSongs(int& allSongsCount);
 };
 

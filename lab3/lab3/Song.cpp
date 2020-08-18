@@ -23,6 +23,13 @@ void Song::SetGenre(const GenreType& genre)
 	this->_genre = genre;
 }
 
+void Song::SetSong(const string& title, const int duration, const GenreType& genre)
+{
+	SetTitle(title);
+	SetDuration(duration);
+	SetGenre(genre);
+}
+
 string Song::GetTitle()
 {
 	return this->_title;
@@ -49,4 +56,10 @@ Song::Song(const string& title, const int duration, const GenreType& genre)
 	SetTitle(title);
 	SetDuration(duration);
 	SetGenre(genre);
+}
+
+void Song::WriteSong()
+{
+	cout << _title << " - продолжительность " << _duration;
+	cout << " минуты, жанр " << WriteGenre(_genre);
 }

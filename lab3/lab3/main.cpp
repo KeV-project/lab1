@@ -9,5 +9,6 @@ void main()
 	//DemoWorkingWithClasses::DemoBook();
 	//DemoWorkingWithClasses::DemoRoute();
 	//DemoWorkingWithClasses::DemoRectangleWithPoint();
-	DemoWorkingWithClasses::DemoFlightWithTime();
+	//DemoWorkingWithClasses::DemoFlightWithTime();
+	DemoWorkingWithClasses::DemoBand();
 }

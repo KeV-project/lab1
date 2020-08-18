@@ -19,10 +19,12 @@ public:
 	string GetName();
 	int GetYear();
 	int GetSongsCount();
-	Song* GetSong();
+	Song* GetSongs();
 
 	Album();
 	Album(const string& name, const int year,
 		Song* songs, const int songsCount);
+
+	~Album();
 };
 
