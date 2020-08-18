@@ -229,29 +229,6 @@ void DemoWorkingWithClasses::DemoFlightWithTime()
 	delete[] flights;
 }
 
-Song* DemoWorkingWithClasses::GetAllGenreSongs(const GenreType& findingGenre, Song* allSongs, int& allSongsCount, int& findedSongsCount)
-{
-	findedSongsCount = 0;
-	for (int i = 0; i < allSongsCount; i++)
-	{
-		if (allSongs[i].GetGenre() == findingGenre)
-		{
-			findedSongsCount++;
-		}
-	}
-	Song* genreSongs = new Song[findedSongsCount];
-	int indexGenreSong = 0;
-	for (int i = 0; i < findedSongsCount; i++)
-	{
-		if (allSongs[i].GetGenre() == findingGenre)
-		{
-			genreSongs[indexGenreSong] = allSongs[i];
-			indexGenreSong++;
-		}
-	}
-	return genreSongs;
-}
-
 void DemoWorkingWithClasses::DemoBand()
 {
 	// Task 3.4.5
@@ -340,6 +317,35 @@ void DemoWorkingWithClasses::DemoBand()
 		cout << allSongs[i].GetTitle() << endl;
 	}
 	cout << endl;
-	delete[] allSongs;
 	PrintLine();
+
+	delete[] allSongs;
+
+	// Task 3.4.6
+	cout << "Введите жанр искомой песни\n(0 - Jazz, 1 - HipHop,";
+	cout << "2 - Electronic,\n3 - Rock, 4 - Disco, 5 - Fusion, 6 - Pop ): ";
+	int findedGenreNum = 0;
+	cin >> findedGenreNum;
+	cout << endl;
+	GenreType findedGenre = GetGenreType(findedGenreNum);
+	int findedSongsCount = 0;
+	Song* findedGenreSongs = band.GetAllGenreSongs(findedGenre, findedSongsCount);
+	if (findedGenreSongs != 0)
+	{
+		cout << "По запросу " << "\"" << GetGenreForWrite(findedGenre) << "\"";
+		cout << " найдено " << findedSongsCount << " песен:" << endl << endl;
+		for (int i = 0; i < findedSongsCount; i++)
+		{
+			cout << i + 1 << ". " << findedGenreSongs[i].GetInformationAboutSong() << endl;
+		}
+		cout << endl;
+	}
+	else
+	{
+		cout << "По запросу " << "\"" << GetGenreForWrite(findedGenre) << "\"";
+		cout << " ничего не найдено" << endl << endl;
+	}
+	PrintLine();
+	
+	delete[] findedGenreSongs;
 }

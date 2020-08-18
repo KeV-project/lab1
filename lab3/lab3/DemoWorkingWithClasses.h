@@ -30,8 +30,6 @@ public:
 	static void WriteFlights(Flight** flights, const int flightsCount);
 	static void DemoFlightWithTime();
 
-	Song* GetAllGenreSongs(const GenreType& findingGenre,
-		Song* allSongs, int& allSongsCount, int& findedSongsCount);
 	static void DemoBand();
 };
 
