@@ -323,20 +323,41 @@ void DemoWorkingWithClasses::DemoBand()
 	delete[] allSongs;
 
 	// Task 3.4.6
-	cout << "Введите жанр искомой песни\n(0 - Jazz, 1 - HipHop,";
-	cout << "2 - Electronic,\n3 - Rock, 4 - Disco, 5 - Fusion, 6 - Pop ): ";
-	int findedGenreNum = 0;
-	cin >> findedGenreNum;
-	cout << endl;
-	GenreType findedGenre = GetGenreType(findedGenreNum);
-	int findedSongsCount = 0;
+	// Компилятор не видит переменную findedGenre, если не вынести ее из цикла
+	GenreType findedGenre = Jazz;
+	do
+	{
+		cout << "Введите жанр искомой песни\n(0 - Jazz, 1 - HipHop,";
+		cout << "2 - Electronic,\n3 - Rock, 4 - Disco, 5 - Fusion, 6 - Pop ): ";
+		int findedGenreNum = 0;
+		cin >> findedGenreNum;
+		cout << endl;
+		if (IsValue())
+		{
+			try
+			{
+				findedGenre = GetGenreType(findedGenreNum);
+				break;
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
+		}
+		else
+		{
+			cout << "Пожалуйста, ведите целое число" << endl << endl;
+		}
+	} while (true);
+	int findedGenreSongsCount = 0;
 	Song* findedGenreSongs = 
-		band.GetAllGenreSongs(findedGenre, findedSongsCount);
+		band.GetAllGenreSongs(findedGenre, findedGenreSongsCount);
 	if (findedGenreSongs != 0)
 	{
 		cout << "По запросу " << "\"" << GetGenreForWrite(findedGenre) << "\"";
-		cout << " найдено " << findedSongsCount << " песен:" << endl << endl;
-		for (int i = 0; i < findedSongsCount; i++)
+		cout << " найдено " << findedGenreSongsCount << " песен:" << endl << endl;
+		for (int i = 0; i < findedGenreSongsCount; i++)
 		{
 			cout << i + 1 << ". ";
 			cout << findedGenreSongs[i].GetInformationAboutSong() << endl;

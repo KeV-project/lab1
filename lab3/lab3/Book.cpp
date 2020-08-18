@@ -7,7 +7,7 @@ void Book::SetTitle(const string& title)
 
 void Book::SetYear(const int year)
 {
-	if (year <= 0 || year > 2020)
+	if (year < 0 || year > 2020)
 	{
 		string message = "Число " + to_string(year) +
 			" не входит в допустимый диапазон значений [0, 2020]\n"
@@ -24,8 +24,8 @@ void Book::SetPagesCount(const int pagesCount)
 	if (pagesCount <= 0)
 	{
 		string message = "Число " + to_string(pagesCount) +
-			" не является положительным "
-			"и не может определять\nколичество страниц в книге";
+			" не является положительным\n"
+			"и не может определять количество страниц в книге";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);
@@ -38,7 +38,7 @@ void Book::SetAuthors(string* authors, const int authorsCount)
 	if (authorsCount < 0 || authorsCount > 10)
 	{
 		string message = "Число " + to_string(authorsCount) +
-			" не входит в допустимый диапазон значений [0, 10]";
+			" не входит\nв допустимый диапазон значений [0, 10]";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);
@@ -75,13 +75,13 @@ string* Book::GetAuthors()
 Book::Book()
 {
 	SetTitle("");
-	SetYear(1);
+	SetYear(2020);
 	SetPagesCount(1);
 	SetAuthors(nullptr, 0);
 }
 
 Book::Book(const string& title, const int year, const int pagesCount,
-	const int authorsCount, string* authors)
+	string* authors, const int authorsCount)
 {
 	SetTitle(title);
 	SetYear(year);

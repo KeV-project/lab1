@@ -127,23 +127,23 @@ Song* Band::GetAllSongs(int& allSongsCount)
 }
 
 Song* Band::GetAllGenreSongs(const GenreType& findedGenre,
-	int& findedGenreSongs)
+	int& findedGenreSongsCount)
 {
-	findedGenreSongs = 0;
+	findedGenreSongsCount = 0;
 	for (int i = 0; i < this->_albumsCount; i++)
 	{
 		for (int j = 0; j < this->_albums[i]->GetSongsCount(); j++)
 		{
 			if (_albums[i]->GetSongs()[j].GetGenre() == findedGenre)
 			{
-				findedGenreSongs++;
+				findedGenreSongsCount++;
 			}
 		}
 	}
-	if (findedGenreSongs != 0)
+	if (findedGenreSongsCount != 0)
 	{
 		int genreSongsIndex = 0;
-		Song* genreSongs = new Song[findedGenreSongs];
+		Song* genreSongs = new Song[findedGenreSongsCount];
 		for (int i = 0; i < this->_albumsCount; i++)
 		{
 			for (int j = 0; j < this->_albums[i]->GetSongsCount(); j++)

@@ -29,7 +29,7 @@ public:
 
 	Book();
 	Book(const string& title, const int year, const int pagesCount,
-		const int authorsCount, string* author);
+		string* authors, const int authorsCount);
 
 	~Book();
 

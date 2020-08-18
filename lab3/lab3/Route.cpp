@@ -99,7 +99,7 @@ Route::Route(const int number, const int duration, const int periodicity,
 
 Route::~Route()
 {
-	delete [] this->_stops;
+	delete [] _stops;
 }
 
 void Route::ReadRouteFromConsole()
