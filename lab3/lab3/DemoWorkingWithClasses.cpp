@@ -240,32 +240,32 @@ void DemoWorkingWithClasses::DemoBand()
 		new Song[albumsSongsCount]
 		{
 			Song ("Летчик", 4.05, Rock),
-			Song ("Черное_солнце", 3.50, Rock),
+			Song ("Черное солнце", 3.50, Rock),
 			Song ("Виски", 3.55, Rock),
-			Song("Пора_возвращаться_домой", 3.30, Rock)
+			Song("Пора возвращаться домой", 3.30, Rock)
 		},
 		new Song[albumsSongsCount]
 		{
 			Song("Компромисс", 4.10, Rock),
-			Song("Не_умирать_молодым", 3.40, Rock),
-			Song("Блюз_16+", 3.30, Rock),
+			Song("Не умирать молодым", 3.40, Rock),
+			Song("Блюз 16+", 3.30, Rock),
 			Song("Хипстер", 4.05, Rock)
 		},
 		new Song[albumsSongsCount]
 		{
-			Song("Реки_любви", 3.25, Rock),
-			Song("Её_глаза", 4.05, Rock),
-			Song("Задеть_за_живое", 4.15, Rock),
+			Song("Реки любви", 3.25, Rock),
+			Song("Её глаза", 4.05, Rock),
+			Song("Задеть за живое", 4.15, Rock),
 			Song("Скандал", 3.10, Rock)
 		}
 	};
 
 	Album** albums = new Album*[albumsCount]
 	{
-		new Album("Горизонт_Событий", 2017, albumsSongs[0],
+		new Album("Горизонт Событий", 2017, albumsSongs[0],
 			albumsSongsCount),
 		new Album("16+", 2014, albumsSongs[1], albumsSongsCount),
-		new Album("О_чем_говорят_мужчины", 2009, albumsSongs[2],
+		new Album("О чем говорят мужчины", 2009, albumsSongs[2],
 			albumsSongsCount)
 	};
 	
@@ -275,7 +275,10 @@ void DemoWorkingWithClasses::DemoBand()
 
 	// Task 3.4.2
 	cout << "Демонстрация работы функции FindSong():" << endl << endl;
+	cout << "Введите название искомой песни: ";
 	string findedSongTitle = "";
+	getline(cin, findedSongTitle, '\n');
+	cout << endl;
 	Song* findedSong = band.FindSong(findedSongTitle);
 	if (findedSong != nullptr)
 	{
@@ -290,7 +293,7 @@ void DemoWorkingWithClasses::DemoBand()
 	}
 	cout << endl << endl;
 	PrintLine();
-
+	/*
 	// Task 3.4.3
 	cout << "Демонстрация работы функции FindAlbum():" << endl << endl;
 	Song findedAlbumSong("Черное_солнце", 3.50, Rock);
@@ -373,4 +376,5 @@ void DemoWorkingWithClasses::DemoBand()
 	PrintLine();
 	
 	delete[] findedGenreSongs;
+	*/
 }
