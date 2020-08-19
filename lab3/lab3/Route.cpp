@@ -191,7 +191,7 @@ void Route::ReadRouteFromConsole()
 				for (int i = 0; i < stopsCount; i++)
 				{
 					cout << "Введите остановку №" << i + 1 << ": ";
-					cin >> stops[i];
+					getline(cin, stops[i], '\n');
 					cout << endl;
 				}
 			}

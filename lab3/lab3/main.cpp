@@ -8,7 +8,7 @@ void main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	//DemoWorkingWithClasses::DemoBook();
+	DemoWorkingWithClasses::DemoBook();
 	DemoWorkingWithClasses::DemoRoute();
 	DemoWorkingWithClasses::DemoRectangleWithPoint();
 	DemoWorkingWithClasses::DemoFlightWithTime();

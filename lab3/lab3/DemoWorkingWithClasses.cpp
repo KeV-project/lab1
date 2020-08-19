@@ -3,9 +3,9 @@
 int DemoWorkingWithClasses::FindBookByAuthor(Book* books,
 	const int booksCount, const string& findedAuthor)
 {
-	for (int i = 1; i < booksCount; i++)
+	for (int i = 0; i < booksCount; i++)
 	{
-		for (int j = 1; j < books[i].GetAuthorsCount(); j++)
+		for (int j = 0; j < books[i].GetAuthorsCount(); j++)
 		{
 			if (books[i].GetAuthors()[j] == findedAuthor)
 			{
@@ -38,7 +38,7 @@ void DemoWorkingWithClasses::DemoBook()
 	// Task 3.2.5
 	cout << "Введите автора для поиска книги: ";
 	string findedAuthor = "";
-	cin >> findedAuthor;
+	getline(cin, findedAuthor, '\n');
 	cout << endl;
 	int findedBookIndex = FindBookByAuthor(books, booksCount, findedAuthor);
 	if (findedBookIndex == -1)
@@ -60,9 +60,9 @@ void DemoWorkingWithClasses::DemoBook()
 int DemoWorkingWithClasses::FindRouteTo(Route* routes,
 	const int routesCount, const string& findedStop)
 {
-	for (int i = 1; i < routesCount; i++)
+	for (int i = 0; i < routesCount; i++)
 	{
-		for (int j = 1; j < routes[i].GetStopsCount(); j++)
+		for (int j = 0; j < routes[i].GetStopsCount(); j++)
 		{
 			if (routes[i].GetStops()[j] == findedStop)
 			{
@@ -92,7 +92,7 @@ void DemoWorkingWithClasses::DemoRoute()
 
 	cout << "Введите остановку для поиска рейса: ";
 	string findedStop = "";
-	cin >> findedStop;
+	getline(cin, findedStop, '\n');
 	cout << endl;
 	int findedRouteIndex = FindRouteTo(routes, routesCount, findedStop);
 	if (findedRouteIndex == -1)
@@ -274,6 +274,8 @@ void DemoWorkingWithClasses::DemoBand()
 	delete[] albumsSongs;
 
 	// Task 3.4.2
+	cin.clear();
+	cin.ignore(32767, '\n');
 	cout << "Демонстрация работы функции FindSong():" << endl << endl;
 	cout << "Введите название искомой песни: ";
 	string findedSongTitle = "";
@@ -288,7 +290,7 @@ void DemoWorkingWithClasses::DemoBand()
 	}
 	else
 	{
-		cout << "По запросу " << "\"" << findedSong << "\"";
+		cout << "По запросу " << "\"" << findedSongTitle << "\"";
 		cout << " ничего не найдено";
 	}
 	cout << endl << endl;
