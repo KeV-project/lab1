@@ -32,7 +32,7 @@ public:
 	
 	int CountAllSongs();
 	Song* FindSong(const string& songTitle);
-	Album* FindAlbum(Song& findedSong);
+	Album* FindAlbum(Song* findedSong);
 	Song* GetAllSongs(int& allSongsCount);
 	Song* GetAllGenreSongs(const GenreType& findedGenre,
 		int& findedGenreSongs);

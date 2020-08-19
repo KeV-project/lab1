@@ -93,15 +93,15 @@ Song* Band::FindSong(const string& songTitle)
 	return nullptr;
 }
 
-Album* Band::FindAlbum(Song& findedSong)
+Album* Band::FindAlbum(Song* findedSong)
 {
 	for (int i = 0; i < this->_albumsCount; i++)
 	{
 		for (int j = 0; j < this->_albums[i]->GetSongsCount(); j++)
 		{
-			if (_albums[i]->GetSongs()[j].GetTitle() == findedSong.GetTitle() 
-				&& _albums[i]->GetSongs()[j].GetDuration() == findedSong.GetDuration()
-				&& _albums[i]->GetSongs()[j].GetGenre() == findedSong.GetGenre())
+			if (_albums[i]->GetSongs()[j].GetTitle() == findedSong->GetTitle() 
+				&& _albums[i]->GetSongs()[j].GetDuration() == findedSong->GetDuration()
+				&& _albums[i]->GetSongs()[j].GetGenre() == findedSong->GetGenre())
 			{
 				return _albums[i];
 			}

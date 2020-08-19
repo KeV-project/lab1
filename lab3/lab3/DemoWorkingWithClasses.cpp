@@ -292,26 +292,24 @@ void DemoWorkingWithClasses::DemoBand()
 		cout << " ничего не найдено";
 	}
 	cout << endl << endl;
-	PrintLine();
-	/*
+	
 	// Task 3.4.3
 	cout << "Демонстрация работы функции FindAlbum():" << endl << endl;
-	Song findedAlbumSong("Черное_солнце", 3.50, Rock);
-	Album* findedAlbum = band.FindAlbum(findedAlbumSong);
+	Album* findedAlbum = band.FindAlbum(findedSong);
 	if (findedAlbum != nullptr)
 	{
-		cout << "Песня " << findedAlbumSong.GetInformationAboutSong() << " ";
-		cout << "находится в альбоме: ";
+		cout << "Песня " << "\"" << findedSong << "\"" << " ";
+		cout << "находится в альбоме:" << endl;
 		cout << findedAlbum->GetInformationAboutSong();
 	}
 	else
 	{
-		cout << "По запросу " << findedAlbum->GetInformationAboutSong();
+		cout << "По запросу " << "\"" << findedSong << "\"";
 		cout << " ничего не найдено";
 	}
 	cout << endl << endl;
 	PrintLine();
-
+	/*
 	// Task 3.4.4
 	int allSongsCount = 0;
 	Song* allSongs = band.GetAllSongs(allSongsCount);
