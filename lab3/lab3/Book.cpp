@@ -98,7 +98,9 @@ void Book::ReadBookFromConsole()
 {
 	cout << "Введите название книги: ";
 	string title = "";
+	cin.ignore(cin.rdbuf()->in_avail());
 	getline(cin, title, '\n');
+	cin.clear();
 	cout << endl;
 	SetTitle(title);
 	do
@@ -164,7 +166,9 @@ void Book::ReadBookFromConsole()
 				for (int i = 0; i < authorsCount; i++)
 				{
 					cout << "Введите автора №" << i + 1 << ": ";
+					cin.ignore(cin.rdbuf()->in_avail());
 					getline(cin, authors[i], '\n');
+					cin.clear();
 					cout << endl;
 				}
 			}

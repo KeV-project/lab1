@@ -19,9 +19,10 @@ int DemoWorkingWithClasses::FindBookByAuthor(Book* books,
 void DemoWorkingWithClasses::DemoBook()
 {
 	// Task 3.2.4
-	const int booksCount = 5;
+	const int booksCount = 2;
 	Book* books = new Book [booksCount];
-	cout << "Заполните массив из 5 книг:" << endl << endl;
+	cout << "Заполните массив из " << booksCount << " книг:";
+	cout << endl << endl;
 	for (int i = 0; i < booksCount; i++)
 	{
 		cout << "КНИГА №" << i + 1 << ":" << endl << endl;
@@ -38,7 +39,9 @@ void DemoWorkingWithClasses::DemoBook()
 	// Task 3.2.5
 	cout << "Введите автора для поиска книги: ";
 	string findedAuthor = "";
+	cin.ignore(cin.rdbuf()->in_avail());
 	getline(cin, findedAuthor, '\n');
+	cin.clear();
 	cout << endl;
 	int findedBookIndex = FindBookByAuthor(books, booksCount, findedAuthor);
 	if (findedBookIndex == -1)
@@ -75,9 +78,10 @@ int DemoWorkingWithClasses::FindRouteTo(Route* routes,
 
 void DemoWorkingWithClasses::DemoRoute()
 {
-	const int routesCount = 5;
+	const int routesCount = 2;
 	Route* routes = new Route[routesCount];
-	cout << "Заполните массив из 5 рейсов:" << endl << endl;
+	cout << "Заполните массив из " << routesCount << " рейсов:";
+	cout << endl << endl;
 	for (int i = 0; i < routesCount; i++)
 	{
 		cout << "РЕЙС №" << i + 1 << ":" << endl << endl;
@@ -92,7 +96,9 @@ void DemoWorkingWithClasses::DemoRoute()
 
 	cout << "Введите остановку для поиска рейса: ";
 	string findedStop = "";
+	cin.ignore(cin.rdbuf()->in_avail());
 	getline(cin, findedStop, '\n');
+	cin.clear();
 	cout << endl;
 	int findedRouteIndex = FindRouteTo(routes, routesCount, findedStop);
 	if (findedRouteIndex == -1)
@@ -274,12 +280,12 @@ void DemoWorkingWithClasses::DemoBand()
 	delete[] albumsSongs;
 
 	// Task 3.4.2
-	cin.clear();
-	cin.ignore(32767, '\n');
 	cout << "Демонстрация работы функции FindSong():" << endl << endl;
 	cout << "Введите название искомой песни: ";
 	string findedSongTitle = "";
+	cin.ignore(cin.rdbuf()->in_avail());
 	getline(cin, findedSongTitle, '\n');
+	cin.clear();
 	cout << endl;
 	Song* findedSong = band.FindSong(findedSongTitle);
 	if (findedSong != nullptr)
@@ -300,7 +306,7 @@ void DemoWorkingWithClasses::DemoBand()
 	Album* findedAlbum = band.FindAlbum(findedSong);
 	if (findedAlbum != nullptr)
 	{
-		cout << "Песня " << "\"" << findedSong << "\"" << " ";
+		cout << "Песня " << "\"" << findedSongTitle << "\"" << " ";
 		cout << "находится в альбоме:" << endl;
 		cout << findedAlbum->GetInformationAboutSong();
 	}
