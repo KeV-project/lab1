@@ -22,11 +22,11 @@ public:
 		const string& findedStop);
 	static void DemoRoute();
 
-	static void WriteRectangles(Rectangle** rectangles,
+	static void WriteRectangles(Rect** rectangles,
 		const int rectanglesCount);
-	static float GetMeanCenterX(Rectangle** rectangles,
+	static float GetMeanCenterX(Rect** rectangles,
 		const int rectanglesCount);
-	static float GetMeanCenterY(Rectangle** rectangles,
+	static float GetMeanCenterY(Rect** rectangles,
 		const int rectanglesCount);
 	static void DemoRectangleWithPoint();
 

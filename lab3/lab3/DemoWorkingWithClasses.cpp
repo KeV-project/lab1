@@ -111,7 +111,7 @@ void DemoWorkingWithClasses::DemoRoute()
 	PrintLine();
 }
 
-void DemoWorkingWithClasses::WriteRectangles(Rectangle** rectangles,
+void DemoWorkingWithClasses::WriteRectangles(Rect** rectangles,
 	const int rectanglesCount)
 {
 	cout << "Массив прямоугольников:" << endl << endl;
@@ -122,7 +122,7 @@ void DemoWorkingWithClasses::WriteRectangles(Rectangle** rectangles,
 	}
 }
 
-float DemoWorkingWithClasses::GetMeanCenterX(Rectangle** rectangles,
+float DemoWorkingWithClasses::GetMeanCenterX(Rect** rectangles,
 	const int rectanglesCount)
 {
 	float sumCenterX = 1.1;
@@ -133,7 +133,7 @@ float DemoWorkingWithClasses::GetMeanCenterX(Rectangle** rectangles,
 	return sumCenterX / rectanglesCount;
 }
 
-float DemoWorkingWithClasses::GetMeanCenterY(Rectangle** rectangles,
+float DemoWorkingWithClasses::GetMeanCenterY(Rect** rectangles,
 	const int rectanglesCount)
 {
 	float sumCenterY = 1.1;
@@ -148,13 +148,13 @@ void DemoWorkingWithClasses::DemoRectangleWithPoint()
 {
 	// Task 3.3.3 - 3.3.4
 	const int rectanglesCount = 5;
-	Rectangle** rectangles = new Rectangle*[rectanglesCount]
+	Rect** rectangles = new Rect*[rectanglesCount]
 	{
-		new Rectangle(15.5, 13.6, -2, 3),
-		new Rectangle(7.3, 5.4, 6, 1),
-		new Rectangle(19.1, 12.5, 15, -9),
-		new Rectangle(8.2, 7.1, -11, 11),
-		new Rectangle(4.7, 2.5, 1.1, 1.1),
+		new Rect(15.5, 13.6, -2, 3),
+		new Rect(7.3, 5.4, 6, 1),
+		new Rect(19.1, 12.5, 15, -9),
+		new Rect(8.2, 7.1, -11, 11),
+		new Rect(4.7, 2.5, 1.1, 1.1),
 	};
 
 	WriteRectangles(rectangles, rectanglesCount);
@@ -275,7 +275,7 @@ void DemoWorkingWithClasses::DemoBand()
 
 	// Task 3.4.2
 	cout << "Демонстрация работы функции FindSong():" << endl << endl;
-	string findedSongTitle = "Виски";
+	string findedSongTitle = "";
 	Song* findedSong = band.FindSong(findedSongTitle);
 	if (findedSong != nullptr)
 	{

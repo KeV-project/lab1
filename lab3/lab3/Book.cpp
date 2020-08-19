@@ -181,9 +181,9 @@ void Book::ReadBookFromConsole()
 
 void Book::WriteBookToConsole()
 {
-	for (int i = 0; i < this->_authorsCount; i++)
+	for (int i = 0; i < _authorsCount; i++)
 	{
-		cout << this->_authors[i];
+		cout << _authors[i];
 		if (i + 1 == _authorsCount)
 		{
 			cout << " ";
@@ -193,7 +193,7 @@ void Book::WriteBookToConsole()
 			cout << ", ";
 		}
 	}
-	cout << this->_title << ". ";
-	cout << this->_year << ". ";
-	cout << "- " << this->_pagesCount << "c." << endl << endl;
+	cout << _title << ". ";
+	cout << _year << ". ";
+	cout << "- " << _pagesCount << "c." << endl << endl;
 }

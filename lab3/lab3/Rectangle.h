@@ -5,7 +5,9 @@
 
 using namespace std;
 
-class Rectangle
+// Библиотека Windows.h не позволяет использовать слово Rectangle
+// в качестве названия класса
+class Rect
 {
 private:
 	Point _center;
@@ -23,8 +25,8 @@ public:
 	float GetLength();
 	float GetWidth();
 
-	Rectangle();
-	Rectangle(const float length, const float width,
+	Rect();
+	Rect(const float length, const float width,
 		const float x, const float y);
 
 	void ChangeRectangle(const float length, const float width,

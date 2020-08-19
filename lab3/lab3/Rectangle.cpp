@@ -1,16 +1,16 @@
 #include "Rectangle.h"
 
-void Rectangle::SetCenterX(const float x)
+void Rect::SetCenterX(const float x)
 {
 	this->_center.SetX(x);
 }
 
-void Rectangle::SetCenterY(const float y)
+void Rect::SetCenterY(const float y)
 {
 	this->_center.SetY(y);
 }
 
-void Rectangle::SetLength(const float length)
+void Rect::SetLength(const float length)
 {
 	if (length <= 0)
 	{
@@ -24,7 +24,7 @@ void Rectangle::SetLength(const float length)
 	this->_length = length;
 }
 
-void Rectangle::SetWidth(const float width)
+void Rect::SetWidth(const float width)
 {
 	if (width <= 0)
 	{
@@ -38,27 +38,27 @@ void Rectangle::SetWidth(const float width)
 	this->_width = width;
 }
 
-float Rectangle::GetCenterX()
+float Rect::GetCenterX()
 {
 	return _center.GetX();
 }
 
-float Rectangle::GetCenterY()
+float Rect::GetCenterY()
 {
 	return _center.GetY();
 }
 
-float Rectangle::GetLength()
+float Rect::GetLength()
 {
 	return _length;
 }
 
-float Rectangle::GetWidth()
+float Rect::GetWidth()
 {
 	return _width;
 }
 
-Rectangle::Rectangle()
+Rect::Rect()
 {
 	SetLength(1.0);
 	SetWidth(1.0);
@@ -66,7 +66,7 @@ Rectangle::Rectangle()
 	SetCenterY(0.0);
 }
 
-Rectangle::Rectangle(const float length, const float width,
+Rect::Rect(const float length, const float width,
 	const float x, const float y)
 {
 	SetLength(length);
@@ -75,7 +75,7 @@ Rectangle::Rectangle(const float length, const float width,
 	SetCenterY(y);
 }
 
-void Rectangle::ChangeRectangle(const float length, const float width,
+void Rect::ChangeRectangle(const float length, const float width,
 	const float x, const float y)
 {
 	SetLength(length);
@@ -84,7 +84,7 @@ void Rectangle::ChangeRectangle(const float length, const float width,
 	SetCenterY(y);
 }
 
-void Rectangle::WriteRectangle()
+void Rect::WriteRectangle()
 {
 	cout << "ƒлинa: " << _length << endl;
 	cout << "Ўирина: " << _width << endl;
