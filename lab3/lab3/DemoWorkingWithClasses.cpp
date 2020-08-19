@@ -22,13 +22,13 @@ void DemoWorkingWithClasses::DemoBook()
 	const int booksCount = 5;
 	Book* books = new Book [booksCount];
 	cout << "Заполните массив из 5 книг:" << endl << endl;
-	for (int i = 1; i < booksCount; i++)
+	for (int i = 0; i < booksCount; i++)
 	{
 		cout << "КНИГА №" << i + 1 << ":" << endl << endl;
 		books[i].ReadBookFromConsole();
 	}
 	cout << "Массив книг:" << endl << endl;
-	for (int i = 1; i < booksCount; i++)
+	for (int i = 0; i < booksCount; i++)
 	{
 		cout << "КНИГА №" << i + 1 << ": ";
 		books[i].WriteBookToConsole();
@@ -78,13 +78,13 @@ void DemoWorkingWithClasses::DemoRoute()
 	const int routesCount = 5;
 	Route* routes = new Route[routesCount];
 	cout << "Заполните массив из 5 рейсов:" << endl << endl;
-	for (int i = 1; i < routesCount; i++)
+	for (int i = 0; i < routesCount; i++)
 	{
 		cout << "РЕЙС №" << i + 1 << ":" << endl << endl;
 		routes[i].ReadRouteFromConsole();
 	}
 	cout << "Массив рейсов:" << endl << endl;
-	for (int i = 1; i < routesCount; i++)
+	for (int i = 0; i < routesCount; i++)
 	{
 		routes[i].WriteRouteToConsole();
 	}
@@ -309,7 +309,7 @@ void DemoWorkingWithClasses::DemoBand()
 	}
 	cout << endl << endl;
 	PrintLine();
-	/*
+	
 	// Task 3.4.4
 	int allSongsCount = 0;
 	Song* allSongs = band.GetAllSongs(allSongsCount);
@@ -322,7 +322,6 @@ void DemoWorkingWithClasses::DemoBand()
 	PrintLine();
 
 	delete[] allSongs;
-
 	// Task 3.4.6
 	// Компилятор не видит переменную findedGenre, если не вынести ее из цикла
 	GenreType findedGenre = Jazz;
@@ -374,5 +373,4 @@ void DemoWorkingWithClasses::DemoBand()
 	PrintLine();
 	
 	delete[] findedGenreSongs;
-	*/
 }

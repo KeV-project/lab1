@@ -8,10 +8,9 @@ void main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	//setlocale(LC_ALL, "rus");
 	//DemoWorkingWithClasses::DemoBook();
-	//DemoWorkingWithClasses::DemoRoute();
-	//DemoWorkingWithClasses::DemoRectangleWithPoint();
-	//DemoWorkingWithClasses::DemoFlightWithTime();
+	DemoWorkingWithClasses::DemoRoute();
+	DemoWorkingWithClasses::DemoRectangleWithPoint();
+	DemoWorkingWithClasses::DemoFlightWithTime();
 	DemoWorkingWithClasses::DemoBand();
 }

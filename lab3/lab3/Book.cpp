@@ -98,7 +98,7 @@ void Book::ReadBookFromConsole()
 {
 	cout << "Введите название книги: ";
 	string title = "";
-	cin >> title;
+	getline(cin, title, '\n');
 	cout << endl;
 	SetTitle(title);
 	do
@@ -164,7 +164,7 @@ void Book::ReadBookFromConsole()
 				for (int i = 0; i < authorsCount; i++)
 				{
 					cout << "Введите автора №" << i + 1 << ": ";
-					cin >> authors[i];
+					getline(cin, authors[i], '\n');
 					cout << endl;
 				}
 			}
