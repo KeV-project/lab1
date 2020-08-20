@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "Output.h"
 #include "Ring.h"
 
 using namespace std;
