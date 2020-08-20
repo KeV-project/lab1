@@ -9,4 +9,6 @@ void main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	DemoFigures::DemoRing();
+	DemoFigures::DemoRect();
+	DemoFigures::DemoCollision();
 }

@@ -1,5 +1,7 @@
 #include "Rect.h"
 
+int Rect::AllRectsCount = 0;
+
 void Rect::SetCenter(const float x, const float y)
 {
 	_center = Point(x, y);
@@ -42,9 +44,9 @@ float Rect::GetArea()
 	return _length * _width;
 }
 
-int Rect::GetAllRectCount()
+int Rect::GetAllRectsCount()
 {
-	return AllRectCount;
+	return AllRectsCount;
 }
 
 Rect::Rect()
@@ -52,20 +54,22 @@ Rect::Rect()
 	_center = Point(0.0, 0.0);
 	SetLength(1.0);
 	SetWidth(1.0);
+	AllRectsCount++;
 }
 
-Rect::Rect(const float length, const float width, 
-	const float x, const float y)
+Rect::Rect(const float x, const float y, 
+	const float length, const float width)
 {
 	_center = Point(x, y);
 	SetLength(length);
 	SetWidth(width);
+	AllRectsCount++;
 }
 
 void Rect::PrintRect()
 {
 	cout << "x = " << _center.GetX() << ", y = ";
-	cout << _center.GetY << ", длина = ";
+	cout << _center.GetY() << ", длина = ";
 	cout << _length << ", ширина = " << _width;
 }
 

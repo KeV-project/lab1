@@ -8,7 +8,7 @@ using namespace std;
 class Rect
 {
 private:
-	static int AllRectCount;
+	static int AllRectsCount;
 
 	Point _center;
 	float _length;
@@ -24,11 +24,15 @@ public:
 	float GetCentreX();
 	float GetCentreY();
 	float GetArea();
-	int GetAllRectCount();
+	static int GetAllRectsCount();
 
 	Rect();
-	Rect(const float length, const float width, 
-		const float x, const float y);
+	Rect(const float x, const float y, 
+		const float length, const float width);
+	~Rect()
+	{
+		AllRectsCount--;
+	}
 
 	void PrintRect();
 };
