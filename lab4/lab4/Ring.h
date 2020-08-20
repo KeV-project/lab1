@@ -5,11 +5,11 @@
 #include "FloatValidator.h"
 using namespace std;
 
-const float Pi = 3.14;
-
 class Ring
 {
 private:
+	const float _PI = 3.14159;
+
 	static int AllRingsCount;
 
 	Point _center;

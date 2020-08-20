@@ -48,7 +48,7 @@ void FloatValidator::AssertPositiveValue(const float value,
 }
 
 void FloatValidator::AssertValueInRange(const float value,
-	const float minLimit, const float maxLimit)
+	const float minLimit, const float maxLimit, const string& content)
 {
 	if (!IsValueInRange(value, minLimit, maxLimit))
 	{
@@ -56,7 +56,7 @@ void FloatValidator::AssertValueInRange(const float value,
 			+ " не входит в допустимый диапазон значений [" 
 			+ (to_string(minLimit)).erase(5, 10) + ", " 
 			+ (to_string(maxLimit)).erase(5, 10)
-			+ "]\nи не может определять год издания книги";
+			+ "]\nи не может определять " + content;
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);

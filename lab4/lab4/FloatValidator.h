@@ -14,6 +14,7 @@ public:
 	static void AssertPositiveValue(const float value, 
 		const string& content);
 	static void AssertValueInRange(const float value, 
-		const float minLimit, const float maxLimit);
+		const float minLimit, const float maxLimit,
+		const string& content);
 };
 

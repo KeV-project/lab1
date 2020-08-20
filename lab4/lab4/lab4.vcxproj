@@ -138,12 +138,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DemoFigures.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Ring.cpp" />
     <ClCompile Include="FloatValidator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DemoFigures.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Ring.h" />
     <ClInclude Include="FloatValidator.h" />
