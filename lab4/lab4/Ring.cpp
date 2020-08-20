@@ -2,14 +2,9 @@
 
 int Ring::AllRingsCount = 0;
 
-void Ring::SetCenterX(const float x)
+void Ring::SetCenter(const float x, const float y)
 {
-	_center.SetX(x);
-}
-
-void Ring::SetCenterY(const float y)
-{
-	_center.SetY(y);
+	_center = Point(x, y);
 }
 
 void Ring::SetRadius(float inRadius, float outRadius)
@@ -56,16 +51,15 @@ int Ring::GetAllRingsCount()
 
 Ring::Ring()
 {
-	_center.SetX(0.0);
-	_center.SetY(0.0);
+	_center = Point(0.0, 0.0);
 	SetRadius(1.0, 2.0);
+	AllRingsCount++;
 }
 
 Ring::Ring(const float x, const float y, 
 	const float inRadius, const float outRadius)
 {
-	_center.SetX(x);
-	_center.SetY(y);
+	_center = Point(x, y);
 	SetRadius(inRadius, outRadius);
 	AllRingsCount++;
 }

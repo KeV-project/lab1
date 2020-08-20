@@ -33,7 +33,16 @@ bool FloatValidator::IsValuePositive(const float value)
 	return false;
 }
 
-void FloatValidator::AssertPositiveValue(const float value, 
+void FloatValidator::AssertValue()
+{
+	if (!IsValue())
+	{
+		throw exception("Введено некорректное значение.\n"
+			"Пожалуйста введите число: ");
+	}
+}
+
+void FloatValidator::AssertPositiveValue(const float value,
 	const string& content)
 {
 	if (!IsValuePositive(value))
