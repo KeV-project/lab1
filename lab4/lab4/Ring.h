@@ -8,7 +8,7 @@ using namespace std;
 class Ring
 {
 private:
-	const float _PI = 3.14159;
+	const float PI = 3.14159;
 
 	static int AllRingsCount;
 
@@ -36,4 +36,6 @@ public:
 	{
 		AllRingsCount--;
 	}
+
+	void PrintRing();
 };

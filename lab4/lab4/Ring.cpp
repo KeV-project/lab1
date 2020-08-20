@@ -18,7 +18,7 @@ void Ring::SetRadius(float inRadius, float outRadius)
 		"радиус внутреннего кольца");
 	FloatValidator::AssertPositiveValue(outRadius,
 		"радиус внешнего кольца");
-	FloatValidator::AssertValueInRange(inRadius, 0, outRadius);
+	FloatValidator::AssertValueInRange(inRadius, 0, outRadius, "радиус кольца");
 	_inRadius = inRadius;
 	_outRadius = outRadius;
 }
@@ -45,7 +45,7 @@ float Ring::GetOutRadius()
 
 float Ring::GetArea()
 {
-	return Pi * (pow(_outRadius, 2) - pow(_inRadius, 2));
+	return PI * (pow(_outRadius, 2) - pow(_inRadius, 2));
 }
 
 int Ring::GetAllRingsCount()
@@ -67,4 +67,11 @@ Ring::Ring(const float x, const float y,
 	_center.SetY(y);
 	SetRadius(inRadius, outRadius);
 	AllRingsCount++;
+}
+
+void Ring::PrintRing()
+{
+	cout << "x = " << _center.GetX() << ", y = " << _center.GetY();
+	cout << ", внутренний радиус  = " << _inRadius;
+	cout << ", внешний радиус = " << _outRadius;
 }
