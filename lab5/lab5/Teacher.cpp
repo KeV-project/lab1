@@ -1,6 +1,6 @@
 #include "Teacher.h"
 
-void Teacher::SetPosition(string position)
+void Teacher::SetPosition(const string& position)
 {
 	this->_position = position;
 }
@@ -19,10 +19,9 @@ Teacher::Teacher()
 	SetPosition("");
 }
 
-Teacher::Teacher(string name, string surname, string patronymic, string position)
+Teacher::Teacher(const string& surname, const string& name,
+	const string& patronymic, const string& position): 
+	Person(surname, name, patronymic)
 {
-	SetName(name);
-	SetSurname(surname);
-	SetPatronymic(patronymic);
 	SetPosition(position);
 }

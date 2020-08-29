@@ -1,11 +1,11 @@
 #include "Student.h"
 
-void Student::SetRecordBookNum(int recordBookNum)
+void Student::SetGradebookNum(const int recordBookNum)
 {
 	_gradebookNum = recordBookNum;
 }
 
-void Student::SetEntranceYear(int year)
+void Student::SetEntranceYear(const int year)
 {
 	_entranceYear = year;
 }
@@ -25,14 +25,17 @@ Student::Student()
 	SetName("");
 	SetSurname("");
 	SetPatronymic("");
-	SetRecordBookNum(0);
+	SetGradebookNum(0);
 	SetEntranceYear(0);
 }
 
 Student::Student(const string& surname, const string& name,
-	const string& patronymic, const int gradebookNumber,
-	const int entranceYear)
+	const string& patronymic, const int gradebookNum, 
+	const int entranceYear) : Person(surname, name, patronymic)
 {
-	SetRecordBookNum(gradebookNumber);
+	SetGradebookNum(gradebookNum);
 	SetEntranceYear(entranceYear);
 }
+
+
+

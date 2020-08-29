@@ -19,7 +19,7 @@ public:
 	string GetPatronymic();
 
 	Person();
-	Person(const string& name, const string& surname, 
+	Person(const string& surname, const string& name,
 		const string& patronymic);
 };
 

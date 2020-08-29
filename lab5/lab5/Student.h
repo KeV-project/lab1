@@ -8,14 +8,14 @@ private:
 	int _entranceYear;
 
 public:
-	void SetRecordBookNum(int recordBookNum);
-	void SetEntranceYear(int year);
+	void SetGradebookNum(const int recordBookNum);
+	void SetEntranceYear(const int year);
 
 	int GetRecordBookNum();
 	int GetEntranceYear();
 
 	Student();
 	Student(const string& surname, const string& name,
-		const string& patronymic, const int gradebookNumber,
-		const int year) : Person(name, surname, patronymic){}
+		const string& patronymic, const int gradebookNum,
+		const int entranceYear);
 };

@@ -7,11 +7,12 @@ private:
 	string _position;
 
 public:
-	void SetPosition(string position);
+	void SetPosition(const string& position);
 
 	string GetPosition();
 
 	Teacher();
-	Teacher(string name, string surname, string patronymic, string position);
+	Teacher(const string& surname, const string& name, 
+		const string& patronymic, const string& position);
 };
 

@@ -37,7 +37,7 @@ Person::Person()
 	SetPatronymic("");
 }
 
-Person::Person(const string& name, const string& surname, 
+Person::Person(const string& surname, const string& name,
 	const string& patronymic)
 {
 	SetName(name);
