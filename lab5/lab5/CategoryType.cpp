@@ -1,8 +1,4 @@
 #include "CategoryType.h"
-#include <string>
-#include "Input.h"
-
-
 
 CategoryType GetCategoryType(const int numCategory)
 {
