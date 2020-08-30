@@ -20,7 +20,8 @@ void ShowCheckWithDiscount(DiscountBase* discount,
 {
 	for (int i = 0; i < productsCount; i++)
 	{
-		cout << products[i].GetName() << " Старая цена: " << products[i].GetCost() << " Новая цена: ";
+		cout << products[i].GetName() << " Старая цена: ";
+		cout << products[i].GetCost() << " Новая цена: ";
 		if (products[i].GetCategory() == discount->GetCategory())
 		{
 			cout << discount->Calculate(&products[i]);
