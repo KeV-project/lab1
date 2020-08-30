@@ -5,6 +5,9 @@
 #include "Teacher.h"
 #include "User.h"
 #include "PaidUser.h"
+#include "DiscountBase.h"
+#include "PercentDiscount.h"
+#include "CertificateDiscount.h"
 
 using namespace std;
 
@@ -79,6 +82,33 @@ void main()
 		delete paidUsers[i];
 	}
 	delete[] paidUsers;
+
+	PrintLine();
+
+	// Task 5.3.6
+	const int productsCount = 5;
+	Product* products = new Product[productsCount]
+	{
+		Product("samsung galaxy s8", Smartphones, 20000),
+		Product("xiaomi mi tv 4s 43", TV, 40000),
+		Product("polaris pmc 0517ad", Appliances, 4000),
+		Product("honor 10 lite", Smartphones, 15000),
+		Product("microlab m-106 black", Acoustics, 25000),
+	};
+
+	PercentDiscount percentDiscount1(20, TV);
+	ShowCheckWithDiscount(&percentDiscount1, products, productsCount);
+
+	PercentDiscount percentDiscount2(10, Appliances);
+	ShowCheckWithDiscount(&percentDiscount2, products, productsCount);
+
+	CertificateDiscount certificateDiscount1(2000, Smartphones);
+	ShowCheckWithDiscount(&certificateDiscount1, products, productsCount);
+
+	CertificateDiscount certificateDiscount2(3000, Appliances);
+	ShowCheckWithDiscount(&certificateDiscount2, products, productsCount);
+
+	delete[] products;
 
 	PrintLine();
 }

@@ -15,3 +15,21 @@ DiscountBase::DiscountBase(const CategoryType& category)
 	SetCategory(category);
 }
 
+void ShowCheckWithDiscount(DiscountBase* discount, 
+	Product* products, int productsCount)
+{
+	for (int i = 0; i < productsCount; i++)
+	{
+		cout << products[i].GetName() << " Старая цена: " << products[i].GetCost() << " Новая цена: ";
+		if (products[i].GetCategory() == discount->GetCategory())
+		{
+			cout << discount->Calculate(&products[i]);
+		}
+		else
+		{
+			cout << products[i].GetCost();
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
