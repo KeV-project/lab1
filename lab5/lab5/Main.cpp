@@ -65,7 +65,8 @@ void main()
 	password = "UgfkDGmU";
 	try
 	{
-		User* loginedPaidUser = Login(paidUsers, usersCount, login, password);
+		User* loginedPaidUser = Login(paidUsers, 
+			usersCount, login, password);
 		cout << loginedPaidUser->GetLogin();
 		cout << " вход в систему выполнен успешно" << endl << endl;
 	}

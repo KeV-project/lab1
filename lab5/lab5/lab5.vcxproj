@@ -138,20 +138,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CategoryType.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="PaidUser.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Post.cpp" />
+    <ClCompile Include="Product.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Teacher.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CategoryType.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="PaidUser.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Post.h" />
+    <ClInclude Include="Product.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Teacher.h" />
     <ClInclude Include="User.h" />
