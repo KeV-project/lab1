@@ -26,3 +26,6 @@ public:
 	bool IsCorrectPassword(const string& password);
 };
 
+User* Login(User** users, const int usersCount, 
+	const string& enteredLogin, const string& enteredPassword);
+

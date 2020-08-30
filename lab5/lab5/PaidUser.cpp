@@ -2,7 +2,7 @@
 
 void PaidUser::SetPosts(Post* posts, const int postsCount)
 {
-	if (postsCount <= 0)
+	if (postsCount < 0)
 	{
 		string message = "Число " + to_string(postsCount) 
 			+ " не может определять количество постов" 
@@ -26,6 +26,12 @@ int PaidUser::GetPostsCount()
 }
 
 PaidUser::PaidUser() : User()
+{
+	SetPosts(nullptr, 0);
+}
+
+PaidUser::PaidUser(const int id, const string& login, 
+	const string& password) : User(id, login, password)
 {
 	SetPosts(nullptr, 0);
 }

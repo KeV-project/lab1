@@ -16,7 +16,7 @@ public:
 
 	PaidUser();
 	PaidUser(const int id, const string& login,
-		const string& password) : User(id, login, password) {};
+		const string& password);
 	PaidUser(const int id, const string& login, 
 		const string& password, Post* posts, const int postsCount);
 };
