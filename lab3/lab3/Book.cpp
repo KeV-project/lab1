@@ -94,7 +94,7 @@ Book::~Book()
 	delete[] _authors;
 }
 
-void Book::ReadBookFromConsole()
+void Book::ReadFromConsole()
 {
 	cout << "¬ведите название книги: ";
 	string title = "";
@@ -183,7 +183,7 @@ void Book::ReadBookFromConsole()
 	} while (true);
 }
 
-void Book::WriteBookToConsole()
+void Book::WriteToConsole()
 {
 	for (int i = 0; i < _authorsCount; i++)
 	{

@@ -26,13 +26,13 @@ void DemoWorkingWithClasses::DemoBook()
 	for (int i = 0; i < booksCount; i++)
 	{
 		cout << "ÊÍÈÃÀ ¹" << i + 1 << ":" << endl << endl;
-		books[i].ReadBookFromConsole();
+		books[i].ReadFromConsole();
 	}
 	cout << "Ìàññèâ êíèã:" << endl << endl;
 	for (int i = 0; i < booksCount; i++)
 	{
 		cout << "ÊÍÈÃÀ ¹" << i + 1 << ": ";
-		books[i].WriteBookToConsole();
+		books[i].WriteToConsole();
 	}
 	PrintLine();
 
@@ -52,7 +52,7 @@ void DemoWorkingWithClasses::DemoBook()
 	else
 	{
 		cout << "Êíèãà àâòîðà: ";
-		books[findedBookIndex].WriteBookToConsole();
+		books[findedBookIndex].WriteToConsole();
 	}
 
 	delete[] books;

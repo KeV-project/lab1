@@ -1,5 +1,4 @@
 #pragma once
-
 #include <iostream>
 #include <string>
 #include "Input.h"
@@ -33,7 +32,7 @@ public:
 
 	~Book();
 
-	void ReadBookFromConsole();
-	void  WriteBookToConsole();
+	void ReadFromConsole();
+	void WriteToConsole();
 };
 

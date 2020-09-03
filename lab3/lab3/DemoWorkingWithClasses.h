@@ -1,12 +1,9 @@
 #pragma once
-#include <iostream>
 #include "Output.h"
 #include "Book.h"
 #include "Route.h"
 #include "Rectangle.h"
 #include "Flight.h"
-#include "Song.h"
-#include "Album.h"
 #include "Band.h"
 
 using namespace std;
