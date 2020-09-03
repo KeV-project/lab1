@@ -4,7 +4,7 @@ void Route::SetNumber(const int number)
 {
 	if (number <= 0)
 	{
-		string message = "Число " + to_string(number) +
+		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(number) +
 			" не является положительным\nи не может определять номер рейса";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
@@ -17,7 +17,7 @@ void Route::SetDuration(const int duration)
 {
 	if (duration <= 0)
 	{
-		string message = "Число " + to_string(duration) +
+		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(duration) +
 			" не является положительным числом\n"
 			"и не может определять продолжительность рейса";
 		char buf[255];
@@ -31,7 +31,7 @@ void Route::SetPeriodicity(const int periodicity)
 {
 	if (periodicity <= 0)
 	{
-		string message = "Число " + to_string(periodicity) +
+		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(periodicity) +
 			" не является положительным числом\n"
 			"и не может определять периодичность рейса";
 		char buf[255];
@@ -45,8 +45,8 @@ void Route::SetStops(string* stops, const int stopsCount)
 {
 	if (stopsCount < 0 || stopsCount > 10)
 	{
-		string message = "Число " + to_string(stopsCount) +
-			" не входит в допустимый диапазон значений [0, 10]";
+		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(stopsCount) +
+			"\nне входит в допустимый диапазон значений [0, 10]";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);
@@ -120,11 +120,11 @@ void Route::ReadRouteFromConsole()
 			catch (const std::exception& ex)
 			{
 				cout << ex.what() << endl << endl;
-				continue;
 			}
 		}
 		else
 		{
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные" << endl;
 			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
@@ -144,11 +144,11 @@ void Route::ReadRouteFromConsole()
 			catch (const std::exception& ex)
 			{
 				cout << ex.what() << endl << endl;
-				continue;
 			}
 		}
 		else
 		{
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные" << endl;
 			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
@@ -168,11 +168,11 @@ void Route::ReadRouteFromConsole()
 			catch (const std::exception& ex)
 			{
 				cout << ex.what() << endl << endl;
-				continue;
 			}
 		}
 		else
 		{
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные" << endl;
 			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
@@ -202,7 +202,8 @@ void Route::ReadRouteFromConsole()
 		}
 		else
 		{
-			cout << "Пожалуйста, введите положительное целое число";
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные" << endl;
+			cout << "Пожалуйста, введите неотрицательное целое число";
 			cout << endl << endl;
 		}
 	} while (true);
