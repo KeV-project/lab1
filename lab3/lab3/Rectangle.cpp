@@ -14,7 +14,7 @@ void Rect::SetLength(const float length)
 {
 	if (length <= 0)
 	{
-		string message = "Число " + to_string(length) +
+		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(length) +
 			" не является положительным\n"
 			"и не может определять длину прямоугольника";
 		char buf[255];
@@ -28,7 +28,7 @@ void Rect::SetWidth(const float width)
 {
 	if (width <= 0)
 	{
-		string message = "Число " + to_string(width) +
+		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(width) +
 			" не является положительным\n"
 			"и не может определять ширинну прямоугольника";
 		char buf[255];
