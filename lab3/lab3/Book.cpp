@@ -202,3 +202,19 @@ void Book::WriteToConsole()
 	cout << _year << ". ";
 	cout << "- " << _pagesCount << "c." << endl << endl;
 }
+
+int FindBookByAuthor(Book* books, const int booksCount, 
+	const string& findedAuthor)
+{
+	for (int i = 0; i < booksCount; i++)
+	{
+		for (int j = 0; j < books[i].GetAuthorsCount(); j++)
+		{
+			if (books[i].GetAuthors()[j] == findedAuthor)
+			{
+				return i;
+			}
+		}
+	}
+	return -1;
+}

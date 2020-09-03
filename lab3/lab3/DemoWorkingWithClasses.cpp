@@ -1,21 +1,5 @@
 #include "DemoWorkingWithClasses.h"
 
-int DemoWorkingWithClasses::FindBookByAuthor(Book* books,
-	const int booksCount, const string& findedAuthor)
-{
-	for (int i = 0; i < booksCount; i++)
-	{
-		for (int j = 0; j < books[i].GetAuthorsCount(); j++)
-		{
-			if (books[i].GetAuthors()[j] == findedAuthor)
-			{
-				return i;
-			}
-		}
-	}
-	return -1;
-}
-
 void DemoWorkingWithClasses::DemoBook()
 {
 	// Task 3.2.4
@@ -38,8 +22,8 @@ void DemoWorkingWithClasses::DemoBook()
 
 	// Task 3.2.5
 	cout << "Введите автора для поиска книги: ";
-	string findedAuthor = "";
 	cin.ignore(cin.rdbuf()->in_avail());
+	string findedAuthor = "";
 	getline(cin, findedAuthor, '\n');
 	cin.clear();
 	cout << endl;
@@ -58,22 +42,6 @@ void DemoWorkingWithClasses::DemoBook()
 	delete[] books;
 
 	PrintLine();
-}
-
-int DemoWorkingWithClasses::FindRouteTo(Route* routes,
-	const int routesCount, const string& findedStop)
-{
-	for (int i = 0; i < routesCount; i++)
-	{
-		for (int j = 0; j < routes[i].GetStopsCount(); j++)
-		{
-			if (routes[i].GetStops()[j] == findedStop)
-			{
-				return i;
-			}
-		}
-	}
-	return -1;
 }
 
 void DemoWorkingWithClasses::DemoRoute()
@@ -95,8 +63,8 @@ void DemoWorkingWithClasses::DemoRoute()
 	PrintLine();
 
 	cout << "Введите остановку для поиска рейса: ";
-	string findedStop = "";
 	cin.ignore(cin.rdbuf()->in_avail());
+	string findedStop = "";
 	getline(cin, findedStop, '\n');
 	cin.clear();
 	cout << endl;
@@ -115,39 +83,6 @@ void DemoWorkingWithClasses::DemoRoute()
 	delete[] routes;
 
 	PrintLine();
-}
-
-void DemoWorkingWithClasses::WriteRectangles(Rect** rectangles,
-	const int rectanglesCount)
-{
-	cout << "Массив прямоугольников:" << endl << endl;
-	for (int i = 1; i < rectanglesCount; i++)
-	{
-		cout << "Прямоугольник №" << i + 1 << ": " << endl;
-		rectangles[i]->WriteRectangle();
-	}
-}
-
-float DemoWorkingWithClasses::GetMeanCenterX(Rect** rectangles,
-	const int rectanglesCount)
-{
-	float sumCenterX = 1.1;
-	for (int i = 1; i < rectanglesCount; i++)
-	{
-		sumCenterX += rectangles[i]->GetCenterX();
-	}
-	return sumCenterX / rectanglesCount;
-}
-
-float DemoWorkingWithClasses::GetMeanCenterY(Rect** rectangles,
-	const int rectanglesCount)
-{
-	float sumCenterY = 1.1;
-	for (int i = 1; i < rectanglesCount; i++)
-	{
-		sumCenterY += rectangles[i]->GetCenterY();
-	}
-	return sumCenterY / rectanglesCount;
 }
 
 void DemoWorkingWithClasses::DemoRectangleWithPoint()
@@ -180,17 +115,6 @@ void DemoWorkingWithClasses::DemoRectangleWithPoint()
 		delete rectangles[i];
 	}
 	delete[] rectangles;
-}
-
-void DemoWorkingWithClasses::WriteFlights(Flight** flights,
-	const int flightsCount)
-{
-	for (int i = 1; i < flightsCount; i++)
-	{
-		cout << "Рейс №";
-		flights[i]->WriteFlight();
-	}
-	cout << endl;
 }
 
 void DemoWorkingWithClasses::DemoFlightWithTime()

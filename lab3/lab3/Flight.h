@@ -51,3 +51,4 @@ public:
 	int GetFlightTimeMinutes();
 };
 
+void WriteFlights(Flight** flights, const int flightsCount);

@@ -36,3 +36,5 @@ public:
 	void WriteToConsole();
 };
 
+int FindBookByAuthor(Book* books, const int booksCount,
+	const string& findedAuthor);

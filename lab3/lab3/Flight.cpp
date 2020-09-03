@@ -207,3 +207,13 @@ int Flight::GetFlightTimeMinutes()
 		- this->_departureTime.GetMinute();
 	return DifMinute + DifHour * 60;
 }
+
+void WriteFlights(Flight** flights, const int flightsCount)
+{
+	for (int i = 1; i < flightsCount; i++)
+	{
+		cout << "Πειρ Ή";
+		flights[i]->WriteFlight();
+	}
+	cout << endl;
+}

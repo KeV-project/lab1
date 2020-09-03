@@ -91,3 +91,36 @@ void Rect::WriteRectangle()
 	cout << "x: " << GetCenterX() << endl;
 	cout << "y: " << GetCenterY() << endl << endl;
 }
+
+void WriteRectangles(Rect** rectangles,
+	const int rectanglesCount)
+{
+	cout << "Массив прямоугольников:" << endl << endl;
+	for (int i = 1; i < rectanglesCount; i++)
+	{
+		cout << "Прямоугольник №" << i + 1 << ": " << endl;
+		rectangles[i]->WriteRectangle();
+	}
+}
+
+float GetMeanCenterX(Rect** rectangles,
+	const int rectanglesCount)
+{
+	float sumCenterX = 1.1;
+	for (int i = 1; i < rectanglesCount; i++)
+	{
+		sumCenterX += rectangles[i]->GetCenterX();
+	}
+	return sumCenterX / rectanglesCount;
+}
+
+float GetMeanCenterY(Rect** rectangles,
+	const int rectanglesCount)
+{
+	float sumCenterY = 1.1;
+	for (int i = 1; i < rectanglesCount; i++)
+	{
+		sumCenterY += rectangles[i]->GetCenterY();
+	}
+	return sumCenterY / rectanglesCount;
+}

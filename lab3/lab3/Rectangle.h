@@ -34,3 +34,10 @@ public:
 	void WriteRectangle();
 };
 
+void WriteRectangles(Rect** rectangles,
+	const int rectanglesCount);
+float GetMeanCenterX(Rect** rectangles,
+	const int rectanglesCount);
+float GetMeanCenterY(Rect** rectangles,
+	const int rectanglesCount);
+

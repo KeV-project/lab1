@@ -32,7 +32,7 @@ void Route::SetPeriodicity(const int periodicity)
 	if (periodicity <= 0)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(periodicity) +
-			" не является положительным числом\n"
+			" не является положительным\n"
 			"и не может определять периодичность рейса";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
@@ -43,10 +43,10 @@ void Route::SetPeriodicity(const int periodicity)
 
 void Route::SetStops(string* stops, const int stopsCount)
 {
-	if (stopsCount < 0 || stopsCount > 10)
+	if (stopsCount < 2 || stopsCount > 10)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(stopsCount) +
-			"\nне входит в допустимый диапазон значений [0, 10]";
+			"\nне входит в допустимый диапазон значений [2, 10]";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);
@@ -85,7 +85,7 @@ Route::Route()
 	SetNumber(1);
 	SetDuration(1);
 	SetPeriodicity(1);
-	SetStops(nullptr, 0);
+	SetStops(nullptr, 2);
 }
 
 Route::Route(const int number, const int duration, const int periodicity,
@@ -182,20 +182,16 @@ void Route::ReadRouteFromConsole()
 		int stopsCount = 0;
 		cin >> stopsCount;
 		cout << endl;
-		if (IsValue() && stopsCount >= 0)
+		if (IsValue() && stopsCount >= 2)
 		{
-			string* stops = nullptr;
-			if (stopsCount > 0)
+			string* stops = new string[stopsCount];
+			for (int i = 0; i < stopsCount; i++)
 			{
-				stops = new string[stopsCount];
-				for (int i = 0; i < stopsCount; i++)
-				{
-					cout << "Введите остановку №" << i + 1 << ": ";
-					cin.ignore(cin.rdbuf()->in_avail());
-					getline(cin, stops[i], '\n');
-					cin.clear();
-					cout << endl;
-				}
+				cout << "Введите остановку №" << i + 1 << ": ";
+				cin.ignore(cin.rdbuf()->in_avail());
+				getline(cin, stops[i], '\n');
+				cin.clear();
+				cout << endl;
 			}
 			SetStops(stops, stopsCount);
 			break;
@@ -203,7 +199,7 @@ void Route::ReadRouteFromConsole()
 		else
 		{
 			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные" << endl;
-			cout << "Пожалуйста, введите неотрицательное целое число";
+			cout << "Пожалуйста, введите целое число в диапазоне [2, 10]";
 			cout << endl << endl;
 		}
 	} while (true);
@@ -218,4 +214,20 @@ void Route::WriteRouteToConsole()
 	cout << this->_periodicity << " минут. " << endl;
 	cout << "Маршрут включает " << this->_stopsCount << " остановок";
 	cout << endl << endl;
+}
+
+int FindRouteTo(Route* routes,
+	const int routesCount, const string& findedStop)
+{
+	for (int i = 0; i < routesCount; i++)
+	{
+		for (int j = 0; j < routes[i].GetStopsCount(); j++)
+		{
+			if (routes[i].GetStops()[j] == findedStop)
+			{
+				return i;
+			}
+		}
+	}
+	return -1;
 }

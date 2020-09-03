@@ -37,3 +37,5 @@ public:
 	void WriteRouteToConsole();
 };
 
+int FindRouteTo(Route* routes, const int routesCount,
+	const string& findedStop);
