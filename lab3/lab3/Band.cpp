@@ -14,8 +14,9 @@ void Band::SetAlbums(Album** albums, const int albumsCount)
 {
 	if (albumsCount < 0)
 	{
-		string message = "Отрицательное число " + to_string(albumsCount)
-			+ " не может задавать количество альбомов группы";
+		string message = "ИСКЛЮЧЕНИЕ: Отрицательное число " 
+			+ to_string(albumsCount) + "не может задавать\n"
+			"количество альбомов группы";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);

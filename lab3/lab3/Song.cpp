@@ -9,8 +9,9 @@ void Song::SetDuration(const int duration)
 {
 	if (duration < 0)
 	{
-		string message = "Отрицательное число " + to_string(duration)
-			+ " не может определять продолжительность песни";
+		string message = "ИСКЛЮЧЕНИЕ: Отрицательное число " 
+			+ to_string(duration) + "\nне может определять "
+			+"продолжительность песни";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);

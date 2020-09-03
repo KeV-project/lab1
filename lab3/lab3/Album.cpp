@@ -9,7 +9,7 @@ void Album::SetYear(const int year)
 {
 	if (year < 0 || year > 2020)
 	{
-		string message = "Число " + to_string(year) +
+		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(year) +
 			" не входит в допустимый диапазон значений [0, 2020]\n"
 			"и не может определять год издания книги";
 		char buf[255];
@@ -23,8 +23,9 @@ void Album::SetSongs(Song* songs, const int songsCount)
 {
 	if (songsCount < 0)
 	{
-		string message = "Отрицательное число " + to_string(songsCount)
-			+ " не может задавать количество песен в альбоме";
+		string message = "ИСКЛЮЧЕНИЕ: Отрицательное число " 
+			+ to_string(songsCount)+ "\nне может задавать "
+			+ "количество песен в альбоме";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);
