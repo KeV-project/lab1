@@ -9,8 +9,8 @@ void Book::SetYear(const int year)
 {
 	if (year < 0 || year > 2020)
 	{
-		string message = "Число " + to_string(year) +
-			" не входит в допустимый диапазон значений [0, 2020]\n"
+		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(year) +
+			" не входит\nв допустимый диапазон значений [0, 2020]\n"
 			"и не может определять год издания книги";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
@@ -23,7 +23,7 @@ void Book::SetPagesCount(const int pagesCount)
 {
 	if (pagesCount <= 0)
 	{
-		string message = "Число " + to_string(pagesCount) +
+		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(pagesCount) +
 			" не является положительным\n"
 			"и не может определять количество страниц в книге";
 		char buf[255];
@@ -37,7 +37,7 @@ void Book::SetAuthors(string* authors, const int authorsCount)
 {
 	if (authorsCount < 0 || authorsCount > 10)
 	{
-		string message = "Число " + to_string(authorsCount) +
+		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(authorsCount) +
 			" не входит\nв допустимый диапазон значений [0, 10]";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
@@ -97,8 +97,8 @@ Book::~Book()
 void Book::ReadFromConsole()
 {
 	cout << "Введите название книги: ";
-	string title = "";
 	cin.ignore(cin.rdbuf()->in_avail());
+	string title = "";
 	getline(cin, title, '\n');
 	cin.clear();
 	cout << endl;
@@ -119,11 +119,11 @@ void Book::ReadFromConsole()
 			catch (const std::exception& ex)
 			{
 				cout << ex.what() << endl << endl;
-				continue;
 			}
 		}
 		else
 		{
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные" << endl;
 			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
@@ -143,11 +143,11 @@ void Book::ReadFromConsole()
 			catch (const std::exception& ex)
 			{
 				cout << ex.what() << endl << endl;
-				continue;
 			}
 		}
 		else
 		{
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные" << endl;
 			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
@@ -177,8 +177,8 @@ void Book::ReadFromConsole()
 		}
 		else
 		{
-			cout << "Пожалуйста, введите неотрицательное целое число";
-			cout << endl << endl;
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные" << endl;
+			cout << "Пожалуйста, введите неотрицательное целое число" << endl << endl;
 		}
 	} while (true);
 }
