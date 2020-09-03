@@ -4,8 +4,8 @@ void Flight::SetNumber(const int number)
 {
 	if (number < 0)
 	{
-		string message = "Отрицательное число " + to_string(number) +
-			" не может определять номер рейса";
+		string message = "ИСКЛЮЧЕНИЕ: Отрицательное число "
+			+ to_string(number) + " не может определять номер рейса";
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);
@@ -38,7 +38,7 @@ void Flight::SetDestinationTime(const int year, const int month,
 {
 	if (year < this->_departureTime.GetYear())
 	{
-		string message = "Год прибытия: " + to_string(year) 
+		string message = "ИСКЛЮЧЕНИЕ: Год прибытия: " + to_string(year) 
 			+ " предшествует году вылета: " 
 			+ to_string(_departureTime.GetYear());
 		char buf[255];
@@ -49,7 +49,7 @@ void Flight::SetDestinationTime(const int year, const int month,
 	{
 		if (month < this->_departureTime.GetMonth())
 		{
-			string message = "Месяц прибытия: " 
+			string message = "ИСКЛЮЧЕНИЕ: Месяц прибытия: " 
 				+ to_string(_destinationTime.GetYear()) + "." 
 				+ to_string(month) + " предшествует месяцу вылета: "
 				+ to_string(_departureTime.GetYear()) + "."
@@ -62,7 +62,7 @@ void Flight::SetDestinationTime(const int year, const int month,
 		{
 			if (day < this->_departureTime.GetDay())
 			{
-				string message = "Дата прибытия: "
+				string message = "ИСКЛЮЧЕНИЕ: Дата прибытия: "
 					+ to_string(_destinationTime.GetYear()) + "."
 					+ to_string(_destinationTime.GetMonth()) + "."
 					+ to_string(day) + " предшествует дате вылета: "
@@ -77,7 +77,7 @@ void Flight::SetDestinationTime(const int year, const int month,
 			{
 				if (hour < this->_departureTime.GetHour())
 				{
-					string message = "Время прибытия: "
+					string message = "ИСКЛЮЧЕНИЕ: Время прибытия: "
 						+ to_string(_destinationTime.GetYear()) + "."
 						+ to_string(_destinationTime.GetMonth()) + "."
 						+ to_string(_destinationTime.GetDay())
@@ -95,7 +95,7 @@ void Flight::SetDestinationTime(const int year, const int month,
 				{
 					if (minute < this->_departureTime.GetMinute())
 					{
-						string message = "Время прибытия: "
+						string message = "ИСКЛЮЧЕНИЕ: Время прибытия: "
 							+ to_string(_destinationTime.GetYear()) + "."
 							+ to_string(_destinationTime.GetMonth()) + "."
 							+ to_string(_destinationTime.GetDay())
