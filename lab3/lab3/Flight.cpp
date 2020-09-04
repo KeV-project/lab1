@@ -2,6 +2,7 @@
 
 void Flight::SetNumber(const int number)
 {
+	//TODO: Дубль
 	if (number < 0)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Отрицательное число "
@@ -36,6 +37,7 @@ void Flight::SetDepartureTime(const int year, const int month,
 void Flight::SetDestinationTime(const int year, const int month,
 	const int day, const int hour, const int minute)
 {
+	//TODO: Дубль
 	if (year < this->_departureTime.GetYear())
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Год прибытия: " + to_string(year) 
@@ -47,6 +49,7 @@ void Flight::SetDestinationTime(const int year, const int month,
 	}
 	else if (year == this->_departureTime.GetYear())
 	{
+		//TODO: Дубль
 		if (month < this->_departureTime.GetMonth())
 		{
 			string message = "ИСКЛЮЧЕНИЕ: Месяц прибытия: " 
@@ -60,6 +63,7 @@ void Flight::SetDestinationTime(const int year, const int month,
 		}
 		else if (month == this->_departureTime.GetMonth())
 		{
+			//TODO: Дубль
 			if (day < this->_departureTime.GetDay())
 			{
 				string message = "ИСКЛЮЧЕНИЕ: Дата прибытия: "
@@ -75,6 +79,7 @@ void Flight::SetDestinationTime(const int year, const int month,
 			}
 			else if (day == this->_departureTime.GetDay())
 			{
+				//TODO: Дубль
 				if (hour < this->_departureTime.GetHour())
 				{
 					string message = "ИСКЛЮЧЕНИЕ: Время прибытия: "
@@ -93,6 +98,7 @@ void Flight::SetDestinationTime(const int year, const int month,
 				}
 				else if (hour == this->_departureTime.GetHour())
 				{
+					//TODO: Дубль
 					if (minute < this->_departureTime.GetMinute())
 					{
 						string message = "ИСКЛЮЧЕНИЕ: Время прибытия: "
@@ -192,6 +198,7 @@ void Flight::ChangeFlight(const int number, const string& departure,
 
 void Flight::WriteFlight()
 {
+	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
 	cout << _number << " ";
 	cout << _departure << " - " << _destination << " ";
 	cout << "Вылет: " << _departureTime.GetTime() << " ";
@@ -200,6 +207,7 @@ void Flight::WriteFlight()
 
 int Flight::GetFlightTimeMinutes()
 {
+	//TODO: RSDN
 	int DifHour = 0;
 	int DifMinute = 0;
 	DifHour = this->_destinationTime.GetHour() - this->_departureTime.GetHour();
@@ -210,6 +218,7 @@ int Flight::GetFlightTimeMinutes()
 
 void WriteFlights(Flight** flights, const int flightsCount)
 {
+	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
 	for (int i = 1; i < flightsCount; i++)
 	{
 		cout << "Рейс №";

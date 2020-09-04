@@ -2,6 +2,7 @@
 
 void Time::SetYear(const int year)
 {
+	//TODO: Дубль
 	if (year <= 0)
 	{
 		string message = "Число " + to_string(year) +
@@ -16,6 +17,9 @@ void Time::SetYear(const int year)
 
 void Time::SetMonth(const int month)
 {
+	//TODO: Дубль
+	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
 	if (month < 1 || month > 12)
 	{
 		string message = "Число " + to_string(month) +
@@ -30,6 +34,9 @@ void Time::SetMonth(const int month)
 
 void Time::SetDay(const int day)
 {
+	//TODO: Дубль
+	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
 	if (day < 1 || day > 31)
 	{
 		string message = "Число " + to_string(day) +
@@ -44,6 +51,9 @@ void Time::SetDay(const int day)
 
 void Time::SetHour(const int hour)
 {
+	//TODO: Дубль
+	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
 	if (hour < 0 || hour > 23)
 	{
 		string message = "Число " + to_string(hour) +
@@ -58,7 +68,9 @@ void Time::SetHour(const int hour)
 
 void Time::SetMinute(const int minute)
 {
-
+	//TODO: Дубль
+	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
 	if (minute < 0 || minute > 59)
 	{
 		string message = "Число " + to_string(minute) +

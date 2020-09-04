@@ -7,6 +7,9 @@ void Album::SetName(const string& name)
 
 void Album::SetYear(const int year)
 {
+	//TODO: дубль
+	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
 	if (year < 0 || year > 2020)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(year) +

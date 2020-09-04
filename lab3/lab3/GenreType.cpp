@@ -4,6 +4,7 @@ GenreType GetGenreType(const int numGenre)
 {
 	if (!IsValueInRange(numGenre, 0, 6))
 	{
+		//TODO: Дубль
 		string message = "Число " + to_string(numGenre) +
 			" не входит в допустимый диапазон [0, 6]\n"
 			"и не может быть сопоставлено с соответствующим "

@@ -2,6 +2,7 @@
 
 void Route::SetNumber(const int number)
 {
+	//TODO: Дубль
 	if (number <= 0)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(number) +
@@ -15,6 +16,7 @@ void Route::SetNumber(const int number)
 
 void Route::SetDuration(const int duration)
 {
+	//TODO: Дубль
 	if (duration <= 0)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(duration) +
@@ -29,6 +31,7 @@ void Route::SetDuration(const int duration)
 
 void Route::SetPeriodicity(const int periodicity)
 {
+	//TODO: Дубль
 	if (periodicity <= 0)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(periodicity) +
@@ -43,6 +46,9 @@ void Route::SetPeriodicity(const int periodicity)
 
 void Route::SetStops(string* stops, const int stopsCount)
 {
+	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
+	//TODO: Дубль
 	if (stopsCount < 2 || stopsCount > 10)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(stopsCount) +
@@ -104,6 +110,8 @@ Route::~Route()
 
 void Route::ReadRouteFromConsole()
 {
+	//TODO: Много дублей
+	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
 	do
 	{
 		cout << "Введите номер рейса: ";
@@ -207,6 +215,7 @@ void Route::ReadRouteFromConsole()
 
 void Route::WriteRouteToConsole()
 {
+	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
 	cout << "Рейс №" << this->_number << " (" << this->_stops[0];
 	cout << " - " << this->_stops[_stopsCount - 1] << ") находится в пути ";
 	cout << this->_durationInMinutes << " минут, " << endl;

@@ -12,6 +12,7 @@ void Rect::SetCenterY(const float y)
 
 void Rect::SetLength(const float length)
 {
+	//TODO: Дубль
 	if (length <= 0)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(length) +
@@ -26,6 +27,7 @@ void Rect::SetLength(const float length)
 
 void Rect::SetWidth(const float width)
 {
+	//TODO: Дубль
 	if (width <= 0)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(width) +
@@ -86,6 +88,7 @@ void Rect::ChangeRectangle(const float length, const float width,
 
 void Rect::WriteRectangle()
 {
+	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
 	cout << "Длинa: " << _length << endl;
 	cout << "Ширина: " << _width << endl;
 	cout << "x: " << GetCenterX() << endl;
@@ -95,6 +98,7 @@ void Rect::WriteRectangle()
 void WriteRectangles(Rect** rectangles,
 	const int rectanglesCount)
 {
+	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
 	cout << "Массив прямоугольников:" << endl << endl;
 	for (int i = 1; i < rectanglesCount; i++)
 	{

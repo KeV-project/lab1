@@ -7,6 +7,7 @@ void Song::SetTitle(const string& title)
 
 void Song::SetDuration(const int duration)
 {
+	//TODO: Дубль
 	if (duration < 0)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Отрицательное число " 

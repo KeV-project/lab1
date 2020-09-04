@@ -7,6 +7,9 @@ void Book::SetTitle(const string& title)
 
 void Book::SetYear(const int year)
 {
+	//TODO: дубль
+	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
 	if (year < 0 || year > 2020)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(year) +
@@ -35,6 +38,9 @@ void Book::SetPagesCount(const int pagesCount)
 
 void Book::SetAuthors(string* authors, const int authorsCount)
 {
+	//TODO: дубль
+	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
 	if (authorsCount < 0 || authorsCount > 10)
 	{
 		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(authorsCount) +
@@ -96,6 +102,8 @@ Book::~Book()
 
 void Book::ReadFromConsole()
 {
+	//TODO: Много дублей
+	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
 	cout << "Введите название книги: ";
 	cin.ignore(cin.rdbuf()->in_avail());
 	string title = "";
@@ -186,6 +194,7 @@ void Book::ReadFromConsole()
 
 void Book::WriteToConsole()
 {
+	//TODO: Тоже что и выше. Корректнее возвращать строку, а её уже выводить в консоль
 	for (int i = 0; i < _authorsCount; i++)
 	{
 		cout << _authors[i];
