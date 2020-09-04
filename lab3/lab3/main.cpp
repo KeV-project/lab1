@@ -12,5 +12,5 @@ void main()
 	//DemoWorkingWithClasses::DemoRoute();
 	//DemoWorkingWithClasses::DemoRectangleWithPoint();
 	DemoWorkingWithClasses::DemoFlightWithTime();
-	DemoWorkingWithClasses::DemoBand();
+	//DemoWorkingWithClasses::DemoBand();
 }

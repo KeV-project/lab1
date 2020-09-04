@@ -38,82 +38,55 @@ void Flight::SetDepartureTime(const int year, const int month,
 void Flight::SetDestinationTime(const int year, const int month,
 	const int day, const int hour, const int minute)
 {
-	//TODO: Дубль
-	if (year < this->_departureTime.GetYear())
+	//TODO: Дубль +
+	if (IsValueInRange(year, _departureTime.GetYear(), 2021))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Год прибытия: " + to_string(year) 
-			+ " предшествует году вылета: " 
-			+ to_string(_departureTime.GetYear());
+		string message = MakeMessage(_departureTime, 
+			_destinationTime, year, InvalidYear);
 		char buf[255];
 		strcpy_s(buf, message.c_str());
 		throw exception(buf);
 	}
-	else if (year == this->_departureTime.GetYear())
+	else if (year == _departureTime.GetYear())
 	{
-		//TODO: Дубль
-		if (month < this->_departureTime.GetMonth())
+		//TODO: Дубль +
+		if (IsValueInRange(month, _departureTime.GetMonth(), 12))
 		{
-			string message = "ИСКЛЮЧЕНИЕ: Месяц прибытия: " 
-				+ to_string(_destinationTime.GetYear()) + "." 
-				+ to_string(month) + " предшествует месяцу вылета: "
-				+ to_string(_departureTime.GetYear()) + "."
-				+ to_string(_departureTime.GetMonth());
+			string message = MakeMessage(_departureTime,
+				_destinationTime, month, InvalidMonth);
 			char buf[255];
 			strcpy_s(buf, message.c_str());
 			throw exception(buf);
 		}
-		else if (month == this->_departureTime.GetMonth())
+		else if (month == _departureTime.GetMonth())
 		{
-			//TODO: Дубль
-			if (day < this->_departureTime.GetDay())
+			//TODO: Дубль +
+			if (IsValueInRange(day, _departureTime.GetDay(), 31))
 			{
-				string message = "ИСКЛЮЧЕНИЕ: Дата прибытия: "
-					+ to_string(_destinationTime.GetYear()) + "."
-					+ to_string(_destinationTime.GetMonth()) + "."
-					+ to_string(day) + " предшествует дате вылета: "
-					+ to_string(_departureTime.GetYear()) + "."
-					+ to_string(_departureTime.GetMonth()) + "."
-					+ to_string(_departureTime.GetDay());
+				string message = MakeMessage(_departureTime,
+					_destinationTime, day, InvalidDay);
 				char buf[255];
 				strcpy_s(buf, message.c_str());
 				throw exception(buf);
 			}
-			else if (day == this->_departureTime.GetDay())
+			else if (day == _departureTime.GetDay())
 			{
-				//TODO: Дубль
-				if (hour < this->_departureTime.GetHour())
+				//TODO: Дубль +
+				if (IsValueInRange(hour, _departureTime.GetHour(), 23))
 				{
-					string message = "ИСКЛЮЧЕНИЕ: Время прибытия: "
-						+ to_string(_destinationTime.GetYear()) + "."
-						+ to_string(_destinationTime.GetMonth()) + "."
-						+ to_string(_destinationTime.GetDay())
-						+ to_string(hour) + "ч"
-						+ " предшествует времени вылета: "
-						+ to_string(_departureTime.GetYear()) + "."
-						+ to_string(_departureTime.GetMonth()) + "."
-						+ to_string(_departureTime.GetDay())
-						+ to_string(_departureTime.GetHour());
+					string message = MakeMessage(_departureTime,
+						_destinationTime, hour, InvalidHour);
 					char buf[255];
 					strcpy_s(buf, message.c_str());
 					throw exception(buf);
 				}
-				else if (hour == this->_departureTime.GetHour())
+				else if (hour == _departureTime.GetHour())
 				{
-					//TODO: Дубль
-					if (minute < this->_departureTime.GetMinute())
+					//TODO: Дубль +
+					if (IsValueInRange(minute, _departureTime.GetMinute(), 59))
 					{
-						string message = "ИСКЛЮЧЕНИЕ: Время прибытия: "
-							+ to_string(_destinationTime.GetYear()) + "."
-							+ to_string(_destinationTime.GetMonth()) + "."
-							+ to_string(_destinationTime.GetDay())
-							+ to_string(_destinationTime.GetHour()) + ":"
-							+ to_string(minute)
-							+ " предшествует времени вылета: "
-							+ to_string(_departureTime.GetYear()) + "."
-							+ to_string(_departureTime.GetMonth()) + "."
-							+ to_string(_departureTime.GetDay())
-							+ to_string(_departureTime.GetHour())
-							+ to_string(_departureTime.GetMinute());
+						string message = MakeMessage(_departureTime,
+							_destinationTime, minute, InvalidMinute);
 						char buf[255];
 						strcpy_s(buf, message.c_str());
 						throw exception(buf);

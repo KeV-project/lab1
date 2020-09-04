@@ -27,5 +27,4 @@ public:
 	Song();
 	Song(const string& title, const int duration, const GenreType& genre);
 
-	string GetInformationAboutSong();
 };

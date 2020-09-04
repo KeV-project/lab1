@@ -4,7 +4,7 @@ void Time::SetYear(const int year)
 {
 	//TODO: Дубль +
 	int const minYear = 0;
-	int const maxYear = 2020;
+	int const maxYear = 2021;
 	if (!IsValueInRange(year, minYear, maxYear))
 	{
 		char message[255];
@@ -110,7 +110,7 @@ int Time::GetMinute()
 
 Time::Time()
 {
-	SetYear(2020);
+	SetYear(2021);
 	SetMonth(12);
 	SetDay(31);
 	SetHour(23);

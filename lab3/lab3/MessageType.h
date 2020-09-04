@@ -4,5 +4,10 @@ enum MessageType
 {
 	NotPositive,
 	NotNonNegative,
-	NotNumber
+	NotNumber,
+	InvalidYear,
+	InvalidMonth,
+	InvalidDay,
+	InvalidHour,
+	InvalidMinute
 };

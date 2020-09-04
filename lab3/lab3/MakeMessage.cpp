@@ -44,3 +44,69 @@ string MakeMessage()
 		"Пожалуйста, введите целое число";
 	return message;
 }
+
+string MakeMessage(Time departureTime, Time destinationTime, 
+	const int invalidTime, const MessageType& messageType)
+{
+	switch (messageType)
+	{
+		case InvalidYear:
+		{
+			string message = "ИСКЛЮЧЕНИЕ: Год прибытия: " 
+				+ to_string(invalidTime)
+				+ " предшествует году вылета: "
+				+ to_string(departureTime.GetYear());
+			return message;
+		}
+		case InvalidMonth:
+		{
+			string message = "ИСКЛЮЧЕНИЕ: Месяц прибытия: "
+				+ to_string(destinationTime.GetYear()) + "."
+				+ to_string(invalidTime) + " предшествует месяцу вылета: "
+				+ to_string(departureTime.GetYear()) + "."
+				+ to_string(departureTime.GetMonth());
+			return message;
+		}
+		case InvalidDay:
+		{
+			string message = "ИСКЛЮЧЕНИЕ: Дата прибытия: "
+				+ to_string(destinationTime.GetYear()) + "."
+				+ to_string(destinationTime.GetMonth()) + "."
+				+ to_string(invalidTime) + " предшествует дате вылета: "
+				+ to_string(departureTime.GetYear()) + "."
+				+ to_string(departureTime.GetMonth()) + "."
+				+ to_string(departureTime.GetDay());
+			return message;
+		}
+		case InvalidHour:
+		{
+			string message = "ИСКЛЮЧЕНИЕ: Время прибытия: "
+				+ to_string(destinationTime.GetYear()) + "."
+				+ to_string(destinationTime.GetMonth()) + "."
+				+ to_string(destinationTime.GetDay())
+				+ to_string(invalidTime) + "ч"
+				+ " предшествует времени вылета: "
+				+ to_string(departureTime.GetYear()) + "."
+				+ to_string(departureTime.GetMonth()) + "."
+				+ to_string(departureTime.GetDay())
+				+ to_string(departureTime.GetHour());
+			return message;
+		}
+		case InvalidMinute:
+		{
+			string message = "ИСКЛЮЧЕНИЕ: Время прибытия: "
+				+ to_string(destinationTime.GetYear()) + "."
+				+ to_string(destinationTime.GetMonth()) + "."
+				+ to_string(destinationTime.GetDay())
+				+ to_string(destinationTime.GetHour()) + ":"
+				+ to_string(invalidTime)
+				+ " предшествует времени вылета: "
+				+ to_string(departureTime.GetYear()) + "."
+				+ to_string(departureTime.GetMonth()) + "."
+				+ to_string(departureTime.GetDay())
+				+ to_string(departureTime.GetHour())
+				+ to_string(departureTime.GetMinute());
+			return message;
+		}
+	}
+}

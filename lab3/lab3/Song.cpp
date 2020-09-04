@@ -59,9 +59,3 @@ Song::Song(const string& title, const int duration, const GenreType& genre)
 	SetDuration(duration);
 	SetGenre(genre);
 }
-
-string Song::GetInformationAboutSong()
-{
-	return  _title + " - продолжительность " + to_string( _duration)
-		+ " минуты, жанр " + GetGenreForWrite(_genre);
-}

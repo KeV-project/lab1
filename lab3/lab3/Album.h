@@ -28,7 +28,5 @@ public:
 		Song* songs, const int songsCount);
 
 	~Album();
-
-	string GetInformationAboutSong();
 };
 

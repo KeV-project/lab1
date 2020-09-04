@@ -208,7 +208,7 @@ void DemoWorkingWithClasses::DemoBand()
 	{
 		cout << "Результат работы поиска по запросу " << "\"";
 		cout << findedSongTitle << "\"" << ":" << endl;
-		cout << findedSong->GetInformationAboutSong();
+		PrintInfoAboutSong(*findedSong);
 	}
 	else
 	{
@@ -224,7 +224,7 @@ void DemoWorkingWithClasses::DemoBand()
 	{
 		cout << "Песня " << "\"" << findedSongTitle << "\"" << " ";
 		cout << "находится в альбоме:" << endl;
-		cout << findedAlbum->GetInformationAboutSong();
+		PrintInfoAboutAlbum(findedAlbum);
 	}
 	else
 	{
@@ -242,8 +242,8 @@ void DemoWorkingWithClasses::DemoBand()
 	PrintLine();
 
 	delete[] allSongs;
+
 	// Task 3.4.6
-	// Компилятор не видит переменную findedGenre, если не вынести ее из цикла
 	GenreType findedGenre = Jazz;
 	do
 	{
@@ -277,12 +277,7 @@ void DemoWorkingWithClasses::DemoBand()
 	{
 		cout << "По запросу " << "\"" << GetGenreForWrite(findedGenre) << "\"";
 		cout << " найдено " << findedGenreSongsCount << " песен:" << endl << endl;
-		for (int i = 0; i < findedGenreSongsCount; i++)
-		{
-			cout << i + 1 << ". ";
-			cout << findedGenreSongs[i].GetInformationAboutSong() << endl;
-		}
-		cout << endl;
+		PrintAllSongs(findedGenreSongs, findedGenreSongsCount);
 	}
 	else
 	{

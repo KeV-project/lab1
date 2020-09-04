@@ -118,8 +118,7 @@ void PrintAllSongs(Song* songs, const int songsCount)
 void PrintInfoAboutAlbum(Album *album)
 {
     cout << album->GetName() << "(" << album->GetYear() << " год) ";
-    cout << "содержит " << album->GetSongsCount() << " пес(ю/ни/ен):";
-    cout << endl << endl;
+    cout << "содержит " << album->GetSongsCount() << " пес(ю/ни/ен)";
 }
 
 void PrintInfoAboutBand(Band& band)
@@ -130,6 +129,7 @@ void PrintInfoAboutBand(Band& band)
     for (int i = 0; i < band.GetAlbumsCount(); i++)
     {
         PrintInfoAboutAlbum(band.GetAlbums()[i]);
+        cout <<  ": " << endl << endl;
         PrintAllSongs(band.GetAlbums()[i]->GetSongs(), 
             band.GetAlbums()[i]->GetSongsCount());
     }
