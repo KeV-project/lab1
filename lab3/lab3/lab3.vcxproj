@@ -146,6 +146,7 @@
     <ClCompile Include="GenreType.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MakeMessage.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Rectangle.cpp" />
@@ -161,6 +162,8 @@
     <ClInclude Include="Flight.h" />
     <ClInclude Include="GenreType.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="MakeMessage.h" />
+    <ClInclude Include="MessageType.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Rectangle.h" />
