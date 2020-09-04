@@ -7,47 +7,48 @@ void Book::SetTitle(const string& title)
 
 void Book::SetYear(const int year)
 {
-	//TODO: дубль
+	//TODO: дубль +
 	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
-	if (year < 0 || year > 2020)
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
+	int const minLimit = 0;
+	int const maxLimit = 2020;
+	if (!IsValueInRange(year, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(year) +
-			" не входит\nв допустимый диапазон значений [0, 2020]\n"
-			"и не может определять год издания книги";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(year, minLimit,
+			maxLimit, "год издания книги").c_str());
+		throw exception(message);
 	}
 	this->_year = year;
 }
 
 void Book::SetPagesCount(const int pagesCount)
 {
-	if (pagesCount <= 0)
+	int const minLimit = 1;
+	int const maxLimit = 1000000;
+	if (!IsValueInRange(pagesCount, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(pagesCount) +
-			" не является положительным\n"
-			"и не может определять количество страниц в книге";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(pagesCount, minLimit,
+			maxLimit, "количество страниц в книге").c_str());
+		throw exception(message);
 	}
 	this->_pagesCount = pagesCount;
 }
 
 void Book::SetAuthors(string* authors, const int authorsCount)
 {
-	//TODO: дубль
+	//TODO: дубль +
 	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
-	if (authorsCount < 0 || authorsCount > 10)
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
+	int const minLimit = 0;
+	int const maxLimit = 10;
+	if (!IsValueInRange(authorsCount, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(authorsCount) +
-			" не входит\nв допустимый диапазон значений [0, 10]";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(authorsCount, minLimit,
+			maxLimit, "количество авторов книге").c_str());
+		throw exception(message);
 	}
 	this->_authorsCount = authorsCount;
 	this->_authors = authors;
@@ -124,7 +125,7 @@ void Book::ReadFromConsole()
 				SetYear(year);
 				break;
 			}
-			catch (const std::exception& ex)
+			catch (exception& ex)
 			{
 				cout << ex.what() << endl << endl;
 			}
@@ -148,7 +149,7 @@ void Book::ReadFromConsole()
 				SetPagesCount(pagesCount);
 				break;
 			}
-			catch (const std::exception& ex)
+			catch (exception &ex)
 			{
 				cout << ex.what() << endl << endl;
 			}

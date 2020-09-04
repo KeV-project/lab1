@@ -2,16 +2,14 @@
 
 GenreType GetGenreType(const int numGenre)
 {
+	int const minLimit = 0;
+	int const maxLimit = 6;
 	if (!IsValueInRange(numGenre, 0, 6))
 	{
-		//TODO: Дубль
-		string message = "Число " + to_string(numGenre) +
-			" не входит в допустимый диапазон [0, 6]\n"
-			"и не может быть сопоставлено с соответствующим "
-			"значением перечисления";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(numGenre, minLimit,
+				maxLimit, "жанр песни").c_str());
+		throw exception(message);
 	}
 	switch (numGenre)
 	{

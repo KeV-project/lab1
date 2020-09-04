@@ -3,13 +3,14 @@
 void Flight::SetNumber(const int number)
 {
 	//TODO: Дубль
-	if (number < 0)
+	int const minLimit = 0;
+	int const maxLimit = 1000000;
+	if (!IsValueInRange(number, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Отрицательное число "
-			+ to_string(number) + " не может определять номер рейса";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(number, minLimit,
+			maxLimit, "номер рейса").c_str());
+		throw exception(message);
 	}
 	this->_number = number;
 }

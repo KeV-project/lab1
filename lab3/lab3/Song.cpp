@@ -8,14 +8,14 @@ void Song::SetTitle(const string& title)
 void Song::SetDuration(const int duration)
 {
 	//TODO: Дубль
-	if (duration < 0)
+	int const minLimit = 0;
+	int const maxLimit = 2147483647;
+	if (!IsValueInRange(duration, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Отрицательное число " 
-			+ to_string(duration) + "\nне может определять "
-			+"продолжительность песни";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(duration, NotNonNegative,
+			"продолжительность песни").c_str());
+		throw exception(message);
 	}
 	this->_duration = duration;
 }

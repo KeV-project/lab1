@@ -12,30 +12,30 @@ void Rect::SetCenterY(const float y)
 
 void Rect::SetLength(const float length)
 {
-	//TODO: Дубль
-	if (length <= 0)
+	//TODO: Дубль +
+	int const minLimit = 1;
+	int const maxLimit = 2147483647;
+	if (!IsValueInRange(length, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(length) +
-			" не является положительным\n"
-			"и не может определять длину прямоугольника";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(length, NotPositive,
+			"длину прямоугольника").c_str());
+		throw exception(message);
 	}
 	this->_length = length;
 }
 
 void Rect::SetWidth(const float width)
 {
-	//TODO: Дубль
-	if (width <= 0)
+	//TODO: Дубль +
+	int const minLimit = 1;
+	int const maxLimit = 2147483647;
+	if (!IsValueInRange(width, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(width) +
-			" не является положительным\n"
-			"и не может определять ширинну прямоугольника";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(width, NotPositive,
+			"ширину прямоугольника").c_str());
+		throw exception(message);
 	}
 	this->_width = width;
 }
@@ -100,7 +100,7 @@ void WriteRectangles(Rect** rectangles,
 {
 	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
 	cout << "Массив прямоугольников:" << endl << endl;
-	for (int i = 1; i < rectanglesCount; i++)
+	for (int i = 0; i < rectanglesCount; i++)
 	{
 		cout << "Прямоугольник №" << i + 1 << ": " << endl;
 		rectangles[i]->WriteRectangle();

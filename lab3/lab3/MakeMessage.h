@@ -1,7 +1,10 @@
 #pragma once
-#include <iostream>
+#include <string>
+#include "MessageType.h"
 
 using namespace std;
 
-string MakeMassage(const int minLimit, const int maxLimit);
-string MakeMassage(const bool a);
+string MakeMessage(const int invalidNumber, const int minLimit, 
+	const int maxLimit, const string& content);
+string MakeMessage(const int invalidNumber, const MessageType& messageType,
+	const string& content);

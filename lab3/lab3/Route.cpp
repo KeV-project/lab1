@@ -2,44 +2,45 @@
 
 void Route::SetNumber(const int number)
 {
-	//TODO: Дубль
-	if (number <= 0)
+	//TODO: Дубль +
+	int const minLimit = 0;
+	int const maxLimit = 1000000;
+	if (!IsValueInRange(number, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(number) +
-			" не является положительным\nи не может определять номер рейса";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(number, minLimit,
+			maxLimit, "номер рейса").c_str());
+		throw exception(message);
 	}
 	this->_number = number;
 }
 
 void Route::SetDuration(const int duration)
 {
-	//TODO: Дубль
-	if (duration <= 0)
+	//TODO: Дубль +
+	int const minLimit = 1;
+	int const maxLimit = 2147483647;
+	if (!IsValueInRange(duration, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(duration) +
-			" не является положительным числом\n"
-			"и не может определять продолжительность рейса";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(duration, NotPositive,
+			"продолжительность рейса").c_str());
+		throw exception(message);
 	}
 	this->_durationInMinutes = duration;
 }
 
 void Route::SetPeriodicity(const int periodicity)
 {
-	//TODO: Дубль
-	if (periodicity <= 0)
+	//TODO: Дубль +
+	int const minLimit = 1;
+	int const maxLimit = 2147483647;
+	if (!IsValueInRange(periodicity, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(periodicity) +
-			" не является положительным\n"
-			"и не может определять периодичность рейса";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(periodicity, NotPositive,
+			"периодичность рейса").c_str());
+		throw exception(message);
 	}
 	this->_periodicity = periodicity;
 }
@@ -47,15 +48,16 @@ void Route::SetPeriodicity(const int periodicity)
 void Route::SetStops(string* stops, const int stopsCount)
 {
 	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
-	//TODO: Дубль
-	if (stopsCount < 2 || stopsCount > 10)
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
+	//TODO: Дубль +
+	int const minLimit = 2;
+	int const maxLimit = 10;
+	if (!IsValueInRange(stopsCount, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Число " + to_string(stopsCount) +
-			"\nне входит в допустимый диапазон значений [2, 10]";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(stopsCount, minLimit,
+			maxLimit, "количество остановок").c_str());
+		throw exception(message);
 	}
 	this->_stopsCount = stopsCount;
 	this->_stops = stops;

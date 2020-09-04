@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <string>
+#include "MakeMessage.h"
 #include "Song.h"
 using namespace std;
 

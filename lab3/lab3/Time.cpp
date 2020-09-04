@@ -2,83 +2,83 @@
 
 void Time::SetYear(const int year)
 {
-	//TODO: Дубль
-	if (year <= 0)
+	//TODO: Дубль +
+	int const minLimit = 0;
+	int const maxLimit = 2020;
+	if (!IsValueInRange(year, minLimit, maxLimit))
 	{
-		string message = "Число " + to_string(year) +
-			" не является положительным\nи не может "
-			"определять год";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(year, minLimit,
+			maxLimit, "год").c_str());
+		throw exception(message);
 	}
 	this->_year = year;
 }
 
 void Time::SetMonth(const int month)
 {
-	//TODO: Дубль
+	//TODO: Дубль +
 	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
-	if (month < 1 || month > 12)
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
+	int const minLimit = 1;
+	int const maxLimit = 12;
+	if (!IsValueInRange(month, minLimit, maxLimit))
 	{
-		string message = "Число " + to_string(month) +
-			" не входит в допустимый диапазон значений [1, 12]\n"
-			"и не может определять месяц";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(month, minLimit,
+			maxLimit, "месяц").c_str());
+		throw exception(message);
 	}
 	this->_month = month;
 }
 
 void Time::SetDay(const int day)
 {
-	//TODO: Дубль
+	//TODO: Дубль +
 	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
-	if (day < 1 || day > 31)
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
+	int const minLimit = 1;
+	int const maxLimit = 31;
+	if (!IsValueInRange(day, minLimit, maxLimit))
 	{
-		string message = "Число " + to_string(day) +
-			" не входит в допустимый диапазон значений [1, 31]\n"
-			"и не может определять день";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(day, minLimit,
+			maxLimit, "день").c_str());
+		throw exception(message);
 	}
 	this->_day = day;
 }
 
 void Time::SetHour(const int hour)
 {
-	//TODO: Дубль
+	//TODO: Дубль +
 	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
-	if (hour < 0 || hour > 23)
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
+	int const minLimit = 0;
+	int const maxLimit = 23;
+	if (!IsValueInRange(hour, minLimit, maxLimit))
 	{
-		string message = "Число " + to_string(hour) +
-			" не входит в допустимый диапазон значений [0, 23]\n"
-			"и не может определять час";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(hour, minLimit,
+			maxLimit, "час").c_str());
+		throw exception(message);
 	}
 	this->_hour = hour;
 }
 
 void Time::SetMinute(const int minute)
 {
-	//TODO: Дубль
+	//TODO: Дубль +
 	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы
-	if (minute < 0 || minute > 59)
+	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
+	int const minLimit = 0;
+	int const maxLimit = 59;
+	if (!IsValueInRange(minute, minLimit, maxLimit))
 	{
-		string message = "Число " + to_string(minute) +
-			" не входит в допустимый диапазон значений [0, 59]\n"
-			"и не может определять минуту";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(minute, minLimit,
+			maxLimit, "минуты").c_str());
+		throw exception(message);
 	}
 	this->_minute = minute;
 }

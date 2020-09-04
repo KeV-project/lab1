@@ -2,6 +2,8 @@
 #include "Point.h"
 #include <iostream>
 #include <string>
+#include "MakeMessage.h"
+#include "Input.h"
 
 using namespace std;
 

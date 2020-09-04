@@ -12,14 +12,14 @@ void Band::SetSolist(const string& solist)
 
 void Band::SetAlbums(Album** albums, const int albumsCount)
 {
-	if (albumsCount < 0)
+	int const minLimit = 0;
+	int const maxLimit = 10;
+	if (!IsValueInRange(albumsCount, minLimit, maxLimit))
 	{
-		string message = "ИСКЛЮЧЕНИЕ: Отрицательное число " 
-			+ to_string(albumsCount) + "не может задавать\n"
-			"количество альбомов группы";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(albumsCount, minLimit,
+			maxLimit, "количество альбомов группы").c_str());
+		throw exception(message);
 	}
 	this->_albumsCount = albumsCount;
 	this->_albums = albums;

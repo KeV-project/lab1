@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include "Input.h"
+#include "MakeMessage.h"
 #include "GenreType.h"
 
 using namespace std;

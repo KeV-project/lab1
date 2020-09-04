@@ -1,7 +1,8 @@
 #pragma once
-
 #include <iostream>
 #include <string>
+#include "Input.h"
+#include "MakeMessage.h"
 #include "Time.h"
 
 using namespace std;
