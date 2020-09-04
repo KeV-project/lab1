@@ -2,7 +2,7 @@
 
 void Flight::SetNumber(const int number)
 {
-	//TODO: Дубль
+	//TODO: Дубль +
 	int const minNumber = 0;
 	int const maxNumber = 1000000;
 	if (!IsValueInRange(number, minNumber, maxNumber))
@@ -184,8 +184,8 @@ void Flight::ChangeFlight(const int number, const string& departure,
 	const string& destination, const int departureYear,
 	const int departureMonth, const int departureDay,
 	const int departureHour, const int departureMinute,
-	const int destinationYear, const int destinationMonth, 
-	const int destinationDay, const int destinationHour, 
+	const int destinationYear, const int destinationMonth,
+	const int destinationDay, const int destinationHour,
 	const int destinationMinute)
 {
 	SetNumber(number);
@@ -197,15 +197,6 @@ void Flight::ChangeFlight(const int number, const string& departure,
 		destinationDay, destinationHour, destinationMinute);
 }
 
-void Flight::WriteFlight()
-{
-	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
-	cout << _number << " ";
-	cout << _departure << " - " << _destination << " ";
-	cout << "Вылет: " << _departureTime.GetTime() << " ";
-	cout << "Прибытие " << _destinationTime.GetTime() << endl;
-}
-
 int Flight::GetFlightTimeMinutes()
 {
 	//TODO: RSDN
@@ -215,15 +206,4 @@ int Flight::GetFlightTimeMinutes()
 	DifMinute = this->_destinationTime.GetMinute() 
 		- this->_departureTime.GetMinute();
 	return DifMinute + DifHour * 60;
-}
-
-void WriteFlights(Flight** flights, const int flightsCount)
-{
-	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
-	for (int i = 1; i < flightsCount; i++)
-	{
-		cout << "Рейс №";
-		flights[i]->WriteFlight();
-	}
-	cout << endl;
 }

@@ -47,9 +47,6 @@ public:
 		const int destinationYear, const int destinationMonth, 
 		const int destinationDay, const int destinationHour, 
 		const int destinationMinute);
-	void WriteFlight();
 
 	int GetFlightTimeMinutes();
 };
-
-void WriteFlights(Flight** flights, const int flightsCount);

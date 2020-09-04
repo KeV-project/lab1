@@ -78,6 +78,27 @@ void PrintRectangles(Rect** rectangles, const int rectanglesCount)
     }
 }
 
+void PrintFlight(Flight* flight)
+{
+    //TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести +
+    cout << flight->GetNumber() << " ";
+    cout << flight->GetDeparture() << " - ";
+    cout << flight->GetDestination() << " ";
+    cout << "Вылет: " << flight->GetDepartureTime().GetTime() << " ";
+    cout << "Прибытие " << flight->GetDestinationTime().GetTime() << endl;
+}
+
+void PrintFlights(Flight** flights, const int flightsCount)
+{
+    //TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести +
+    for (int i = 1; i < flightsCount; i++)
+    {
+        cout << "Рейс №";
+        PrintFlight(flights[i]);
+    }
+    cout << endl;
+}
+
 void PrintInfoAboutSong(Song& song)
 {
     cout << song.GetTitle() << " - продолжительность ";

@@ -125,8 +125,7 @@ void DemoWorkingWithClasses::DemoFlightWithTime()
 			2020, 12, 23, 17, 11, 2020, 12, 23, 23, 51),
 	};
 
-	WriteFlights(flights, flightCount);
-
+	PrintFlights(flights, flightCount);
 	PrintLine();
 
 	// Task 3.3.11
