@@ -59,6 +59,25 @@ void PrintRoutes(Route** routes, const int routesCount)
     }
 }
 
+void PrintRectangle(Rect* rectangle)
+{
+    //TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести +
+    cout << "Длинa: " << rectangle->GetLength() << endl;
+    cout << "Ширина: " << rectangle->GetWidth() << endl;
+    cout << "x: " << rectangle->GetCenterX() << endl;
+    cout << "y: " << rectangle->GetCenterY() << endl << endl;
+}
+
+void PrintRectangles(Rect** rectangles, const int rectanglesCount)
+{
+    //TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести +
+    for (int i = 0; i < rectanglesCount; i++)
+    {
+        cout << "Прямоугольник №" << i + 1 << ": " << endl;
+        PrintRectangle(rectangles[i]);
+    }
+}
+
 void PrintInfoAboutSong(Song& song)
 {
     cout << song.GetTitle() << " - продолжительность ";

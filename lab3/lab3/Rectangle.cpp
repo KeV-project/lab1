@@ -86,27 +86,6 @@ void Rect::ChangeRectangle(const float length, const float width,
 	SetCenterY(y);
 }
 
-void Rect::WriteRectangle()
-{
-	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
-	cout << "Длинa: " << _length << endl;
-	cout << "Ширина: " << _width << endl;
-	cout << "x: " << GetCenterX() << endl;
-	cout << "y: " << GetCenterY() << endl << endl;
-}
-
-void WriteRectangles(Rect** rectangles,
-	const int rectanglesCount)
-{
-	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
-	cout << "Массив прямоугольников:" << endl << endl;
-	for (int i = 0; i < rectanglesCount; i++)
-	{
-		cout << "Прямоугольник №" << i + 1 << ": " << endl;
-		rectangles[i]->WriteRectangle();
-	}
-}
-
 float GetMeanCenterX(Rect** rectangles,
 	const int rectanglesCount)
 {

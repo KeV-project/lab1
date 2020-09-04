@@ -89,8 +89,7 @@ void DemoWorkingWithClasses::DemoRectangleWithPoint()
 		new Rect(4.7, 2.5, 1.1, 1.1),
 	};
 
-	WriteRectangles(rectangles, rectanglesCount);
-
+	PrintRectangles(rectangles, rectanglesCount);
 	PrintLine();
 
 	// Task 3.3.5

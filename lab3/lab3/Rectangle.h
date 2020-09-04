@@ -33,11 +33,8 @@ public:
 
 	void ChangeRectangle(const float length, const float width,
 		const float x, const float y);
-	void WriteRectangle();
 };
 
-void WriteRectangles(Rect** rectangles,
-	const int rectanglesCount);
 float GetMeanCenterX(Rect** rectangles,
 	const int rectanglesCount);
 float GetMeanCenterY(Rect** rectangles,
