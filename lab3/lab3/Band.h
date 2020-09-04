@@ -4,6 +4,7 @@
 #include "GenreType.h"
 #include "Song.h"
 #include "Album.h"
+
 using namespace std;
 
 class Band

@@ -4,20 +4,11 @@ void DemoWorkingWithClasses::DemoBook()
 {
 	// Task 3.2.4
 	const int booksCount = 2;
-	Book* books = new Book [booksCount];
 	cout << "Заполните массив из " << booksCount << " книг:";
 	cout << endl << endl;
-	for (int i = 0; i < booksCount; i++)
-	{
-		cout << "КНИГА №" << i + 1 << ":" << endl << endl;
-		books[i].ReadFromConsole();
-	}
+	Book** books = ReadBooks(booksCount);
 	cout << "Массив книг:" << endl << endl;
-	for (int i = 0; i < booksCount; i++)
-	{
-		cout << "КНИГА №" << i + 1 << ": ";
-		books[i].WriteToConsole();
-	}
+	PrintBooks(books, booksCount);
 	PrintLine();
 
 	// Task 3.2.5
@@ -36,9 +27,13 @@ void DemoWorkingWithClasses::DemoBook()
 	else
 	{
 		cout << "Книга автора: ";
-		books[findedBookIndex].WriteToConsole();
+		PrintBook(books[findedBookIndex]);
 	}
 
+	for (int i = 0; i < booksCount; i++)
+	{
+		delete books[i];
+	}
 	delete[] books;
 
 	PrintLine();
@@ -203,6 +198,9 @@ void DemoWorkingWithClasses::DemoBand()
 
 	delete[] albumsSongs;
 
+	PrintInfoAboutBand(band);
+	PrintLine();
+
 	// Task 3.4.2
 	cout << "Демонстрация работы функции FindSong():" << endl << endl;
 	cout << "Введите название искомой песни: ";
@@ -246,11 +244,7 @@ void DemoWorkingWithClasses::DemoBand()
 	int allSongsCount = 0;
 	Song* allSongs = band.GetAllSongs(allSongsCount);
 	cout << "Все песни группы \"" << band.GetName() << "\":" << endl << endl;
-	for (int i = 0; i < allSongsCount; i++)
-	{
-		cout << allSongs[i].GetTitle() << endl;
-	}
-	cout << endl;
+	PrintAllSongs(allSongs, allSongsCount);
 	PrintLine();
 
 	delete[] allSongs;

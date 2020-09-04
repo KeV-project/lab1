@@ -101,126 +101,14 @@ Book::~Book()
 	delete[] _authors;
 }
 
-void Book::ReadFromConsole()
-{
-	//TODO: Много дублей
-	//TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести 
-	cout << "Введите название книги: ";
-	cin.ignore(cin.rdbuf()->in_avail());
-	string title = "";
-	getline(cin, title, '\n');
-	cin.clear();
-	cout << endl;
-	SetTitle(title);
-	do
-	{
-		cout << "Введите год издания книги: ";
-		int year = 0;
-		cin >> year;
-		cout << endl;
-		if (IsValue())
-		{
-			try
-			{
-				SetYear(year);
-				break;
-			}
-			catch (exception& ex)
-			{
-				cout << ex.what() << endl << endl;
-			}
-		}
-		else
-		{
-			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные" << endl;
-			cout << "Пожалуйста, введите целое число" << endl << endl;
-		}
-	} while (true);
-	do
-	{
-		cout << "Введите количество страниц в книге: ";
-		int pagesCount = 0;
-		cin >> pagesCount;
-		cout << endl;
-		if (IsValue())
-		{
-			try
-			{
-				SetPagesCount(pagesCount);
-				break;
-			}
-			catch (exception &ex)
-			{
-				cout << ex.what() << endl << endl;
-			}
-		}
-		else
-		{
-			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные" << endl;
-			cout << "Пожалуйста, введите целое число" << endl << endl;
-		}
-	} while (true);
-	do
-	{
-		cout << "Введите количество авторов книги: ";
-		int authorsCount = 0;
-		cin >> authorsCount;
-		cout << endl;
-		if (IsValue() && authorsCount >= 0)
-		{
-			string* authors = nullptr;
-			if (authorsCount > 0)
-			{
-				authors = new string[authorsCount];
-				for (int i = 0; i < authorsCount; i++)
-				{
-					cout << "Введите автора №" << i + 1 << ": ";
-					cin.ignore(cin.rdbuf()->in_avail());
-					getline(cin, authors[i], '\n');
-					cin.clear();
-					cout << endl;
-				}
-			}
-			SetAuthors(authors, authorsCount);
-			break;
-		}
-		else
-		{
-			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные" << endl;
-			cout << "Пожалуйста, введите неотрицательное целое число";
-			cout << endl << endl;
-		}
-	} while (true);
-}
-
-void Book::WriteToConsole()
-{
-	//TODO: Тоже что и выше. Корректнее возвращать строку, а её уже выводить в консоль
-	for (int i = 0; i < _authorsCount; i++)
-	{
-		cout << _authors[i];
-		if (i + 1 == _authorsCount)
-		{
-			cout << " ";
-		}
-		else
-		{
-			cout << ", ";
-		}
-	}
-	cout << _title << ". ";
-	cout << _year << ". ";
-	cout << "- " << _pagesCount << "c." << endl << endl;
-}
-
-int FindBookByAuthor(Book* books, const int booksCount, 
+int FindBookByAuthor(Book** books, const int booksCount, 
 	const string& findedAuthor)
 {
 	for (int i = 0; i < booksCount; i++)
 	{
-		for (int j = 0; j < books[i].GetAuthorsCount(); j++)
+		for (int j = 0; j < books[i]->GetAuthorsCount(); j++)
 		{
-			if (books[i].GetAuthors()[j] == findedAuthor)
+			if (books[i]->GetAuthors()[j] == findedAuthor)
 			{
 				return i;
 			}

@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Input.h"
+#include "CheckValue.h"
 #include "MakeMessage.h"
 
 using namespace std;

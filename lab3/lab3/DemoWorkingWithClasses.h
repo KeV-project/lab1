@@ -1,5 +1,6 @@
 #pragma once
-#include "Output.h"
+#include "PrintToColsole.h"
+#include "ReadFromConsole.h"
 #include "Book.h"
 #include "Route.h"
 #include "Rectangle.h"

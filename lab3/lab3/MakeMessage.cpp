@@ -37,3 +37,10 @@ string MakeMessage(const int invalidNumber, const MessageType& messageType,
 		}
 	}
 }
+
+string MakeMessage(const int invalidNumber)
+{
+	string message = "ИСКЛЮЧЕНИЕ: Некорректные входные данные\n"
+		"Пожалуйста, введите целое число";
+	return message;
+}

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include "MakeMessage.h"
-#include "Input.h"
+#include "CheckValue.h"
 
 using namespace std;
 

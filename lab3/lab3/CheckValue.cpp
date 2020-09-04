@@ -1,4 +1,4 @@
-#include "Input.h"
+#include "CheckValue.h"
 
 bool IsValue()
 {

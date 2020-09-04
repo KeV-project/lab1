@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include "MakeMessage.h"
-#include "Input.h"
+#include "CheckValue.h"
 
 using namespace std;
 
@@ -32,10 +32,7 @@ public:
 		string* authors, const int authorsCount);
 
 	~Book();
-
-	void ReadFromConsole();
-	void WriteToConsole();
 };
 
-int FindBookByAuthor(Book* books, const int booksCount,
+int FindBookByAuthor(Book** books, const int booksCount,
 	const string& findedAuthor);
