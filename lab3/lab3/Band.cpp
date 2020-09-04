@@ -12,13 +12,13 @@ void Band::SetSolist(const string& solist)
 
 void Band::SetAlbums(Album** albums, const int albumsCount)
 {
-	int const minLimit = 0;
-	int const maxLimit = 10;
-	if (!IsValueInRange(albumsCount, minLimit, maxLimit))
+	int const minAlbumsCount = 0;
+	int const maxAlbumsCount = 10;
+	if (!IsValueInRange(albumsCount, minAlbumsCount, maxAlbumsCount))
 	{
 		char message[255];
-		strcpy_s(message, MakeMessage(albumsCount, minLimit,
-			maxLimit, "количество альбомов группы").c_str());
+		strcpy_s(message, MakeMessage(albumsCount, minAlbumsCount,
+			maxAlbumsCount, "количество альбомов группы").c_str());
 		throw exception(message);
 	}
 	this->_albumsCount = albumsCount;

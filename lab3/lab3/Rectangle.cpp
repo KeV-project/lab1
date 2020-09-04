@@ -13,9 +13,9 @@ void Rect::SetCenterY(const float y)
 void Rect::SetLength(const float length)
 {
 	//TODO: Дубль +
-	int const minLimit = 1;
-	int const maxLimit = 2147483647;
-	if (!IsValueInRange(length, minLimit, maxLimit))
+	int const minLength = 1;
+	int const maxLength = 2147483647;
+	if (!IsValueInRange(length, minLength, maxLength))
 	{
 		char message[255];
 		strcpy_s(message, MakeMessage(length, NotPositive,
@@ -28,9 +28,9 @@ void Rect::SetLength(const float length)
 void Rect::SetWidth(const float width)
 {
 	//TODO: Дубль +
-	int const minLimit = 1;
-	int const maxLimit = 2147483647;
-	if (!IsValueInRange(width, minLimit, maxLimit))
+	int const minWidth = 1;
+	int const maxWidth = 2147483647;
+	if (!IsValueInRange(width, minWidth, maxWidth))
 	{
 		char message[255];
 		strcpy_s(message, MakeMessage(width, NotPositive,

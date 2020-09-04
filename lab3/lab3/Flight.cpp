@@ -3,13 +3,13 @@
 void Flight::SetNumber(const int number)
 {
 	//TODO: Äóáëü
-	int const minLimit = 0;
-	int const maxLimit = 1000000;
-	if (!IsValueInRange(number, minLimit, maxLimit))
+	int const minNumber = 0;
+	int const maxNumber = 1000000;
+	if (!IsValueInRange(number, minNumber, maxNumber))
 	{
 		char message[255];
-		strcpy_s(message, MakeMessage(number, minLimit,
-			maxLimit, "íîìåğ ğåéñà").c_str());
+		strcpy_s(message, MakeMessage(number, minNumber,
+			maxNumber, "íîìåğ ğåéñà").c_str());
 		throw exception(message);
 	}
 	this->_number = number;

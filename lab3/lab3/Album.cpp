@@ -10,13 +10,13 @@ void Album::SetYear(const int year)
 	//TODO: дубль +
 	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
 	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
-	int const minLimit = 0;
-	int const maxLimit = 2020;
-	if (!IsValueInRange(year, minLimit, maxLimit))
+	int const minYear = 0;
+	int const maxYear = 2020;
+	if (!IsValueInRange(year, minYear, maxYear))
 	{
 		char message[255];
-		strcpy_s(message, MakeMessage(year, minLimit,
-			maxLimit, "год издания книги").c_str());
+		strcpy_s(message, MakeMessage(year, minYear,
+			maxYear, "год издания книги").c_str());
 		throw exception(message);
 	}
 	this->_year = year;
@@ -24,13 +24,13 @@ void Album::SetYear(const int year)
 
 void Album::SetSongs(Song* songs, const int songsCount)
 {
-	int const minLimit = 0;
-	int const maxLimit = 10;
-	if (!IsValueInRange(songsCount, minLimit, maxLimit))
+	int const minSongsCount = 0;
+	int const maxSongsCount = 10;
+	if (!IsValueInRange(songsCount, minSongsCount, maxSongsCount))
 	{
 		char message[255];
-		strcpy_s(message, MakeMessage(songsCount, minLimit,
-			maxLimit, "количество песен в альбоме").c_str());
+		strcpy_s(message, MakeMessage(songsCount, minSongsCount,
+			maxSongsCount, "количество песен в альбоме").c_str());
 		throw exception(message);
 	}
 	this->_songsCount = songsCount;

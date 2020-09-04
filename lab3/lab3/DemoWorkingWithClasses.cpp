@@ -42,19 +42,11 @@ void DemoWorkingWithClasses::DemoBook()
 void DemoWorkingWithClasses::DemoRoute()
 {
 	const int routesCount = 2;
-	Route* routes = new Route[routesCount];
 	cout << "Заполните массив из " << routesCount << " рейсов:";
 	cout << endl << endl;
-	for (int i = 0; i < routesCount; i++)
-	{
-		cout << "РЕЙС №" << i + 1 << ":" << endl << endl;
-		routes[i].ReadRouteFromConsole();
-	}
+	Route** routes = ReadRoutes(routesCount);
 	cout << "Массив рейсов:" << endl << endl;
-	for (int i = 0; i < routesCount; i++)
-	{
-		routes[i].WriteRouteToConsole();
-	}
+	PrintRoutes(routes, routesCount);
 	PrintLine();
 
 	cout << "Введите остановку для поиска рейса: ";
@@ -72,9 +64,13 @@ void DemoWorkingWithClasses::DemoRoute()
 	else
 	{
 		cout << "Рейс, включающий остановку " << findedStop << endl << endl;
-		routes[findedRouteIndex].WriteRouteToConsole();
+		PrintRoute(routes[findedRouteIndex]);
 	}
 
+	for (int i = 0; i < routesCount; i++)
+	{
+		delete routes[i];
+	}
 	delete[] routes;
 
 	PrintLine();

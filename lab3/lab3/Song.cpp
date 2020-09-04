@@ -8,9 +8,9 @@ void Song::SetTitle(const string& title)
 void Song::SetDuration(const int duration)
 {
 	//TODO: Дубль
-	int const minLimit = 0;
-	int const maxLimit = 2147483647;
-	if (!IsValueInRange(duration, minLimit, maxLimit))
+	int const minDuration = 0;
+	int const maxDuration = 2147483647;
+	if (!IsValueInRange(duration, minDuration, maxDuration))
 	{
 		char message[255];
 		strcpy_s(message, MakeMessage(duration, NotNonNegative,

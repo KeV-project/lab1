@@ -32,10 +32,7 @@ public:
 		const int stopsCount, string* stops);
 
 	~Route();
-
-	void ReadRouteFromConsole();
-	void WriteRouteToConsole();
 };
 
-int FindRouteTo(Route* routes, const int routesCount,
+int FindRouteTo(Route** routes, const int routesCount,
 	const string& findedStop);

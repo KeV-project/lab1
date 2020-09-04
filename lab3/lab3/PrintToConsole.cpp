@@ -33,7 +33,29 @@ void PrintBooks(Book** books, const int booksCount)
     for (int i = 0; i < booksCount; i++)
     {
         cout << "КНИГА №" << i + 1 << ": ";
-        PrintBook(books[i]);;
+        PrintBook(books[i]);
+    }
+}
+
+void PrintRoute(Route* route)
+{
+    //TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести +
+    cout << "Рейс №" << route->GetNumber() << " (";
+    cout << route->GetStops()[0] << " - ";
+    cout << route->GetStops()[route->GetStopsCount() - 1];
+    cout << ") находится в пути " << route->GetDuration();
+    cout << " минут, " << endl;
+    cout << "отпраляется на маршрут с периодичностью в ";
+    cout << route->GetPeriodicity() << " минут. " << endl;
+    cout << "Маршрут включает " << route->GetStopsCount();
+    cout << " остановок" << endl << endl;
+}
+
+void PrintRoutes(Route** routes, const int routesCount)
+{
+    for (int i = 0; i < routesCount; i++)
+    {
+        PrintRoute(routes[i]);
     }
 }
 

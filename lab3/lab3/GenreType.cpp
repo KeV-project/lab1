@@ -2,13 +2,13 @@
 
 GenreType GetGenreType(const int numGenre)
 {
-	int const minLimit = 0;
-	int const maxLimit = 6;
-	if (!IsValueInRange(numGenre, 0, 6))
+	int const minNumGenre = 0;
+	int const maxNumGenre = 6;
+	if (!IsValueInRange(numGenre, minNumGenre, maxNumGenre))
 	{
 		char message[255];
-		strcpy_s(message, MakeMessage(numGenre, minLimit,
-				maxLimit, "жанр песни").c_str());
+		strcpy_s(message, MakeMessage(numGenre, minNumGenre,
+				maxNumGenre, "жанр песни").c_str());
 		throw exception(message);
 	}
 	switch (numGenre)

@@ -32,7 +32,7 @@ Book* ReadBook()
 		}
 		else
 		{
-			cout << MakeMessage(year) << endl << endl;
+			cout << MakeMessage() << endl << endl;
 		}
 	} while (true);
 	do
@@ -55,7 +55,7 @@ Book* ReadBook()
 		}
 		else
 		{
-			cout << MakeMessage(pagesCount) << endl << endl;
+			cout << MakeMessage() << endl << endl;
 		}
 	} while (true);
 	do
@@ -90,7 +90,7 @@ Book* ReadBook()
 		}
 		else
 		{
-			cout << MakeMessage(authorsCount) << endl << endl;
+			cout << MakeMessage() << endl << endl;
 		}
 	} while (true);
 	return book;
@@ -105,4 +105,127 @@ Book** ReadBooks(const int booksCount)
 		books[i] = ReadBook();
 	}
 	return books;
+}
+
+Route* ReadRoute()
+{
+	//TODO: ћного дублей +
+	//TODO: Ётот метод не должен тут находитьс€, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести +
+	Route* route = new Route;
+	do
+	{
+		cout << "¬ведите номер рейса: ";
+		int number = 0;
+		cin >> number;
+		cout << endl;
+		if (IsValue())
+		{
+			try
+			{
+				route->SetNumber(number);
+				break;
+			}
+			catch (const std::exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+			}
+		}
+		else
+		{
+			cout << MakeMessage() << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "¬ведите продолжительность рейса: ";
+		int duration = 0;
+		cin >> duration;
+		cout << endl;
+		if (IsValue())
+		{
+			try
+			{
+				route->SetDuration(duration);
+				break;
+			}
+			catch (const std::exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+			}
+		}
+		else
+		{
+			cout << MakeMessage() << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "¬ведите периодичность рейса: ";
+		int periodicity = 0;
+		cin >> periodicity;
+		cout << endl;
+		if (IsValue())
+		{
+			try
+			{
+				route->SetPeriodicity(periodicity);
+				break;
+			}
+			catch (const std::exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+			}
+		}
+		else
+		{
+			cout << MakeMessage() << endl << endl;
+		}
+	} while (true);
+	do
+	{
+		cout << "¬ведите количество остановок рейса: ";
+		int stopsCount = 0;
+		cin >> stopsCount;
+		cout << endl;
+		if (IsValue())
+		{
+			string* stops = nullptr;
+			try
+			{
+				route->SetStops(stops, stopsCount);;
+			}
+			catch (const std::exception& ex)
+			{
+				cout << ex.what() << endl << endl;
+				continue;
+			}
+			stops = new string[stopsCount];
+			for (int i = 0; i < stopsCount; i++)
+			{
+				cout << "¬ведите остановку є" << i + 1 << ": ";
+				cin.ignore(cin.rdbuf()->in_avail());
+				getline(cin, stops[i], '\n');
+				cin.clear();
+				cout << endl;
+			}
+			route->SetStops(stops, stopsCount);
+			break;
+		}
+		else
+		{
+			cout << MakeMessage() << endl << endl;
+		}
+	} while (true);
+	return route;
+}
+
+Route** ReadRoutes(const int routesCount)
+{
+	Route** routes = new Route*[routesCount];
+	for (int i = 0; i < routesCount; i++)
+	{
+		cout << "–≈…— є" << i + 1 << ":" << endl << endl;
+		routes[i] = ReadRoute();
+	}
+	return routes;
 }
