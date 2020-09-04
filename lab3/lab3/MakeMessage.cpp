@@ -45,67 +45,71 @@ string MakeMessage()
 	return message;
 }
 
-string MakeMessage(Time departureTime, Time destinationTime, 
-	const int invalidTime, const MessageType& messageType)
+string MakeMessage(const int departureYear, const int departureMonth,
+	const int departureDay, const int departureHour,
+	const int departureMinute, const int destinationYear,
+	const int destinationMonth, const int destinationDay,
+	const int destinationHour, const int destinationMinute,
+	const MessageType& messageType)
 {
 	switch (messageType)
 	{
 		case InvalidYear:
 		{
 			string message = "ИСКЛЮЧЕНИЕ: Год прибытия: " 
-				+ to_string(invalidTime)
+				+ to_string(destinationYear)
 				+ " предшествует году вылета: "
-				+ to_string(departureTime.GetYear());
+				+ to_string(departureYear);
 			return message;
 		}
 		case InvalidMonth:
 		{
 			string message = "ИСКЛЮЧЕНИЕ: Месяц прибытия: "
-				+ to_string(destinationTime.GetYear()) + "."
-				+ to_string(invalidTime) + " предшествует месяцу вылета: "
-				+ to_string(departureTime.GetYear()) + "."
-				+ to_string(departureTime.GetMonth());
+				+ to_string(destinationYear) + "."
+				+ to_string(destinationMonth) + "\nпредшествует месяцу вылета: "
+				+ to_string(departureYear) + "."
+				+ to_string(departureMonth);
 			return message;
 		}
 		case InvalidDay:
 		{
 			string message = "ИСКЛЮЧЕНИЕ: Дата прибытия: "
-				+ to_string(destinationTime.GetYear()) + "."
-				+ to_string(destinationTime.GetMonth()) + "."
-				+ to_string(invalidTime) + " предшествует дате вылета: "
-				+ to_string(departureTime.GetYear()) + "."
-				+ to_string(departureTime.GetMonth()) + "."
-				+ to_string(departureTime.GetDay());
+				+ to_string(destinationHour) + "."
+				+ to_string(destinationMonth) + "."
+				+ to_string(destinationDay) + "\nпредшествует дате вылета: "
+				+ to_string(departureYear) + "."
+				+ to_string(departureMonth) + "."
+				+ to_string(departureDay);
 			return message;
 		}
 		case InvalidHour:
 		{
 			string message = "ИСКЛЮЧЕНИЕ: Время прибытия: "
-				+ to_string(destinationTime.GetYear()) + "."
-				+ to_string(destinationTime.GetMonth()) + "."
-				+ to_string(destinationTime.GetDay())
-				+ to_string(invalidTime) + "ч"
+				+ to_string(destinationYear) + "."
+				+ to_string(destinationMonth) + "."
+				+ to_string(destinationDay) + " "
+				+ to_string(destinationHour) + " ч\n"
 				+ " предшествует времени вылета: "
-				+ to_string(departureTime.GetYear()) + "."
-				+ to_string(departureTime.GetMonth()) + "."
-				+ to_string(departureTime.GetDay())
-				+ to_string(departureTime.GetHour());
+				+ to_string(departureYear) + "."
+				+ to_string(departureMonth) + "."
+				+ to_string(departureDay) + " "
+				+ to_string(departureHour);
 			return message;
 		}
 		case InvalidMinute:
 		{
 			string message = "ИСКЛЮЧЕНИЕ: Время прибытия: "
-				+ to_string(destinationTime.GetYear()) + "."
-				+ to_string(destinationTime.GetMonth()) + "."
-				+ to_string(destinationTime.GetDay())
-				+ to_string(destinationTime.GetHour()) + ":"
-				+ to_string(invalidTime)
-				+ " предшествует времени вылета: "
-				+ to_string(departureTime.GetYear()) + "."
-				+ to_string(departureTime.GetMonth()) + "."
-				+ to_string(departureTime.GetDay())
-				+ to_string(departureTime.GetHour())
-				+ to_string(departureTime.GetMinute());
+				+ to_string(destinationYear) + "."
+				+ to_string(destinationMonth) + "."
+				+ to_string(destinationDay) + " "
+				+ to_string(destinationHour) + ":"
+				+ to_string(destinationMinute)
+				+ "\nпредшествует времени вылета: "
+				+ to_string(departureYear) + "."
+				+ to_string(departureMonth) + "."
+				+ to_string(departureDay) + " "
+				+ to_string(departureHour) + ":"
+				+ to_string(departureMinute);
 			return message;
 		}
 	}

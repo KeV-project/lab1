@@ -39,67 +39,72 @@ void Flight::SetDestinationTime(const int year, const int month,
 	const int day, const int hour, const int minute)
 {
 	//TODO: Дубль +
-	if (IsValueInRange(year, _departureTime.GetYear(), 2021))
+	if (!IsValueInRange(year, _departureTime.GetYear(), 2021))
 	{
-		string message = MakeMessage(_departureTime, 
-			_destinationTime, year, InvalidYear);
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
+		char message[255];
+		strcpy_s(message, MakeMessage(_departureTime.GetYear(),
+			_departureTime.GetMonth(), _departureTime.GetDay(),
+			_departureTime.GetHour(), _departureTime.GetMinute(),
+			year, month, day, hour, minute, InvalidYear).c_str());
+		throw exception(message);
 	}
 	else if (year == _departureTime.GetYear())
 	{
 		//TODO: Дубль +
-		if (IsValueInRange(month, _departureTime.GetMonth(), 12))
+		if (!IsValueInRange(month, _departureTime.GetMonth(), 12))
 		{
-			string message = MakeMessage(_departureTime,
-				_destinationTime, month, InvalidMonth);
-			char buf[255];
-			strcpy_s(buf, message.c_str());
-			throw exception(buf);
+			char message[255];
+			strcpy_s(message, MakeMessage(_departureTime.GetYear(),
+				_departureTime.GetMonth(), _departureTime.GetDay(),
+				_departureTime.GetHour(), _departureTime.GetMinute(),
+				year, month, day, hour, minute, InvalidMonth).c_str());
+			throw exception(message);
 		}
 		else if (month == _departureTime.GetMonth())
 		{
 			//TODO: Дубль +
-			if (IsValueInRange(day, _departureTime.GetDay(), 31))
+			if (!IsValueInRange(day, _departureTime.GetDay(), 31))
 			{
-				string message = MakeMessage(_departureTime,
-					_destinationTime, day, InvalidDay);
-				char buf[255];
-				strcpy_s(buf, message.c_str());
-				throw exception(buf);
+				char message[255];
+				strcpy_s(message, MakeMessage(_departureTime.GetYear(),
+					_departureTime.GetMonth(), _departureTime.GetDay(),
+					_departureTime.GetHour(), _departureTime.GetMinute(),
+					year, month, day, hour, minute, InvalidDay).c_str());
+				throw exception(message);
 			}
 			else if (day == _departureTime.GetDay())
 			{
 				//TODO: Дубль +
-				if (IsValueInRange(hour, _departureTime.GetHour(), 23))
+				if (!IsValueInRange(hour, _departureTime.GetHour(), 23))
 				{
-					string message = MakeMessage(_departureTime,
-						_destinationTime, hour, InvalidHour);
-					char buf[255];
-					strcpy_s(buf, message.c_str());
-					throw exception(buf);
+					char message[255];
+					strcpy_s(message, MakeMessage(_departureTime.GetYear(),
+						_departureTime.GetMonth(), _departureTime.GetDay(),
+						_departureTime.GetHour(), _departureTime.GetMinute(),
+						year, month, day, hour, minute, InvalidHour).c_str());
+					throw exception(message);
 				}
 				else if (hour == _departureTime.GetHour())
 				{
 					//TODO: Дубль +
-					if (IsValueInRange(minute, _departureTime.GetMinute(), 59))
+					if (!IsValueInRange(minute, _departureTime.GetMinute(), 59))
 					{
-						string message = MakeMessage(_departureTime,
-							_destinationTime, minute, InvalidMinute);
-						char buf[255];
-						strcpy_s(buf, message.c_str());
-						throw exception(buf);
+						char message[255];
+						strcpy_s(message, MakeMessage(_departureTime.GetYear(),
+							_departureTime.GetMonth(), _departureTime.GetDay(),
+							_departureTime.GetHour(), _departureTime.GetMinute(),
+							year, month, day, hour, minute, InvalidMinute).c_str());
+						throw exception(message);
 					}
 				}
 			}
 		}
 	}
-	this->_destinationTime.SetYear(year);
-	this->_destinationTime.SetMonth(month);
-	this->_destinationTime.SetDay(day);
-	this->_destinationTime.SetHour(hour);
-	this->_destinationTime.SetMinute(minute);
+	_destinationTime.SetYear(year);
+	_destinationTime.SetMonth(month);
+	_destinationTime.SetDay(day);
+	_destinationTime.SetHour(hour);
+	_destinationTime.SetMinute(minute);
 }
 
 int Flight::GetNumber()
