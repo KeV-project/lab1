@@ -270,7 +270,7 @@ void DemoWorkingWithClasses::DemoBand()
 			cout << "Пожалуйста, ведите целое число" << endl << endl;
 		}
 	} while (true);
-	int findedGenreSongsCount = 0;
+	int findedGenreSongsCount = band.GetAllGenreSongsCount(findedGenre);
 	Song* findedGenreSongs = 
 		band.GetAllGenreSongs(findedGenre, findedGenreSongsCount);
 	if (findedGenreSongs != 0)

@@ -127,14 +127,13 @@ Song* Band::GetAllSongs(int& allSongsCount)
 	return songs;
 }
 
-Song* Band::GetAllGenreSongs(const GenreType& findedGenre,
-	int& findedGenreSongsCount)
+int Band::GetAllGenreSongsCount(const GenreType& findedGenre)
 {
-	//TODO: Этот метод лучше бы отрефакторить, разбив на два.
-	findedGenreSongsCount = 0;
-	for (int i = 0; i < this->_albumsCount; i++)
+	//TODO: Этот метод лучше бы отрефакторить, разбив на два. +
+	int findedGenreSongsCount = 0;
+	for (int i = 0; i < _albumsCount; i++)
 	{
-		for (int j = 0; j < this->_albums[i]->GetSongsCount(); j++)
+		for (int j = 0; j < _albums[i]->GetSongsCount(); j++)
 		{
 			if (_albums[i]->GetSongs()[j].GetGenre() == findedGenre)
 			{
@@ -142,7 +141,12 @@ Song* Band::GetAllGenreSongs(const GenreType& findedGenre,
 			}
 		}
 	}
-	
+	return findedGenreSongsCount;
+}
+
+Song* Band::GetAllGenreSongs(const GenreType& findedGenre,
+	const int findedGenreSongsCount)
+{
 	if (findedGenreSongsCount != 0)
 	{
 		int genreSongsIndex = 0;
