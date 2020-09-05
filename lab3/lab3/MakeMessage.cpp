@@ -66,7 +66,8 @@ string MakeMessage(const int departureYear, const int departureMonth,
 		{
 			string message = "ИСКЛЮЧЕНИЕ: Месяц прибытия: "
 				+ to_string(destinationYear) + "."
-				+ to_string(destinationMonth) + "\nпредшествует месяцу вылета: "
+				+ to_string(destinationMonth) 
+				+ "\nпредшествует месяцу вылета: "
 				+ to_string(departureYear) + "."
 				+ to_string(departureMonth);
 			return message;
@@ -76,7 +77,8 @@ string MakeMessage(const int departureYear, const int departureMonth,
 			string message = "ИСКЛЮЧЕНИЕ: Дата прибытия: "
 				+ to_string(destinationHour) + "."
 				+ to_string(destinationMonth) + "."
-				+ to_string(destinationDay) + "\nпредшествует дате вылета: "
+				+ to_string(destinationDay) 
+				+ "\nпредшествует дате вылета: "
 				+ to_string(departureYear) + "."
 				+ to_string(departureMonth) + "."
 				+ to_string(departureDay);

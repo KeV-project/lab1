@@ -177,11 +177,11 @@ void Flight::ChangeFlight(const int number, const string& departure,
 
 int Flight::GetFlightTimeMinutes()
 {
-	//TODO: RSDN
+	//TODO: RSDN +
 	int DifHour = 0;
 	int DifMinute = 0;
-	DifHour = this->_destinationTime.GetHour() - this->_departureTime.GetHour();
-	DifMinute = this->_destinationTime.GetMinute() 
-		- this->_departureTime.GetMinute();
+	DifHour = _destinationTime.GetHour() - _departureTime.GetHour();
+	DifMinute = _destinationTime.GetMinute() 
+		- _departureTime.GetMinute();
 	return DifMinute + DifHour * 60;
 }

@@ -7,7 +7,7 @@ void Song::SetTitle(const string& title)
 
 void Song::SetDuration(const int duration)
 {
-	//TODO: Дубль
+	//TODO: Дубль +
 	int const minDuration = 0;
 	int const maxDuration = 2147483647;
 	if (!IsValueInRange(duration, minDuration, maxDuration))
