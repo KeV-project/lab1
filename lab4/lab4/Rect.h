@@ -33,7 +33,5 @@ public:
 	{
 		AllRectsCount--;
 	}
-
-	void PrintRect();
 };
 

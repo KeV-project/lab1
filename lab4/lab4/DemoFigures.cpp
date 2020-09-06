@@ -10,7 +10,7 @@ void DemoFigures::DemoRing()
 		cout << "Создание кольца №1: Ring(10.5, 5.2, 13.5, 15.0) ";
 		cout << endl << endl;
 		rings[0] = new Ring(10.5, 5.2, 13.5, 15.0);
-		rings[0]->PrintRing();
+		PrintRing(rings[0]);
 		cout << endl << endl;
 
 	}
@@ -24,7 +24,7 @@ void DemoFigures::DemoRing()
 		cout << "Создание кольца №2: Ring(10.5, 5.2, 16.5, 15.0)";
 		cout << endl << endl;
 		rings[1] = new Ring(10.5, 5.2, 16.5, 15.0);
-		rings[1]->PrintRing();
+		PrintRing(rings[1]);
 		cout << endl << endl;
 	}
 	catch (const std::exception& ex)
@@ -37,7 +37,7 @@ void DemoFigures::DemoRing()
 		cout << "Создание кольца №3: Ring(10.5, 5.2, -13.5, 15.0)";
 		cout << endl << endl;
 		rings[2] = new Ring(10.5, 5.2, -13.5, 15.0);
-		rings[2]->PrintRing();
+		PrintRing(rings[2]);
 		cout << endl << endl;
 	}
 	catch (const std::exception& ex)
@@ -76,7 +76,7 @@ void DemoFigures::DemoRect()
 		cout << "Создание прямоугольника №1: Rect(5.5, -6.6, 13.0, 15.0)";
 		cout << endl << endl;
 		rects[0] = new Rect(5.5, -6.6, 13.0, 15.0);
-		rects[0]->PrintRect();
+		PrintRect(rects[0]);
 		cout << endl << endl;
 
 	}
@@ -91,7 +91,7 @@ void DemoFigures::DemoRect()
 		cout << "Создание прямоугольника №2: Rect(-1.5, 2.5, -1.0, 5.5)";
 		cout << endl << endl;
 		rects[1] = new Rect(-1.5, 2.5, -1.0, 5.5);
-		rects[1]->PrintRect();
+		PrintRect(rects[1]);
 		cout << endl << endl;
 	}
 	catch (const std::exception& ex)
@@ -105,7 +105,7 @@ void DemoFigures::DemoRect()
 		cout << "Создание прямоугольника №3: Rect(3.5, -5.2, 7.5, -10.6)";
 		cout << endl << endl;
 		rects[2] = new Rect(3.5, -5.2, 7.5, -10.6);
-		rects[2]->PrintRect();
+		PrintRect(rects[2]);
 		cout << endl << endl;
 	}
 	catch (const std::exception& ex)
@@ -161,11 +161,11 @@ void DemoFigures::DemoCollision()
 	for (int i = 0; i < rectsCount; i += 2)
 	{
 		cout << "Прямоуголиник №" << i + 1 << ":" << endl;
-		rects[i].PrintRect();
+		PrintRect(&rects[i]);
 		cout << endl << endl;
 
 		cout << "Прямоуголиник №" << i + 2 << ":" << endl;
-		rects[i + 1].PrintRect();
+		PrintRect(&rects[i + 1]);
 		cout << endl << endl;
 		if (CollisionManager::IsCollision(rects[i], rects[i + 1]))
 		{
@@ -202,11 +202,11 @@ void DemoFigures::DemoCollision()
 	for (int i = 0; i < ringsCount; i += 2)
 	{
 		cout << "Кольцо №" << i + 1 << ":" << endl;
-		rings[i].PrintRing();
+		PrintRing(&rings[i]);
 		cout << endl << endl;
 
 		cout << "Кольцо №" << i + 2 << ":" << endl;
-		rings[i + 1].PrintRing();
+		PrintRing(&rings[i + 1]);
 		cout << endl << endl;
 
 		if (CollisionManager::IsCollision(rings[i], rings[i + 1]))

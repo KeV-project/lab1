@@ -66,10 +66,3 @@ Rect::Rect(const float x, const float y,
 	AllRectsCount++;
 }
 
-void Rect::PrintRect()
-{
-	cout << "x = " << _center.GetX() << ", y = ";
-	cout << _center.GetY() << ", длина = ";
-	cout << _length << ", ширина = " << _width;
-}
-

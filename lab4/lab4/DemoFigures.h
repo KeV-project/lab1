@@ -1,5 +1,5 @@
 #pragma once
-#include "Output.h"
+#include "PrintToConsole.h"
 #include "CollisionManager.h"
 #include "Ring.h"
 #include "Rect.h"

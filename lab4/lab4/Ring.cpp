@@ -63,10 +63,3 @@ Ring::Ring(const float x, const float y,
 	SetRadius(inRadius, outRadius);
 	AllRingsCount++;
 }
-
-void Ring::PrintRing()
-{
-	cout << "x = " << _center.GetX() << ", y = " << _center.GetY();
-	cout << ", внутренний радиус = " << _inRadius;
-	cout << ", внешний радиус = " << _outRadius;
-}
