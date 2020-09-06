@@ -12,13 +12,8 @@ void Album::SetYear(const int year)
 	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
 	int const minYear = 0;
 	int const maxYear = 2020;
-	if (!IsValueInRange(year, minYear, maxYear))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(year, minYear,
-			maxYear, "год издания книги").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(year, minYear,
+		maxYear, NotInRange, "год издания книги");
 	this->_year = year;
 }
 
@@ -26,13 +21,8 @@ void Album::SetSongs(Song* songs, const int songsCount)
 {
 	int const minSongsCount = 0;
 	int const maxSongsCount = 10;
-	if (!IsValueInRange(songsCount, minSongsCount, maxSongsCount))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(songsCount, minSongsCount,
-			maxSongsCount, "количество песен в альбоме").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(songsCount, minSongsCount,
+		maxSongsCount, NotInRange, "количество песен в альбоме");
 	this->_songsCount = songsCount;
 	this->_songs = songs;
 }

@@ -10,13 +10,8 @@ void Song::SetDuration(const int duration)
 	//TODO: Дубль +
 	int const minDuration = 0;
 	int const maxDuration = 2147483647;
-	if (!IsValueInRange(duration, minDuration, maxDuration))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(duration, NotNonNegative,
-			"продолжительность песни").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(duration, minDuration, maxDuration,
+		NotNonNegative, "продолжительность песни");
 	this->_duration = duration;
 }
 

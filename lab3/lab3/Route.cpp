@@ -5,13 +5,8 @@ void Route::SetNumber(const int number)
 	//TODO: ƒубль +
 	int const minNumber = 0;
 	int const maxNumber = 1000000;
-	if (!IsValueInRange(number, minNumber, maxNumber))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(number, minNumber,
-			maxNumber, "номер рейса").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(number, minNumber,
+		maxNumber, NotInRange, "номер рейса");
 	this->_number = number;
 }
 
@@ -20,13 +15,8 @@ void Route::SetDuration(const int duration)
 	//TODO: ƒубль +
 	int const minDuration = 1;
 	int const maxDuration = 2147483647;
-	if (!IsValueInRange(duration, minDuration, maxDuration))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(duration, NotPositive,
-			"продолжительность рейса").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(duration, minDuration, maxDuration, 
+		NotPositive, "продолжительность рейса");
 	this->_durationInMinutes = duration;
 }
 
@@ -35,13 +25,8 @@ void Route::SetPeriodicity(const int periodicity)
 	//TODO: ƒубль +
 	int const minPeriodicity = 1;
 	int const maxPeriodicity = 2147483647;
-	if (!IsValueInRange(periodicity, minPeriodicity, maxPeriodicity))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(periodicity, NotPositive,
-			"периодичность рейса").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(periodicity, minPeriodicity, maxPeriodicity, 
+		NotPositive, "периодичность рейса");
 	this->_periodicity = periodicity;
 }
 
@@ -52,13 +37,8 @@ void Route::SetStops(string* stops, const int stopsCount)
 	//TODO: ƒубль +
 	int const minStopsCount = 2;
 	int const maxStopsCount = 10;
-	if (!IsValueInRange(stopsCount, minStopsCount, maxStopsCount))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(stopsCount, minStopsCount,
-			maxStopsCount, "количество остановок").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(stopsCount, minStopsCount,
+		maxStopsCount, NotInRange, "количество остановок");
 	this->_stopsCount = stopsCount;
 	this->_stops = stops;
 }

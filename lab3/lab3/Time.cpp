@@ -5,13 +5,8 @@ void Time::SetYear(const int year)
 	//TODO: Дубль +
 	int const minYear = 0;
 	int const maxYear = 2021;
-	if (!IsValueInRange(year, minYear, maxYear))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(year, minYear,
-			maxYear, "год").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(year, minYear,
+		maxYear, NotInRange, "год");
 	this->_year = year;
 }
 
@@ -22,13 +17,8 @@ void Time::SetMonth(const int month)
 	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
 	int const minMonth = 1;
 	int const maxMonth = 12;
-	if (!IsValueInRange(month, minMonth, maxMonth))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(month, minMonth,
-			maxMonth, "месяц").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(month, minMonth,
+		maxMonth, NotInRange, "месяц");
 	this->_month = month;
 }
 
@@ -39,13 +29,8 @@ void Time::SetDay(const int day)
 	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
 	int const minDay = 1;
 	int const maxDay = 31;
-	if (!IsValueInRange(day, minDay, maxDay))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(day, minDay,
-			maxDay, "день").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(day, minDay,
+		maxDay, NotInRange, "день");
 	this->_day = day;
 }
 
@@ -56,13 +41,8 @@ void Time::SetHour(const int hour)
 	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
 	int const minHour = 0;
 	int const maxHour = 23;
-	if (!IsValueInRange(hour, minHour, maxHour))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(hour, minHour,
-			maxHour, "час").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(hour, minHour,
+		maxHour, NotInRange, "час");
 	this->_hour = hour;
 }
 
@@ -73,13 +53,8 @@ void Time::SetMinute(const int minute)
 	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
 	int const minMinute = 0;
 	int const maxMinute = 59;
-	if (!IsValueInRange(minute, minMinute, maxMinute))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(minute, minMinute,
-			maxMinute, "минуты").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(minute, minMinute,
+		maxMinute, NotInRange, "минуты");
 	this->_minute = minute;
 }
 

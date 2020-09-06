@@ -32,7 +32,8 @@ Book* ReadBook()
 		}
 		else
 		{
-			cout << MakeMessage() << endl << endl;
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные\n";
+			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
 	do
@@ -55,7 +56,8 @@ Book* ReadBook()
 		}
 		else
 		{
-			cout << MakeMessage() << endl << endl;
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные\n";
+			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
 	do
@@ -90,7 +92,8 @@ Book* ReadBook()
 		}
 		else
 		{
-			cout << MakeMessage() << endl << endl;
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные\n";
+			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
 	return book;
@@ -132,7 +135,8 @@ Route* ReadRoute()
 		}
 		else
 		{
-			cout << MakeMessage() << endl << endl;
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные\n";
+			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
 	do
@@ -155,7 +159,8 @@ Route* ReadRoute()
 		}
 		else
 		{
-			cout << MakeMessage() << endl << endl;
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные\n";
+			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
 	do
@@ -178,7 +183,8 @@ Route* ReadRoute()
 		}
 		else
 		{
-			cout << MakeMessage() << endl << endl;
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные\n";
+			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
 	do
@@ -213,7 +219,8 @@ Route* ReadRoute()
 		}
 		else
 		{
-			cout << MakeMessage() << endl << endl;
+			cout << "ИСКЛЮЧЕНИЕ: Некорректные входные данные\n";
+			cout << "Пожалуйста, введите целое число" << endl << endl;
 		}
 	} while (true);
 	return route;

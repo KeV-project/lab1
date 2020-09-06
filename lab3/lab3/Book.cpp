@@ -12,13 +12,8 @@ void Book::SetYear(const int year)
 	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
 	int const minYear = 0;
 	int const maxYear = 2020;
-	if (!IsValueInRange(year, minYear, maxYear))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(year, minYear,
-			maxYear, "год издания книги").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(year, minYear,
+		maxYear, NotInRange, "год издания книги");
 	this->_year = year;
 }
 
@@ -26,13 +21,8 @@ void Book::SetPagesCount(const int pagesCount)
 {
 	int const minPagesCount = 1;
 	int const maxPagesCount = 1000000;
-	if (!IsValueInRange(pagesCount, minPagesCount, maxPagesCount))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(pagesCount, minPagesCount,
-			maxPagesCount, "количество страниц в книге").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(pagesCount, minPagesCount,
+		maxPagesCount, NotInRange, "количество страниц в книге");
 	this->_pagesCount = pagesCount;
 }
 
@@ -43,13 +33,8 @@ void Book::SetAuthors(string* authors, const int authorsCount)
 	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
 	int const minAuthorsCount = 0;
 	int const maxAuthorsCount = 10;
-	if (!IsValueInRange(authorsCount, minAuthorsCount, maxAuthorsCount))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(authorsCount, minAuthorsCount,
-			maxAuthorsCount, "количество авторов книге").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(authorsCount, minAuthorsCount,
+		maxAuthorsCount, NotInRange, "количество авторов книге");
 	this->_authorsCount = authorsCount;
 	this->_authors = authors;
 }

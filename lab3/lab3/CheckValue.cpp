@@ -22,3 +22,16 @@ bool IsValueInRange(const int value, const int minLimit, const int maxLimit)
 	}
 	return true;
 }
+
+void AssertValueInRange(const int value, const int minLimit,
+	const int maxLimit, const MessageType& messageType,
+	const string& content)
+{
+	if (!IsValueInRange(value, minLimit, maxLimit))
+	{
+		char message[255];
+		strcpy_s(message, MakeMessage(value, minLimit,
+			maxLimit, messageType, content).c_str());
+		throw exception(message);
+	}
+}

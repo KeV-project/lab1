@@ -15,13 +15,8 @@ void Rect::SetLength(const float length)
 	//TODO: Дубль +
 	int const minLength = 1;
 	int const maxLength = 2147483647;
-	if (!IsValueInRange(length, minLength, maxLength))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(length, NotPositive,
-			"длину прямоугольника").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(length, minLength, maxLength, 
+		NotPositive, "длину прямоугольника");
 	this->_length = length;
 }
 
@@ -30,13 +25,8 @@ void Rect::SetWidth(const float width)
 	//TODO: Дубль +
 	int const minWidth = 1;
 	int const maxWidth = 2147483647;
-	if (!IsValueInRange(width, minWidth, maxWidth))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(width, NotPositive,
-			"ширину прямоугольника").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(width, minWidth, maxWidth,
+		NotPositive, "ширину прямоугольника");
 	this->_width = width;
 }
 

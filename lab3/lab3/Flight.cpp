@@ -5,13 +5,8 @@ void Flight::SetNumber(const int number)
 	//TODO: ƒубль +
 	int const minNumber = 0;
 	int const maxNumber = 1000000;
-	if (!IsValueInRange(number, minNumber, maxNumber))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(number, minNumber,
-			maxNumber, "номер рейса").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(number, minNumber,
+		maxNumber, NotInRange, "номер рейса");
 	this->_number = number;
 }
 
@@ -39,63 +34,28 @@ void Flight::SetDestinationTime(const int year, const int month,
 	const int day, const int hour, const int minute)
 {
 	//TODO: ƒубль +
-	if (!IsValueInRange(year, _departureTime.GetYear(), 2021))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(_departureTime.GetYear(),
-			_departureTime.GetMonth(), _departureTime.GetDay(),
-			_departureTime.GetHour(), _departureTime.GetMinute(),
-			year, month, day, hour, minute, InvalidYear).c_str());
-		throw exception(message);
-	}
-	else if (year == _departureTime.GetYear())
+	AssertValueInRange(_departureTime.GetYear(), 0, year,
+		InvalidTime, "год");
+	if (year == _departureTime.GetYear())
 	{
 		//TODO: ƒубль +
-		if (!IsValueInRange(month, _departureTime.GetMonth(), 12))
-		{
-			char message[255];
-			strcpy_s(message, MakeMessage(_departureTime.GetYear(),
-				_departureTime.GetMonth(), _departureTime.GetDay(),
-				_departureTime.GetHour(), _departureTime.GetMinute(),
-				year, month, day, hour, minute, InvalidMonth).c_str());
-			throw exception(message);
-		}
-		else if (month == _departureTime.GetMonth())
+		AssertValueInRange(_departureTime.GetMonth(), 1, month,
+			InvalidTime, "мес€ц");
+		if (month == _departureTime.GetMonth())
 		{
 			//TODO: ƒубль +
-			if (!IsValueInRange(day, _departureTime.GetDay(), 31))
-			{
-				char message[255];
-				strcpy_s(message, MakeMessage(_departureTime.GetYear(),
-					_departureTime.GetMonth(), _departureTime.GetDay(),
-					_departureTime.GetHour(), _departureTime.GetMinute(),
-					year, month, day, hour, minute, InvalidDay).c_str());
-				throw exception(message);
-			}
-			else if (day == _departureTime.GetDay())
+			AssertValueInRange(_departureTime.GetDay(), 1, day,
+				InvalidTime, "день");
+			if (day == _departureTime.GetDay())
 			{
 				//TODO: ƒубль +
-				if (!IsValueInRange(hour, _departureTime.GetHour(), 23))
-				{
-					char message[255];
-					strcpy_s(message, MakeMessage(_departureTime.GetYear(),
-						_departureTime.GetMonth(), _departureTime.GetDay(),
-						_departureTime.GetHour(), _departureTime.GetMinute(),
-						year, month, day, hour, minute, InvalidHour).c_str());
-					throw exception(message);
-				}
-				else if (hour == _departureTime.GetHour())
+				AssertValueInRange(_departureTime.GetHour(), 0, hour,
+					InvalidTime, "час");
+				if (hour == _departureTime.GetHour())
 				{
 					//TODO: ƒубль +
-					if (!IsValueInRange(minute, _departureTime.GetMinute(), 59))
-					{
-						char message[255];
-						strcpy_s(message, MakeMessage(_departureTime.GetYear(),
-							_departureTime.GetMonth(), _departureTime.GetDay(),
-							_departureTime.GetHour(), _departureTime.GetMinute(),
-							year, month, day, hour, minute, InvalidMinute).c_str());
-						throw exception(message);
-					}
+					AssertValueInRange(_departureTime.GetMinute(), 1, minute,
+						InvalidTime, "минуты");
 				}
 			}
 		}
@@ -105,6 +65,18 @@ void Flight::SetDestinationTime(const int year, const int month,
 	_destinationTime.SetDay(day);
 	_destinationTime.SetHour(hour);
 	_destinationTime.SetMinute(minute);
+}
+
+void Flight::SetTime(const int departureYear, const int departureMonth,
+	const int departureDay, const int departureHour,
+	const int departureMinute, const int destinationYear,
+	const int destinationMonth, const int destinationDay,
+	const int destinationHour, const int destinationMinute)
+{
+	SetDepartureTime(departureYear, departureMonth, 
+		departureDay, departureHour, departureMinute);
+	SetDestinationTime(destinationYear, destinationMonth, 
+		destinationDay, destinationHour, destinationMinute);
 }
 
 int Flight::GetNumber()

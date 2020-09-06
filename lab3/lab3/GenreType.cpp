@@ -4,13 +4,8 @@ GenreType GetGenreType(const int numGenre)
 {
 	int const minNumGenre = 0;
 	int const maxNumGenre = 6;
-	if (!IsValueInRange(numGenre, minNumGenre, maxNumGenre))
-	{
-		char message[255];
-		strcpy_s(message, MakeMessage(numGenre, minNumGenre,
-				maxNumGenre, "жанр песни").c_str());
-		throw exception(message);
-	}
+	AssertValueInRange(numGenre, minNumGenre,
+		maxNumGenre, NotInRange, "жанр песни");
 	switch (numGenre)
 	{
 		case 0:

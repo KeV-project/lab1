@@ -2,12 +2,8 @@
 
 enum MessageType
 {
+	NotInRange,
 	NotPositive,
 	NotNonNegative,
-	NotNumber,
-	InvalidYear,
-	InvalidMonth,
-	InvalidDay,
-	InvalidHour,
-	InvalidMinute
+	InvalidTime
 };

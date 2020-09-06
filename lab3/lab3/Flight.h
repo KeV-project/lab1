@@ -16,14 +16,21 @@ private:
 	Time _departureTime;
 	Time _destinationTime;
 
-public:
-	void SetNumber(const int number);
-	void SetDeparture(const string& departure);
-	void SetDestination(const string& destination);
 	void SetDepartureTime(const int year, const int month,
 		const int day, const int hour, const int minute);
 	void SetDestinationTime(const int year, const int month,
 		const int day, const int hour, const int minute);
+
+public:
+	void SetNumber(const int number);
+	void SetDeparture(const string& departure);
+	void SetDestination(const string& destination);
+	void SetTime(const int departureYear,
+		const int departureMonth, const int departureDay,
+		const int departureHour, const int departureMinute,
+		const int destinationYear, const int destinationMonth,
+		const int destinationDay, const int destinationHour,
+		const int destinationMinute);
 
 	int GetNumber();
 	string GetDeparture();
