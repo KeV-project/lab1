@@ -2,7 +2,6 @@
 
 void Route::SetNumber(const int number)
 {
-	//TODO: Дубль +
 	int const minNumber = 0;
 	int const maxNumber = 1000000;
 	AssertValueInRange(number, minNumber,
@@ -12,7 +11,7 @@ void Route::SetNumber(const int number)
 
 void Route::SetDuration(const int duration)
 {
-	//TODO: Дубль +
+	//TODO: Для максимальной границы есть встроенные константы, например INT32_MAX	
 	int const minDuration = 1;
 	int const maxDuration = 2147483647;
 	AssertValueInRange(duration, minDuration, maxDuration, 
@@ -22,7 +21,7 @@ void Route::SetDuration(const int duration)
 
 void Route::SetPeriodicity(const int periodicity)
 {
-	//TODO: Дубль +
+	//TODO: Для максимальной границы есть встроенные константы, например INT32_MAX	
 	int const minPeriodicity = 1;
 	int const maxPeriodicity = 2147483647;
 	AssertValueInRange(periodicity, minPeriodicity, maxPeriodicity, 
@@ -32,9 +31,6 @@ void Route::SetPeriodicity(const int periodicity)
 
 void Route::SetStops(string* stops, const int stopsCount)
 {
-	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
-	//TODO: Дубль +
 	int const minStopsCount = 2;
 	int const maxStopsCount = 10;
 	AssertValueInRange(stopsCount, minStopsCount,

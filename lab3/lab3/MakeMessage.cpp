@@ -4,6 +4,8 @@ string MakeMessage(const int invalidNumber, const int minLimit,
 	const int maxLimit, const MessageType& messageType, 
 	const string& content)
 {
+	//TODO: Оставил бы эту часть в AssertValueInRange, т.к. этот метод усложняет понимание логики, т.е. мы передаём некоторые аргументы
+	//TODO: в AssertValueInRange, а используем их только тут
 	switch (messageType)
 	{
 		case NotInRange:

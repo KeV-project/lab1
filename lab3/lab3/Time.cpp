@@ -2,7 +2,6 @@
 
 void Time::SetYear(const int year)
 {
-	//TODO: Дубль +
 	int const minYear = 0;
 	int const maxYear = 2021;
 	AssertValueInRange(year, minYear,
@@ -12,9 +11,6 @@ void Time::SetYear(const int year)
 
 void Time::SetMonth(const int month)
 {
-	//TODO: Дубль +
-	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
 	int const minMonth = 1;
 	int const maxMonth = 12;
 	AssertValueInRange(month, minMonth,
@@ -24,9 +20,6 @@ void Time::SetMonth(const int month)
 
 void Time::SetDay(const int day)
 {
-	//TODO: Дубль +
-	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
 	int const minDay = 1;
 	int const maxDay = 31;
 	AssertValueInRange(day, minDay,
@@ -36,9 +29,6 @@ void Time::SetDay(const int day)
 
 void Time::SetHour(const int hour)
 {
-	//TODO: Дубль +
-	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
 	int const minHour = 0;
 	int const maxHour = 23;
 	AssertValueInRange(hour, minHour,
@@ -48,9 +38,6 @@ void Time::SetHour(const int hour)
 
 void Time::SetMinute(const int minute)
 {
-	//TODO: Дубль +
-	//TODO: Сообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
 	int const minMinute = 0;
 	int const maxMinute = 59;
 	AssertValueInRange(minute, minMinute,

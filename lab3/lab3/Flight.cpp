@@ -33,27 +33,23 @@ void Flight::SetDepartureTime(const int year, const int month,
 void Flight::SetDestinationTime(const int year, const int month,
 	const int day, const int hour, const int minute)
 {
-	//TODO: ƒубль +
+	//TODO: вообще не пон€л - что за логика тут закладываетс€, надо обсудить. 
 	AssertValueInRange(_departureTime.GetYear(), 0, year,
 		InvalidTime, "год");
 	if (year == _departureTime.GetYear())
 	{
-		//TODO: ƒубль +
 		AssertValueInRange(_departureTime.GetMonth(), 1, month,
 			InvalidTime, "мес€ц");
 		if (month == _departureTime.GetMonth())
 		{
-			//TODO: ƒубль +
 			AssertValueInRange(_departureTime.GetDay(), 1, day,
 				InvalidTime, "день");
 			if (day == _departureTime.GetDay())
 			{
-				//TODO: ƒубль +
 				AssertValueInRange(_departureTime.GetHour(), 0, hour,
 					InvalidTime, "час");
 				if (hour == _departureTime.GetHour())
 				{
-					//TODO: ƒубль +
 					AssertValueInRange(_departureTime.GetMinute(), 1, minute,
 						InvalidTime, "минуты");
 				}
@@ -149,7 +145,7 @@ void Flight::ChangeFlight(const int number, const string& departure,
 
 int Flight::GetFlightTimeMinutes()
 {
-	//TODO: RSDN +
+	//TODO: RSDN - локальные переменные + их можно сразу проиницииализировать подход€щими значени€ми
 	int DifHour = 0;
 	int DifMinute = 0;
 	DifHour = _destinationTime.GetHour() - _departureTime.GetHour();

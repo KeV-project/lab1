@@ -7,9 +7,7 @@ void Album::SetName(const string& name)
 
 void Album::SetYear(const int year)
 {
-	//TODO: дубль +
-	//TODO: —ообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
+	//TODO: ћожет быть 0?
 	int const minYear = 0;
 	int const maxYear = 2020;
 	AssertValueInRange(year, minYear,
@@ -19,6 +17,7 @@ void Album::SetYear(const int year)
 
 void Album::SetSongs(Song* songs, const int songsCount)
 {
+	//TODO: ћожет быть 0?
 	int const minSongsCount = 0;
 	int const maxSongsCount = 10;
 	AssertValueInRange(songsCount, minSongsCount,

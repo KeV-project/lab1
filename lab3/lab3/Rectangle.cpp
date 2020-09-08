@@ -12,7 +12,7 @@ void Rect::SetCenterY(const float y)
 
 void Rect::SetLength(const float length)
 {
-	//TODO: Дубль +
+	//TODO: Для максимальной границы есть встроенные константы, например INT32_MAX	
 	int const minLength = 1;
 	int const maxLength = 2147483647;
 	AssertValueInRange(length, minLength, maxLength, 
@@ -22,7 +22,7 @@ void Rect::SetLength(const float length)
 
 void Rect::SetWidth(const float width)
 {
-	//TODO: Дубль +
+	//TODO: Для максимальной границы есть встроенные константы, например INT32_MAX	
 	int const minWidth = 1;
 	int const maxWidth = 2147483647;
 	AssertValueInRange(width, minWidth, maxWidth,

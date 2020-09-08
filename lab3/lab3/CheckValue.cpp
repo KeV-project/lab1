@@ -16,6 +16,10 @@ bool IsValue()
 
 bool IsValueInRange(const int value, const int minLimit, const int maxLimit)
 {
+	//TODO: Тут я бы инвертировал логику и упростил выражение до
+	// return (minLimit <= value && value >= maxLimit)
+	// так будет проще читать с точки зрения понимания корректных допустимых границ
+	// в вашем случае необходимо инвертировать логику, чтобы это прочитать
 	if (value < minLimit || value > maxLimit)
 	{
 		return false;

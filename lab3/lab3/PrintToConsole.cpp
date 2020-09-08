@@ -10,7 +10,6 @@ void PrintLine()
 
 void PrintBook(Book* book)
 {
-    //TODO: Тоже что и выше. Корректнее возвращать строку, а её уже выводить в консоль +
     for (int i = 0; i < book->GetAuthorsCount(); i++)
     {
         cout << book->GetAuthors()[i];
@@ -39,7 +38,6 @@ void PrintBooks(Book** books, const int booksCount)
 
 void PrintRoute(Route* route)
 {
-    //TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести +
     cout << "Рейс №" << route->GetNumber() << " (";
     cout << route->GetStops()[0] << " - ";
     cout << route->GetStops()[route->GetStopsCount() - 1];
@@ -61,7 +59,6 @@ void PrintRoutes(Route** routes, const int routesCount)
 
 void PrintRectangle(Rect* rectangle)
 {
-    //TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести +
     cout << "Длинa: " << rectangle->GetLength() << endl;
     cout << "Ширина: " << rectangle->GetWidth() << endl;
     cout << "x: " << rectangle->GetCenterX() << endl;
@@ -70,7 +67,6 @@ void PrintRectangle(Rect* rectangle)
 
 void PrintRectangles(Rect** rectangles, const int rectanglesCount)
 {
-    //TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести +
     for (int i = 0; i < rectanglesCount; i++)
     {
         cout << "Прямоугольник №" << i + 1 << ": " << endl;
@@ -80,7 +76,6 @@ void PrintRectangles(Rect** rectangles, const int rectanglesCount)
 
 void PrintFlight(Flight* flight)
 {
-    //TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести +
     cout << flight->GetNumber() << " ";
     cout << flight->GetDeparture() << " - ";
     cout << flight->GetDestination() << " ";
@@ -90,7 +85,6 @@ void PrintFlight(Flight* flight)
 
 void PrintFlights(Flight** flights, const int flightsCount)
 {
-    //TODO: Этот метод не должен тут находиться, т.к. таким образов вы прикалачиваете его к консоли, консольный ввод лучше вынести +
     for (int i = 1; i < flightsCount; i++)
     {
         cout << "Рейс №";

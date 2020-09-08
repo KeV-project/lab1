@@ -7,9 +7,7 @@ void Book::SetTitle(const string& title)
 
 void Book::SetYear(const int year)
 {
-	//TODO: дубль +
-	//TODO: —ообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
+	//TODO: ћожет быть 0?
 	int const minYear = 0;
 	int const maxYear = 2020;
 	AssertValueInRange(year, minYear,
@@ -28,9 +26,7 @@ void Book::SetPagesCount(const int pagesCount)
 
 void Book::SetAuthors(string* authors, const int authorsCount)
 {
-	//TODO: дубль +
-	//TODO: —ообщение о диапазоне значений лучше формировать с помощью заданных заранее значений лимитов
-	//TODO: т.е. границы вынести в константы и в сообщение подставить эти константы +
+	//TODO: ћожет быть 0?
 	int const minAuthorsCount = 0;
 	int const maxAuthorsCount = 10;
 	AssertValueInRange(authorsCount, minAuthorsCount,
