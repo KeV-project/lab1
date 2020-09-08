@@ -8,7 +8,7 @@ void PrintLine()
     cout << "__________________________" << endl << endl;
 }
 
-void ShowInitials(Person* person)
+void PrintInitials(Person* person)
 {
 	cout << person->GetSurname() << " ";
 	cout << person->GetName() << " ";

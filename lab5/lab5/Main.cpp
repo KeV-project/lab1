@@ -18,14 +18,14 @@ void main()
 
 	// Task 5.1.5
 	Person person("Савельев", "Геннадий", "Борисович");
-	ShowName(&person);
+	PrintInitials(&person);
 
 	Student student("Зубарев", "Никита", "Сергеевич", 192, 2018);
-	ShowName(&student);
+	PrintInitials(&student);
 
 	Teacher teacher("Сорин", "Петр", "Константинович",
 		"старший преподаватель");
-	ShowName(&teacher);
+	PrintInitials(&teacher);
 
 	PrintLine();
 

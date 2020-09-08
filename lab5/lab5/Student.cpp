@@ -2,11 +2,15 @@
 
 void Student::SetGradebookNum(const int recordBookNum)
 {
+	ValueValidator::AssertPositiveValue(recordBookNum, 
+		"номер зачетной книжки студента");
 	_gradebookNum = recordBookNum;
 }
 
 void Student::SetEntranceYear(const int year)
 {
+	ValueValidator::AssertValueInRange(year, 0, 
+		2020, "год постуления студента");
 	_entranceYear = year;
 }
 

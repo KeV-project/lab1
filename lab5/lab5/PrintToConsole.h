@@ -6,4 +6,4 @@ using namespace std;
 
 void PrintLine();
 
-void PrintInitils(Person* person);
+void PrintInitials(Person* person);
