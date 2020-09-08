@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "ValueValidator.h"
 using namespace std;
 
 class User

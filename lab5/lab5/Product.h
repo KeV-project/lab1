@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "ValueValidator.h"
 #include "CategoryType.h"
 
 using namespace std;
@@ -9,12 +10,12 @@ class Product
 private:
 	string _name;
 	CategoryType _category;
-	double _cost;
+	float _cost;
 
 public:
 	void SetName(const string& name);
 	void SetCategory(const CategoryType& category);
-	void SetCost(const double cost);
+	void SetCost(const float cost);
 
 	string GetName();
 	CategoryType GetCategory();
@@ -22,7 +23,7 @@ public:
 
 	Product();
 	Product(const string& name, 
-		const CategoryType& category, const double cost);
+		const CategoryType& category, const float cost);
 };
 
 

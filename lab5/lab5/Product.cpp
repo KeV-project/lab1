@@ -10,17 +10,12 @@ void Product::SetCategory(const CategoryType& category)
 	this->_category = category;
 }
 
-void Product::SetCost(const double cost)
+void Product::SetCost(const float cost)
 {
-	if (cost < 0 || cost > 100000)
-	{
-		string message = "Число " + to_string(cost)
-			+ " не входит в допустимый диапазон [0, 100000]"
-			+ "\nи не может определять стоимость товара";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
-	}
+	const float minCost = 0;
+	const float maxCost = 100000;
+	ValueValidator::AssertValueInRange(cost, 
+		minCost, maxCost, "стоимость товара");
 	this->_cost = cost;
 }
 
@@ -47,7 +42,7 @@ Product::Product()
 }
 
 Product::Product(const string& name, 
-	const CategoryType& category, const double cost)
+	const CategoryType& category, const float cost)
 {
 	SetName(name);
 	SetCategory(category);

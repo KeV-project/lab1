@@ -1,16 +1,18 @@
 #pragma once
 #include "DiscountBase.h"
+#include "ValueValidator.h"
 
 class CertificateDiscount : public DiscountBase
 {
 private:
-	double _amount;
+	float _amount;
 public:
-	void SetAmount(const double amount);
+	void SetAmount(const float amount);
 
 	double GetAmount();
 
-	CertificateDiscount(const double amount, const CategoryType& category);
+	CertificateDiscount(const float amount, 
+		const CategoryType& category);
 
 	double Calculate(Product* product) override;
 };

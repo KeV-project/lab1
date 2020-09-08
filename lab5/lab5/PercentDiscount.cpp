@@ -2,15 +2,10 @@
 
 void PercentDiscount::SetPercent(const int percent)
 {
-	if (percent < 0 || percent > 100)
-	{
-		string message = "Число " + to_string(percent)
-			+ " не входит в допустимый диапазон [0, 100]"
-			+ "\nи не может определять размер скидки в процентах";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
-	}
+	const int minPercent = 0;
+	const int maxPercent = 100;
+	ValueValidator::AssertValueInRange(percent, 
+		minPercent, maxPercent, "размер скидки в процентах");
 	this->_percent = percent;
 }
 

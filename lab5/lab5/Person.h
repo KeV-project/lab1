@@ -23,5 +23,3 @@ public:
 	Person(const string& surname, const string& name,
 		const string& patronymic);
 };
-
-void ShowName(Person* person);

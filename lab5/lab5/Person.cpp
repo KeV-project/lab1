@@ -44,10 +44,3 @@ Person::Person(const string& surname, const string& name,
 	SetSurname(surname);
 	SetPatronymic(patronymic);
 }
-
-void ShowName(Person* person)
-{
-	cout << person->GetSurname() << " ";
-	cout << person->GetName() << " ";
-	cout << person->GetPatronymic() << endl << endl;
-}

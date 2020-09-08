@@ -2,16 +2,10 @@
 
 CategoryType GetCategoryType(const int numCategory)
 {
-	if (!IsValueInRange(numCategory, 0, 6))
-	{
-		string message = "Число " + to_string(numCategory) +
-			" не входит в допустимый диапазон [0, 6]\n"
-			"и не может быть сопоставлено с соответствующим "
-			"значением категории товара";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
-	}
+	const int minCategoryNum = 0;
+	const int maxCategoryNum = 6;
+	ValueValidator::AssertValueInRange(numCategory, 
+		minCategoryNum, maxCategoryNum, "категорию товара");
 	switch (numCategory)
 	{
 		case 0:

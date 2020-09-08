@@ -1,4 +1,5 @@
 #pragma once
+#include "ValueValidator.h"
 #include "DiscountBase.h"
 
 class PercentDiscount : public DiscountBase

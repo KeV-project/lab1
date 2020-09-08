@@ -143,7 +143,7 @@
     <ClCompile Include="DiscountBase.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Output.cpp" />
+    <ClCompile Include="PrintToConsole.cpp" />
     <ClCompile Include="PaidUser.cpp" />
     <ClCompile Include="PercentDiscount.cpp" />
     <ClCompile Include="Person.cpp" />
@@ -152,13 +152,14 @@
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Teacher.cpp" />
     <ClCompile Include="User.cpp" />
+    <ClCompile Include="ValueValidator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CategoryType.h" />
     <ClInclude Include="CertificateDiscount.h" />
     <ClInclude Include="DiscountBase.h" />
     <ClInclude Include="Input.h" />
-    <ClInclude Include="Output.h" />
+    <ClInclude Include="PrintToConsole.h" />
     <ClInclude Include="PaidUser.h" />
     <ClInclude Include="PercentDiscount.h" />
     <ClInclude Include="Person.h" />
@@ -167,6 +168,7 @@
     <ClInclude Include="Student.h" />
     <ClInclude Include="Teacher.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="ValueValidator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
