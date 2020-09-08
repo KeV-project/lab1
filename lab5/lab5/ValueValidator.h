@@ -10,6 +10,8 @@ private:
 	static bool IsValuePositive(const int value);
 	static bool IsValueInRange(const int value,
 		const int minLimit, const int maxLimit);
+	static bool IsValueInRange(const float value,
+		const float minLimit, const float maxLimit);
 
 public:
 	static bool IsValue();
@@ -18,6 +20,9 @@ public:
 		const string& content);
 	static void AssertValueInRange(const int value,
 		const int minLimit, const int maxLimit,
+		const string& content);
+	static void AssertValueInRange(const float value,
+		const float minLimit, const float maxLimit,
 		const string& content);
 };
 

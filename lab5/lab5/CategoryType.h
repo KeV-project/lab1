@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "Input.h"
+#include "ValueValidator.h"
 
 enum CategoryType
 {

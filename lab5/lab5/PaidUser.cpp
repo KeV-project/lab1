@@ -2,15 +2,10 @@
 
 void PaidUser::SetPosts(Post* posts, const int postsCount)
 {
-	if (postsCount < 0)
-	{
-		string message = "Число " + to_string(postsCount) 
-			+ " не может определять количество постов" 
-			+ "\nтак как не является положительным";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
-	}
+	const int minPostsCount = 0;
+	const int maxPostsCount = 10;
+	ValueValidator::AssertValueInRange(postsCount, 
+		minPostsCount, maxPostsCount, "количество постов пользователя");
 	_posts = posts;
 	_postsCount = postsCount;
 }

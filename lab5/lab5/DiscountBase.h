@@ -16,6 +16,3 @@ protected:
 	DiscountBase(const CategoryType& category);
 };
 
-void ShowCheckWithDiscount(DiscountBase* discount, 
-	Product* products, int productsCount);
-

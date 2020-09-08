@@ -9,8 +9,10 @@ void Student::SetGradebookNum(const int recordBookNum)
 
 void Student::SetEntranceYear(const int year)
 {
-	ValueValidator::AssertValueInRange(year, 0, 
-		2020, "год постуления студента");
+	const int minYear = 0;
+	const int maxYear = 2020;
+	ValueValidator::AssertValueInRange(year, minYear, 
+		maxYear, "год постуления студента");
 	_entranceYear = year;
 }
 

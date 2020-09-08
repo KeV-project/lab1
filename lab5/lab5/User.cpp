@@ -2,15 +2,7 @@
 
 void User::SetId(const int id)
 {
-	if (id <= 0)
-	{
-		string message = "Число " + to_string(id)
-			+ " не может определять id пользователя"
-			+ "\nтак как не является положительным";
-		char buf[255];
-		strcpy_s(buf, message.c_str());
-		throw exception(buf);
-	}
+	ValueValidator::AssertPositiveValue(id, "id пользователя");
 	_id = id;
 }
 void User::SetLogin(const string& login)

@@ -17,6 +17,16 @@ bool ValueValidator::IsValue()
 bool ValueValidator::IsValueInRange(const int value,
 	const int minLimit, const int maxLimit)
 {
+	if (value < minLimit || value > maxLimit)
+	{
+		return false;
+	}
+	return true;
+}
+
+bool ValueValidator::IsValueInRange(const float value,
+	const float minLimit, const float maxLimit)
+{
 	if (value <= minLimit || value >= maxLimit)
 	{
 		return false;
@@ -49,6 +59,22 @@ void ValueValidator::AssertPositiveValue(const int value,
 
 void ValueValidator::AssertValueInRange(const int value,
 	const int minLimit, const int maxLimit, const string& content)
+{
+	if (!IsValueInRange(value, minLimit, maxLimit))
+	{
+		string message = "Число " + to_string(value)
+			+ " не входит в допустимый диапазон значений ["
+			+ to_string(minLimit) + ", "
+			+ to_string(maxLimit)
+			+ "]\nи не может определять " + content;
+		char buf[255];
+		strcpy_s(buf, message.c_str());
+		throw exception(buf);
+	}
+}
+
+void ValueValidator::AssertValueInRange(const float value,
+	const float minLimit, const float maxLimit, const string& content)
 {
 	if (!IsValueInRange(value, minLimit, maxLimit))
 	{
