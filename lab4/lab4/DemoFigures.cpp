@@ -5,6 +5,7 @@ void DemoFigures::DemoRing()
 	// Task 4.1.6
 	const int ringsCount = 3;
 	Ring** rings = new Ring * [ringsCount];
+	//TODO: Можно было собрать в кучу сделав массив с массивом даблов. Создание колец можно было бы тогда вызывать в цикле
 	try
 	{
 		cout << "Создание кольца №1: Ring(10.5, 5.2, 13.5, 15.0) ";
@@ -70,6 +71,7 @@ void DemoFigures::DemoRing()
 void DemoFigures::DemoRect()
 {
 	const int rectsCount = 3;
+	//TODO: Тоже что и выше - дубли
 	Rect** rects = new Rect * [rectsCount];
 	try
 	{
@@ -115,6 +117,7 @@ void DemoFigures::DemoRect()
 	cout << "Всего прямоугольников: " << Rect::GetAllRectsCount();
 	cout << endl << endl;
 
+	//TODO: Почему delete вызван только для первого элемента?
 	delete rects[0];
 	delete[] rects;
 

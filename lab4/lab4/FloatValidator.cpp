@@ -17,6 +17,7 @@ bool FloatValidator::IsValue()
 bool FloatValidator::IsValueInRange(const float value,
 	const float minLimit, const float maxLimit)
 {
+	//TODO: Писал замечание в предыдущей лабе
 	if (value <= minLimit || value >= maxLimit)
 	{
 		return false;
@@ -26,6 +27,7 @@ bool FloatValidator::IsValueInRange(const float value,
 
 bool FloatValidator::IsValuePositive(const float value)
 {
+	//TODO: Можно сразу возвращать значение
 	if (value > 0)
 	{
 		return true;
@@ -47,6 +49,7 @@ void FloatValidator::AssertPositiveValue(const float value,
 {
 	if (!IsValuePositive(value))
 	{
+		//TODO: Дубль
 		string message = "Отрицательное число " 
 			+ (to_string(value)).erase(5, 10)
 			+ " не может определять " + content;
@@ -61,6 +64,7 @@ void FloatValidator::AssertValueInRange(const float value,
 {
 	if (!IsValueInRange(value, minLimit, maxLimit))
 	{
+		//TODO: Дубль
 		string message = "Число " + (to_string(value)).erase(5, 10) 
 			+ " не входит в допустимый диапазон значений [" 
 			+ (to_string(minLimit)).erase(5, 10) + ", " 
