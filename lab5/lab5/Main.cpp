@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include "Windows.h"
-#include "Output.h"
+#include "PrintToConsole.h"
 #include "Student.h"
 #include "Teacher.h"
 #include "User.h"

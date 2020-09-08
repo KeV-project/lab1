@@ -5,3 +5,5 @@
 using namespace std;
 
 void PrintLine();
+
+void PrintInitils(Person* person);

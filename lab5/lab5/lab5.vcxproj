@@ -143,7 +143,7 @@
     <ClCompile Include="DiscountBase.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Output.cpp" />
+    <ClCompile Include="PrintToConsole.cpp" />
     <ClCompile Include="PaidUser.cpp" />
     <ClCompile Include="PercentDiscount.cpp" />
     <ClCompile Include="Person.cpp" />
@@ -158,7 +158,7 @@
     <ClInclude Include="CertificateDiscount.h" />
     <ClInclude Include="DiscountBase.h" />
     <ClInclude Include="Input.h" />
-    <ClInclude Include="Output.h" />
+    <ClInclude Include="PrintToConsole.h" />
     <ClInclude Include="PaidUser.h" />
     <ClInclude Include="PercentDiscount.h" />
     <ClInclude Include="Person.h" />
