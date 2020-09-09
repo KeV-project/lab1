@@ -7,9 +7,9 @@ void Song::SetTitle(const string& title)
 
 void Song::SetDuration(const int duration)
 {
-	//TODO: Для максимальной границы есть встроенные константы, например INT32_MAX	
+	//TODO: Для максимальной границы есть встроенные константы, например INT32_MAX +
 	int const minDuration = 0;
-	int const maxDuration = 2147483647;
+	int const maxDuration = INT32_MAX;
 	AssertValueInRange(duration, minDuration, maxDuration,
 		NotNonNegative, "продолжительность песни");
 	this->_duration = duration;

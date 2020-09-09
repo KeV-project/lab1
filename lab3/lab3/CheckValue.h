@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
-#include "MakeMessage.h"
+#include <string>
+#include "MessageType.h"
 
 using namespace std;
 

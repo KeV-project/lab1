@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "MakeMessage.h"
 #include "CheckValue.h"
 
 using namespace std;
@@ -23,6 +22,7 @@ public:
 
 	string GetTitle();
 	int GetYear();
+	string GetYearForWrite();
 	int GetPagesCount();
 	int GetAuthorsCount();
 	string* GetAuthors();

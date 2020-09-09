@@ -23,7 +23,7 @@ void PrintBook(Book* book)
         }
     }
     cout << book->GetTitle() << ". ";
-    cout << book->GetYear() << ". ";
+    cout << book->GetYearForWrite() << ". ";
     cout << "- " << book->GetPagesCount() << "c." << endl << endl;
 }
 

@@ -7,8 +7,8 @@ void Book::SetTitle(const string& title)
 
 void Book::SetYear(const int year)
 {
-	//TODO: Может быть 0?
-	int const minYear = 0;
+	//TODO: Может быть 0? +
+	int const minYear = -2400;
 	int const maxYear = 2020;
 	AssertValueInRange(year, minYear,
 		maxYear, NotInRange, "год издания книги");
@@ -26,7 +26,9 @@ void Book::SetPagesCount(const int pagesCount)
 
 void Book::SetAuthors(string* authors, const int authorsCount)
 {
-	//TODO: Может быть 0?
+	//TODO: Может быть 0? +
+	// В конструкторе по умолчанию книга может быть инициализирована без указания авторов
+	// Автор книги может быть неизвестен
 	int const minAuthorsCount = 0;
 	int const maxAuthorsCount = 10;
 	AssertValueInRange(authorsCount, minAuthorsCount,
@@ -43,6 +45,15 @@ string Book::GetTitle()
 int Book::GetYear()
 {
 	return this->_year;
+}
+
+string Book::GetYearForWrite()
+{
+	if (IsValueInRange(_year, -2400, 1))
+	{
+		return to_string(_year * -1) + " год до н.э";
+	}
+	return to_string(_year) + " г";
 }
 
 int Book::GetPagesCount()

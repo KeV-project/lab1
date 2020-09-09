@@ -23,6 +23,8 @@ void Flight::SetDestination(const string& destination)
 void Flight::SetDepartureTime(const int year, const int month,
 	const int day, const int hour, const int minute)
 {
+	AssertValueInRange(year, 1938, 2021, 
+		NotInRange, "год вылета самолета");
 	this->_departureTime.SetYear(year);
 	this->_departureTime.SetMonth(month);
 	this->_departureTime.SetDay(day);
@@ -34,33 +36,17 @@ void Flight::SetDestinationTime(const int year, const int month,
 	const int day, const int hour, const int minute)
 {
 	//TODO: вообще не понял - что за логика тут закладывается, надо обсудить. 
-	AssertValueInRange(_departureTime.GetYear(), 0, year,
-		InvalidTime, "год");
-	if (year == _departureTime.GetYear())
+	Time destinationTime(year, month, day, hour, minute);
+	if (_departureTime.IsTimeBeforeThen(destinationTime))
 	{
-		AssertValueInRange(_departureTime.GetMonth(), 1, month,
-			InvalidTime, "месяц");
-		if (month == _departureTime.GetMonth())
-		{
-			AssertValueInRange(_departureTime.GetDay(), 1, day,
-				InvalidTime, "день");
-			if (day == _departureTime.GetDay())
-			{
-				AssertValueInRange(_departureTime.GetHour(), 0, hour,
-					InvalidTime, "час");
-				if (hour == _departureTime.GetHour())
-				{
-					AssertValueInRange(_departureTime.GetMinute(), 1, minute,
-						InvalidTime, "минуты");
-				}
-			}
-		}
+		AssertValueInRange(year, 1938, 2021, 
+			NotInRange, "год прибытия самолета");
+		_destinationTime.SetYear(year);
+		_destinationTime.SetMonth(month);
+		_destinationTime.SetDay(day);
+		_destinationTime.SetHour(hour);
+		_destinationTime.SetMinute(minute);
 	}
-	_destinationTime.SetYear(year);
-	_destinationTime.SetMonth(month);
-	_destinationTime.SetDay(day);
-	_destinationTime.SetHour(hour);
-	_destinationTime.SetMinute(minute);
 }
 
 void Flight::SetTime(const int departureYear, const int departureMonth,
@@ -145,11 +131,9 @@ void Flight::ChangeFlight(const int number, const string& departure,
 
 int Flight::GetFlightTimeMinutes()
 {
-	//TODO: RSDN - локальные переменные + их можно сразу проиницииализировать подходящими значениями
-	int DifHour = 0;
-	int DifMinute = 0;
-	DifHour = _destinationTime.GetHour() - _departureTime.GetHour();
-	DifMinute = _destinationTime.GetMinute() 
+	//TODO: RSDN - локальные переменные + их можно сразу проиницииализировать подходящими значениями +
+	int difHour = _destinationTime.GetHour() - _departureTime.GetHour();
+	int difMinute = _destinationTime.GetMinute()
 		- _departureTime.GetMinute();
-	return DifMinute + DifHour * 60;
+	return difMinute + difHour * 60;
 }

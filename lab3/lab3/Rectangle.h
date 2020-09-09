@@ -2,7 +2,6 @@
 #include "Point.h"
 #include <iostream>
 #include <string>
-#include "MakeMessage.h"
 #include "CheckValue.h"
 
 using namespace std;

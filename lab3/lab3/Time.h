@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include "CheckValue.h"
-#include "MakeMessage.h"
 
 using namespace std;
 
@@ -27,11 +26,12 @@ public:
 	int GetDay();
 	int GetHour();
 	int GetMinute();
+	string GetTime();
 
 	Time();
 	Time(const int year, const int month, const int day,
 		const int hour, const int minute);
 	
-	string GetTime();
+	bool IsTimeBeforeThen(Time& time);
 };
 

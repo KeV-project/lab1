@@ -51,9 +51,6 @@
     <ClCompile Include="Band.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="MakeMessage.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="CheckValue.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -96,9 +93,6 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Band.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="MakeMessage.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="MessageType.h">

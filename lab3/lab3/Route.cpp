@@ -11,9 +11,9 @@ void Route::SetNumber(const int number)
 
 void Route::SetDuration(const int duration)
 {
-	//TODO: Для максимальной границы есть встроенные константы, например INT32_MAX	
+	//TODO: Для максимальной границы есть встроенные константы, например INT32_MAX +
 	int const minDuration = 1;
-	int const maxDuration = 2147483647;
+	int const maxDuration = INT32_MAX;
 	AssertValueInRange(duration, minDuration, maxDuration, 
 		NotPositive, "продолжительность рейса");
 	this->_durationInMinutes = duration;
@@ -21,9 +21,9 @@ void Route::SetDuration(const int duration)
 
 void Route::SetPeriodicity(const int periodicity)
 {
-	//TODO: Для максимальной границы есть встроенные константы, например INT32_MAX	
+	//TODO: Для максимальной границы есть встроенные константы, например INT32_MAX +
 	int const minPeriodicity = 1;
-	int const maxPeriodicity = 2147483647;
+	int const maxPeriodicity = INT32_MAX;
 	AssertValueInRange(periodicity, minPeriodicity, maxPeriodicity, 
 		NotPositive, "периодичность рейса");
 	this->_periodicity = periodicity;

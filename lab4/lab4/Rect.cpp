@@ -9,13 +9,19 @@ void Rect::SetCenter(const float x, const float y)
 
 void Rect::SetLength(const float length)
 {
-	FloatValidator::AssertPositiveValue(length, "длину прямоулогьника");
+	const int minLength = 0;
+	const int maxLength = INT32_MAX;
+	FloatValidator::AssertValueInRange(length, 
+		minLength, maxLength, "длину прямоулогьника");
 	this->_length = length;
 }
 
 void Rect::SetWidth(float width)
 {
-	FloatValidator::AssertPositiveValue(width, "ширину прямоугольника");
+	const int minWidth = 0;
+	const int maxWidth = INT32_MAX;
+	FloatValidator::AssertValueInRange(width, 
+		minWidth, maxWidth, "ширину прямоугольника");
 	this->_width = width;
 }
 

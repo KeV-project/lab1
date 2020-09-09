@@ -7,8 +7,8 @@ void Album::SetName(const string& name)
 
 void Album::SetYear(const int year)
 {
-	//TODO: Может быть 0?
-	int const minYear = 0;
+	//TODO: Может быть 0? +
+	int const minYear = 1860;
 	int const maxYear = 2020;
 	AssertValueInRange(year, minYear,
 		maxYear, NotInRange, "год издания книги");
@@ -17,7 +17,8 @@ void Album::SetYear(const int year)
 
 void Album::SetSongs(Song* songs, const int songsCount)
 {
-	//TODO: Может быть 0?
+	//TODO: Может быть 0? +
+	// В конструкторе по умолчанию альбом может быть инициализирован без песен 
 	int const minSongsCount = 0;
 	int const maxSongsCount = 10;
 	AssertValueInRange(songsCount, minSongsCount,

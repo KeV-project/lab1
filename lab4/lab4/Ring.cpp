@@ -9,12 +9,14 @@ void Ring::SetCenter(const float x, const float y)
 
 void Ring::SetRadius(float inRadius, float outRadius)
 {
-	FloatValidator::AssertPositiveValue(inRadius,
-		"радиус внутреннего кольца");
-	FloatValidator::AssertPositiveValue(outRadius,
-		"радиус внешнего кольца");
+	const int minRadius = 0;
+	const int maxRadius = INT32_MAX;
 	FloatValidator::AssertValueInRange(inRadius,
-		0, outRadius, "радиус внутреннего кольца");
+		minRadius, maxRadius, "радиус внутреннего кольца");
+	FloatValidator::AssertValueInRange(outRadius, 
+		minRadius, maxRadius, "радиус внешнего кольца");
+	FloatValidator::AssertValueInRange(inRadius,
+		minRadius, outRadius, "радиус внутреннего кольца");
 	_inRadius = inRadius;
 	_outRadius = outRadius;
 }

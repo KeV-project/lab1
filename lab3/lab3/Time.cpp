@@ -2,10 +2,6 @@
 
 void Time::SetYear(const int year)
 {
-	int const minYear = 0;
-	int const maxYear = 2021;
-	AssertValueInRange(year, minYear,
-		maxYear, NotInRange, "год");
 	this->_year = year;
 }
 
@@ -70,6 +66,13 @@ int Time::GetMinute()
 	return _minute;
 }
 
+string Time::GetTime()
+{
+	return to_string(_year) + "." + to_string(_month)
+		+ "." + to_string(_day) + " " + to_string(_hour)
+		+ ":" + to_string(_minute);
+}
+
 Time::Time()
 {
 	SetYear(2021);
@@ -89,9 +92,29 @@ Time::Time(const int year, const int month, const int day,
 	SetMinute(minute);
 }
 
-string Time::GetTime()
+bool Time::IsTimeBeforeThen(Time& time)
 {
-	return to_string(_year) + "." + to_string(_month) 
-		+ "." + to_string(_day) + " " + to_string(_hour) 
-		+ ":" + to_string( _minute);
+	AssertValueInRange(_year, -2400, time.GetYear(),
+		InvalidTime, "год");
+	if (time.GetYear() == _year)
+	{
+		AssertValueInRange(_month, 1, time.GetMonth(),
+			InvalidTime, "мес€ц");
+		if (time.GetMonth() == _month)
+		{
+			AssertValueInRange(_day, 1, time.GetDay(),
+				InvalidTime, "день");
+			if (time.GetDay() == _day)
+			{
+				AssertValueInRange(_hour, 0, time.GetHour(),
+					InvalidTime, "час");
+				if (time.GetHour() == _hour)
+				{
+					AssertValueInRange(_minute, 1, time.GetMinute(),
+						InvalidTime, "минуты");
+				}
+			}
+		}
+	}
+	return true;
 }
