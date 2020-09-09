@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
+#define _USE_MATH_DEFINES
 #include <math.h> 
+#include "MessageType.h"
 #include "Point.h"
 #include "FloatValidator.h"
 using namespace std;
@@ -18,7 +20,7 @@ private:
 
 public:
 	void SetCenter(const float x, const float y);
-	void SetRadius(float inRadius, float outRadius);
+	void SetRadius(const float inRadius, const float outRadius);
 
 	float GetCentreX();
 	float GetCentreY();

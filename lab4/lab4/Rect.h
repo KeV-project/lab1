@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "MessageType.h"
 #include "FloatValidator.h"
 #include "Point.h"
 

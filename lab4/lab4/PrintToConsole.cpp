@@ -8,7 +8,7 @@ void PrintLine()
     cout << "__________________________" << endl << endl;
 }
 
-void PrintRect(Rect* rectangle)
+void PrintRectangle(Rect* rectangle)
 {
 	cout << "x = " << rectangle->GetCentreX() << ", y = ";
 	cout << rectangle->GetCentreY() << ", длина = ";

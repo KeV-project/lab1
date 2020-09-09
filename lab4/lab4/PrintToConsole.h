@@ -8,5 +8,5 @@ using namespace std;
 
 void PrintLine();
 
-void PrintRect(Rect* rectangle);
+void PrintRectangle(Rect* rectangle);
 void PrintRing(Ring* ring);

@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "MessageType.h"
 
 using namespace std;
 
@@ -12,10 +13,8 @@ private:
 		const float minLimit, const float maxLimit);
 
 public:
-	static void AssertValue();
-		const string& content);
-	static void AssertValueInRange(const float value, 
+	static void AssertValueInRange(const float value,
 		const float minLimit, const float maxLimit,
-		const string& content);
+		const MessageType& messageType, const string& content);
 };
 

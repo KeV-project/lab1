@@ -3,50 +3,45 @@
 void DemoFigures::DemoRing()
 {
 	// Task 4.1.6
+	//TODO: Можно было собрать в кучу сделав массив с массивом даблов. Создание колец можно было бы тогда вызывать в цикле +
 	const int ringsCount = 3;
 	Ring** rings = new Ring * [ringsCount];
-	//TODO: Можно было собрать в кучу сделав массив с массивом даблов. Создание колец можно было бы тогда вызывать в цикле
-	try
-	{
-		cout << "Создание кольца №1: Ring(10.5, 5.2, 13.5, 15.0) ";
-		cout << endl << endl;
-		rings[0] = new Ring(10.5, 5.2, 13.5, 15.0);
-		PrintRing(rings[0]);
-		cout << endl << endl;
 
-	}
-	catch (const std::exception& ex)
+	const int ringsParametersCount = 4;
+	double** ringsParameters = new double*[ringsCount]
 	{
-		cout << ex.what() << endl << endl;
-	}
-	cout << "Всего колец: " << Ring::GetAllRingsCount() << endl << endl;
-	try
+		new double[ringsParametersCount] {10.5, 5.2, 13.5, 15.0},
+		new double[ringsParametersCount] {10.5, 5.2, 16.5, 15.0},
+		new double[ringsParametersCount] {10.5, 5.2, -13.5, 15.0}
+	};
+	
+	for (int i = 0; i < ringsCount; i++)
 	{
-		cout << "Создание кольца №2: Ring(10.5, 5.2, 16.5, 15.0)";
-		cout << endl << endl;
-		rings[1] = new Ring(10.5, 5.2, 16.5, 15.0);
-		PrintRing(rings[1]);
-		cout << endl << endl;
+		cout << "Создание кольца №" << i + 1 << ": Ring(";
+		cout << ringsParameters[i][0] << ", ";
+		cout << ringsParameters[i][1] << ", ";
+		cout << ringsParameters[i][2] << ", ";
+		cout << ringsParameters[i][3] << ")" << endl << endl;
+		try
+		{
+			rings[i] = new Ring(ringsParameters[i][0], ringsParameters[i][1],
+				ringsParameters[i][2], ringsParameters[i][3]);
+			PrintRing(rings[i]);
+			cout << endl << endl;
+		}
+		catch (const std::exception& ex)
+		{
+			cout << ex.what() << endl << endl;
+		}
+		cout << "Всего колец: " << Ring::GetAllRingsCount() << endl << endl;
 	}
-	catch (const std::exception& ex)
+	
+	for (int i = 0; i < ringsCount; i++)
 	{
-		cout << ex.what() << endl << endl;
+		delete[] ringsParameters[i];
 	}
-	cout << "Всего колец: " << Ring::GetAllRingsCount() << endl << endl;
-	try
-	{
-		cout << "Создание кольца №3: Ring(10.5, 5.2, -13.5, 15.0)";
-		cout << endl << endl;
-		rings[2] = new Ring(10.5, 5.2, -13.5, 15.0);
-		PrintRing(rings[2]);
-		cout << endl << endl;
-	}
-	catch (const std::exception& ex)
-	{
-		cout << ex.what() << endl << endl;
-	}
-	cout << "Всего колец: " << Ring::GetAllRingsCount() << endl << endl;
-
+	delete [] ringsParameters;
+	//TODO: Почему delete вызван только для первого элемента?
 	delete rings[0];
 	delete[] rings;
 
@@ -70,56 +65,48 @@ void DemoFigures::DemoRing()
 
 void DemoFigures::DemoRect()
 {
-	const int rectsCount = 3;
 	//TODO: Тоже что и выше - дубли
-	Rect** rects = new Rect * [rectsCount];
-	try
-	{
-		cout << "Создание прямоугольника №1: Rect(5.5, -6.6, 13.0, 15.0)";
-		cout << endl << endl;
-		rects[0] = new Rect(5.5, -6.6, 13.0, 15.0);
-		PrintRect(rects[0]);
-		cout << endl << endl;
+	const int rectanglesCount = 3;
+	Rect** rectangles = new Rect * [rectanglesCount];
 
-	}
-	catch (const std::exception& ex)
+	const int rectanglesParametersCount = 4;
+	double** rectanglesParameters = new double* [rectanglesCount]
 	{
-		cout << ex.what() << endl << endl;
-	}
-	cout << "Всего прямоугольников: " << Rect::GetAllRectsCount();
-	cout << endl << endl;
-	try
-	{
-		cout << "Создание прямоугольника №2: Rect(-1.5, 2.5, -1.0, 5.5)";
-		cout << endl << endl;
-		rects[1] = new Rect(-1.5, 2.5, -1.0, 5.5);
-		PrintRect(rects[1]);
-		cout << endl << endl;
-	}
-	catch (const std::exception& ex)
-	{
-		cout << ex.what() << endl << endl;
-	}
-	cout << "Всего прямоугольников: " << Rect::GetAllRectsCount();
-	cout << endl << endl;
-	try
-	{
-		cout << "Создание прямоугольника №3: Rect(3.5, -5.2, 7.5, -10.6)";
-		cout << endl << endl;
-		rects[2] = new Rect(3.5, -5.2, 7.5, -10.6);
-		PrintRect(rects[2]);
-		cout << endl << endl;
-	}
-	catch (const std::exception& ex)
-	{
-		cout << ex.what() << endl << endl;
-	}
-	cout << "Всего прямоугольников: " << Rect::GetAllRectsCount();
-	cout << endl << endl;
+		new double[rectanglesParametersCount] {5.5, -6.6, 13.0, 15.0},
+		new double[rectanglesParametersCount] {-1.5, 2.5, -1.0, 5.5},
+		new double[rectanglesParametersCount] {3.5, -5.2, 7.5, -10.6}
+	};
 
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		cout << "Создание прямоугольника №" << i + 1 << ": Ring(";
+		cout << rectanglesParameters[i][0] << ", ";
+		cout << rectanglesParameters[i][1] << ", ";
+		cout << rectanglesParameters[i][2] << ", ";
+		cout << rectanglesParameters[i][3] << ")" << endl << endl;
+		try
+		{
+			rectangles[i] = new Rect(rectanglesParameters[i][0], 
+				rectanglesParameters[i][1], rectanglesParameters[i][2], 
+				rectanglesParameters[i][3]);
+			PrintRectangle(rectangles[i]);
+			cout << endl << endl;
+		}
+		catch (const std::exception& ex)
+		{
+			cout << ex.what() << endl << endl;
+		}
+		cout << "Всего прямоугольников: " << Rect::GetAllRectsCount() << endl << endl;
+	}
+
+	for (int i = 0; i < rectanglesCount; i++)
+	{
+		delete[] rectanglesParameters[i];
+	}
+	delete[] rectanglesParameters;
 	//TODO: Почему delete вызван только для первого элемента?
-	delete rects[0];
-	delete[] rects;
+	delete rectangles[0];
+	delete[] rectangles;
 
 	PrintLine();
 
@@ -152,8 +139,8 @@ void DemoFigures::DemoCollision()
 		Rect(9.0, 5.0, 10.5, 2.5),
 
 		//Непересекающиеся прямоугольники
-		Rect(5.0, 3.0, 4.0, 2.5),
-		Rect(6.0, 3.0, 11.0, 7.5),
+		Rect(5.0, 3.0, 1.0, 3.0),
+		Rect(9.0, 8.0, 2.0, 1.0),
 
 		Rect(7.0, 10.0, 4.5, 6.0),
 		Rect(6.0, 3.0, 12.5, 5.5)
@@ -164,11 +151,11 @@ void DemoFigures::DemoCollision()
 	for (int i = 0; i < rectsCount; i += 2)
 	{
 		cout << "Прямоуголиник №" << i + 1 << ":" << endl;
-		PrintRect(&rects[i]);
+		PrintRectangle(&rects[i]);
 		cout << endl << endl;
 
 		cout << "Прямоуголиник №" << i + 2 << ":" << endl;
-		PrintRect(&rects[i + 1]);
+		PrintRectangle(&rects[i + 1]);
 		cout << endl << endl;
 		if (CollisionManager::IsCollision(rects[i], rects[i + 1]))
 		{

@@ -7,16 +7,16 @@ void Ring::SetCenter(const float x, const float y)
 	_center = Point(x, y);
 }
 
-void Ring::SetRadius(float inRadius, float outRadius)
+void Ring::SetRadius(const float inRadius, const float outRadius)
 {
-	const int minRadius = 0;
+	const int minRadius = 0.0;
 	const int maxRadius = INT32_MAX;
 	FloatValidator::AssertValueInRange(inRadius,
-		minRadius, maxRadius, "радиус внутреннего кольца");
+		minRadius, maxRadius, NotPositive, "радиус внутреннего кольца");
 	FloatValidator::AssertValueInRange(outRadius, 
-		minRadius, maxRadius, "радиус внешнего кольца");
+		minRadius, maxRadius, NotPositive, "радиус внешнего кольца");
 	FloatValidator::AssertValueInRange(inRadius,
-		minRadius, outRadius, "радиус внутреннего кольца");
+		minRadius, outRadius, NotInRange, "радиус внутреннего кольца");
 	_inRadius = inRadius;
 	_outRadius = outRadius;
 }
@@ -43,7 +43,7 @@ float Ring::GetOutRadius()
 
 float Ring::GetArea()
 {
-	return PI * (pow(_outRadius, 2) - pow(_inRadius, 2));
+	return M_PI * (pow(_outRadius, 2) - pow(_inRadius, 2));
 }
 
 int Ring::GetAllRingsCount()
