@@ -17,7 +17,7 @@ bool FloatValidator::IsValue()
 bool FloatValidator::IsValueInRange(const float value,
 	const float minLimit, const float maxLimit)
 {
-	//TODO: Писал замечание в предыдущей лабе +
+	//TODO: Почему тут поменялись граничные значения по сравнению с предыдущей лабой? Раньше они были не строгие.
 	return minLimit < value && maxLimit > value;
 }
 
@@ -27,11 +27,11 @@ void FloatValidator::AssertValueInRange(const float value,
 {
 	if (!IsValueInRange(value, minLimit, maxLimit))
 	{
-		//TODO: Дубль +
 		switch (messageType)
 		{
 			case NotInRange:
 			{
+					//TODO: Получение из float выводимого чилса с помощью erase - это дубли - лучше их повыносить
 				string message = "Число " + (to_string(value)).erase(5, 10)
 					+ " не входит в допустимый диапазон значений ["
 					+ (to_string(minLimit)).erase(5, 10) + ", "

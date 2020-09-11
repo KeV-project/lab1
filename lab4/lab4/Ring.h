@@ -10,7 +10,6 @@ using namespace std;
 class Ring
 {
 private:
-	//TODO: ≈сли правильно подключить math.h - можно получить доступ к встроенной константе и не будет необходимости использовать свою. +
 
 	static int AllRingsCount;
 

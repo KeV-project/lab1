@@ -1,13 +1,13 @@
-#include "DemoFigures.h"
+п»ї#include "DemoFigures.h"
 
 void DemoFigures::DemoRing()
 {
 	// Task 4.1.6
-	//TODO: Можно было собрать в кучу сделав массив с массивом даблов. Создание колец можно было бы тогда вызывать в цикле +
 	const int ringsCount = 3;
 	Ring** rings = new Ring * [ringsCount];
 
 	const int ringsParametersCount = 4;
+	//TODO: Floats? Р—РЅР°СЋ, С‡С‚Рѕ РЅР°РїРёСЃР°Р» "РјР°СЃСЃРёРІ РґР°Р±Р»РѕРІ", РЅРѕ СЏ СЃРёР»СЊРЅРѕ РЅРµ РІРґСѓРјС‹РІР°Р»СЃСЏ ВЇ\_(гѓ„)_/ВЇ
 	double** ringsParameters = new double*[ringsCount]
 	{
 		new double[ringsParametersCount] {10.5, 5.2, 13.5, 15.0},
@@ -17,7 +17,7 @@ void DemoFigures::DemoRing()
 	
 	for (int i = 0; i < ringsCount; i++)
 	{
-		cout << "Создание кольца №" << i + 1 << ": Ring(";
+		cout << "РЎРѕР·РґР°РЅРёРµ РєРѕР»СЊС†Р° в„–" << i + 1 << ": Ring(";
 		cout << ringsParameters[i][0] << ", ";
 		cout << ringsParameters[i][1] << ", ";
 		cout << ringsParameters[i][2] << ", ";
@@ -33,7 +33,7 @@ void DemoFigures::DemoRing()
 		{
 			cout << ex.what() << endl << endl;
 		}
-		cout << "Всего колец: " << Ring::GetAllRingsCount() << endl << endl;
+		cout << "Р’СЃРµРіРѕ РєРѕР»РµС†: " << Ring::GetAllRingsCount() << endl << endl;
 	}
 	
 	for (int i = 0; i < ringsCount; i++)
@@ -41,22 +41,22 @@ void DemoFigures::DemoRing()
 		delete[] ringsParameters[i];
 	}
 	delete [] ringsParameters;
-	//TODO: Почему delete вызван только для первого элемента?
+	
 	delete rings[0];
 	delete[] rings;
 
 	PrintLine();
 
 	// Task 4.4.6
-	cout << "Количество колец до вызова конструктора: ";
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РєРѕР»РµС† РґРѕ РІС‹Р·РѕРІР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°: ";
 	cout << Ring::GetAllRingsCount();
 	cout << endl << endl;
 	Ring* ring = new Ring(10.0, 5.0, 25.0, 25.5);
-	cout << "Количество колец после вызова конструктора: ";
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РєРѕР»РµС† РїРѕСЃР»Рµ РІС‹Р·РѕРІР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°: ";
 	cout << Ring::GetAllRingsCount();
 	cout << endl << endl;
 	delete ring;
-	cout << "Количество колец после вызова деструктора: ";
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РєРѕР»РµС† РїРѕСЃР»Рµ РІС‹Р·РѕРІР° РґРµСЃС‚СЂСѓРєС‚РѕСЂР°: ";
 	cout << Ring::GetAllRingsCount();
 	cout << endl << endl;
 
@@ -65,11 +65,11 @@ void DemoFigures::DemoRing()
 
 void DemoFigures::DemoRect()
 {
-	//TODO: Тоже что и выше - дубли
 	const int rectanglesCount = 3;
 	Rect** rectangles = new Rect * [rectanglesCount];
 
 	const int rectanglesParametersCount = 4;
+	//TODO: Floats?
 	double** rectanglesParameters = new double* [rectanglesCount]
 	{
 		new double[rectanglesParametersCount] {5.5, -6.6, 13.0, 15.0},
@@ -79,7 +79,7 @@ void DemoFigures::DemoRect()
 
 	for (int i = 0; i < rectanglesCount; i++)
 	{
-		cout << "Создание прямоугольника №" << i + 1 << ": Ring(";
+		cout << "РЎРѕР·РґР°РЅРёРµ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° в„–" << i + 1 << ": Ring(";
 		cout << rectanglesParameters[i][0] << ", ";
 		cout << rectanglesParameters[i][1] << ", ";
 		cout << rectanglesParameters[i][2] << ", ";
@@ -96,7 +96,7 @@ void DemoFigures::DemoRect()
 		{
 			cout << ex.what() << endl << endl;
 		}
-		cout << "Всего прямоугольников: " << Rect::GetAllRectsCount() << endl << endl;
+		cout << "Р’СЃРµРіРѕ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєРѕРІ: " << Rect::GetAllRectsCount() << endl << endl;
 	}
 
 	for (int i = 0; i < rectanglesCount; i++)
@@ -104,22 +104,22 @@ void DemoFigures::DemoRect()
 		delete[] rectanglesParameters[i];
 	}
 	delete[] rectanglesParameters;
-	//TODO: Почему delete вызван только для первого элемента?
+	
 	delete rectangles[0];
 	delete[] rectangles;
 
 	PrintLine();
 
 	// Task 4.4.6
-	cout << "Количество прямоугольников до вызова конструктора: ";
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєРѕРІ РґРѕ РІС‹Р·РѕРІР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°: ";
 	cout << Rect::GetAllRectsCount();
 	cout << endl << endl;
 	Rect* rect = new Rect(10.0, 5.0, 25.0, 25.5);
-	cout << "Количество прямоугольников после вызова конструктора: ";
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєРѕРІ РїРѕСЃР»Рµ РІС‹Р·РѕРІР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°: ";
 	cout << Rect::GetAllRectsCount();
 	cout << endl << endl;
 	delete rect;
-	cout << "Количество прямоугольников после вызова деструктора: ";
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєРѕРІ РїРѕСЃР»Рµ РІС‹Р·РѕРІР° РґРµСЃС‚СЂСѓРєС‚РѕСЂР°: ";
 	cout << Rect::GetAllRectsCount();
 	cout << endl << endl;
 
@@ -131,14 +131,14 @@ void DemoFigures::DemoCollision()
 	const int rectsCount = 8;
 	Rect rects[rectsCount]
 	{
-		//Пересекающиеся прямоугольники
+		//РџРµСЂРµСЃРµРєР°СЋС‰РёРµСЃСЏ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєРё
 		Rect(8.0, 4.0, 5.0, 3.0),
 		Rect(9.0, 5.0, 12.5, 6.5),
 
 		Rect(7.0, 5.0, 5.5, 6.5),
 		Rect(9.0, 5.0, 10.5, 2.5),
 
-		//Непересекающиеся прямоугольники
+		//РќРµРїРµСЂРµСЃРµРєР°СЋС‰РёРµСЃСЏ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєРё
 		Rect(5.0, 3.0, 1.0, 3.0),
 		Rect(9.0, 8.0, 2.0, 1.0),
 
@@ -146,40 +146,40 @@ void DemoFigures::DemoCollision()
 		Rect(6.0, 3.0, 12.5, 5.5)
 	};
 
-	cout << "ПРЯМОУГОЛЬНИКИ" << endl << endl;
+	cout << "РџР РЇРњРћРЈР“РћР›Р¬РќРРљР" << endl << endl;
 
 	for (int i = 0; i < rectsCount; i += 2)
 	{
-		cout << "Прямоуголиник №" << i + 1 << ":" << endl;
+		cout << "РџСЂСЏРјРѕСѓРіРѕР»РёРЅРёРє в„–" << i + 1 << ":" << endl;
 		PrintRectangle(&rects[i]);
 		cout << endl << endl;
 
-		cout << "Прямоуголиник №" << i + 2 << ":" << endl;
+		cout << "РџСЂСЏРјРѕСѓРіРѕР»РёРЅРёРє в„–" << i + 2 << ":" << endl;
 		PrintRectangle(&rects[i + 1]);
 		cout << endl << endl;
 		if (CollisionManager::IsCollision(rects[i], rects[i + 1]))
 		{
-			cout << "Прямоугольники " << i + 1 << " и " << i + 2;
-			cout << " пересекаются" << endl << endl;
+			cout << "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєРё " << i + 1 << " Рё " << i + 2;
+			cout << " РїРµСЂРµСЃРµРєР°СЋС‚СЃСЏ" << endl << endl;
 		}
 		else
 		{
-			cout << "Прямоугольники " << i + 1 << " и " << i + 2;
-			cout << " не пересекаются" << endl << endl;
+			cout << "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєРё " << i + 1 << " Рё " << i + 2;
+			cout << " РЅРµ РїРµСЂРµСЃРµРєР°СЋС‚СЃСЏ" << endl << endl;
 		}
 	}
 
 	const int ringsCount = 8;
 	Ring rings[ringsCount]
 	{
-		//Пересекающиеся кольца
+		//РџРµСЂРµСЃРµРєР°СЋС‰РёРµСЃСЏ РєРѕР»СЊС†Р°
 		Ring(4.5, 2.5, 1.0, 1.5),
 		Ring(7.0, 5.0, 2.5, 3.0),
 
 		Ring(4.0, 4.0, 2.5, 4.0),
 		Ring(8.0, 7.0, 1.0, 2.0),
 
-		//Непересекающиеся кольца
+		//РќРµРїРµСЂРµСЃРµРєР°СЋС‰РёРµСЃСЏ РєРѕР»СЊС†Р°
 		Ring(3.5, 2.5, 1.0, 1.5),
 		Ring(8.0, 7.0, 1.5, 2.0),
 
@@ -187,27 +187,27 @@ void DemoFigures::DemoCollision()
 		Ring(12.0, 8.0, 1.0, 2.0)
 	};
 	
-	cout << "КОЛЬЦА" << endl << endl;
+	cout << "РљРћР›Р¬Р¦Рђ" << endl << endl;
 
 	for (int i = 0; i < ringsCount; i += 2)
 	{
-		cout << "Кольцо №" << i + 1 << ":" << endl;
+		cout << "РљРѕР»СЊС†Рѕ в„–" << i + 1 << ":" << endl;
 		PrintRing(&rings[i]);
 		cout << endl << endl;
 
-		cout << "Кольцо №" << i + 2 << ":" << endl;
+		cout << "РљРѕР»СЊС†Рѕ в„–" << i + 2 << ":" << endl;
 		PrintRing(&rings[i + 1]);
 		cout << endl << endl;
 
 		if (CollisionManager::IsCollision(rings[i], rings[i + 1]))
 		{
-			cout << "Кольца " << i + 1 << " и " << i + 2;
-			cout << " пересекаются" << endl << endl;
+			cout << "РљРѕР»СЊС†Р° " << i + 1 << " Рё " << i + 2;
+			cout << " РїРµСЂРµСЃРµРєР°СЋС‚СЃСЏ" << endl << endl;
 		}
 		else
 		{
-			cout << "Кольца " << i + 1 << " и " << i + 2;
-			cout << " не пересекаются" << endl << endl;
+			cout << "РљРѕР»СЊС†Р° " << i + 1 << " Рё " << i + 2;
+			cout << " РЅРµ РїРµСЂРµСЃРµРєР°СЋС‚СЃСЏ" << endl << endl;
 		}
 	}
 
