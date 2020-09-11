@@ -16,10 +16,6 @@ bool IsValue()
 
 bool IsValueInRange(const int value, const int minLimit, const int maxLimit)
 {
-	//TODO: Тут я бы инвертировал логику и упростил выражение до
-	// return (minLimit <= value && value >= maxLimit)
-	// так будет проще читать с точки зрения понимания корректных допустимых границ
-	// в вашем случае необходимо инвертировать логику, чтобы это прочитать +
 	return (minLimit <= value && maxLimit >= value);
 }
 
@@ -29,8 +25,6 @@ void AssertValueInRange(const int value, const int minLimit,
 {
 	if (!IsValueInRange(value, minLimit, maxLimit))
 	{
-		//TODO: Оставил бы эту часть в AssertValueInRange, т.к. этот метод усложняет понимание логики, т.е. мы передаём некоторые аргументы
-		//TODO: в AssertValueInRange, а используем их только тут +
 		switch (messageType)
 		{
 			case NotInRange:

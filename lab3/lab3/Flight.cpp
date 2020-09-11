@@ -2,7 +2,6 @@
 
 void Flight::SetNumber(const int number)
 {
-	//TODO: Дубль +
 	int const minNumber = 0;
 	int const maxNumber = 1000000;
 	AssertValueInRange(number, minNumber,
@@ -35,7 +34,6 @@ void Flight::SetDepartureTime(const int year, const int month,
 void Flight::SetDestinationTime(const int year, const int month,
 	const int day, const int hour, const int minute)
 {
-	//TODO: вообще не понял - что за логика тут закладывается, надо обсудить. 
 	Time destinationTime(year, month, day, hour, minute);
 	if (_departureTime.IsTimeBeforeThen(destinationTime))
 	{
@@ -131,7 +129,7 @@ void Flight::ChangeFlight(const int number, const string& departure,
 
 int Flight::GetFlightTimeMinutes()
 {
-	//TODO: RSDN - локальные переменные + их можно сразу проиницииализировать подходящими значениями +
+	//TODO: RSDN - Сокращения
 	int difHour = _destinationTime.GetHour() - _departureTime.GetHour();
 	int difMinute = _destinationTime.GetMinute()
 		- _departureTime.GetMinute();

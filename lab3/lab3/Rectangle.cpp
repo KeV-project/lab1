@@ -12,9 +12,9 @@ void Rect::SetCenterY(const float y)
 
 void Rect::SetLength(const float length)
 {
-	//TODO: ƒл€ максимальной границы есть встроенные константы, например INT32_MAX +
 	int const minLength = 1;
 	int const maxLength = INT32_MAX;
+	//TODO: ≈сть несоответсвти€ типов - передаЄм дробное, провер€ем с приведением к целому
 	AssertValueInRange(length, minLength, maxLength, 
 		NotPositive, "длину пр€моугольника");
 	this->_length = length;
@@ -22,9 +22,9 @@ void Rect::SetLength(const float length)
 
 void Rect::SetWidth(const float width)
 {
-	//TODO: ƒл€ максимальной границы есть встроенные константы, например INT32_MAX +
 	int const minWidth = 1;
 	int const maxWidth = INT32_MAX;
+	//TODO: ≈сть несоответсвти€ типов - передаЄм дробное, провер€ем с приведением к целому
 	AssertValueInRange(width, minWidth, maxWidth,
 		NotPositive, "ширину пр€моугольника");
 	this->_width = width;
