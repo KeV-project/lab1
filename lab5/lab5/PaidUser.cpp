@@ -5,7 +5,8 @@ void PaidUser::SetPosts(Post* posts, const int postsCount)
 	const int minPostsCount = 0;
 	const int maxPostsCount = 10;
 	ValueValidator::AssertValueInRange(postsCount, 
-		minPostsCount, maxPostsCount, "количество постов пользователя");
+		minPostsCount, maxPostsCount, NotInRange,
+		"количество постов пользователя");
 	_posts = posts;
 	_postsCount = postsCount;
 }

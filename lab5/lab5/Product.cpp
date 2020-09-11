@@ -15,7 +15,8 @@ void Product::SetCost(const float cost)
 	const float minCost = 0;
 	const float maxCost = 100000;
 	ValueValidator::AssertValueInRange(cost, 
-		minCost, maxCost, "стоимость товара");
+		minCost, maxCost, 
+		NotInRange, "стоимость товара");
 	this->_cost = cost;
 }
 

@@ -9,7 +9,7 @@ private:
 	int _entranceYear;
 
 public:
-	void SetGradebookNum(const int recordBookNum);
+	void SetGradebookNum(const int gradebookNum);
 	void SetEntranceYear(const int year);
 
 	int GetRecordBookNum();

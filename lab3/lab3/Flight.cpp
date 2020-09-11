@@ -129,9 +129,10 @@ void Flight::ChangeFlight(const int number, const string& departure,
 
 int Flight::GetFlightTimeMinutes()
 {
-	//TODO: RSDN - Сокращения
-	int difHour = _destinationTime.GetHour() - _departureTime.GetHour();
-	int difMinute = _destinationTime.GetMinute()
+	//TODO: RSDN - Сокращения +
+	int hoursInFlight = _destinationTime.GetHour() 
+		- _departureTime.GetHour();
+	int minutesInFlight = _destinationTime.GetMinute()
 		- _departureTime.GetMinute();
-	return difMinute + difHour * 60;
+	return minutesInFlight + hoursInFlight * 60;
 }

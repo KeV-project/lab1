@@ -5,7 +5,8 @@ CategoryType GetCategoryType(const int numCategory)
 	const int minCategoryNum = 0;
 	const int maxCategoryNum = 6;
 	ValueValidator::AssertValueInRange(numCategory, 
-		minCategoryNum, maxCategoryNum, "категорию товара");
+		minCategoryNum, maxCategoryNum,
+		NotInRange, "категорию товара");
 	switch (numCategory)
 	{
 		case 0:

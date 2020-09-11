@@ -1,18 +1,21 @@
 #include "Student.h"
 
-void Student::SetGradebookNum(const int recordBookNum)
+void Student::SetGradebookNum(const int gradebookNum)
 {
-	ValueValidator::AssertPositiveValue(recordBookNum, 
+	const int minGradebookNum = 1;
+	const int maxGradebookNum = INT32_MAX;
+	ValueValidator::AssertValueInRange(gradebookNum, 
+		minGradebookNum, maxGradebookNum, NotPositive,
 		"номер зачетной книжки студента");
-	_gradebookNum = recordBookNum;
+	_gradebookNum = gradebookNum;
 }
 
 void Student::SetEntranceYear(const int year)
 {
-	const int minYear = 0;
+	const int minYear = 1755;
 	const int maxYear = 2020;
 	ValueValidator::AssertValueInRange(year, minYear, 
-		maxYear, "год постуления студента");
+		maxYear, NotInRange, "год постуления студента");
 	_entranceYear = year;
 }
 

@@ -209,26 +209,18 @@ void DemoWorkingWithClasses::DemoBand()
 		cout << "Результат работы поиска по запросу " << "\"";
 		cout << findedSongTitle << "\"" << ":" << endl;
 		PrintInfoAboutSong(*findedSong);
-	}
-	else
-	{
-		cout << "По запросу " << "\"" << findedSongTitle << "\"";
-		cout << " ничего не найдено";
-	}
-	cout << endl << endl;
-	
-	// Task 3.4.3
-	cout << "Демонстрация работы функции FindAlbum():" << endl << endl;
-	Album* findedAlbum = band.FindAlbum(findedSong);
-	if (findedAlbum != nullptr)
-	{
+		cout << endl << endl;
+
+		// Task 3.4.3
+		cout << "Демонстрация работы функции FindAlbum():" << endl << endl;
+		Album* findedAlbum = band.FindAlbum(findedSong);
 		cout << "Песня " << "\"" << findedSongTitle << "\"" << " ";
 		cout << "находится в альбоме:" << endl;
 		PrintInfoAboutAlbum(findedAlbum);
 	}
 	else
 	{
-		cout << "По запросу " << "\"" << findedSong << "\"";
+		cout << "По запросу " << "\"" << findedSongTitle << "\"";
 		cout << " ничего не найдено";
 	}
 	cout << endl << endl;

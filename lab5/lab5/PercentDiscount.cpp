@@ -5,7 +5,8 @@ void PercentDiscount::SetPercent(const int percent)
 	const int minPercent = 0;
 	const int maxPercent = 100;
 	ValueValidator::AssertValueInRange(percent, 
-		minPercent, maxPercent, "размер скидки в процентах");
+		minPercent, maxPercent, 
+		NotInRange, "размер скидки в процентах");
 	this->_percent = percent;
 }
 

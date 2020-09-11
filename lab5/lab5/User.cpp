@@ -2,7 +2,10 @@
 
 void User::SetId(const int id)
 {
-	ValueValidator::AssertPositiveValue(id, "id пользователя");
+	const int minId = 0;
+	const int maxId = INT32_MAX;
+	ValueValidator::AssertValueInRange(id, minId,
+		maxId, NotInRange, "id пользователя");
 	_id = id;
 }
 void User::SetLogin(const string& login)
