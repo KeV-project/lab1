@@ -12,14 +12,14 @@ void Ring::SetRadius(float inRadius, float outRadius)
 	// Ограничение на инициализацию радиусов кольца больше 2х знаков после запятой
 	inRadius = floor(inRadius * 100) / 100;
 	outRadius = floor(outRadius * 100) / 100;
-	const int minRadius = 0.0;
+	const int minRadius = 0.01;
 	const int maxRadius = INT32_MAX;
 	ValueValidator::AssertValueInRange(inRadius,
 		minRadius, maxRadius, NotPositive, "радиус внутреннего кольца");
 	ValueValidator::AssertValueInRange(outRadius,
 		minRadius, maxRadius, NotPositive, "радиус внешнего кольца");
 	ValueValidator::AssertValueInRange(inRadius,
-		minRadius, outRadius, NotInRange, "радиус внутреннего кольца");
+		minRadius, outRadius - 0.01, NotInRange, "радиус внутреннего кольца");
 	_inRadius = inRadius;
 	_outRadius = outRadius;
 }
