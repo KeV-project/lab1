@@ -7,20 +7,24 @@ void Rect::SetCenter(const float x, const float y)
 	_center = Point(x, y);
 }
 
-void Rect::SetLength(const float length)
+void Rect::SetLength(float length)
 {
+	// Ограничение на инициализацию длины прямоугольника больше 2х знаков после запятой
+	length = floor(length * 100) / 100;
 	const int minLength = 0.0;
 	const int maxLength = INT32_MAX;
-	FloatValidator::AssertValueInRange(length, 
+	ValueValidator::AssertValueInRange(length, 
 		minLength, maxLength, NotPositive,"длину прямоулогьника");
 	this->_length = length;
 }
 
 void Rect::SetWidth(float width)
 {
+	// Ограничение на инициализацию шиниры прямоугольника больше 2х знаков после запятой
+	width = floor(width * 100) / 100;
 	const int minWidth = 0.0;
 	const int maxWidth = INT32_MAX;
-	FloatValidator::AssertValueInRange(width, 
+	ValueValidator::AssertValueInRange(width, 
 		minWidth, maxWidth, NotPositive, "ширину прямоугольника");
 	this->_width = width;
 }
