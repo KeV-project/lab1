@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClCompile Include="CategoryType.cpp" />
     <ClCompile Include="CertificateDiscount.cpp" />
+    <ClCompile Include="DemoWorkingWithClasses.cpp" />
     <ClCompile Include="DiscountBase.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PrintToConsole.cpp" />
@@ -156,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="CategoryType.h" />
     <ClInclude Include="CertificateDiscount.h" />
+    <ClInclude Include="DemoWorkingWithClasses.h" />
     <ClInclude Include="DiscountBase.h" />
     <ClInclude Include="MessageType.h" />
     <ClInclude Include="PrintToConsole.h" />

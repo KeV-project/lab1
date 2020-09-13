@@ -12,6 +12,7 @@ void Student::SetGradebookNum(const int gradebookNum)
 
 void Student::SetEntranceYear(const int year)
 {
+	// 1755 - год создания первого университета 
 	const int minYear = 1755;
 	const int maxYear = 2020;
 	ValueValidator::AssertValueInRange(year, minYear, 
