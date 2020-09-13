@@ -7,15 +7,18 @@ void Ring::SetCenter(const float x, const float y)
 	_center = Point(x, y);
 }
 
-void Ring::SetRadius(const float inRadius, const float outRadius)
+void Ring::SetRadius(float inRadius, float outRadius)
 {
+	// Ограничение на инициализацию радиусов кольца больше 2х знаков после запятой
+	inRadius = floor(inRadius * 100) / 100;
+	outRadius = floor(outRadius * 100) / 100;
 	const int minRadius = 0.0;
 	const int maxRadius = INT32_MAX;
-	FloatValidator::AssertValueInRange(inRadius,
+	ValueValidator::AssertValueInRange(inRadius,
 		minRadius, maxRadius, NotPositive, "радиус внутреннего кольца");
-	FloatValidator::AssertValueInRange(outRadius, 
+	ValueValidator::AssertValueInRange(outRadius,
 		minRadius, maxRadius, NotPositive, "радиус внешнего кольца");
-	FloatValidator::AssertValueInRange(inRadius,
+	ValueValidator::AssertValueInRange(inRadius,
 		minRadius, outRadius, NotInRange, "радиус внутреннего кольца");
 	_inRadius = inRadius;
 	_outRadius = outRadius;

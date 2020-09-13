@@ -19,7 +19,7 @@ private:
 
 public:
 	void SetCenter(const float x, const float y);
-	void SetRadius(const float inRadius, const float outRadius);
+	void SetRadius(float inRadius, float outRadius);
 
 	float GetCentreX();
 	float GetCentreY();
