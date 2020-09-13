@@ -4,7 +4,7 @@
 #include <math.h> 
 #include "MessageType.h"
 #include "Point.h"
-#include "FloatValidator.h"
+#include "ValueValidator.h"
 using namespace std;
 
 class Ring

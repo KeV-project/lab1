@@ -5,14 +5,13 @@
 
 using namespace std;
 
-static class FloatValidator
+static class ValueValidator
 {
-private:
+public:
+	static string ConversionFloatToString(const float value);
 	static bool IsValue();
 	static bool IsValueInRange(const float value,
 		const float minLimit, const float maxLimit);
-
-public:
 	static void AssertValueInRange(const float value,
 		const float minLimit, const float maxLimit,
 		const MessageType& messageType, const string& content);

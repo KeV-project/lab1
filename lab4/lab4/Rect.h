@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "MessageType.h"
-#include "FloatValidator.h"
+#include "ValueValidator.h"
 #include "Point.h"
 
 using namespace std;

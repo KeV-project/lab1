@@ -24,9 +24,6 @@
     <ClCompile Include="Ring.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="FloatValidator.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="DemoFigures.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -39,15 +36,15 @@
     <ClCompile Include="PrintToConsole.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ValueValidator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Point.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Ring.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="FloatValidator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="DemoFigures.h">
@@ -63,6 +60,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="MessageType.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueValidator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

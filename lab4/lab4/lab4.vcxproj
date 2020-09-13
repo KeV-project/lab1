@@ -145,7 +145,7 @@
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Ring.cpp" />
-    <ClCompile Include="FloatValidator.cpp" />
+    <ClCompile Include="ValueValidator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CollisionManager.h" />
@@ -155,7 +155,7 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="Ring.h" />
-    <ClInclude Include="FloatValidator.h" />
+    <ClInclude Include="ValueValidator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

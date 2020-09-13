@@ -3,5 +3,7 @@
 enum MessageType
 {
 	NotInRange,
-	NotPositive
+	NotPositive,
+	NotNonNegative,
+	InvalidTime
 };
