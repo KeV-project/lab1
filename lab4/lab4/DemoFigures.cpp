@@ -7,12 +7,12 @@ void DemoFigures::DemoRing()
 	Ring** rings = new Ring * [ringsCount];
 
 	const int ringsParametersCount = 4;
-	//TODO: Floats? Знаю, что написал "массив даблов", но я сильно не вдумывался ¯\_(ツ)_/¯
-	double** ringsParameters = new double*[ringsCount]
+	//TODO: Floats? Знаю, что написал "массив даблов", но я сильно не вдумывался ¯\_(ツ)_/¯ +
+	float** ringsParameters = new float*[ringsCount]
 	{
-		new double[ringsParametersCount] {10.5, 5.2, 13.5, 15.0},
-		new double[ringsParametersCount] {10.5, 5.2, 16.5, 15.0},
-		new double[ringsParametersCount] {10.5, 5.2, -13.5, 15.0}
+		new float[ringsParametersCount] {10.5, 5.2, 13.5, 15.0},
+		new float[ringsParametersCount] {10.5, 5.2, 16.5, 15.0},
+		new float[ringsParametersCount] {10.5, 5.2, -13.5, 15.0}
 	};
 	
 	for (int i = 0; i < ringsCount; i++)
@@ -69,12 +69,12 @@ void DemoFigures::DemoRect()
 	Rect** rectangles = new Rect * [rectanglesCount];
 
 	const int rectanglesParametersCount = 4;
-	//TODO: Floats?
-	double** rectanglesParameters = new double* [rectanglesCount]
+	//TODO: Floats? +
+	float** rectanglesParameters = new float* [rectanglesCount]
 	{
-		new double[rectanglesParametersCount] {5.5, -6.6, 13.0, 15.0},
-		new double[rectanglesParametersCount] {-1.5, 2.5, -1.0, 5.5},
-		new double[rectanglesParametersCount] {3.5, -5.2, 7.5, -10.6}
+		new float[rectanglesParametersCount] {5.5, -6.6, 13.0, 15.0},
+		new float[rectanglesParametersCount] {-1.5, 2.5, -1.0, 5.5},
+		new float[rectanglesParametersCount] {3.5, -5.2, 7.5, -10.6}
 	};
 
 	for (int i = 0; i < rectanglesCount; i++)
