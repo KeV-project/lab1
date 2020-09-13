@@ -9,7 +9,7 @@ void Time::SetMonth(const int month)
 {
 	int const minMonth = 1;
 	int const maxMonth = 12;
-	AssertValueInRange(month, minMonth,
+	ValueValidator::AssertValueInRange(month, minMonth,
 		maxMonth, NotInRange, "мес€ц");
 	this->_month = month;
 }
@@ -18,7 +18,7 @@ void Time::SetDay(const int day)
 {
 	int const minDay = 1;
 	int const maxDay = 31;
-	AssertValueInRange(day, minDay,
+	ValueValidator::AssertValueInRange(day, minDay,
 		maxDay, NotInRange, "день");
 	this->_day = day;
 }
@@ -27,7 +27,7 @@ void Time::SetHour(const int hour)
 {
 	int const minHour = 0;
 	int const maxHour = 23;
-	AssertValueInRange(hour, minHour,
+	ValueValidator::AssertValueInRange(hour, minHour,
 		maxHour, NotInRange, "час");
 	this->_hour = hour;
 }
@@ -36,7 +36,7 @@ void Time::SetMinute(const int minute)
 {
 	int const minMinute = 0;
 	int const maxMinute = 59;
-	AssertValueInRange(minute, minMinute,
+	ValueValidator::AssertValueInRange(minute, minMinute,
 		maxMinute, NotInRange, "минуты");
 	this->_minute = minute;
 }
@@ -94,24 +94,24 @@ Time::Time(const int year, const int month, const int day,
 
 bool Time::IsTimeBeforeThen(Time& time)
 {
-	AssertValueInRange(_year, -2400, time.GetYear(),
+	ValueValidator::AssertValueInRange(_year, -2400, time.GetYear(),
 		InvalidTime, "год");
 	if (time.GetYear() == _year)
 	{
-		AssertValueInRange(_month, 1, time.GetMonth(),
+		ValueValidator::AssertValueInRange(_month, 1, time.GetMonth(),
 			InvalidTime, "мес€ц");
 		if (time.GetMonth() == _month)
 		{
-			AssertValueInRange(_day, 1, time.GetDay(),
+			ValueValidator::AssertValueInRange(_day, 1, time.GetDay(),
 				InvalidTime, "день");
 			if (time.GetDay() == _day)
 			{
-				AssertValueInRange(_hour, 0, time.GetHour(),
-					InvalidTime, "час");
+				ValueValidator::AssertValueInRange(_hour, 0, 
+					time.GetHour(), InvalidTime, "час");
 				if (time.GetHour() == _hour)
 				{
-					AssertValueInRange(_minute, 1, time.GetMinute(),
-						InvalidTime, "минуты");
+					ValueValidator::AssertValueInRange(_minute, 1, 
+						time.GetMinute(), InvalidTime, "минуты");
 				}
 			}
 		}

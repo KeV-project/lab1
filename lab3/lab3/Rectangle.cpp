@@ -10,22 +10,26 @@ void Rect::SetCenterY(const float y)
 	this->_center.SetY(y);
 }
 
-void Rect::SetLength(const float length)
+void Rect::SetLength(float length)
 {
+	// Ограничение на ввод длины больше 2х знаков после запятой
+	length = floor(length * 100) / 100;
 	int const minLength = 1;
 	int const maxLength = INT32_MAX;
-	//TODO: Есть несоответсвтия типов - передаём дробное, проверяем с приведением к целому
-	AssertValueInRange(length, minLength, maxLength, 
+	//TODO: Есть несоответсвтия типов - передаём дробное, проверяем с приведением к целому +
+	ValueValidator::AssertValueInRange(length, minLength, maxLength, 
 		NotPositive, "длину прямоугольника");
 	this->_length = length;
 }
 
-void Rect::SetWidth(const float width)
+void Rect::SetWidth(float width)
 {
+	// Ограничение на ввод ширины больше 2х знаков после запятой
+	width = floor(width * 100) / 100;
 	int const minWidth = 1;
 	int const maxWidth = INT32_MAX;
-	//TODO: Есть несоответсвтия типов - передаём дробное, проверяем с приведением к целому
-	AssertValueInRange(width, minWidth, maxWidth,
+	//TODO: Есть несоответсвтия типов - передаём дробное, проверяем с приведением к целому +
+	ValueValidator::AssertValueInRange(width, minWidth, maxWidth,
 		NotPositive, "ширину прямоугольника");
 	this->_width = width;
 }

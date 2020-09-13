@@ -9,7 +9,7 @@ void Song::SetDuration(const int duration)
 {
 	int const minDuration = 0;
 	int const maxDuration = INT32_MAX;
-	AssertValueInRange(duration, minDuration, maxDuration,
+	ValueValidator::AssertValueInRange(duration, minDuration, maxDuration,
 		NotNonNegative, "продолжительность песни");
 	this->_duration = duration;
 }

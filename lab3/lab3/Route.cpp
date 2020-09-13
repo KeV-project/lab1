@@ -4,7 +4,7 @@ void Route::SetNumber(const int number)
 {
 	int const minNumber = 0;
 	int const maxNumber = 1000000;
-	AssertValueInRange(number, minNumber,
+	ValueValidator::AssertValueInRange(number, minNumber,
 		maxNumber, NotInRange, "номер рейса");
 	this->_number = number;
 }
@@ -13,7 +13,7 @@ void Route::SetDuration(const int duration)
 {
 	int const minDuration = 1;
 	int const maxDuration = INT32_MAX;
-	AssertValueInRange(duration, minDuration, maxDuration, 
+	ValueValidator::AssertValueInRange(duration, minDuration, maxDuration,
 		NotPositive, "продолжительность рейса");
 	this->_durationInMinutes = duration;
 }
@@ -22,8 +22,8 @@ void Route::SetPeriodicity(const int periodicity)
 {
 	int const minPeriodicity = 1;
 	int const maxPeriodicity = INT32_MAX;
-	AssertValueInRange(periodicity, minPeriodicity, maxPeriodicity, 
-		NotPositive, "периодичность рейса");
+	ValueValidator::AssertValueInRange(periodicity, minPeriodicity, 
+		maxPeriodicity, NotPositive, "периодичность рейса");
 	this->_periodicity = periodicity;
 }
 
@@ -31,7 +31,7 @@ void Route::SetStops(string* stops, const int stopsCount)
 {
 	int const minStopsCount = 2;
 	int const maxStopsCount = 10;
-	AssertValueInRange(stopsCount, minStopsCount,
+	ValueValidator::AssertValueInRange(stopsCount, minStopsCount,
 		maxStopsCount, NotInRange, "количество остановок");
 	this->_stopsCount = stopsCount;
 	this->_stops = stops;

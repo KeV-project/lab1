@@ -4,7 +4,7 @@ void Flight::SetNumber(const int number)
 {
 	int const minNumber = 0;
 	int const maxNumber = 1000000;
-	AssertValueInRange(number, minNumber,
+	ValueValidator::AssertValueInRange(number, minNumber,
 		maxNumber, NotInRange, "номер рейса");
 	this->_number = number;
 }
@@ -22,7 +22,7 @@ void Flight::SetDestination(const string& destination)
 void Flight::SetDepartureTime(const int year, const int month,
 	const int day, const int hour, const int minute)
 {
-	AssertValueInRange(year, 1938, 2021, 
+	ValueValidator::AssertValueInRange(year, 1938, 2021,
 		NotInRange, "год вылета самолета");
 	this->_departureTime.SetYear(year);
 	this->_departureTime.SetMonth(month);
@@ -37,7 +37,7 @@ void Flight::SetDestinationTime(const int year, const int month,
 	Time destinationTime(year, month, day, hour, minute);
 	if (_departureTime.IsTimeBeforeThen(destinationTime))
 	{
-		AssertValueInRange(year, 1938, 2021, 
+		ValueValidator::AssertValueInRange(year, 1938, 2021,
 			NotInRange, "год прибытия самолета");
 		_destinationTime.SetYear(year);
 		_destinationTime.SetMonth(month);

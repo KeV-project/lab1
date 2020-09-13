@@ -16,7 +16,7 @@ Book* ReadBook()
 		int year = 0;
 		cin >> year;
 		cout << endl;
-		if (IsValue())
+		if (ValueValidator::IsValue())
 		{
 			try
 			{
@@ -40,7 +40,7 @@ Book* ReadBook()
 		int pagesCount = 0;
 		cin >> pagesCount;
 		cout << endl;
-		if (IsValue())
+		if (ValueValidator::IsValue())
 		{
 			try
 			{
@@ -64,7 +64,7 @@ Book* ReadBook()
 		int authorsCount = 0;
 		cin >> authorsCount;
 		cout << endl;
-		if (IsValue())
+		if (ValueValidator::IsValue())
 		{
 			string* authors = nullptr;
 			try
@@ -117,7 +117,7 @@ Route* ReadRoute()
 		int number = 0;
 		cin >> number;
 		cout << endl;
-		if (IsValue())
+		if (ValueValidator::IsValue())
 		{
 			try
 			{
@@ -141,7 +141,7 @@ Route* ReadRoute()
 		int duration = 0;
 		cin >> duration;
 		cout << endl;
-		if (IsValue())
+		if (ValueValidator::IsValue())
 		{
 			try
 			{
@@ -165,7 +165,7 @@ Route* ReadRoute()
 		int periodicity = 0;
 		cin >> periodicity;
 		cout << endl;
-		if (IsValue())
+		if (ValueValidator::IsValue())
 		{
 			try
 			{
@@ -189,7 +189,7 @@ Route* ReadRoute()
 		int stopsCount = 0;
 		cin >> stopsCount;
 		cout << endl;
-		if (IsValue())
+		if (ValueValidator::IsValue())
 		{
 			string* stops = nullptr;
 			try

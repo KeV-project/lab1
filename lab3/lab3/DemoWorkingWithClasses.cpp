@@ -82,7 +82,7 @@ void DemoWorkingWithClasses::DemoRectangleWithPoint()
 	const int rectanglesCount = 5;
 	Rect** rectangles = new Rect*[rectanglesCount]
 	{
-		new Rect(15.5, 13.6, -2, 3),
+		new Rect(15.555, 13.6, -2, 3),
 		new Rect(7.3, 5.4, 6, 1),
 		new Rect(19.1, 12.5, 15, -9),
 		new Rect(8.2, 7.1, -11, 11),
@@ -244,7 +244,7 @@ void DemoWorkingWithClasses::DemoBand()
 		int findedGenreNum = 0;
 		cin >> findedGenreNum;
 		cout << endl;
-		if (IsValue())
+		if (ValueValidator::IsValue())
 		{
 			try
 			{

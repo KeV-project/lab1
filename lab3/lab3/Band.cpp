@@ -14,7 +14,7 @@ void Band::SetAlbums(Album** albums, const int albumsCount)
 {
 	int const minAlbumsCount = 0;
 	int const maxAlbumsCount = 10;
-	AssertValueInRange(albumsCount, minAlbumsCount,
+	ValueValidator::AssertValueInRange(albumsCount, minAlbumsCount,
 		maxAlbumsCount, NotInRange, "количество альбомов группы");
 	this->_albumsCount = albumsCount;
 	this->_albums = albums;

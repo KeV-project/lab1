@@ -4,7 +4,7 @@ GenreType GetGenreType(const int numGenre)
 {
 	int const minNumGenre = 0;
 	int const maxNumGenre = 6;
-	AssertValueInRange(numGenre, minNumGenre,
+	ValueValidator::AssertValueInRange(numGenre, minNumGenre,
 		maxNumGenre, NotInRange, "жанр песни");
 	switch (numGenre)
 	{

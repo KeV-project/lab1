@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "CheckValue.h"
+#include "ValueValidator.h"
 
 using namespace std;
 

@@ -9,7 +9,7 @@ void Book::SetYear(const int year)
 {
 	int const minYear = -2400;
 	int const maxYear = 2020;
-	AssertValueInRange(year, minYear,
+	ValueValidator::AssertValueInRange(year, minYear,
 		maxYear, NotInRange, "год издания книги");
 	this->_year = year;
 }
@@ -18,7 +18,7 @@ void Book::SetPagesCount(const int pagesCount)
 {
 	int const minPagesCount = 1;
 	int const maxPagesCount = 1000000;
-	AssertValueInRange(pagesCount, minPagesCount,
+	ValueValidator::AssertValueInRange(pagesCount, minPagesCount,
 		maxPagesCount, NotInRange, "количество страниц в книге");
 	this->_pagesCount = pagesCount;
 }
@@ -29,8 +29,8 @@ void Book::SetAuthors(string* authors, const int authorsCount)
 	// Автор книги может быть неизвестен
 	int const minAuthorsCount = 0;
 	int const maxAuthorsCount = 10;
-	AssertValueInRange(authorsCount, minAuthorsCount,
-		maxAuthorsCount, NotInRange, "количество авторов книге");
+	ValueValidator::AssertValueInRange(authorsCount, minAuthorsCount,
+		maxAuthorsCount, NotInRange, "количество авторов книги");
 	this->_authorsCount = authorsCount;
 	this->_authors = authors;
 }
@@ -47,7 +47,7 @@ int Book::GetYear()
 
 string Book::GetYearForWrite()
 {
-	if (IsValueInRange(_year, -2400, 1))
+	if (ValueValidator::IsValueInRange(_year, -2400, 1))
 	{
 		return to_string(_year * -1) + " год до н.э";
 	}

@@ -51,13 +51,13 @@
     <ClCompile Include="Band.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CheckValue.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="ReadFromConsole.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="PrintToConsole.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ValueValidator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -98,13 +98,13 @@
     <ClInclude Include="MessageType.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CheckValue.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="ReadFromConsole.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="PrintToColsole.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueValidator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

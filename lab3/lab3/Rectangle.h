@@ -2,7 +2,7 @@
 #include "Point.h"
 #include <iostream>
 #include <string>
-#include "CheckValue.h"
+#include "ValueValidator.h"
 
 using namespace std;
 
@@ -18,8 +18,8 @@ private:
 public:
 	void SetCenterX(const float x);
 	void SetCenterY(const float y);
-	void SetLength(const float length);
-	void SetWidth(const float width);
+	void SetLength(float length);
+	void SetWidth(float width);
 
 	float GetCenterX();
 	float GetCenterY();

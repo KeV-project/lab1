@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "CheckValue.h"
+#include "ValueValidator.h"
 
 using namespace std;
 

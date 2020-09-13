@@ -144,7 +144,7 @@
     <ClCompile Include="DemoWorkingWithClasses.cpp" />
     <ClCompile Include="Flight.cpp" />
     <ClCompile Include="GenreType.cpp" />
-    <ClCompile Include="CheckValue.cpp" />
+    <ClCompile Include="ValueValidator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PrintToConsole.cpp" />
     <ClCompile Include="Point.cpp" />
@@ -161,7 +161,7 @@
     <ClInclude Include="DemoWorkingWithClasses.h" />
     <ClInclude Include="Flight.h" />
     <ClInclude Include="GenreType.h" />
-    <ClInclude Include="CheckValue.h" />
+    <ClInclude Include="ValueValidator.h" />
     <ClInclude Include="MessageType.h" />
     <ClInclude Include="PrintToColsole.h" />
     <ClInclude Include="Point.h" />
