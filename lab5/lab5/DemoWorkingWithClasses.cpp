@@ -6,16 +6,8 @@ void DemoWorkingWithClasses::DemoPerson()
 	Person person("Савельев", "Геннадий", "Борисович");
 	PrintInitials(&person);
 
-	try
-	{
-		Student student("Зубарев", "Никита", "Сергеевич", 192, 1000);
-		PrintInitials(&student);
-	}
-	catch (const std::exception& ex)
-	{
-		cout << ex.what() << endl << endl;
-	}
-
+	Student student("Зубарев", "Никита", "Сергеевич", 192, 2015);
+	PrintInitials(&student);
 
 	Teacher teacher("Сорин", "Петр", "Константинович",
 		"старший преподаватель");
@@ -89,11 +81,11 @@ void DemoWorkingWithClasses::DemoDiscount()
 	const int productsCount = 5;
 	Product* products = new Product[productsCount]
 	{
-		Product("samsung galaxy s8", Smartphones, -20000.55),
-		Product("xiaomi mi tv 4s 43", TV, 40000),
-		Product("polaris pmc 0517ad", Appliances, 4000),
-		Product("honor 10 lite", Smartphones, 15000),
-		Product("microlab m-106 black", Acoustics, 25000),
+		Product("samsung galaxy s8", Smartphones, 20000.99),
+		Product("xiaomi mi tv 4s 43", TV, 40000.99),
+		Product("polaris pmc 0517ad", Appliances, 4000.99),
+		Product("honor 10 lite", Smartphones, 15000.55),
+		Product("microlab m-106 black", Acoustics, 25000.33),
 	};
 
 	PercentDiscount percentDiscount1(20, TV);

@@ -10,8 +10,10 @@ void Product::SetCategory(const CategoryType& category)
 	this->_category = category;
 }
 
-void Product::SetCost(const float cost)
+void Product::SetCost(float cost)
 {
+	// Ограничение на инициализацию поля числом больше 2х знаков после запятой
+	cost = floor(cost * 100) / 100;
 	const float minCost = 0;
 	const float maxCost = 100000;
 	ValueValidator::AssertValueInRange(cost, 
