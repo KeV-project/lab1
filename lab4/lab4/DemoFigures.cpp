@@ -7,7 +7,6 @@ void DemoFigures::DemoRing()
 	Ring** rings = new Ring * [ringsCount];
 
 	const int ringsParametersCount = 4;
-	//TODO: Floats? Знаю, что написал "массив даблов", но я сильно не вдумывался ¯\_(ツ)_/¯ +
 	float** ringsParameters = new float*[ringsCount]
 	{
 		new float[ringsParametersCount] {10.5, 5.2, 13.5, 15.0},
@@ -69,7 +68,6 @@ void DemoFigures::DemoRect()
 	Rect** rectangles = new Rect * [rectanglesCount];
 
 	const int rectanglesParametersCount = 4;
-	//TODO: Floats? +
 	float** rectanglesParameters = new float* [rectanglesCount]
 	{
 		new float[rectanglesParametersCount] {5.5, -6.6, 13.0, 15.0},

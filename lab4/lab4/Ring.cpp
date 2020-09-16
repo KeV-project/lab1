@@ -9,6 +9,8 @@ void Ring::SetCenter(const float x, const float y)
 
 void Ring::SetRadius(float inRadius, float outRadius)
 {
+	//TODO: ввод значений с ограничением на 2 знака дублируется в нескольких местах.
+	//TODO: Дублирование лучше убрать, т.к. тут дублируется прям формула рассчёта
 	// Ограничение на инициализацию радиусов кольца больше 2х знаков после запятой
 	inRadius = floor(inRadius * 100) / 100;
 	outRadius = floor(outRadius * 100) / 100;
@@ -18,6 +20,7 @@ void Ring::SetRadius(float inRadius, float outRadius)
 		minRadius, maxRadius, NotPositive, "радиус внутреннего кольца");
 	ValueValidator::AssertValueInRange(outRadius,
 		minRadius, maxRadius, NotPositive, "радиус внешнего кольца");
+	//TODO: Непонятно, почему вычитается 0.01 - лучше вынести в отдельную, понятно именованную переменную
 	ValueValidator::AssertValueInRange(inRadius,
 		minRadius, outRadius - 0.01, NotInRange, "радиус внутреннего кольца");
 	_inRadius = inRadius;
