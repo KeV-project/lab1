@@ -15,7 +15,7 @@ private:
 public:
 	void SetName(const string& name);
 	void SetCategory(const CategoryType& category);
-	void SetCost(const float cost);
+	void SetCost(float cost);
 
 	string GetName();
 	CategoryType GetCategory();

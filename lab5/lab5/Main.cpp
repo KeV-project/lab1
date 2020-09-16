@@ -8,7 +8,7 @@ void main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	DemoWorkingWithClasses::DemoPerson();
-	DemoWorkingWithClasses::DemoUser();
+	//DemoWorkingWithClasses::DemoPerson();
+	//DemoWorkingWithClasses::DemoUser();
 	DemoWorkingWithClasses::DemoDiscount();
 }
