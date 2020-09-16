@@ -10,10 +10,10 @@ void Ring::SetCenter(const float x, const float y)
 void Ring::SetRadius(float inRadius, float outRadius)
 {
 	//TODO: ввод значений с ограничением на 2 знака дублируется в нескольких местах.
-	//TODO: Дублирование лучше убрать, т.к. тут дублируется прям формула рассчёта
+	//TODO: Дублирование лучше убрать, т.к. тут дублируется прям формула рассчёта +
 	// Ограничение на инициализацию радиусов кольца больше 2х знаков после запятой
-	inRadius = floor(inRadius * 100) / 100;
-	outRadius = floor(outRadius * 100) / 100;
+	ValueCorrector::RoundFloatToHundredths(inRadius);
+	ValueCorrector::RoundFloatToHundredths(outRadius);
 	const int minRadius = 0.01;
 	const int maxRadius = INT32_MAX;
 	ValueValidator::AssertValueInRange(inRadius,

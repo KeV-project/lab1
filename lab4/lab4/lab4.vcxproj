@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ValueCorrector.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="DemoFigures.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="ValueValidator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ValueCorrector.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="DemoFigures.h" />
     <ClInclude Include="MessageType.h" />

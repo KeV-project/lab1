@@ -4,6 +4,7 @@
 #include <math.h> 
 #include "MessageType.h"
 #include "Point.h"
+#include "ValueCorrector.h"
 #include "ValueValidator.h"
 using namespace std;
 

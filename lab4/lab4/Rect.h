@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "MessageType.h"
+#include "ValueCorrector.h"
 #include "ValueValidator.h"
 #include "Point.h"
 

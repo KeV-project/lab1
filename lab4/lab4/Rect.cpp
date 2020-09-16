@@ -10,9 +10,9 @@ void Rect::SetCenter(const float x, const float y)
 void Rect::SetLength(float length)
 {
 	//TODO: ввод значений с ограничением на 2 знака дублируется в нескольких местах.
-	//TODO: Дублирование лучше убрать, т.к. тут дублируется прям формула рассчёта
+	//TODO: Дублирование лучше убрать, т.к. тут дублируется прям формула рассчёта +
 	// Ограничение на инициализацию длины прямоугольника больше 2х знаков после запятой
-	length = floor(length * 100) / 100;
+	ValueCorrector::RoundFloatToHundredths(length);
 	const int minLength = 0.01;
 	const int maxLength = INT32_MAX;
 	ValueValidator::AssertValueInRange(length, 
@@ -25,7 +25,7 @@ void Rect::SetWidth(float width)
 	//TODO: ввод значений с ограничением на 2 знака дублируется в нескольких местах.
 	//TODO: Дублирование лучше убрать, т.к. тут дублируется прям формула рассчёта
 	// Ограничение на инициализацию шиниры прямоугольника больше 2х знаков после запятой
-	width = floor(width * 100) / 100;
+	ValueCorrector::RoundFloatToHundredths(width);
 	const int minWidth = 0.01;
 	const int maxWidth = INT32_MAX;
 	ValueValidator::AssertValueInRange(width, 
