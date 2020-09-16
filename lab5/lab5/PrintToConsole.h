@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Person.h"
 #include "DiscountBase.h"
+#include "ValueCorrector.h"
 
 using namespace std;
 

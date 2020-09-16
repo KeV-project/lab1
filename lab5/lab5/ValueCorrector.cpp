@@ -28,6 +28,6 @@ string ValueCorrector::ConversionFloatToString(const float value)
 
 void ValueCorrector::RoundFloatToHundredths(float& value)
 {
-	value = floor(value * 100) / 100;
+	value = roundf(value * 100) / 100;
 }
 

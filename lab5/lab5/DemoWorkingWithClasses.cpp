@@ -81,11 +81,11 @@ void DemoWorkingWithClasses::DemoDiscount()
 	const int productsCount = 5;
 	Product* products = new Product[productsCount]
 	{
-		Product("samsung galaxy s8", Smartphones, 20000.99),
+		Product("samsung galaxy s8", Smartphones, 20000.55),
 		Product("xiaomi mi tv 4s 43", TV, 40000.99),
-		Product("polaris pmc 0517ad", Appliances, 4000.99),
-		Product("honor 10 lite", Smartphones, 15000.55),
-		Product("microlab m-106 black", Acoustics, 25000.33),
+		Product("polaris pmc 0517ad", Appliances, 4000.00),
+		Product("honor 10 lite", Smartphones, 15000.34),
+		Product("microlab m-106 black", Acoustics, 25000.00),
 	};
 
 	PercentDiscount percentDiscount1(20, TV);

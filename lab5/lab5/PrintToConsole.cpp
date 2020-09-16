@@ -21,6 +21,8 @@ void ShowCheckWithDiscount(DiscountBase* discount,
 	for (int i = 0; i < productsCount; i++)
 	{
 		cout << products[i].GetName() << " Старая цена: ";
+		cout.setf(ios::fixed);
+		cout.precision(2);
 		cout << products[i].GetCost() << " Новая цена: ";
 		if (products[i].GetCategory() == discount->GetCategory())
 		{
