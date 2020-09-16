@@ -129,7 +129,6 @@ void Flight::ChangeFlight(const int number, const string& departure,
 
 int Flight::GetFlightTimeMinutes()
 {
-	//TODO: RSDN - Сокращения +
 	int hoursInFlight = _destinationTime.GetHour() 
 		- _departureTime.GetHour();
 	int minutesInFlight = _destinationTime.GetMinute()

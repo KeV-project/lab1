@@ -16,7 +16,6 @@ void Rect::SetLength(float length)
 	length = floor(length * 100) / 100;
 	int const minLength = 1;
 	int const maxLength = INT32_MAX;
-	//TODO: Есть несоответсвтия типов - передаём дробное, проверяем с приведением к целому +
 	ValueValidator::AssertValueInRange(length, minLength, maxLength, 
 		NotPositive, "длину прямоугольника");
 	this->_length = length;
@@ -28,7 +27,6 @@ void Rect::SetWidth(float width)
 	width = floor(width * 100) / 100;
 	int const minWidth = 1;
 	int const maxWidth = INT32_MAX;
-	//TODO: Есть несоответсвтия типов - передаём дробное, проверяем с приведением к целому +
 	ValueValidator::AssertValueInRange(width, minWidth, maxWidth,
 		NotPositive, "ширину прямоугольника");
 	this->_width = width;
