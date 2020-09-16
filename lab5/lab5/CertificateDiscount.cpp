@@ -2,8 +2,8 @@
 
 void CertificateDiscount::SetAmount(const float amount)
 {
-	const float minAmount = 0;
-	const float maxAmount = 10000;
+	const float minAmount = 0.00;
+	const float maxAmount = 10000.00;
 	ValueValidator::AssertValueInRange(amount, 
 		minAmount, maxAmount,
 		NotInRange, "размер сертификата");

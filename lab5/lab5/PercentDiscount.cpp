@@ -23,10 +23,10 @@ PercentDiscount::PercentDiscount(const int percent,
 
 double PercentDiscount::Calculate(Product* product)
 {
-	if (product->GetCategory() == this->GetCategory())
+	if (product->GetCategory() == GetCategory())
 	{
 		return product->GetCost() - product->GetCost() 
-			* this->GetPercent() / 100;
+			* GetPercent() / 100;
 	}
 	return product->GetCost();
 }

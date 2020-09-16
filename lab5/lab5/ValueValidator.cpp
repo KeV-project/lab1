@@ -1,34 +1,10 @@
 #include "ValueValidator.h"
-
-// Возвращает целое либо дробное число с 2 знаками после запятой в виде строки
-string ValueValidator::ConversionFloatToString(const float value)
-{
-	int integerPart = value;
-	int fractionalPart = 0;
-
-	if (int((value - (int)value) * 100) < 0)
-	{
-		fractionalPart = int((value - (int)value) * -100);
-	}
-	else
-	{
-		fractionalPart = int((value - (int)value) * 100);
-	}
-
-	if (fractionalPart == 0)
-	{
-		return to_string(integerPart);
-	}
-	else
-	{
-		return to_string(integerPart) + "."
-			+ to_string(fractionalPart);
-	}
-}
+#include "ValueCorrector.h"
 
 bool ValueValidator::IsValueInRange(const float value,
 	const float minLimit, const float maxLimit)
 {
+	
 	return (minLimit <= value && maxLimit >= value);
 }
 
@@ -57,10 +33,10 @@ void ValueValidator::AssertValueInRange(const float value,
 		case NotInRange:
 		{
 			string message = "ИСКЛЮЧЕНИЕ: Число "
-				+ ConversionFloatToString(value)
+				+ ValueCorrector::ConversionFloatToString(value)
 				+ "\nне входит в допустимый диапазон значений "
-				+ "[" + ConversionFloatToString(minLimit) + ", "
-				+ ConversionFloatToString(maxLimit)
+				+ "[" + ValueCorrector::ConversionFloatToString(minLimit) + ", "
+				+ ValueCorrector::ConversionFloatToString(maxLimit)
 				+ "]\nи не может определять " + content;
 			char sendMessage[255];
 			strcpy_s(sendMessage, message.c_str());
@@ -69,7 +45,7 @@ void ValueValidator::AssertValueInRange(const float value,
 		case NotPositive:
 		{
 			string message = "ИСКЛЮЧЕНИЕ: Число "
-				+ ConversionFloatToString(value)
+				+ ValueCorrector::ConversionFloatToString(value)
 				+ " не является положительным\n"
 				+ "и не может определять " + content;
 			char sendMessage[255];
@@ -79,7 +55,7 @@ void ValueValidator::AssertValueInRange(const float value,
 		case NotNonNegative:
 		{
 			string message = "ИСКЛЮЧЕНИЕ: Число "
-				+ ConversionFloatToString(value)
+				+ ValueCorrector::ConversionFloatToString(value)
 				+ " не является неотрицательным\n"
 				+ "и не может определять " + content;
 			char sendMessage[255];
@@ -90,9 +66,9 @@ void ValueValidator::AssertValueInRange(const float value,
 		{
 			string message = "ИСКЛЮЧЕНИЕ: " + content
 				+ " вылета: "
-				+ ConversionFloatToString(value)
+				+ ValueCorrector::ConversionFloatToString(value)
 				+ " опережает(/ют)" + content + " прибытия: "
-				+ ConversionFloatToString(maxLimit);
+				+ ValueCorrector::ConversionFloatToString(maxLimit);
 			char sendMessage[255];
 			strcpy_s(sendMessage, message.c_str());
 			throw exception(sendMessage);
