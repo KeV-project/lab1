@@ -10,6 +10,9 @@ private:
 	string _surname;
 	string _patronymic;
 
+protected:
+	string field;
+
 public:
 	void SetName(const string& name);
 	void SetSurname(const string& surname);

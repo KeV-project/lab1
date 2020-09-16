@@ -20,7 +20,7 @@ public:
 	int GetId();
 	string GetLogin();
 	string GetPassword();
-
+	
 	User();
 	User(const int id, const string& login, const string& password);
 
@@ -29,4 +29,5 @@ public:
 
 User* Login(User** users, const int usersCount, 
 	const string& enteredLogin, const string& enteredPassword);
+
 

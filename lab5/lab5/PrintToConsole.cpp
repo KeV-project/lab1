@@ -15,6 +15,12 @@ void PrintInitials(Person* person)
 	cout << person->GetPatronymic() << endl << endl;
 }
 
+void PrintMessageAboutEntering(User* loginedUser)
+{
+	cout << loginedUser->GetLogin();
+	cout << " вход в систему выполнен успешно" << endl << endl;
+}
+
 void ShowCheckWithDiscount(DiscountBase* discount,
 	Product* products, int productsCount)
 {

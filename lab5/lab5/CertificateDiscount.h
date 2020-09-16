@@ -9,7 +9,7 @@ private:
 public:
 	void SetAmount(const float amount);
 
-	double GetAmount();
+	float GetAmount();
 
 	CertificateDiscount(const float amount, 
 		const CategoryType& category);

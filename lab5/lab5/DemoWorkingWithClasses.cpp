@@ -24,23 +24,24 @@ void DemoWorkingWithClasses::DemoUser()
 	User** users = new User * [usersCount]
 	{
 		new User(100000, "morkovka1995", "1995morkovka"),
-			new User(100001, "ilon_mask", "X æ A-12"),
-			new User(100002, "megazver", "password"),
-			new User(100003, "yogurt", "ksTPQzSu"),
+		new User(100001, "ilon_mask", "X æ A-12"),
+		new User(100002, "megazver", "password"),
+		new User(100003, "yogurt", "ksTPQzSu"),
 	};
-	string login = "megazver";
-	string password = "password";
+
+	const string usersLogin = "megazver";
+	const string usersPassword = "password";
 	try
 	{
-		User* loginedUser = Login(users, usersCount, login, password);
-		cout << loginedUser->GetLogin();
-		cout << " вход в систему выполнен успешно" << endl << endl;
+		User* loginedUser = Login(users, usersCount, usersLogin, usersPassword);
+		PrintMessageAboutEntering(loginedUser);
 	}
 	catch (const std::exception& ex)
 	{
 		cout << ex.what() << endl << endl;
 	}
-	for (int i = 0; i < 4; i++)
+
+	for (int i = 0; i < usersCount; i++)
 	{
 		delete users[i];
 	}
@@ -49,24 +50,25 @@ void DemoWorkingWithClasses::DemoUser()
 	User** paidUsers = new User * [usersCount]
 	{
 		new PaidUser(200000, "TheKnyazz", "JHPzPGFG"),
-			new PaidUser(200001, "system_exe", "UgfkDGmU"),
-			new PaidUser(200002, "RazorQ", "TBgRnbCP"),
-			new PaidUser(200003, "schdub", "CetyQVID"),
+		new PaidUser(200001, "system_exe", "UgfkDGmU"),
+		new PaidUser(200002, "RazorQ", "TBgRnbCP"),
+		new PaidUser(200003, "schdub", "CetyQVID"),
 	};
-	login = "system_exe";
-	password = "UgfkDGmU";
+
+	const string paidUsersLogin = "system_exe";
+	const string paidUsersPassword = "UgfkDGmU";
 	try
 	{
 		User* loginedPaidUser = Login(paidUsers,
-			usersCount, login, password);
-		cout << loginedPaidUser->GetLogin();
-		cout << " вход в систему выполнен успешно" << endl << endl;
+			usersCount, paidUsersLogin, paidUsersPassword);
+		PrintMessageAboutEntering(loginedPaidUser);
 	}
 	catch (const std::exception& ex)
 	{
 		cout << ex.what() << endl << endl;
 	}
-	for (int i = 0; i < 4; i++)
+
+	for (int i = 0; i < usersCount; i++)
 	{
 		delete paidUsers[i];
 	}
@@ -81,11 +83,11 @@ void DemoWorkingWithClasses::DemoDiscount()
 	const int productsCount = 5;
 	Product* products = new Product[productsCount]
 	{
-		Product("samsung galaxy s8", Smartphones, 20000.55),
+		Product("samsung galaxy s8", Smartphones, 20000.00),
 		Product("xiaomi mi tv 4s 43", TV, 40000.99),
-		Product("polaris pmc 0517ad", Appliances, 4000.00),
-		Product("honor 10 lite", Smartphones, 15000.34),
-		Product("microlab m-106 black", Acoustics, 25000.00),
+		Product("polaris pmc 0517ad", Appliances, 4000.55),
+		Product("honor 10 lite", Smartphones, 15000.00),
+		Product("microlab m-106 black", Acoustics, 25000.05),
 	};
 
 	PercentDiscount percentDiscount1(20, TV);
@@ -94,7 +96,7 @@ void DemoWorkingWithClasses::DemoDiscount()
 	PercentDiscount percentDiscount2(10, Appliances);
 	ShowCheckWithDiscount(&percentDiscount2, products, productsCount);
 
-	CertificateDiscount certificateDiscount1(2000, Smartphones);
+	CertificateDiscount certificateDiscount1(30000, Smartphones);
 	ShowCheckWithDiscount(&certificateDiscount1, products, productsCount);
 
 	CertificateDiscount certificateDiscount2(3000, Appliances);

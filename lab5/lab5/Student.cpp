@@ -26,7 +26,7 @@ int Student::GetRecordBookNum()
 }
 
 int Student::GetEntranceYear()
-{
+{	
 	return _entranceYear;
 }
 
