@@ -126,88 +126,95 @@ void DemoFigures::DemoRect()
 
 void DemoFigures::DemoCollision()
 {
-	const int rectsCount = 8;
-	Rect rects[rectsCount]
+	try
 	{
-		//Пересекающиеся прямоугольники
-		Rect(8.0, 4.0, 5.0, 3.0),
-		Rect(9.0, 5.0, 12.5, 6.5),
-
-		Rect(7.0, 5.0, 5.5, 6.5),
-		Rect(9.0, 5.0, 10.5, 2.5),
-
-		//Непересекающиеся прямоугольники
-		Rect(5.0, 3.0, 1.0, 3.0),
-		Rect(9.0, 8.0, 2.0, 1.0),
-
-		Rect(7.0, 10.0, 4.5, 6.0),
-		Rect(6.0, 3.0, 12.5, 5.5)
-	};
-
-	cout << "ПРЯМОУГОЛЬНИКИ" << endl << endl;
-
-	for (int i = 0; i < rectsCount; i += 2)
-	{
-		cout << "Прямоуголиник №" << i + 1 << ":" << endl;
-		PrintRectangle(&rects[i]);
-		cout << endl << endl;
-
-		cout << "Прямоуголиник №" << i + 2 << ":" << endl;
-		PrintRectangle(&rects[i + 1]);
-		cout << endl << endl;
-		if (CollisionManager::IsCollision(rects[i], rects[i + 1]))
+		const int rectsCount = 8;
+		Rect rects[rectsCount]
 		{
-			cout << "Прямоугольники " << i + 1 << " и " << i + 2;
-			cout << " пересекаются" << endl << endl;
-		}
-		else
+			//Пересекающиеся прямоугольники
+			Rect(8.0, 4.0, 5.0, 3.0),
+			Rect(9.0, 5.0, 12.5, 6.5),
+
+			Rect(7.0, 5.0, 5.5, 6.5),
+			Rect(9.0, 5.0, 10.5, 2.5),
+
+			//Непересекающиеся прямоугольники
+			Rect(5.0, 3.0, 1.0, 3.0),
+			Rect(9.0, 8.0, 2.0, 1.0),
+
+			Rect(7.0, 10.0, 4.5, 6.0),
+			Rect(6.0, 3.0, 12.5, 5.5)
+		};
+
+		cout << "ПРЯМОУГОЛЬНИКИ" << endl << endl;
+
+		for (int i = 0; i < rectsCount; i += 2)
 		{
-			cout << "Прямоугольники " << i + 1 << " и " << i + 2;
-			cout << " не пересекаются" << endl << endl;
+			cout << "Прямоуголиник №" << i + 1 << ":" << endl;
+			PrintRectangle(&rects[i]);
+			cout << endl << endl;
+
+			cout << "Прямоуголиник №" << i + 2 << ":" << endl;
+			PrintRectangle(&rects[i + 1]);
+			cout << endl << endl;
+			if (CollisionManager::IsCollision(rects[i], rects[i + 1]))
+			{
+				cout << "Прямоугольники " << i + 1 << " и " << i + 2;
+				cout << " пересекаются" << endl << endl;
+			}
+			else
+			{
+				cout << "Прямоугольники " << i + 1 << " и " << i + 2;
+				cout << " не пересекаются" << endl << endl;
+			}
 		}
+
+		const int ringsCount = 8;
+		Ring rings[ringsCount]
+		{
+			//Пересекающиеся кольца
+			Ring(4.5, 2.5, 1.0, 1.5),
+			Ring(7.0, 5.0, 2.5, 3.0),
+
+			Ring(4.0, 4.0, 2.5, 4.0),
+			Ring(8.0, 7.0, 1.0, 2.0),
+
+			//Непересекающиеся кольца
+			Ring(3.5, 2.5, 1.0, 1.5),
+			Ring(8.0, 7.0, 1.5, 2.0),
+
+			Ring(5.0, 5.0, 2.0, 4.0),
+			Ring(12.0, 8.0, 1.0, 2.0)
+		};
+
+		cout << "КОЛЬЦА" << endl << endl;
+
+		for (int i = 0; i < ringsCount; i += 2)
+		{
+			cout << "Кольцо №" << i + 1 << ":" << endl;
+			PrintRing(&rings[i]);
+			cout << endl << endl;
+
+			cout << "Кольцо №" << i + 2 << ":" << endl;
+			PrintRing(&rings[i + 1]);
+			cout << endl << endl;
+
+			if (CollisionManager::IsCollision(rings[i], rings[i + 1]))
+			{
+				cout << "Кольца " << i + 1 << " и " << i + 2;
+				cout << " пересекаются" << endl << endl;
+			}
+			else
+			{
+				cout << "Кольца " << i + 1 << " и " << i + 2;
+				cout << " не пересекаются" << endl << endl;
+			}
+		}
+
+		PrintLine();
 	}
-
-	const int ringsCount = 8;
-	Ring rings[ringsCount]
+	catch (const std::exception& ex)
 	{
-		//Пересекающиеся кольца
-		Ring(4.5, 2.5, 1.0, 1.5),
-		Ring(7.0, 5.0, 2.5, 3.0),
-
-		Ring(4.0, 4.0, 2.5, 4.0),
-		Ring(8.0, 7.0, 1.0, 2.0),
-
-		//Непересекающиеся кольца
-		Ring(3.5, 2.5, 1.0, 1.5),
-		Ring(8.0, 7.0, 1.5, 2.0),
-
-		Ring(5.0, 5.0, 2.0, 4.0),
-		Ring(12.0, 8.0, 1.0, 2.0)
-	};
-	
-	cout << "КОЛЬЦА" << endl << endl;
-
-	for (int i = 0; i < ringsCount; i += 2)
-	{
-		cout << "Кольцо №" << i + 1 << ":" << endl;
-		PrintRing(&rings[i]);
-		cout << endl << endl;
-
-		cout << "Кольцо №" << i + 2 << ":" << endl;
-		PrintRing(&rings[i + 1]);
-		cout << endl << endl;
-
-		if (CollisionManager::IsCollision(rings[i], rings[i + 1]))
-		{
-			cout << "Кольца " << i + 1 << " и " << i + 2;
-			cout << " пересекаются" << endl << endl;
-		}
-		else
-		{
-			cout << "Кольца " << i + 1 << " и " << i + 2;
-			cout << " не пересекаются" << endl << endl;
-		}
+		cout << ex.what() << endl << endl;
 	}
-
-	PrintLine();
 }

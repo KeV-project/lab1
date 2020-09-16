@@ -4,7 +4,12 @@
 bool ValueValidator::IsValueInRange(const float value,
 	const float minLimit, const float maxLimit)
 {
-	return (minLimit <= value && maxLimit >= value);
+	// Заменила нестрогие знаки на строгие, так как в данной лаб.раб с ними работать удобнее
+	// Длина, ширина прямоугольника и радиусы кольца не могут быть отрицательными
+	// Поэтому их надежнее сравнивать с 0, чем с 0.01, например
+	// То же самое при сравнении внутреннего и внешнего радиуса кольца
+	// Радиусы колеца не могут быть одинаковыми, иначе это не кольцо
+	return (minLimit < value && maxLimit > value);
 }
 
 bool ValueValidator::IsValue()
