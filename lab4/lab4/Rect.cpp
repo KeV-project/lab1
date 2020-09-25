@@ -9,9 +9,6 @@ void Rect::SetCenter(const float x, const float y)
 
 void Rect::SetLength(float length)
 {
-	//TODO: ввод значений с ограничением на 2 знака дублируется в нескольких местах.
-	//TODO: Дублирование лучше убрать, т.к. тут дублируется прям формула рассчёта +
-	// Ограничение на инициализацию длины прямоугольника больше 2х знаков после запятой +
 	ValueCorrector::RoundFloatToHundredths(length);
 	const float minLength = 0.0;
 	const float maxLength = INT32_MAX;
@@ -22,9 +19,6 @@ void Rect::SetLength(float length)
 
 void Rect::SetWidth(float width)
 {
-	//TODO: ввод значений с ограничением на 2 знака дублируется в нескольких местах.
-	//TODO: Дублирование лучше убрать, т.к. тут дублируется прям формула рассчёта
-	// Ограничение на инициализацию шиниры прямоугольника больше 2х знаков после запятой +
 	ValueCorrector::RoundFloatToHundredths(width);
 	const float minWidth = 0.0;
 	const float maxWidth = INT32_MAX;
