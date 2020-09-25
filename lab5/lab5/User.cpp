@@ -10,6 +10,7 @@ void User::SetId(const int id)
 }
 void User::SetLogin(const string& login)
 {
+	//TODO: Сделайет изящнее через проверку циклом
 	if (login.find("}") != -1 || login.find("{") != -1 
 		|| login.find(">") != -1 || login.find("<") != -1 
 		|| login.find("@") != -1 || login.find("#") != -1 
