@@ -10,16 +10,20 @@ void User::SetId(const int id)
 }
 void User::SetLogin(const string& login)
 {
-	//TODO: Сделайет изящнее через проверку циклом
-	if (login.find("}") != -1 || login.find("{") != -1 
-		|| login.find(">") != -1 || login.find("<") != -1 
-		|| login.find("@") != -1 || login.find("#") != -1 
-		|| login.find("$") != -1 || login.find("%") != -1 
-		|| login.find("^") != -1 || login.find(":") != -1 
-		|| login.find("*") != -1)
+	//TODO: Сделайет изящнее через проверку циклом +
+	const int incorrectSymbolsCount = 11;
+	char* incorrectSymbols = new char[incorrectSymbolsCount]
 	{
-		throw exception("Логин не должен содержать следующие символы:"
-		"\n{, }, <, >, @, # , $, %, ^, :, *");
+		'}', '{', '>', '<', '@', '#', '$', '%', '^', ':', '*'
+	}
+	;
+	for (int i = 0; i < incorrectSymbolsCount; i++)
+	{
+		if (login.find(incorrectSymbols[i]) != -1)
+		{
+			throw exception("Логин не должен содержать следующие символы:"
+				"\n{, }, <, >, @, # , $, %, ^, :, *");
+		}
 	}
 	_login = login;
 }
