@@ -5,20 +5,20 @@
 class Student : public Person
 {
 private:
-	int _gradebookNum;
+	int _gradebookNumber;
 	int _entranceYear;
 
 public:
-	//TODO: RSDN
-	void SetGradebookNum(const int gradebookNum);
+	//TODO: RSDN+
+	void SetGradebookNumber(const int gradebookNumber);
 	void SetEntranceYear(const int year);
 
-	int GetRecordBookNum();
+	int GetRecordBookNumber();
 	int GetEntranceYear();
 
 	Student();
 	Student(const string& surname, const string& name,
-		 //TODO: RSDN
-		const string& patronymic, const int gradebookNum,
+		 //TODO: RSDN +
+		const string& patronymic, const int gradebookNumber,
 		const int entranceYear);
 };

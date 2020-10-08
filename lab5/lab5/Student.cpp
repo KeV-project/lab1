@@ -1,13 +1,13 @@
 #include "Student.h"
 
-void Student::SetGradebookNum(const int gradebookNum)
+void Student::SetGradebookNumber(const int gradebookNumber)
 {
 	const int minGradebookNum = 1;
 	const int maxGradebookNum = INT32_MAX;
-	ValueValidator::AssertValueInRange(gradebookNum, 
+	ValueValidator::AssertValueInRange(gradebookNumber, 
 		minGradebookNum, maxGradebookNum, NotPositive,
 		"номер зачетной книжки студента");
-	_gradebookNum = gradebookNum;
+	_gradebookNumber = gradebookNumber;
 }
 
 void Student::SetEntranceYear(const int year)
@@ -21,9 +21,9 @@ void Student::SetEntranceYear(const int year)
 	_entranceYear = year;
 }
 
-int Student::GetRecordBookNum()
+int Student::GetRecordBookNumber()
 {
-	return _gradebookNum;
+	return _gradebookNumber;
 }
 
 int Student::GetEntranceYear()
@@ -36,15 +36,15 @@ Student::Student()
 	SetName("");
 	SetSurname("");
 	SetPatronymic("");
-	SetGradebookNum(0);
+	SetGradebookNumber(0);
 	SetEntranceYear(0);
 }
 
 Student::Student(const string& surname, const string& name,
-	const string& patronymic, const int gradebookNum, 
+	const string& patronymic, const int gradebookNumber, 
 	const int entranceYear) : Person(surname, name, patronymic)
 {
-	SetGradebookNum(gradebookNum);
+	SetGradebookNumber(gradebookNumber);
 	SetEntranceYear(entranceYear);
 }
 
