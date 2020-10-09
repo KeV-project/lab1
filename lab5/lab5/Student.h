@@ -9,7 +9,6 @@ private:
 	int _entranceYear;
 
 public:
-	//TODO: RSDN+
 	void SetGradebookNumber(const int gradebookNumber);
 	void SetEntranceYear(const int year);
 
@@ -18,7 +17,6 @@ public:
 
 	Student();
 	Student(const string& surname, const string& name,
-		 //TODO: RSDN +
 		const string& patronymic, const int gradebookNumber,
 		const int entranceYear);
 };

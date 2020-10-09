@@ -10,7 +10,6 @@ void User::SetId(const int id)
 }
 void User::SetLogin(const string& login)
 {
-	//TODO: Сделайет изящнее через проверку циклом +
 	const int incorrectSymbolsCount = 11;
 	char* incorrectSymbols = new char[incorrectSymbolsCount]
 	{
